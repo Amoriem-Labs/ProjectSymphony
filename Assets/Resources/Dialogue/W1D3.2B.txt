@@ -1,0 +1,4 @@
+Name: Sam
+Sprite: Sam_Sad
+Aw, seriously?
+Oh well, I guess that's what I get for falling asleep on the first day.

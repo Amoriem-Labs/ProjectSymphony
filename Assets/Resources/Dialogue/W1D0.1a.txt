@@ -1,0 +1,5 @@
+Name: 
+Sprite: EMPTY
+You have better things to do than be a star.
+Who cares about joining a band anyway? You don't need other people's validation.
+GAME OVER

@@ -1,0 +1,24 @@
+Name:  
+Sprite: EMPTY
+BG: Park
+BGM: picnic-bgm
+The park is full of students enjoying their last day before the school semester begins.
+
+Name: PC
+Sprite: EMPTY
+(Maybe I should try to meet some people before classes begin...)
+
+
+Name: 
+Sprite: EMPTY
+Groups of students on blankets are scattered over the grass. Each group seems to fit together in its own way.
+One blanket is full of mustached artists, and another with only those clothed in only bright green.
+The members of a third have muscles as big as the bell of a trombone.
+
+Name: PC
+Sprite: EMPTY
+(These guys look... intense.)
+
+Options: 
+Talk to the strong guys.
+Walk past them.

@@ -1,0 +1,77 @@
+
+Name: PC
+Sprite: Howard_Shrug
+BG: LockerRoom
+Can I ask you something Howard?
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+What is it?
+
+Name: PC
+After class, some students were asking other people to join their band, but it seems like they were already good friends.
+Can you just ask anyone to be in a band with you?
+
+Name: Howard
+Sprite: Howard_At_Peace
+That's a good question, I never thought about asking a stranger to join a band.
+
+Sprite: Howard_Shrug
+I never really got caught up in the band-making rush, but in my opinion...
+You need to hangout with someone at least once before you can ask them to join your band.
+
+Sprite: Howard_Understanding
+That shouldn't be hard for you though - I'm sure everyone will be excited to meet a new student!
+
+sfx	School Bell Ring
+
+Sprite: Howard_Uncomfortable
+Sorry MC, I have to rush to class!
+
+Name: PC
+Oh yeah, me too.
+
+Name: Howard
+Sprite: Howard_Understanding
+When I looked at your schedule earlier, I saw that you and Sam have the same class right now, so hopefully you'll find her there.
+
+Name: PC
+Sprite: EMPTY
+Sounds great, see you later!
+
+BG: Classroom
+Name: Sam
+Sprite: Sam_Happy
+Hey you! I'm so glad we're in the same class!
+
+Sprite: Sam_Sad
+I had this teacher last year and they were soo boring.
+
+Sprite: Sam_Happy
+But now that you're here, this class will definitely be fun!
+
+Name:  
+The teacher walks to the front of the room and opens a gigantic textbook.
+They proceed to read from it in a monotonous voice, and by the end of class you can barely keep your eyes open.
+You turn next to you and see that Sam is fast asleep.
+sfx	School Bell Ring
+
+Name: Teacher
+That's it for this class. Your homework is to read the next ten chapters by tomorrow.
+
+Name: Sam
+Sprite: Sam_Pensive
+What... huh? 
+Is class already over?
+
+Name: PC
+You slept through it...
+
+Name: Sam
+Sprite: Sam_Sad
+Aw man, I was really hoping to be a good student and take some notes.
+MC... do you think you could share your notes with me? Pretty please?
+
+Options: 
+Of course, I'll send you a photo!
+Sorry, but not today.

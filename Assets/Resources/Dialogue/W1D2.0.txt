@@ -1,0 +1,23 @@
+Name:   
+Sprite: EMPTY
+BG: LockerRoom
+<i>Your suitcase is finally empty on the floor before you, and all your possessions are strewn across your bed.</i>
+
+Name: PC
+(Where's my electric piano?)
+
+Name:  
+<i>It's nearly 5pm.</i>
+
+Name: PC
+(Ugh. Guess I'll find it later.)
+
+Name:  
+Sprite: EMPTY
+BG: Lake
+Sam is standing near the water, gazing across it as if she can't see the other side. 
+Howard is leaning on a tree behind her.
+
+Options: 
+Call out to them.
+Sneak up on them.

@@ -1,0 +1,20 @@
+Name: Sam
+Sprite: Sam_Happy
+Ooh okay! Let me lead you there! There's this one spot on the fourth floor where the sun hits just right. Oh my gosh, the golden light hitting her hair...
+BG: Library
+Animation: ScreenShake
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+They have basically every book you could ask for. Any language too.
+
+Sprite: Howard_At_Peace
+I'm sure you could learn anything you want here. Science, magic, music. Everything.
+
+Name: Sam
+Sprite: Sam_Pensive
+That section over there is where you can find the romance books. Any pairing you've ever thought of exists here. Actually, wait. I wonder...
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+And with that unforgettable piece of knowledge shared, let's leave.

@@ -1,0 +1,10 @@
+Name: Howard
+Sprite: Howard_Understanding
+BG: LockerRoom
+How about somewhere else...
+
+Options: 
+Maybe I can see where people rehearse?
+The park!
+I think seeing a classroom would be nice before I'm forced in there against my will.
+Could we go to the library?

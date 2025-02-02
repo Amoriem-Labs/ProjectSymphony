@@ -1,0 +1,25 @@
+Name: Nerd
+Sprite: EMPTY
+...
+
+Name: PC
+Hey... what are you playing?
+
+Name: Nerd 2
+Sprite: EMPTY
+...
+
+Name: PC
+Uh, can I join?
+
+Name:  
+Now all of the nerds turn around. Their eyes bore straight into your soul.
+One of them starts playing the tambourine softly, and then louder. Then they stop.
+
+Name: Nerd
+Sprite: EMPTY
+Sorry, what?
+
+Name: PC
+...Nevermind.
+(Well, they were welcoming...)

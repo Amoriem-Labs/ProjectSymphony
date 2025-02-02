@@ -1,0 +1,11 @@
+Name: PC
+Sprite: EMPTY
+Hey! Thanks for waiting for me.
+
+Name: Howard
+Sprite: Howard_Understanding
+Don't worry about it. Are you ready to go?
+
+Name: Sam
+Sprite: Sam_Happy
+C'mon! There's this really nice spot in the library I just have to show you!

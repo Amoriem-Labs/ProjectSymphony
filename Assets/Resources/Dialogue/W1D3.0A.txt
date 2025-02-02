@@ -1,0 +1,7 @@
+Name: Howard
+Sprite: Howard_At_Peace
+That's right - friends definitely make it more manageable.
+
+Name: Sam
+Sprite: Sam_Pensive
+I think you guys are totally over-hyping the start of the semester.

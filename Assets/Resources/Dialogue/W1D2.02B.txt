@@ -1,0 +1,50 @@
+Name: Sam
+Sprite: Sam_Happy
+Back outside we go! Yeehaw!
+Animation: ScreenShake
+Name:  
+<i>Sam flings open the door and sprints off towards the park.</i>
+
+
+
+Name: Howard
+Sprite: Howard_Shrug
+Let's catch up with her.
+BG: Park
+
+Name: Sam
+Sprite: Sam_Happy
+Freedom!
+
+Name: Howard
+Sprite: Howard_Understanding
+If you couldn't tell yet, Sam loves being outside.
+
+Name: Sam
+Sprite: Sam_Happy
+Not as much as I love Patricia!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Of course.
+
+Name: Sam
+Sprite: Sam_Happy
+Less about me. Let me tell you about the park.
+
+Sprite: Sam_Pensive
+There are a few wild animals around, but the real draw is the flora. The flowers here are really cute, perfect for bouquets.
+The tree over there has a ton of hearts on it! Whenever I pass it I think of...
+
+Name:  
+<i>Sam starts staring off into space, and then snaps her attention back to you.</i>
+
+Name: Sam
+Well, anyway there aren't any there yet. I think they reset the tree every year somehow.
+
+Name: Howard
+Sprite: Howard_At_Peace
+People love to spend time out here during the day. Some people play sports, some look for bugs. There's lots to do.
+
+Sprite: Howard_Uncomfortable
+It is starting to get a bit cold though. Let's go back inside.

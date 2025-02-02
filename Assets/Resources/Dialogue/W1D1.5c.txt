@@ -1,0 +1,10 @@
+Name: Sam
+Sprite: Sam_Happy
+You should come with us to Arial Lake, it's really beautiful!
+
+Name: Howard
+Sprite: Howard_Understanding
+Maybe tomorrow at 5pm?
+
+Name: PC
+That sounds great! I'll see you guys then!

@@ -1,0 +1,49 @@
+Name: Sam
+BG: LockerRoom
+Sprite: Sam_Pensive
+Ooh let me. I spend a lot of time there practicing my songs for Patricia!
+
+Name: Howard
+Sprite: Howard_Shrug
+Oh geez, here we go again.
+
+Name: Sam
+Sprite: Sam_Happy
+Actually, I have a new one I've been working on recently! I'll run it by y'all as we walk.
+
+SFX: Sam_Guitar_Strum
+♫ Like the sun, you are the only one for me–♫
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+We're here.
+Animation: ScreenShake
+BG: PracticeStage
+Name: Sam
+Sprite: Sam_Sad
+Guess we are! Don't worry, I'll show you the rest later.
+
+Sprite: Sam_Pensive
+This right here's the rehearsal room. You can come here any time to practice songs you know.
+
+Name: Howard
+Sprite: Howard_At_Peace
+I use this place to practice my drumming sometimes.
+
+Sprite: Howard_Shrug
+I've gotten a lot better, but it's still hard to find time to practice...
+
+Name: Sam
+Sprite: Sam_Happy 
+The instruments are all top grade, so feel free to play your heart out!
+
+Name: PC	
+Hey, I think I was here for my audition!
+
+Name: Sam
+Sprite: Sam_Happy
+That's so cool!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+...if you've already seen it let's head back to the hallway before we spend all day here.

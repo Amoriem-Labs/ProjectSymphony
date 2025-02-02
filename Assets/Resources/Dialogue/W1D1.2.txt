@@ -1,0 +1,12 @@
+Name: 
+Sprite: EMPTY
+A mirror casts a long shadow across the next picnic blanket.
+At the end of that shadow, you find a small group of students moving space rocks slowly across the skin of a tambourine, looking suspiciously at one another.
+
+Name: PC
+Sprite: EMPTY
+(This group certainly doesn't look like it has a full picnic blanket...)
+
+Options: 
+Talk to the nerds.
+Walk past them.

@@ -1,0 +1,27 @@
+Name: Sam
+Sprite: Sam_Happy
+Awesome sauce!
+
+Name: PC
+Wait so... you guys aren't in a band?
+
+Name: Sam
+Sprite: Sam_Sad
+Noo...
+No, we aren't.
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+But I feel like people don't need a band to be happy.
+
+Name: Sam
+Sprite: Sam_Happy
+Wait wait wait, I see <i>Patricia</i>!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Oh no...
+
+Options: 
+Who's Patricia?
+Do you guys know how to find all of your classes?

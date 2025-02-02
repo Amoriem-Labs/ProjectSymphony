@@ -1,0 +1,7 @@
+Name: Sam
+Sprite: Sam_Happy
+That's more like it. See Howard, you don't have anything to worry about!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+If you say so...

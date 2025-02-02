@@ -1,0 +1,9 @@
+Name: Howard
+Sprite: Howard_At_Peace
+That's great, MC.
+
+Sprite: Howard_Shrug
+Sorry if I stressed you out earlier. I always get so worked up, but once I go to class everything's fine.
+
+Name: PC
+I get that, no worries.

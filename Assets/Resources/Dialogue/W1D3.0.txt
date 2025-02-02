@@ -1,0 +1,25 @@
+Name: Sam
+Sprite: Sam_Happy
+BG: LockerRoom
+Hey MC! Hope you got a good night of sleep before the start of classes!
+
+Name: PC
+Hey guys, how have you been?
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+I could be better...
+I never sleep good before the start of the semester.
+
+Name: Sam
+Sprite: Sam_Pensive
+That's because you're always such a worrier!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+For good reason! This time of year all anyone talks about is the Battle of the Bands.
+There's so much energy and tension, it makes going to class really stressful!
+
+Options: 
+That sounds intense. I'm glad I'll have you guys to help me through it.
+That sounds like fun! Good thing we're in this together.

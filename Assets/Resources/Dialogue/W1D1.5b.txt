@@ -1,0 +1,34 @@
+Name: Howard
+Sprite: Howard_Shrug
+Yeah I think so, we've both been here for a year already...
+
+Name: PC
+...
+
+Sprite: Sam_Happy
+Oh my gosh here comes <i>Patricia</i>!
+
+Name:   
+<i> Sam frantically pulls out her guitar. </i>
+
+Name: Sam
+Sprite: Sam_Pensive
+SFX: Sam_Guitar_Strum
+♫ <i> Oh fiery tree, oh woodwind-y log, how you– </i> ♫
+
+Name: PC
+...
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+...
+
+Name: Howard
+Sprite: Howard_At_Peace
+Do you need any help getting around?
+We could show you some of the important places.
+
+
+Options: 
+That would be awesome! Let's do it!
+That would be great, thanks.

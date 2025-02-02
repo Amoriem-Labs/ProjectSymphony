@@ -1,0 +1,56 @@
+Name: 
+**school bell rings**
+BG: LockerRoom
+Name: Sam
+Sprite: Sam_Sad
+We'd better get going to our first classes.
+
+Name: Howard
+Sprite: Howard_At_Peace
+MC, let me see your schedule.
+
+Name: Sam
+Sprite: Sam_Sad
+Aw man, we won't be in your first class!
+
+Name: Howard
+Sprite: Howard_Understanding
+It's okay MC, my class is next to yours so I'll show you the way there.
+Name: PC
+Thanks Howard! I'll see you guys between classes.
+
+Name: Howard
+Sprite: Howard_At_Peace
+Alright MC, we'll catch up after class, see you!
+
+Name:  
+Sprite: EMPTY
+**School bell ring**
+
+Name: PC
+(First class done...)
+
+Name:  
+There's a lot of chatter as you exit the classroom.
+
+Name: Band Student 
+Hey Alice, we've been hanging out a lot lately...
+And I was wondering if you'd want to be in my band.
+
+Name: Alice
+I thought you'd never ask! Of course!
+
+Name: PC
+(Wow, that was fast...)
+
+Name: Howard
+BG: LockerRoom
+Sprite: Howard_Understanding
+Hey! How was class?
+
+Name: PC
+Hey Howard!
+
+Options: 
+It was better than I thought it would be.
+It was worse than I thought it would be.

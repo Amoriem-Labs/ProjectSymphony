@@ -1,0 +1,12 @@
+{
+    "game": "AmoriemRhythmGame",
+    "manifestVersion": 1,
+    "title": "Week 1",
+    "artist": "Ellis",
+    "mapper": "Chris",
+    "midi": "Week1.mid",
+    "trackA": "DemoTrack.mp3",
+    "trackB": "",
+    "trackC": "",
+    "trackD": ""
+}

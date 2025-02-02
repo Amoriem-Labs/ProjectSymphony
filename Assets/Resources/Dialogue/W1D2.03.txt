@@ -1,0 +1,54 @@
+Name: Sam
+Sprite: Sam_Pensive
+I think that's it!
+
+Name: Howard
+Sprite: Howard_Understanding
+There are a few other places we didn't have time to visit today, but you shouldn't need to know them right now.
+
+Name: Sam
+Sprite: Sam_Sad
+Well I'm all tuckered out.
+
+Name: Howard
+Sprite: Howard_At_Peace
+Yeah, I'm going to head to bed as well. It's been fun getting to know you!
+
+Name: Sam
+Sprite: Sam_Happy
+We should meet up again tomorrow!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+We have classes tomorrow, Sam.
+
+Name: Sam
+Sprite: Sam_Happy
+We should meet up again after classes!
+
+Name: PC
+I guess I'll see you then! Want to meet here?
+
+Name: Howard
+Sprite: Howard_At_Peace
+Sure. Anyway, <i>Ina</i> must be getting worried. I'll see you all tomorrow.
+
+Name: PC
+(Ina?)
+
+Sprite: EMPTY
+Name:   
+Howard rushes off to reassure... whoever Ina is.
+
+Name: Sam
+Sprite: Sam_Happy
+See you later alligator!
+
+Name:  
+Sprite: EMPTY
+Sam rushes off without her guitar or backpack before running right back and grabbing them.
+It's pretty late - you spent the whole night navigating!
+Name: Tutorial
+<i>Click the 'Map' tab. You can now visit any of these locations using this screen. </i>
+<i>Click on your Dorm Room.</i>
+<i>Now click 'Fast Travel' to travel to the location.</i>

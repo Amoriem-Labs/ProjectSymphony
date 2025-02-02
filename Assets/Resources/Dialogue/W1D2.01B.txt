@@ -1,0 +1,21 @@
+Name: 
+Sprite: EMPTY
+The leaves crackle upon the impact of your heavy feet. 
+A branch snaps beneath you.
+
+Name: PC
+Sprite: EMPTY
+Boo!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Ahhh!
+Ohh, it's just you.
+
+Name: Sam
+Sprite: Sam_Happy
+Hahahahaha, nice one! Up top!
+
+Name: Howard
+Sprite: Howard_At_Peace
+Alright, alright. Now that you've had your fun, let's get started.

@@ -1,0 +1,38 @@
+Name: ???
+Sprite: Howard_At_Peace
+We're just chilling. People are being kind of intense right now.
+
+Name: ???
+Sprite: Sam_Pensive
+It's because everyone's already in a <b>band</b>.
+<i>Patricia's</i> in a <b>band</b>.
+Sprite: Sam_Sad
+Why does she have to be in a <b>band</b>!
+
+Name: ???
+Sprite: Howard_Uncomfortable
+Yeah... I think people here are just kind of done making friends. I don't know.
+It seems like everyone already has their own group.
+
+Name: PC
+Oh...
+
+Name: Howard
+Sprite: Howard_Understanding
+By the way, I'm Howard!
+This is Sam.
+
+Name: Sam
+Sprite: Sam_Happy
+Hi! Nice to meet you!
+
+Name: PC
+I'm [WRITE-IN]. 
+
+Name: Howard
+Sprite: Howard_Understanding
+Nice to meet you, MC! Where are you from?
+
+Options: 
+I'm from PLANET ONE.
+I'm from PLANET TWO.

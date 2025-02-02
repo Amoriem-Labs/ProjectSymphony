@@ -1,0 +1,10 @@
+Name: Popular Student
+Sprite: EMPTY
+Hey, so, our picnic blanket's already full - no more space, sorry.
+
+Name: Popular Student 2
+Yeah, please go away.
+Thanks.
+
+Name: PC
+(Wow, rejected.)

@@ -1,0 +1,37 @@
+Name: Sam
+Sprite: Sam_Pensive
+Uhh, not sure why you'd want to spend time there?
+
+Name: Howard
+Sprite: Howard_Understanding
+Some of us care about our studies, Sam
+
+Name: Sam
+Sprite: Sam_Sad
+Hey! I care about my grades too!
+
+Name: Howard
+Sprite: Howard_Shrug
+Whatever. Here.
+Animation: ScreenShake
+BG: Classroom
+No one's here right now because it's so late, but you can find the academic-minded students here in the morning.
+
+Name: Sam
+Sprite: Sam_Happy
+Like Patricia! She's real smart.
+
+Name: Howard
+Sprite: Howard_Shrug
+This place is mostly just used for tests and the occasional lecture. Most people decide to just self-study in the library.
+
+Name: Howard
+Sprite: Howard_At_Peace
+...
+
+Name: Sam
+Sprite: Sam_Neutral
+...
+
+Sprite: Sam_Pensive
+That's enough school for me. Let's go back.

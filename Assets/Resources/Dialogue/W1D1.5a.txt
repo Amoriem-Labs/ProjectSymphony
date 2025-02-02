@@ -1,0 +1,56 @@
+Name: Sam
+Sprite: Sam_Pensive
+Oh my gosh! Excuse you she's only the most talented pistol player in Kansasia?
+Sprite: Sam_Happy
+And not to mention she is an amazing bassist, and–
+
+Sprite: Sam_Happy
+Wait! Here she comes!
+
+Name:  
+<i> Sam frantically pulls out her guitar. </i>
+
+Name: Sam
+SFX: Sam_Guitar_Strum
+Sprite: Sam_Neutral
+♫ <i> Oh fiery tree, oh woodwind-y log, how you– </i> ♫
+
+Name: PC
+Oh wow. I see...
+
+Name: Sam
+Sprite: Sam_Neutral
+Patricia showed me this really cool place once - well, actually she just told me about it–
+Sprite: Sam_Pensive
+Or, I mean, I listened while she was telling her friend -
+Sprite: Sam_Happy
+I mean yes I was lip-reading so I didn't hear her beautiful voice...
+Sprite: Sam_Sad
+Okay, fine you win!
+Sprite: Sam_Happy
+Anyway, it's so beautiful it's called Arial Lake you should come see it with us soon.
+
+Name: PC
+Oh! That would be really nice!
+
+Name: Howard
+Sprite: Howard_Understanding
+And we could also show you some of the other places you'll need to know to get around here.
+
+Name: PC
+Yes! Thank you!
+
+Name: Sam
+Sprite: Sam_Pensive
+Tomorrow maybe?
+
+Name: PC
+Not as if I have anything better to do!
+
+Name: Howard
+Sprite: Howard_Understanding
+Don't worry about it, you're new! You don't have to have everything figured out already.
+Does tomorrow at 5pm sound good?
+
+Name: PC
+That sounds great! I'll see you guys then!

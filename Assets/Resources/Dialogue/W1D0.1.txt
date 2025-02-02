@@ -1,0 +1,9 @@
+Name:  
+Sprite: EMPTY
+On the thirty-fourth day of Denomber, in the 4501st year of the Federation, you receive a letter of admission from MIRA.
+The Multiversal Institute for the Rhythmic Arts.
+Do you accept?
+
+Options: 
+No.
+Yes.

@@ -1,0 +1,14 @@
+Name: Sam
+Sprite: Sam_Neutral
+I've heard of that! Isn't it supposed to be all nice and green there?
+
+Name: PC
+Yeah, it is! It's actually-
+
+Name: Sam
+Sprite: Sam_Happy
+Wait you should take me there sometime I wanna go so bad–
+
+Options: 
+That'd be so cool!
+Oh, uh, sure! I guess...

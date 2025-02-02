@@ -1,0 +1,14 @@
+Name: Jock 1
+Sprite: EMPTY
+Hey, are you new here? I feel like I haven't seen you before.
+
+Name: PC
+Yeah, I'm a transfer student. Just got in today.
+
+Name: Jock 2
+Sprite: EMPTY
+Huh, weird they let people in this late in the semester.
+I mean, good luck finding a band with your late arrival.
+
+Name: PC
+(A band?)
