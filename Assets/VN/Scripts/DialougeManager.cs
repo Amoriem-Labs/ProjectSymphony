@@ -57,9 +57,15 @@ public class DialougeManager : MonoBehaviour
     private bool startedFade = false;
 
     // animations
+
+    // UI Manager
+    public GameObject UIManager;
+    UIManager uiManager;
     void Awake()
     {
         animationManager = GetComponent<AnimationManager>();
+        uiManager = GetComponent<UIManager>();
+
         // create a new queue for the dialogue 
         sentences = new Queue<string>();
         Debug.Log("DialougeManager Awake method called, sentences queue initialized");
@@ -125,7 +131,18 @@ public class DialougeManager : MonoBehaviour
 
             if (newSprite != null)
             {
-                characterSpriteImage.sprite = newSprite;
+                 LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
+                .setEase(LeanTweenType.easeInElastic)
+                .setOnComplete(() =>
+                {
+                    // Change sprite after scaling down
+                    characterSpriteImage.sprite = newSprite;
+
+                    // Animate character sprite in
+                    LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.5f)
+                        .setEase(LeanTweenType.easeOutElastic);
+                });
+                // characterSpriteImage.sprite = newSprite;
             }
             else
             {
@@ -134,11 +151,24 @@ public class DialougeManager : MonoBehaviour
         }
         if (!string.IsNullOrEmpty(curr_dialogue.sprite) && backgroudSpriteImage != null)
         {
+            
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
-
+            
+            Debug.Log("background is" + curr_dialogue.background);
+            //uiManager.ShowLocation(curr_dialogue.background); 
+            
             if (newBG != null)
             {
-                backgroudSpriteImage.sprite = newBG;
+                // Fade out current background
+                LeanTween.alpha(backgroudSpriteImage.rectTransform, 0f, 0.5f).setOnComplete(() =>
+                {
+                    // Change background sprite after fade out
+                    backgroudSpriteImage.sprite = newBG;
+
+                    // Fade in the new background
+                    LeanTween.alpha(backgroudSpriteImage.rectTransform, 1f, 0.5f);
+                });
+                // backgroudSpriteImage.sprite = newBG;
             }
             else
             {
