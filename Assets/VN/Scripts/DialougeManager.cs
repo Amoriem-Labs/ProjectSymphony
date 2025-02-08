@@ -64,7 +64,7 @@ public class DialougeManager : MonoBehaviour
     void Awake()
     {
         animationManager = GetComponent<AnimationManager>();
-        uiManager = GetComponent<UIManager>();
+        uiManager = UIManager.GetComponent<UIManager>();
 
         // create a new queue for the dialogue 
         sentences = new Queue<string>();
@@ -151,11 +151,16 @@ public class DialougeManager : MonoBehaviour
         }
         if (!string.IsNullOrEmpty(curr_dialogue.sprite) && backgroudSpriteImage != null)
         {
+            if (curr_dialogue == null)
+            {
+                Debug.LogError("curr_dialogue is null in StartDialouge!");
+                return;
+            }
             
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
             
             Debug.Log("background is" + curr_dialogue.background);
-            //uiManager.ShowLocation(curr_dialogue.background); 
+            uiManager.ShowLocation(curr_dialogue.background); 
             
             if (newBG != null)
             {

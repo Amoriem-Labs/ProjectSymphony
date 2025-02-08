@@ -20,8 +20,10 @@ public class UIManager : MonoBehaviour
     public UIImage[] uiTimes;  // Array of UI Backgrounds
     public void ShowLocation(string name) // PLACEHOLDER: come back to add variability for showing other elements
     {
+        Debug.Log("show location called, calling" + name);
         foreach (var uiImage in uiLocations)
         {
+            Debug.Log("image name is "+ uiImage.name);
             if (uiImage.name == name)
             {
                 location.GetComponent<RectTransform>().localScale = Vector3.zero;
@@ -40,12 +42,9 @@ public class UIManager : MonoBehaviour
                 {
                     Debug.LogWarning($"No Image component found on");
                 }
+                return;
             }
-            else
-            {
-                Debug.LogWarning($"Invalid sprite index");
-            }
-             return; // Exit the method after finding and processing the correct element
+            
         }
     }  
 
@@ -71,12 +70,9 @@ public class UIManager : MonoBehaviour
                 {
                     Debug.LogWarning($"No Image component found on");
                 }
+                return;
             }
-            else
-            {
-                Debug.LogWarning($"Invalid sprite index");
-            }
-             return; // Exit the method after finding and processing the correct element
+             
         }
     }  
 
