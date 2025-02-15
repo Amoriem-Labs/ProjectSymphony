@@ -11,10 +11,12 @@ Well, you know the song Sam was writing earlier?
 
 Name: Sam
 Sprite: Sam_Happy
+I almost finished it! It's longer now. 
 Name: PC
 That's awesome! Let's play it!
 
 Name:    
+<i>Howard hands you a tattered piece of music paper with lyrics scrawled over it in bright green pen.</i>
 Name: Howard
 Sprite: Howard_Understanding
 Do you still remember the tune?
