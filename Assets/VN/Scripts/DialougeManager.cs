@@ -15,7 +15,8 @@ public class DialougeManager : MonoBehaviour
     public bool isW1D2 = false;
     public bool isW1D3 = false;
     public bool isW2D1 = false;
-    public bool isW2D2 = false;
+    public bool isW2D2A = false;
+    public bool isW2D2B = false;
     public bool isW2D3 = false;
 
 

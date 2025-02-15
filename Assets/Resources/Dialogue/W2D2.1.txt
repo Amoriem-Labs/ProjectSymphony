@@ -1,0 +1,57 @@
+Name: PC
+Sprite: Sam_Neutral
+I love feeling the melody of people's thoughts.
+sfx	chimes play
+
+Name:   
+<i> The wind blows, and you hear chimes ringing in the distance.</i>
+Name: PC
+(That doesn't sound like the schoolbell.)
+Where's that noise coming from?
+
+<i>Sam and Howard put down their instruments and cup their ears. </i>
+Name: Sam
+Sprite: Sam_Pensive
+Uh, maybe it's–
+
+Name: Howard
+Sprite: Howard_At_Peace
+It's coming from the town! It's the chimes in the main square!
+
+Name: PC
+There's a town here? Who lives there?
+
+Name: Howard
+Sprite: Howard_Shrug
+Honestly, I'm not sure. We can go check it out if you want.
+I don't personally think it's that–
+
+Name: Sam
+Sprite: Sam_Happy
+Wait, Howard! There's the wishing well there, remember?
+We saw it on our tour of the school! It's so tragic and romanic we have to go!
+
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Okay...fine. Let's go to the town.
+
+Name: Sam
+Sprite: Sam_Neutral
+Now!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+But Ina has to eat soon!
+
+Name: Sam
+Sprite: Sam_Pensive
+Excuse me, Ina does not have to eat for like three more hours. We have time for this!
+
+Name: Howard
+Sprite: Howard_Shrug
+...You got me.
+
+Options: 
+It'll be fun, Howard.
+Okay... so, are we going?

@@ -1,0 +1,4 @@
+Name: Sam
+Sprite: Sam_Happy
+BG: Park
+Let's go!
