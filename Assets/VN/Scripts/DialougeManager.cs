@@ -298,7 +298,8 @@ public class DialougeManager : MonoBehaviour
     {
         dialougeText.text = "";
 
-        for(int i = 0; i <= sentence.Length; i++)
+        // <i> hid if < until > 
+        for (int i = 0; i <= sentence.Length; i++)
         {
             dialougeText.text = sentence.Substring(0, i);
             yield return new WaitForSeconds(0.01f);
