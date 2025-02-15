@@ -11,7 +11,8 @@ Well, you know the song Sam was writing earlier?
 
 Name: Sam
 Sprite: Sam_Happy
-I almost finished it! It's longer now. 
+I almost finished it! It's longer now.
+
 Name: PC
 That's awesome! Let's play it!
 

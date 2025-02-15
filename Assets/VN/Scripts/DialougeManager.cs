@@ -496,13 +496,14 @@ public class DialougeManager : MonoBehaviour
             
         }
     }
+
     private void HandleOptionSelected(int optionIndex)
     {
         Debug.Log($"Option {optionIndex} selected");
         ClearActiveButtons();
 
         selectedOption = dialogueSequence[currentDialogueIndex].options[optionIndex];
-
+        Debug.Log($"Selected {selectedOption}");
         //currentDialogueIndex = 0;
         MoveToNextDialogueEntry();
     }

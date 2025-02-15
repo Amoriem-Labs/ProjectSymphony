@@ -49,7 +49,7 @@ public class Day0 : MonoBehaviour
             if (currselectedOption == "Yes.")
             {
                 Debug.Log("chose yes");
-                dialogueManager.isW2D2A = true;
+                dialogueManager.isW1D1 = true;
             }
             else if (currselectedOption == "No.")
             {

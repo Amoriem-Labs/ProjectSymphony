@@ -1,5 +1,6 @@
 Name: Sam
-Sprite: Sam_Excited	
+Sprite: Sam_Happy
+BG: Park
 Wow, that was great! Thanks for jamming with us!
 Name: PC
 Of course! 

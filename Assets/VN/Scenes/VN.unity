@@ -1794,9 +1794,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 534654113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c0b498524b584d689890e9f816df1b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 437378d96041d4f63b1a8222a43ed68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DP2: 0
 --- !u!1 &538478035
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,7 +5603,7 @@ MonoBehaviour:
   isW1D2: 0
   isW1D3: 0
   isW2D1: 0
-  isW2D2A: 0
+  isW2D2A: 1
   isW2D2B: 0
   isW2D3: 0
   nameText: {fileID: 1187265764}
