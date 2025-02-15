@@ -14,14 +14,19 @@ public class MapManager : MonoBehaviour
         public bool isComplete;
         public bool isRequired;
         public string locationName;
+        public string EventText;
+        public string SceneTransition;
         public int week;
-        public mapObject(Button btn, bool complete, bool unlocked, bool required, string name, int wk)
+        public mapObject(Button btn, bool complete, bool unlocked, bool required, string name, int wk, string EventTxt, string sceneName)
         {
             button = btn;
             isComplete = complete;
             isUnlocked = unlocked;
             isRequired = required;
             locationName = name;
+            EventText = EventTxt;
+            SceneTransition = sceneName;
+
             week = wk;
         }
     }
@@ -62,12 +67,19 @@ public class MapManager : MonoBehaviour
         finishedEvents = new Dictionary<string, mapObject>();
         initializeEvents();
 
-        School.gameObject.SetActive(false);
-        Gym.gameObject.SetActive(false);
-        Hanger.gameObject.SetActive(false);
-        Trees.gameObject.SetActive(false);
-        Tower.gameObject.SetActive(false);
-        Islands.gameObject.SetActive(false);
+        School.GetComponentInChildren<Image>().enabled=(false);
+        Gym.GetComponentInChildren<Image>().enabled =(false);
+        Hanger.GetComponentInChildren<Image>().enabled= (false);
+        Trees.GetComponentInChildren<Image>().enabled= (false);
+        Tower.GetComponentInChildren<Image>().enabled= (false);
+        Islands.GetComponentInChildren<Image>().enabled =(false);
+
+        School.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        Gym.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        Hanger.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        Trees.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        Tower.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        Islands.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
 
 
         School.onClick.AddListener(() => TrClicked(School));
@@ -97,12 +109,14 @@ public class MapManager : MonoBehaviour
         {
             if (kvp.Value.isUnlocked == true && kvp.Value.isComplete == false && credits != 0)
             {
-                kvp.Value.button.GetComponentInChildren<TMP_Text>().text = kvp.Value.locationName;
-                kvp.Value.button.gameObject.SetActive(true);
+                //kvp.Value.button.GetComponentInChildren<TMP_Text>().text = kvp.Value.locationName;
+                kvp.Value.button.GetComponentInChildren<Image>().enabled = true;
             }
             else
             {
-                kvp.Value.button.gameObject.SetActive(false);
+                //kvp.Value.button.gameObject.SetActive(false);
+                kvp.Value.button.GetComponentInChildren<Image>().enabled = false;
+
             }
         }
     }
@@ -125,12 +139,12 @@ public class MapManager : MonoBehaviour
     void initAllEvents()
     {
         //void addEvent(Button location, complete?, unlocked?, required?, string loc, int weeknum)
-        addEvent(School, false, true, true, "Library", 1);
-        addEvent(Gym, false, true, false, "Gym", 1);
-        addEvent(Hanger, false, true, false, "Hanger", 1);
-        addEvent(Trees, false, true, false, "Trees", 1);
-        addEvent(Tower, false, true, false, "Tower", 1);
-        addEvent(Islands, false, true, true, "Islands", 1);
+        addEvent(School, false, true, true, "Library", 1, "","isW1D1" );
+        //addEvent(Gym, false, true, false, "Gym", 1);
+        //addEvent(Hanger, false, true, false, "Hanger", 1);
+        //addEvent(Trees, false, true, false, "Trees", 1);
+        //addEvent(Tower, false, true, false, "Tower", 1);
+        //addEvent(Islands, false, true, true, "Islands", 1);
 
         //addEvent(TopLeft, false, true, false, "The Green", 1);
         //addEvent(BotLeft, false, true, true, "Fishing Pond", 1);
@@ -149,7 +163,7 @@ public class MapManager : MonoBehaviour
             }
         }
     }
-    void addEvent(Button location, bool comp, bool Unlock, bool require, string loc, int weeknum)
+    void addEvent(Button location, bool comp, bool Unlock, bool require, string loc, int weeknum, string txtevent, string transitionName)
     {
         if (allEvents.ContainsKey(loc))
         {
@@ -157,7 +171,7 @@ public class MapManager : MonoBehaviour
             return;
         }
 
-        mapObject ob = new mapObject(location, comp, Unlock, require, loc, weeknum);
+        mapObject ob = new mapObject(location, comp, Unlock, require, loc, weeknum, txtevent, transitionName);
         allEvents.Add(loc, ob);
 
     }
