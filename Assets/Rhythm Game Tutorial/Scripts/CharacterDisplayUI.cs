@@ -33,13 +33,13 @@ public class CharacterDisplayUI : MonoBehaviour
         }
     }
 
-    public void SwitchToCharacter(GameManager.CharacterSelection character)
+    public void SwitchToCharacter(CharacterSelection character)
     {
         if(coroutine != null) StopCoroutine(coroutine);
-        if(character == GameManager.CharacterSelection.Melodist) coroutine = StartCoroutine(Animate(0));
-        else if(character == GameManager.CharacterSelection.Drummer) coroutine = StartCoroutine(Animate(1));
-        else if(character == GameManager.CharacterSelection.Bassist) coroutine = StartCoroutine(Animate(2));
-        else if(character == GameManager.CharacterSelection.Guitarist) coroutine = StartCoroutine(Animate(3));
+        if(character == CharacterSelection.Melodist) coroutine = StartCoroutine(Animate(0));
+        else if(character == CharacterSelection.Drummer) coroutine = StartCoroutine(Animate(1));
+        else if(character == CharacterSelection.Bassist) coroutine = StartCoroutine(Animate(2));
+        else if(character == CharacterSelection.Guitarist) coroutine = StartCoroutine(Animate(3));
     }
 
     IEnumerator Animate(int featured)
