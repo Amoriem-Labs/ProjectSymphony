@@ -1,0 +1,3 @@
+Name: Howard
+Sprite: Howard_At_Peace
+That's good to hear!

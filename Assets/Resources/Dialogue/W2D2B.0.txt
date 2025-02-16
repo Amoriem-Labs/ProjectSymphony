@@ -1,0 +1,14 @@
+BG: Classroom
+Name: Howard
+Sprite: Howard_At_Peace
+Hey PC!
+Name: PC
+Hey Howard! How's it going?
+Name: Howard
+Sprite: Howard_Shrug
+Pretty good actually.
+Sprite: Howard_At_Peace
+I was actually going to ask how your classes are going now that it's been a whole week.
+Options: 
+They're going great!
+They could be going better...

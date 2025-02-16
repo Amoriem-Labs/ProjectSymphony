@@ -1,0 +1,41 @@
+Name: Howard
+Sprite: Howard_Understanding
+Sam hasn't been leeching off of your notes too much in your class together, right?
+Sprite: Howard_Uncomfortable
+Last year, we had a morning class together and she slept through every single one.
+I basically had to reteach everything to her over coffee after class.
+Sprite: Howard_Shrug
+That definitely helped me to get an A, so I'm not complaining.
+Sprite: Howard_At_Peace
+But if there's one thing I know, Sam is really hardworking.
+She practices so much and music really seems to be her passion.
+Sprite: Howard_Uncomfortable
+Even if a lot of that passion is directed toward Isabella...
+Sprite: Howard_At_Peace
+All that said, I'm glad to have her as a friend.
+And we're happy to have you as a friend now too, PC.
+Name: PC
+Thanks Howard. That means a lot.
+Name: Howard
+Sprite: Howard_Uncomfortable
+Any time! Sorry if I went off and rambled a bit.
+Sprite: Howard_At_Peace
+We should meet up more outside of class.
+Feel free to come hang out whenever you have a free moment.
+Sprite: Howard_At_Peace
+I'm sure that Sam would enjoy your company too!
+Good luck in class!
+Name: PC
+Thanks Howard, I'll see you later!
+Name: Howard
+Sprite: Howard_Understanding
+Actually- Sam and I were planning on going to the town this afternoon, do you want to come?
+Name: PC
+There's a town here?? Who lives there!
+Name: Howard
+Sprite: Howard_Shrug
+Honestly, good question. 
+I don't personally think it's that great, but there's some wishing well there that Sam wants me to see for some reason.
+Come along!
+Name: PC
+...Alright! Not as if I have anything better to do.

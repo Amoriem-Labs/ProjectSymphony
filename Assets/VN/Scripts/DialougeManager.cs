@@ -18,6 +18,13 @@ public class DialougeManager : MonoBehaviour
     public bool isW2D2A = false;
     public bool isW2D2B = false;
     public bool isW2D3 = false;
+    public bool isW2D4 = false;
+    public bool isW2D5 = false;
+
+    public bool isW3D1 = false;
+    public bool isW3D2 = false;
+    public bool isW3D3 = false;
+    public bool isW3D4 = false;
 
 
     // Start is called before the first frame update
@@ -41,7 +48,7 @@ public class DialougeManager : MonoBehaviour
     public int currentDialogueIndex = 0;
     public bool isDialogueActive = false;
     public bool isEndofScene = false;
-
+    public bool choiceSelected = false;
     public string selectedOption;
 
     // audio sources
@@ -271,7 +278,8 @@ public class DialougeManager : MonoBehaviour
 
     private void MoveToNextDialogueEntry()
     {
-        
+        choiceSelected = false;
+
         currentDialogueIndex++;
         if (currentDialogueIndex < dialogueSequence.Count)
         {
@@ -315,6 +323,7 @@ public class DialougeManager : MonoBehaviour
             characterAnimator.SetBool("DialougeActive", false);
         }
         isDialogueActive = false;
+        activeDialogue = false;
 
     }
 
@@ -505,6 +514,7 @@ public class DialougeManager : MonoBehaviour
         selectedOption = dialogueSequence[currentDialogueIndex].options[optionIndex];
         Debug.Log($"Selected {selectedOption}");
         //currentDialogueIndex = 0;
+        choiceSelected = true; 
         MoveToNextDialogueEntry();
     }
 
@@ -577,6 +587,9 @@ public class DialougeManager : MonoBehaviour
         }
         activeDialogue = false;
     }
+
+
+
 
 
 }
