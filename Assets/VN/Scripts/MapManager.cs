@@ -60,26 +60,32 @@ public class MapManager : MonoBehaviour
     void Start()
     {
         mainEventSelected = false;
-        credits = 2;
+        credits = 3;
         weekNum = 1;
         allEvents = new Dictionary<string, mapObject>();
         weekEvents = new Dictionary<string, mapObject>();
         finishedEvents = new Dictionary<string, mapObject>();
         initializeEvents();
+        Image SchoolIm = School.GetComponentInChildren<Image>();
+        Image GymIm = Gym.GetComponentInChildren<Image>();
+        Image HangerIm = Hanger.GetComponentInChildren<Image>();
+        Image TreesIm = Trees.GetComponentInChildren<Image>();
+        Image TowerIm = Tower.GetComponentInChildren<Image>();
+        Image IslandsIm = Islands.GetComponentInChildren<Image>();
 
-        School.GetComponentInChildren<Image>().enabled=(false);
-        Gym.GetComponentInChildren<Image>().enabled =(false);
-        Hanger.GetComponentInChildren<Image>().enabled= (false);
-        Trees.GetComponentInChildren<Image>().enabled= (false);
-        Tower.GetComponentInChildren<Image>().enabled= (false);
-        Islands.GetComponentInChildren<Image>().enabled =(false);
+        SchoolIm.enabled = (true);
+        GymIm.enabled = (true);
+        HangerIm.enabled = (true);
+        TreesIm.enabled = (true);
+        TowerIm.enabled = (true);
+        IslandsIm.enabled = (true);
 
-        School.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
-        Gym.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
-        Hanger.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
-        Trees.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
-        Tower.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
-        Islands.GetComponentInChildren<Image>().alphaHitTestMinimumThreshold = 0.1f;
+        SchoolIm.alphaHitTestMinimumThreshold = 0.1f;
+        GymIm.alphaHitTestMinimumThreshold = 0.1f;
+        HangerIm.alphaHitTestMinimumThreshold = 0.1f;
+        TreesIm.alphaHitTestMinimumThreshold = 0.1f;
+        TowerIm.alphaHitTestMinimumThreshold = 0.1f;
+        IslandsIm.alphaHitTestMinimumThreshold = 0.1f;
 
 
         School.onClick.AddListener(() => TrClicked(School));
@@ -107,15 +113,26 @@ public class MapManager : MonoBehaviour
     {
         foreach (var kvp in weekEvents)
         {
+            kvp.Value.button.GetComponentInChildren<Image>().enabled = true;
+
+            ButtonSetInteractable(School);
+            ButtonSetInteractable(Gym);
+            ButtonSetInteractable(Hanger);
+            ButtonSetInteractable(Trees);
+            ButtonSetInteractable(Tower);
+            ButtonSetInteractable(Islands);
+
+
+
             if (kvp.Value.isUnlocked == true && kvp.Value.isComplete == false && credits != 0)
             {
                 //kvp.Value.button.GetComponentInChildren<TMP_Text>().text = kvp.Value.locationName;
-                kvp.Value.button.GetComponentInChildren<Image>().enabled = true;
+                //kvp.Value.button.GetComponentInChildren<Image>().enabled = true;
             }
             else
             {
                 //kvp.Value.button.gameObject.SetActive(false);
-                kvp.Value.button.GetComponentInChildren<Image>().enabled = false;
+                //kvp.Value.button.GetComponentInChildren<Image>().enabled = false;
 
             }
         }
@@ -139,20 +156,20 @@ public class MapManager : MonoBehaviour
     void initAllEvents()
     {
         //void addEvent(Button location, complete?, unlocked?, required?, string loc, int weeknum)
-        addEvent(School, false, true, true, "Library", 1, "","isW1D1" );
-        //addEvent(Gym, false, true, false, "Gym", 1);
-        //addEvent(Hanger, false, true, false, "Hanger", 1);
-        //addEvent(Trees, false, true, false, "Trees", 1);
-        //addEvent(Tower, false, true, false, "Tower", 1);
-        //addEvent(Islands, false, true, true, "Islands", 1);
+        addEvent(School, false, true, true, "Library", 1, "Should I meet Carter at the School?", "W1D1");
+        addEvent(Gym, false, true, false, "Gym", 1, "Should I train with Sam in the gym?", "W1D2");
+        //addEvent(Hanger, false, true, false, "Hanger", 1, "Should I meet Daylo at the hanger?", "W4D3");
+        addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", "W1D3");
+        addEvent(Tower, false, true, false, "Tower", 1, "Should I meet Carter at the tower?", "W4D2");
+        addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", "W5D2");
 
-        //addEvent(TopLeft, false, true, false, "The Green", 1);
-        //addEvent(BotLeft, false, true, true, "Fishing Pond", 1);
-        //addEvent(BotRight, false, true, false, "Practice Room", 1);
-        //addEvent(BotRight, false, true, false, "Hello", 2);
+        //    //addEvent(TopLeft, false, true, false, "The Green", 1);
+        //    //addEvent(BotLeft, false, true, true, "Fishing Pond", 1);
+        //    //addEvent(BotRight, false, true, false, "Practice Room", 1);
+        //    //addEvent(BotRight, false, true, false, "Hello", 2);
     }
 
-    void initWeekEvents() 
+    void initWeekEvents()
     {
         //iterate through all events and populate weekly events which are unlocked
         foreach (var kvp in allEvents)
@@ -190,6 +207,11 @@ public class MapManager : MonoBehaviour
     private void TrClicked(Button button)
     {
         mapObject obj = getObjFromButton(button);
+        if(obj == null)
+        {
+            Debug.Log("Error null instance of obj\n");
+            return;
+        }
         if (obj.isRequired == true)
         {
             mainEventSelected = true;
@@ -210,4 +232,41 @@ public class MapManager : MonoBehaviour
         }
         return null;
     }
+    void ButtonSetInteractable(Button button)
+    {
+        bool detected = false;
+        if (credits != 0)
+        {
+            foreach (var kvp in weekEvents)
+            {
+                if (button == kvp.Value.button)
+                {
+                    detected = true;
+                    if (kvp.Value.isComplete == false && kvp.Value.isUnlocked == true)
+                    {
+                        kvp.Value.button.interactable = true;
+                    }
+                    else
+                    {
+                        kvp.Value.button.interactable = false;
+                    }
+                }
+
+            }
+            if(detected == false)
+            {
+                button.interactable = false;
+            }
+        }
+        else
+        {
+            button.interactable = false;
+        }
+
+    }
+    //void TransitionScenes(mapObject event)
+    //{
+
+
+    //}
 }
