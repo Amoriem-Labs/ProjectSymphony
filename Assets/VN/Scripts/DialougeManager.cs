@@ -226,7 +226,7 @@ public class DialougeManager : MonoBehaviour
         // set the name 
         if (nameText != null)
         {
-            if(curr_dialogue.name != " PC" && curr_dialogue.name != "PC")
+            if(curr_dialogue.name != " PC" && curr_dialogue.name != "PC" && curr_dialogue.name != " MC" && curr_dialogue.name != "MC")
             {
                 nameText.text = curr_dialogue.name;
             }

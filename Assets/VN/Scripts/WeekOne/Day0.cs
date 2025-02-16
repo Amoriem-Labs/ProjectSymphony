@@ -14,11 +14,12 @@ public class Day0 : MonoBehaviour
     public TextMeshProUGUI dialouge_text;
     private DialougeManager dialogueManager;
     private bool DP0_1;
-
+    public TMP_InputField playerNameReader;
     // Start is called before the first frame update
     void Start()
     {
         DP0_1 = false;
+        playerNameReader.gameObject.SetActive(false); 
 
         // get dialoguemanager and verify
         dialogueManager = FindAnyObjectByType<DialougeManager>();
@@ -49,7 +50,8 @@ public class Day0 : MonoBehaviour
             if (currselectedOption == "Yes.")
             {
                 Debug.Log("chose yes");
-                dialogueManager.isW1D1 = true;
+
+                playerNameReader.gameObject.SetActive(true);
             }
             else if (currselectedOption == "No.")
             {
