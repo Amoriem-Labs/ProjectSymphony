@@ -27,6 +27,9 @@ public class DialougeManager : MonoBehaviour
     public bool isW3D4 = false;
 
 
+    // default name 
+    public string inputtedName = "Chris";
+
     // Start is called before the first frame update
     private Dialouge loadedDialogue;
     private List<string> currentSentances;
@@ -223,7 +226,15 @@ public class DialougeManager : MonoBehaviour
         // set the name 
         if (nameText != null)
         {
-            nameText.text = curr_dialogue.name;
+            if(curr_dialogue.name != " PC" && curr_dialogue.name != "PC")
+            {
+                nameText.text = curr_dialogue.name;
+            }
+            else
+            {
+                nameText.text = inputtedName;
+            }
+
         }
         else
         {
@@ -248,7 +259,8 @@ public class DialougeManager : MonoBehaviour
         foreach (string sentance in curr_dialogue.sentences)
         {
             // add to the queue
-            sentences.Enqueue(sentance);
+            string replacedSentence = sentance.Replace("PC", inputtedName).Replace(" PC", inputtedName);
+            sentences.Enqueue(replacedSentence);
         }
 
         Debug.Log($"Enqueued {sentences.Count} sentences");
@@ -306,16 +318,29 @@ public class DialougeManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         dialougeText.text = "";
-
-        // <i> hid if < until > 
-        for (int i = 0; i <= sentence.Length; i++)
+        int visibleCharacters = 0;
+        while (visibleCharacters <= sentence.Length)
         {
-            dialougeText.text = sentence.Substring(0, i);
+            dialougeText.text = sentence.Substring(0, visibleCharacters);
+            visibleCharacters++;
             yield return new WaitForSeconds(0.01f);
         }
     }
 
-    public void EndDialouge()
+
+//IEnumerator TypeSentence(string sentence)
+//{
+//    dialougeText.text = "";
+
+//    // <i> hid if < until > 
+//    for (int i = 0; i <= sentence.Length; i++)
+//    {
+//        dialougeText.text = sentence.Substring(0, i);
+//        yield return new WaitForSeconds(0.01f);
+//    }
+//}
+
+public void EndDialouge()
     {
         if (isEndofScene)
         {
