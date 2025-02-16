@@ -44,13 +44,11 @@ public class CharacterDisplayUI : MonoBehaviour
 
     IEnumerator Animate(int featured)
 {
-    Debug.Log("animate" + featured);
     float t = 0;
 
     // Start LeanTween animations once for all elements
     for (int i = 0; i < images.Length; i++)
     {
-        Debug.Log("image Length" + images.Length);
         if (i == featured)
         {
             // Animate the spotlight to scale up
@@ -62,7 +60,6 @@ public class CharacterDisplayUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("index" + i);
             // Animate the spotlight to scale down
             LeanTween.scale(spotlights[i].GetComponent<RectTransform>(), Vector3.zero, 1.5f)
                 .setEaseOutElastic()

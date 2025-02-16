@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 using UnityEngine.Events;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
+using System.Linq;
 
 namespace RhythMidi
 {
@@ -24,11 +25,11 @@ namespace RhythMidi
 
         public string MidiFilepath { get; set; }
         public byte[] MidiFileData { get; set; }
-        public List<AudioClip> Tracks { get; set; }
+        public Dictionary<string, AudioClip> Tracks { get; set; }
 
         public ChartResource()
         {
-            Tracks = new List<AudioClip>(4);
+            Tracks = new Dictionary<string, AudioClip>();
         }
     }
 
@@ -69,7 +70,7 @@ namespace RhythMidi
         [Tooltip("The path, relative to StreamingAssets, of the directory that contains all chart directories. Leave blank to not load any charts on Start.")]
         private string chartsPath = "Charts";
 
-        public AudioSource[] audioSources;
+        List<AudioSource> audioSources;
 
         [Tooltip("Finished when LoadAllFromStreamingAssets finishes.")]
         public UnityEvent onFinishedLoading = new UnityEvent();
@@ -87,6 +88,7 @@ namespace RhythMidi
         private void Start()
         {
             if(chartsPath.Length > 0) LoadAllFromStreamingAssets(chartsPath);
+            audioSources = gameObject.GetComponents<AudioSource>().ToList();
         }
 
         /// <summary>
@@ -134,10 +136,7 @@ namespace RhythMidi
             string artist = manifest["artist"];
             string mapper = manifest["mapper"];
             string midi = manifest["midi"];
-            string trackA = manifest["trackA"];
-            string trackB = manifest["trackB"];
-            string trackC = manifest["trackC"];
-            string trackD = manifest["trackD"];
+            JSONNode tracks = manifest["tracks"];
 
             ChartResource chart = new ChartResource();
             chart.Title = title;
@@ -147,15 +146,11 @@ namespace RhythMidi
             chart.MidiFilepath = Path.Combine(directory, midi);
             yield return LoadMidiFile(chart.MidiFilepath, chart);
 
-            string trackPathA = string.IsNullOrEmpty(trackA) ? null : Path.Combine(directory, trackA);
-            string trackPathB = string.IsNullOrEmpty(trackB) ? null : Path.Combine(directory, trackB);
-            string trackPathC = string.IsNullOrEmpty(trackC) ? null : Path.Combine(directory, trackC);
-            string trackPathD = string.IsNullOrEmpty(trackD) ? null : Path.Combine(directory, trackD);
-
-            if (trackPathA != null) yield return LoadTrackAudioClip(trackPathA, chart);
-            if (trackPathB != null) yield return LoadTrackAudioClip(trackPathB, chart);
-            if (trackPathC != null) yield return LoadTrackAudioClip(trackPathC, chart);
-            if (trackPathD != null) yield return LoadTrackAudioClip(trackPathD, chart);
+            foreach(string key in tracks.Keys)
+            {
+                string trackPath = Path.Combine(directory, tracks[key].Value);
+                yield return LoadTrackAudioClip(trackPath, key, chart);
+            }
 
             loadedCharts.Add(chart);
             if(onChartLoaded != null) onChartLoaded.Invoke();
@@ -185,7 +180,7 @@ namespace RhythMidi
             }
         }
 
-        private IEnumerator LoadTrackAudioClip(string path, ChartResource chart)
+        private IEnumerator LoadTrackAudioClip(string path, string key, ChartResource chart)
         {
             string platformCorrectedPath = "file://" + path;
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -204,7 +199,7 @@ namespace RhythMidi
                 }
                 else
                 {
-                    chart.Tracks.Add(DownloadHandlerAudioClip.GetContent(www));
+                    chart.Tracks[key] = DownloadHandlerAudioClip.GetContent(www);
                 }
             }
         }
@@ -271,10 +266,17 @@ namespace RhythMidi
                 noteNotifier.EnqueueNotes(allNotes);
             }
 
-            for(int i = 0; i < Mathf.Min(audioSources.Length, currentChart.Tracks.Count); i++)
+            int i = 0;
+            foreach(string key in currentChart.Tracks.Keys)
             {
-                audioSources[i].clip = currentChart.Tracks[i];
+                AudioClip track = currentChart.Tracks[key];
+                if(i >= audioSources.Count)
+                {
+                    audioSources.Add(gameObject.AddComponent<AudioSource>());
+                }
+                audioSources[i].clip = track;
                 audioSources[i].Stop();
+                i++;
             }
 
             IsPlaying = false;
