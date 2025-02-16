@@ -33,22 +33,19 @@ public class MapManager : MonoBehaviour
 
     public int weekNum;
     public TextMeshProUGUI Creds;
+    public Canvas YesNoUI;
+    public Button Yes;
+    public Button No;
     public Button School;
     public Button Gym;
     public Button Hanger;
     public Button Trees;
     public Button Tower;
     public Button Islands;
-
-
-
-
-
-    //public Button TopRight;
-    //public Button TopLeft;
-    //public Button BotLeft;
-    //public Button BotRight;
+    Button lastButtonClicked;
     bool mainEventSelected;
+    bool YesNoClickable = false;
+    public TextMeshProUGUI DecisionText;
     int credits;
 
     //stored event items 
@@ -72,6 +69,8 @@ public class MapManager : MonoBehaviour
         Image TreesIm = Trees.GetComponentInChildren<Image>();
         Image TowerIm = Tower.GetComponentInChildren<Image>();
         Image IslandsIm = Islands.GetComponentInChildren<Image>();
+        Image YesIm = Yes.GetComponentInChildren<Image>();
+        Image NoIm = No.GetComponentInChildren<Image>();
 
         SchoolIm.enabled = (true);
         GymIm.enabled = (true);
@@ -86,7 +85,8 @@ public class MapManager : MonoBehaviour
         TreesIm.alphaHitTestMinimumThreshold = 0.1f;
         TowerIm.alphaHitTestMinimumThreshold = 0.1f;
         IslandsIm.alphaHitTestMinimumThreshold = 0.1f;
-
+        YesIm.alphaHitTestMinimumThreshold = 0.1f;
+        NoIm.alphaHitTestMinimumThreshold = 0.1f;
 
         School.onClick.AddListener(() => TrClicked(School));
         Gym.onClick.AddListener(() => TrClicked(Gym));
@@ -94,6 +94,9 @@ public class MapManager : MonoBehaviour
         Trees.onClick.AddListener(() => TrClicked(Trees));
         Tower.onClick.AddListener(() => TrClicked(Tower));
         Islands.onClick.AddListener(() => TrClicked(Islands));
+        Yes.onClick.AddListener(() => YesNoClicked(Yes));
+        No.onClick.AddListener(() => YesNoClicked(No));
+        YesNoUI.enabled = false;
 
 
     }
@@ -115,26 +118,16 @@ public class MapManager : MonoBehaviour
         {
             kvp.Value.button.GetComponentInChildren<Image>().enabled = true;
 
-            ButtonSetInteractable(School);
-            ButtonSetInteractable(Gym);
-            ButtonSetInteractable(Hanger);
-            ButtonSetInteractable(Trees);
-            ButtonSetInteractable(Tower);
-            ButtonSetInteractable(Islands);
-
-
-
-            if (kvp.Value.isUnlocked == true && kvp.Value.isComplete == false && credits != 0)
+            if (!YesNoClickable)
             {
-                //kvp.Value.button.GetComponentInChildren<TMP_Text>().text = kvp.Value.locationName;
-                //kvp.Value.button.GetComponentInChildren<Image>().enabled = true;
+                ButtonSetInteractable(School);
+                ButtonSetInteractable(Gym);
+                ButtonSetInteractable(Hanger);
+                ButtonSetInteractable(Trees);
+                ButtonSetInteractable(Tower);
+                ButtonSetInteractable(Islands);
             }
-            else
-            {
-                //kvp.Value.button.gameObject.SetActive(false);
-                //kvp.Value.button.GetComponentInChildren<Image>().enabled = false;
-
-            }
+            
         }
     }
     void nullUnrequiredEvents()
@@ -158,15 +151,10 @@ public class MapManager : MonoBehaviour
         //void addEvent(Button location, complete?, unlocked?, required?, string loc, int weeknum)
         addEvent(School, false, true, true, "Library", 1, "Should I meet Carter at the School?", "W1D1");
         addEvent(Gym, false, true, false, "Gym", 1, "Should I train with Sam in the gym?", "W1D2");
-        //addEvent(Hanger, false, true, false, "Hanger", 1, "Should I meet Daylo at the hanger?", "W4D3");
+        addEvent(Hanger, false, true, false, "Hanger", 1, "Should I meet Daylo at the hanger?", "W4D3");
         addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", "W1D3");
         addEvent(Tower, false, true, false, "Tower", 1, "Should I meet Carter at the tower?", "W4D2");
         addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", "W5D2");
-
-        //    //addEvent(TopLeft, false, true, false, "The Green", 1);
-        //    //addEvent(BotLeft, false, true, true, "Fishing Pond", 1);
-        //    //addEvent(BotRight, false, true, false, "Practice Room", 1);
-        //    //addEvent(BotRight, false, true, false, "Hello", 2);
     }
 
     void initWeekEvents()
@@ -206,18 +194,50 @@ public class MapManager : MonoBehaviour
 
     private void TrClicked(Button button)
     {
-        mapObject obj = getObjFromButton(button);
-        if(obj == null)
+
+        YesNoClickable = true;
+        //enable the ui and enable yes no clicked
+        YesNoUI.enabled = true;
+        lastButtonClicked = button;
+        mapObject obj = getObjFromButton(lastButtonClicked);
+        if (obj == null)
         {
             Debug.Log("Error null instance of obj\n");
             return;
         }
-        if (obj.isRequired == true)
+        DecisionText.text = obj.EventText;
+
+    }
+
+    private void YesNoClicked(Button button)
+    {
+        mapObject obj = getObjFromButton(lastButtonClicked);
+        if (obj == null)
         {
-            mainEventSelected = true;
+            Debug.Log("Error null instance of obj\n");
+            return;
         }
-        Debug.Log("Transition to " + obj.locationName);
-        credits -= 1;
+
+        DecisionText.text = obj.EventText;
+        if (button == Yes)
+        {
+            obj.isComplete = true;
+            if (obj.isRequired == true)
+            {
+                mainEventSelected = true;
+            }
+
+            Debug.Log("Transition to " + obj.SceneTransition);
+
+            credits -= 1;
+        }
+        else if (button == No)
+        {
+            // Add No button logic here
+            Debug.Log("No button clicked. Cancelling action.");
+        }
+        YesNoClickable = false;
+            YesNoUI.enabled = false;
     }
 
     mapObject getObjFromButton(Button button)
@@ -226,7 +246,6 @@ public class MapManager : MonoBehaviour
         {
             if (kvp.Value.button == button)
             {
-                kvp.Value.isComplete = true;
                 return kvp.Value;
             }
         }
