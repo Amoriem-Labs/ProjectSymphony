@@ -1,0 +1,24 @@
+Background: PracticeStage
+Name: Howard
+Sprite: Howard_At_Peace
+Ready?
+Name: PC
+Ready.
+Name: Sam
+Sprite: Sam_Happy
+Ready as blue bunnies on the berth of a yellow spaceship!!
+Name: Howard
+Sprite: Howard_At_Peace
+On my mark. 
+Ready. 
+Set.
+music	rhythm game first song
+Name: PC
+Now we just have to find two more people!
+Name: Howard
+Sprite: Howard_Uncomfortable
+Ugh, this part...
+Where are we even gonna find anyone?
+Name: PC
+Actually, I have a few ideas...
+I've wanted to go wander around by myself a little anyway.
