@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using System;
+using Unity.VisualScripting;
+
+
 
 // Logic here
 
@@ -12,6 +15,9 @@ using System.Linq;
 // call displayItems accordingly, displaying new data
 
 // on character slot click -> set partyManager array 
+// the inventory of characters needs to have:
+// character name, character role, character image to replace with, character affection 
+// character instrument 
 // update the namecard at the button and update selectedUI
 // edit the chemistry bar based on affection
 // make sure there is one character per role
@@ -19,70 +25,127 @@ using System.Linq;
 
 public class PartyManager : MonoBehaviour
 {
-    // 
-    public GameObject InventoryMenu;
-    public GameObject[] itemSlot;
-    // Start is called before the first frame update
+
+    [System.Serializable]
+    public class character{ // for debugging only! will need to reference the persistent data
+        public string name;
+        public string instrument;
+        public int role;
+        public float affection; 
+        public bool isUnlocked;
+        public bool isRequired; 
+
+        public bool isAvailable; 
+    }
+    [SerializeField]
+    public character[] characterList; 
+    private Dictionary<string, character> characterDictionary;
+
+    public GameObject[] characterSlots;
+
+    public GameObject[] nameTags;
+
+    public TextMeshPro songText;
+
+    public string[] selectedCharacters = new string[4]; // placeholder output 
+
+
+
     void Start()
     {
-        
-        
+        characterDictionary = new Dictionary<string, character>();
+
+        // Populate the dictionary with characterList data
+        PopulateCharacterDictionary();
+        DisplayCharacters();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void onButtonPress()
-    {
-        DisplayItems();
-        Debug.Log("button pressed");
+        void PopulateCharacterDictionary()
+        {
+        foreach (var character in characterList)
+        {
+            if (!characterDictionary.ContainsKey(character.name)) 
+            {
+                characterDictionary.Add(character.name, character);
+                Debug.Log("Added character: " + character.name);
+            }
+            else
+            {
+                Debug.LogWarning("Character with name " + character.name + " already exists in the dictionary.");
+            }
+        }
+        }
 
-        // can put more UI animations here
-    }
-   public void DisplayItems()
+   public void DisplayCharacters()
    {
-    // Debug.Log("Display Items is called");
-    // int counter = 0;
+    Debug.Log("Display Characters is called");
 
+    
+    foreach (GameObject slot in characterSlots)
+    {
+         Debug.Log("entered for loop");
 
-    // else
-    // {
-    //     Debug.Log("The dictionary is empty.");
-    // }
-    
-    
-    
-    // foreach (KeyValuePair<string, GameManager.InventoryEntry> kvp in GameManager.Instance.inventoryDictionary)
-    // {
-    //     Debug.Log("entered for loop");
-       
-    //     // GameManager.InventoryEntry entry = kvp.Value;
+         CharacterSlot slotInfo = slot.GetComponent<CharacterSlot>();
 
-    //      Debug.Log("first item is called" + entry.ItemName + "with this many" + entry.Quantity);
-    //     if (entry.Quantity > 0)
-    //     {
-    //         Debug.Log("adding entry to Item Slot");
-    //         itemSlot[counter].SetActive(true);
-    //         ItemSlot slot = itemSlot[counter].GetComponent<ItemSlot>();
-    //         if (slot != null)
-    //         {
-    //             slot.AddItem(entry.ItemName, entry.Quantity, entry.Icon, entry.Description);
-    //         }
-    //         counter++;
-    //     }
-    // }
+         character characterInfo = characterDictionary[slotInfo.characterName];
+
+         if (characterInfo.isUnlocked)
+         {
+            Debug.Log("adding entry to CharacterSlot, as it is unlocked");
+            slotInfo.UnlockCharacter(characterInfo.instrument, characterInfo.role, characterInfo.affection, characterInfo.isUnlocked, characterInfo.isRequired, characterInfo.isAvailable);
+        
+        }
+    }
 
    }
 
-   public void DeselectAllSlots()
-   {
-    for (int i = 0; i < itemSlot.Length; i++)
+   public void DeselectAllSlots(int role)
     {
-        ItemSlot slot = itemSlot[i].GetComponent<ItemSlot>();
-        slot.selected.SetActive(false);
-        slot.thisSelected = false;
+    foreach (GameObject slot in characterSlots)
+    {
+        // Get the CharacterSlot component
+        CharacterSlot slotInfo = slot.GetComponent<CharacterSlot>();
+        Image characterImage = slot.GetComponent<Image>();   
+
+        // Check if the role matches
+        if (role == slotInfo.role)
+        {
+            Debug.Log("deselected + " + slotInfo.characterName);
+            // Disable selection indicator
+            slotInfo.thisSelected = false;
+
+            // If the GameObject has a Renderer, adjust the outline material
+            
+            //Material mat = Instantiate(characterImage.material);
+            characterImage.material.SetFloat("_OutlineAlpha", 0f);
+            //mat.
+        }
     }
+    }
+
+   public void SelectCharacter(int role, string name, string instrument)
+   {
+        selectedCharacters[role - 1] = name;
+        Debug.Log("Role" + role + " is given to" + name);
+
+        Transform imageTransform = nameTags[role - 1].transform.Find("Image");
+
+        if (imageTransform.Find("NameText") != null)
+        {
+            Debug.Log("found name text");
+        }
+
+        if (imageTransform.Find("NameText").GetComponent<TextMeshPro>() != null)
+        {
+            Debug.Log("text mesh pro is found");
+        }
+
+        // Set the text of 'NameText' child
+        imageTransform.Find("NameText").GetComponent<TextMeshProUGUI>().text = name;
+
+        // Set the text of 'InstrumentText' child
+        imageTransform.Find("InstrumentText").GetComponent<TextMeshProUGUI>().text = instrument;
    }
+
 }

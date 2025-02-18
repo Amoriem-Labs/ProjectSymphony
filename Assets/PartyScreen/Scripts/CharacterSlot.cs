@@ -11,63 +11,79 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 {
     // == Item Data == //
 
-    public string itemName;
-    public int quantity;
-    public Sprite itemSprite;
-    public bool isFull;
-    public string itemDescription;
+    public string characterName;
+    public string instrument;
+
+    public int role; // 1 = Melody, 2 = CounterMelody, 3 = Percussion, 4 = Harmony
+
+    public float affection; 
+    public Sprite unlockedSprite;
     public Sprite emptySprite;
 
 
-    // == Item Slot == //
-    [SerializeField]
-    private TMP_Text quantityText;
-
-    [SerializeField]
-    private Image itemImage;
-
-    // == Item Description == //
-
-    public Image itemDescriptionImage;
-    public TMP_Text itemDescriptionNameText;
-    public TMP_Text itemDescriptionText;
-
-
-    //Other//
-
-    public GameObject selected;
+    //public GameObject selected;
     public bool thisSelected;
+
+    public bool isUnlocked;
 
     public GameObject available;
 
-    public bool thisAvailable;
+    public bool isAvailable;
 
     public GameObject required;
 
-    public bool thisRequired;
+    public bool isRequired;
+
+    public GameObject PartyManager;
 
     PartyManager partyManager;
+
+    Image characterImage;
+    
+    Material mat;
 
     private void Start()
     {
         //inventoryManager = GameObject.Find("Inventory Canvas").GetComponent<InventoryManager>();
+        characterImage = GetComponent<Image>();    
+
+        partyManager = PartyManager.GetComponent<PartyManager>();
+
+        mat = Instantiate(characterImage.material);
+        characterImage.material = mat; // Assign new instanc
+        //mat.SetFloat("_OutlineAlpha", 0f);
     }
 
- 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public void UnlockCharacter(string instrument, int role, float affection, bool isUnlocked, bool isRequired, bool isAvailable)
     {
 
-        Debug.Log("Item slot now has new item inside");
-        this.itemName = itemName;
-        this.quantity = quantity;
-        this.itemSprite = itemSprite;
-        this.itemDescription = itemDescription;
-        this.isFull = true;
+        Debug.Log("This Character is Unlocked");
 
-        quantityText.text = quantity.ToString();
-        Debug.Log("quantityText enabled status: " + quantityText.enabled);
-        quantityText.enabled = true;
-        itemImage.sprite = itemSprite;
+        characterImage.sprite = unlockedSprite;
+
+        // Adjust the RectTransform to 261x261
+        RectTransform rectTransform = characterImage.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(220f, 220f); // Set UI size
+
+        
+
+        this.instrument = instrument; 
+        this.role = role;
+        this.affection = affection;
+        this.isUnlocked = isUnlocked;
+        this.isRequired = isRequired;
+        this.isAvailable = isAvailable;
+
+        if (isRequired)
+        {
+            required.SetActive(true);
+        }
+        if (isAvailable)
+        {
+            available.SetActive(true);
+        }
+
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -85,9 +101,22 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        partyManager.DeselectAllSlots();
-        selected.SetActive(true);
-        thisSelected = true;
+        if(isUnlocked)
+        {
+            Debug.Log("selected");
+            partyManager.DeselectAllSlots(role);
+
+            mat.SetFloat("_OutlineAlpha", 1f);
+            //characterImage.material.SetFloat("_OutlineAlpha", 1f);
+
+            partyManager.SelectCharacter(role, characterName, instrument);
+            // selected.SetActive(true);
+            thisSelected = true;
+        }
+        else
+        {
+            Debug.Log("not unlocked yet");
+        }
 
         // itemDescriptionNameText.text = itemName;
         // itemDescriptionText.text = itemDescription;
@@ -106,6 +135,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     {
         
     }
+    
 
 
 
