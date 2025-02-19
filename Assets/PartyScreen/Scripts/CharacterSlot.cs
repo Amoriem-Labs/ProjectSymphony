@@ -101,7 +101,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        if(isUnlocked)
+        if(isUnlocked && isAvailable) 
         {
             Debug.Log("selected");
             partyManager.DeselectAllSlots(role);

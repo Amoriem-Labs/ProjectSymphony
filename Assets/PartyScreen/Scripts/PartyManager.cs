@@ -27,6 +27,8 @@ public class PartyManager : MonoBehaviour
 {
 
     [System.Serializable]
+
+    // Testing Purposes - need to replaced by persistent data //
     public class character{ // for debugging only! will need to reference the persistent data
         public string name;
         public string instrument;
@@ -39,13 +41,44 @@ public class PartyManager : MonoBehaviour
     }
     [SerializeField]
     public character[] characterList; 
+
+    public string songName; // will need to be input later
+
+    // The Dictionary that will be read into // 
     private Dictionary<string, character> characterDictionary;
+
+    // UI Objects // 
 
     public GameObject[] characterSlots;
 
     public GameObject[] nameTags;
 
-    public TextMeshPro songText;
+    public GameObject[] backgrounds;
+
+    public GameObject GoButton;
+
+    public GameObject NotEnoughAffection;
+
+    public GameObject ChemistryBar;
+
+    ComboBar chemistryBar;
+
+
+    // Important Values // 
+    public float threshold; // can be edited
+
+    [SerializeField]
+    private float chemistry; 
+
+
+    // Input // 
+
+    public int numberInBand; // number of musicians required for this song
+
+    public GameObject SongText; 
+    
+
+    // Output// 
 
     public string[] selectedCharacters = new string[4]; // placeholder output 
 
@@ -58,6 +91,10 @@ public class PartyManager : MonoBehaviour
         // Populate the dictionary with characterList data
         PopulateCharacterDictionary();
         DisplayCharacters();
+
+        SongText.GetComponent<TextMeshProUGUI>().text = songName;
+
+        chemistryBar = ChemistryBar.GetComponent<ComboBar>();
 
     }
 
@@ -146,6 +183,157 @@ public class PartyManager : MonoBehaviour
 
         // Set the text of 'InstrumentText' child
         imageTransform.Find("InstrumentText").GetComponent<TextMeshProUGUI>().text = instrument;
+
+        // change character image below
+
+         Sprite newSprite = Resources.Load<Sprite>($"RhythmSprites/{name}");
+         if (newSprite == null)
+        {
+            Debug.Log("did not find sprite of" + name);
+            newSprite = Resources.Load<Sprite>("RhythmSprites/EMPTY");
+        }
+        else
+        {
+            Debug.Log("found sprite of" + name);
+        }
+      
+        Transform labelImage = backgrounds[role - 1].transform.Find("LabelImage");
+        Transform characterImage = backgrounds[role - 1].transform.Find("CharacterImage");
+
+        if (labelImage != null)
+        {
+            // Animate labelImage disappearing (scaling down before deactivating)
+            LeanTween.scale(labelImage.GetComponent<RectTransform>(), Vector3.zero, 0.5f)
+                .setEase(LeanTweenType.easeInElastic)
+                .setOnComplete(() => labelImage.gameObject.SetActive(false)); // Deactivate after animation
+        }
+
+        if (characterImage != null)
+        {
+            Debug.Log("Updating sprite of " + name);
+
+            Image imgComponent = characterImage.GetComponent<Image>();
+            if (imgComponent != null)
+            {
+                LeanTween.scale(characterImage.GetComponent<RectTransform>(), Vector3.zero, 0.5f)
+                    .setEase(LeanTweenType.easeInElastic)
+                    .setOnComplete(() =>
+                    {
+                        
+                        // Change sprite after scaling down
+                        imgComponent.sprite = newSprite;
+                        characterImage.gameObject.SetActive(true);
+
+                        // Animate characterImage appearing
+                        LeanTween.scale(characterImage.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.5f)
+                            .setEase(LeanTweenType.easeOutElastic);
+                    });
+
+                 // Ensure it's visible before animation starts
+            }
+            else
+            {
+                Debug.LogError("characterImage does not have an Image component!");
+            }
+        }
+
+
+        checkArray();
    }
+   public void checkArray()
+    {
+    int nonEmptyCount = 0;  // To count the number of non-empty entries
+
+    // Loop through the selected characters
+    foreach (string character in selectedCharacters)
+    {
+        if (!string.IsNullOrEmpty(character))  // Check if the character is not null or empty
+        {
+            nonEmptyCount++;
+        }
+
+        // If we've already counted enough non-empty entries, we can break early
+        if (nonEmptyCount >= numberInBand)
+        {
+            break;
+        }
+    }
+
+    if (nonEmptyCount >= numberInBand)
+    {
+        // Enough entries are non-empty
+        Debug.Log("Enough characters are selected.");
+        if (CalculateChemistry())
+        {
+            LeanTween.scale(GoButton.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                    .setEase(LeanTweenType.easeInCubic)
+                    .setOnComplete(() =>
+                    {
+                         GoButton.SetActive(true);
+                        LeanTween.scale(GoButton.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.2f)
+                            .setEase(LeanTweenType.easeOutElastic);
+                    });
+           
+            LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                .setEase(LeanTweenType.easeInCubic)
+                .setOnComplete(() =>
+            NotEnoughAffection.SetActive(false));
+        }
+        else
+        {
+            LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                    .setEase(LeanTweenType.easeInCubic)
+                    .setOnComplete(() =>
+                    {
+                        NotEnoughAffection.SetActive(true);
+                        LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.2f)
+                            .setEase(LeanTweenType.easeOutElastic);
+                    });
+
+           LeanTween.scale(GoButton.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                .setEase(LeanTweenType.easeInCubic)
+                .setOnComplete(() =>
+           GoButton.SetActive(false));
+        }
+    }
+    else
+    {
+        // Not enough entries are non-empty
+        Debug.Log("Not enough characters are selected.");
+    }
+    }
+    public bool CalculateChemistry()
+    {
+        chemistry = 0; 
+
+        foreach (string bandmate in selectedCharacters)
+        {
+            chemistry += characterDictionary[bandmate].affection; 
+            Debug.Log("chemistry is now" + chemistry);
+        }
+        chemistry = chemistry / numberInBand; 
+
+        chemistryBar.SetScore((int)chemistry);
+
+        if (chemistry >= threshold)
+        {
+            Debug.Log("chemistry is above threshold");
+            return true;
+        }
+        else
+        {
+            Debug.Log("chemistry is below threshold");
+            return false; 
+        }
+    }
+    public void ProceedToRhythm()
+    {
+        Debug.Log("Will head to the rhythm screen with these characters:");
+        foreach (string bandmate in selectedCharacters)
+        {
+            Debug.Log(bandmate);
+        }
+    }
+
 
 }
