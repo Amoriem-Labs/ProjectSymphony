@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 
 public class CharacterSlot : MonoBehaviour, IPointerClickHandler
 {
-    // == Item Data == //
+    // == Character Data == //
 
     public string characterName;
     public string instrument;
@@ -21,37 +21,35 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     public Sprite emptySprite;
 
 
-    //public GameObject selected;
+    // UI // 
     public bool thisSelected;
-
     public bool isUnlocked;
 
     public GameObject available;
-
     public bool isAvailable;
 
     public GameObject required;
-
     public bool isRequired;
+
+    Image characterImage;
+    Material mat;
+
+    // Object References//
 
     public GameObject PartyManager;
 
     PartyManager partyManager;
 
-    Image characterImage;
-    
-    Material mat;
+
 
     private void Start()
     {
-        //inventoryManager = GameObject.Find("Inventory Canvas").GetComponent<InventoryManager>();
         characterImage = GetComponent<Image>();    
 
         partyManager = PartyManager.GetComponent<PartyManager>();
 
         mat = Instantiate(characterImage.material);
-        characterImage.material = mat; // Assign new instanc
-        //mat.SetFloat("_OutlineAlpha", 0f);
+        characterImage.material = mat; // Assign new instance of material
     }
 
     public void UnlockCharacter(string instrument, int role, float affection, bool isUnlocked, bool isRequired, bool isAvailable)
@@ -64,8 +62,6 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
         // Adjust the RectTransform to 261x261
         RectTransform rectTransform = characterImage.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(220f, 220f); // Set UI size
-
-        
 
         this.instrument = instrument; 
         this.role = role;
@@ -94,7 +90,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
         }
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            OnRightClick();
+            Debug.Log("right click");
         }
 
     }
@@ -118,23 +114,9 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
             Debug.Log("not unlocked yet");
         }
 
-        // itemDescriptionNameText.text = itemName;
-        // itemDescriptionText.text = itemDescription;
-        // itemDescriptionImage.sprite = itemSprite;
-
-        // if(itemDescriptionImage.sprite == null)
-        // {
-        //     itemDescriptionImage.sprite = emptySprite;
-        // }
-
-        // set array here
-
 
     }
-    public void OnRightClick()
-    {
-        
-    }
+  
     
 
 

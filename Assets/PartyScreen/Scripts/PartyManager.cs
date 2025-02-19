@@ -7,21 +7,12 @@ using System.Linq;
 using System;
 using Unity.VisualScripting;
 
+/* NOTES
 
+- Requires Input and Output 
+- The character class is for testing purposes only - ideally, this script would read from the save file/persistent data
 
-// Logic here
-
-// check what characters are unlocked, if they are required for this song, and if they are available for this song 
-// call displayItems accordingly, displaying new data
-
-// on character slot click -> set partyManager array 
-// the inventory of characters needs to have:
-// character name, character role, character image to replace with, character affection 
-// character instrument 
-// update the namecard at the button and update selectedUI
-// edit the chemistry bar based on affection
-// make sure there is one character per role
-// once array is full, set go 
+*/
 
 public class PartyManager : MonoBehaviour
 {
@@ -32,7 +23,7 @@ public class PartyManager : MonoBehaviour
     public class character{ // for debugging only! will need to reference the persistent data
         public string name;
         public string instrument;
-        public int role;
+        public int role; // 1 = Melody, 2 = CounterMelody, 3 = Percussion, 4 = Harmony
         public float affection; 
         public bool isUnlocked;
         public bool isRequired; 
@@ -42,7 +33,7 @@ public class PartyManager : MonoBehaviour
     [SerializeField]
     public character[] characterList; 
 
-    public string songName; // will need to be input later
+    public string songName; // will need to be inputted later by song select/ VN
 
     // The Dictionary that will be read into // 
     private Dictionary<string, character> characterDictionary;
@@ -63,7 +54,6 @@ public class PartyManager : MonoBehaviour
 
     ComboBar chemistryBar;
 
-
     // Important Values // 
     public float threshold; // can be edited
 
@@ -81,8 +71,6 @@ public class PartyManager : MonoBehaviour
     // Output// 
 
     public string[] selectedCharacters = new string[4]; // placeholder output 
-
-
 
     void Start()
     {
