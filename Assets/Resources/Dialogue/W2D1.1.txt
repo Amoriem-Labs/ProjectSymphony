@@ -1,0 +1,40 @@
+BG: Park
+
+Name:  
+Sprite: Empty
+The park is almost empty this early in the morning. A few early risers seem to be making their way through the greenery, but the activity you've come to associate with the park during the daytime is absent. 
+It is almost... peaceful.
+
+Sprite: Ina_Normal
+
+Name: Howard
+Sprite: Howard_at_peace
+Oh, thank goodness you're here. I was getting worried that I'd have to leave Ina alone for the day.
+
+Name: PC
+We wouldn't want that to happen. Especially not to this little fluffball.
+(That dog is so cute with Howard. Something about the two of them just seems to work.)
+
+Name: Howard
+Sprite: Howard_at_peace
+Thank you again for agreeing to do this on such a tight schedule. He's getting pretty low and the cafeteria doesn't have dog food, but I think they have some in the town!
+Sprite: Howard_uncomfortable
+I can't bring him with me to the store, not after the bubble incident, so I usually just lock the door to my room and hope for the best. Or bribe Sam. That sometimes works.
+Anyway, you're a lifesaver. Thank you.
+
+Name: PC
+No problem! Just leave this good boy to me. ~He's such a good boy, isn't he? Yes you are.~ 
+
+SFX: Cute_Dog_Barking
+
+Name:  
+Sprite: Empty
+Ina barks. Very cute.
+
+Name: Howard
+Sprite: Howard_at_peace
+Well you two are definitely getting along. Do you mind if I take his leash off? I know he's more comfortable without it.
+
+Options:  
+Let Howard take Ina's leash off.
+Do not Let Howard take Ina's leash off.

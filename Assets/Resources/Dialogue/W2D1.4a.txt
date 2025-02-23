@@ -1,0 +1,20 @@
+Name: PC
+(I know exactly what I need to do. But I don't know if I have the strength to do it.)
+
+Animation: translucent Sam happy face sprite 
+
+Name:  
+Sprite: EMPTY
+A ghostly Image of Sam appears in your minds eye. She is giving you a thumbs up.
+You grab the leash from your back pocket and loop it around itself, creating a lasso. With newfound determination, you look at your target.
+
+SFX: Cowboy_Standoff_Effect
+
+Name: PC
+Yeehaw!
+
+Name:  
+Sprite: EMPTY
+The lasso goes flying in a perfect arc and comes down around Ina's neck with the inevitability of the setting sun.
+The dog seems startled for a moment, before looking up at you. You think you can see something like respect shining in his eyes.
+The moment ends, and Ina goes back to his treat.

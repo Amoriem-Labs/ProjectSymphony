@@ -1,0 +1,9 @@
+Name: PC
+Are you crazy? It looks like that thing could kill somebody.
+
+Name: Sam
+Sprite: Sam_Pensive
+Heh, is anyone sane when it comes to love?
+
+Name: PC
+I don't think that's how the saying goes.

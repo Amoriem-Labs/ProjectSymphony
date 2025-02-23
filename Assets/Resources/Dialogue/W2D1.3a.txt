@@ -1,0 +1,13 @@
+Name: PC
+(You're not getting away this time!)
+
+Name:  
+Sprite: EMPTY
+You slowly sneak up to the dog, approaching from its blind spot. When you are about five feet away, you tense before leaping at Ina.
+
+SFX: Soft_Cymbal_Hit
+
+Name:  
+Sprite: EMPTY
+Unfortunately, when you tensed, you hit against one of the drum sets just enough to cause a noise. Ina's ears twitch as he turns to look at you.
+Seeing your jump, Ina moves out of the way and runs to the other side of the room.

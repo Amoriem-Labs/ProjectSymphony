@@ -1,0 +1,9 @@
+BG: Park
+
+Name:  
+Sprite: EMPTY
+You race into the park, retracing your steps in hope that Ina returned to where the chase started.
+The morning quiet remains. The park is calm. You have chosen the wrong place.
+
+Options:
+Choice One: Go to the Hallway
