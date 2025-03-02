@@ -5,8 +5,7 @@
     "artist": "Sebastien",
     "mapper": "Sebastien",
     "midi": "Prelude.mid",
-    "trackA": "Prelude.mp3",
-    "trackB": "",
-    "trackC": "",
-    "trackD": ""
+    "tracks": {
+        "melody": "Prelude.mp3"
+    }
 }

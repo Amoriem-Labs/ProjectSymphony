@@ -5,8 +5,10 @@
     "artist": "Eric Yoon",
     "mapper": "Eric Yoon",
     "midi": "AmogusDrip.mid",
-    "trackA": "Melody.mp3",
-    "trackB": "Guitar.mp3",
-    "trackC": "Bass.mp3",
-    "trackD": "Drums.mp3"
+    "tracks": {
+        "melody": "Melody.mp3",
+        "guitar": "Guitar.mp3",
+        "bass": "Bass.mp3",
+        "drums": "Drums.mp3"
+    }
 }

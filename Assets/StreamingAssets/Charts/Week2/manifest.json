@@ -5,8 +5,7 @@
     "artist": "Music Team",
     "mapper": "Eric",
     "midi": "Week2.mid",
-    "trackA": "Week2.mp3",
-    "trackB": "",
-    "trackC": "",
-    "trackD": ""
+    "tracks": {
+        "melody": "Week2.mp3"
+    }
 }
