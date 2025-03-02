@@ -70,7 +70,7 @@ namespace RhythMidi
         [Tooltip("The path, relative to StreamingAssets, of the directory that contains all chart directories. Leave blank to not load any charts on Start.")]
         private string chartsPath = "Charts";
 
-        List<AudioSource> audioSources;
+        public List<AudioSource> audioSources;
 
         [Tooltip("Finished when LoadAllFromStreamingAssets finishes.")]
         public UnityEvent onFinishedLoading = new UnityEvent();
