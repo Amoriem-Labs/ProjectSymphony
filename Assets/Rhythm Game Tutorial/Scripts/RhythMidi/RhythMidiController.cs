@@ -25,6 +25,7 @@ namespace RhythMidi
 
         public string MidiFilepath { get; set; }
         public byte[] MidiFileData { get; set; }
+        public AudioClip BackingTrack { get; set; }
         public Dictionary<string, AudioClip> Tracks { get; set; }
 
         public ChartResource()
@@ -66,6 +67,8 @@ namespace RhythMidi
 
     public class RhythMidiController : MonoBehaviour
     {
+        public static RhythMidiController Instance { get; private set; }
+
         [SerializeField]
         [Tooltip("The path, relative to StreamingAssets, of the directory that contains all chart directories. Leave blank to not load any charts on Start.")]
         private string chartsPath = "Charts";
@@ -79,7 +82,7 @@ namespace RhythMidi
         public bool IsPlaying { get; private set; }
 
         private List<ChartResource> loadedCharts = new List<ChartResource>();
-        private ChartResource currentChart;
+        public ChartResource currentChart;
         private MidiFile midiData;
         public TempoMap CurrentTempoMap { get; private set; }
         
@@ -87,8 +90,22 @@ namespace RhythMidi
 
         private void Start()
         {
+            if(Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
             if(chartsPath.Length > 0) LoadAllFromStreamingAssets(chartsPath);
             audioSources = gameObject.GetComponents<AudioSource>().ToList();
+        }
+
+        public void ClearCallbacks() {
+            noteNotifiers.Clear();
         }
 
         /// <summary>
@@ -152,6 +169,9 @@ namespace RhythMidi
                 yield return LoadTrackAudioClip(trackPath, key, chart);
             }
 
+            string backingTrackPath = Path.Combine(directory, manifest["backingTrack"]);
+            yield return LoadTrackAudioClip(backingTrackPath, "__BACKING", chart);
+
             loadedCharts.Add(chart);
             if(onChartLoaded != null) onChartLoaded.Invoke();
         }
@@ -199,7 +219,14 @@ namespace RhythMidi
                 }
                 else
                 {
-                    chart.Tracks[key] = DownloadHandlerAudioClip.GetContent(www);
+                    if(key == "__BACKING")
+                    {
+                        chart.BackingTrack = DownloadHandlerAudioClip.GetContent(www);
+                    }
+                    else
+                    {
+                        chart.Tracks[key] = DownloadHandlerAudioClip.GetContent(www);
+                    }
                 }
             }
         }
@@ -277,6 +304,14 @@ namespace RhythMidi
                 audioSources[i].clip = track;
                 audioSources[i].Stop();
                 i++;
+            }
+
+            // Add the backing track
+            if(i >= audioSources.Count)
+            {
+                audioSources.Add(gameObject.AddComponent<AudioSource>());
+                audioSources[i].clip = currentChart.BackingTrack;
+                audioSources[i].Stop();
             }
 
             IsPlaying = false;

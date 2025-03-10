@@ -189,7 +189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 281, y: 96.615}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 252.7535, y: 159.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3551637809063667741
@@ -242,17 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8585be7c0852949f28a60fd0eac7b107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Bla
-  instrument: 
-  role: 3
-  affection: 0
-  unlockedSprite: {fileID: 21300000, guid: 47ee57557a0f1462693289bc19dc9dad, type: 3}
-  emptySprite: {fileID: 21300000, guid: fd58ea063d7b14f038a50cd7ee9a7693, type: 3}
-  thisSelected: 0
-  isUnlocked: 0
   available: {fileID: 1630100671146929702}
-  isAvailable: 0
   required: {fileID: 4651457212914112938}
+  thisSelected: 0
+  isAvailable: 0
   isRequired: 0
   PartyManager: {fileID: 0}
 --- !u!114 &558075338476330223

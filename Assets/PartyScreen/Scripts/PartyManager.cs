@@ -1,58 +1,24 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
-using System;
-using Unity.VisualScripting;
-
-/* NOTES
-
-- Requires Input and Output 
-- The character class is for testing purposes only - ideally, this script would read from the save file/persistent data
-
-*/
+using RhythMidi;
 
 public class PartyManager : MonoBehaviour
 {
-
-    [System.Serializable]
-
-    // Testing Purposes - need to replaced by persistent data //
-    public class character{ // for debugging only! will need to reference the persistent data
-        public string name;
-        public string instrument;
-        public int role; // 1 = Melody, 2 = CounterMelody, 3 = Percussion, 4 = Harmony
-        public float affection; 
-        public bool isUnlocked;
-        public bool isRequired; 
-
-        public bool isAvailable; 
-    }
-    [SerializeField]
-    public character[] characterList; 
-
-    public string songName; // will need to be inputted later by song select/ VN
-
-    // The Dictionary that will be read into // 
-    private Dictionary<string, character> characterDictionary;
-
-    // UI Objects // 
-
-    public GameObject[] characterSlots;
-
-    public GameObject[] nameTags;
-
-    public GameObject[] backgrounds;
-
+    public Transform[] roleColumns;
+    public TextMeshProUGUI[] characterNameLabels;
+    public TextMeshProUGUI[] characterInstrumentLabels;
+    public Image[] backgroundHeros;
+    public Image[] backgroundLabels;
     public GameObject GoButton;
-
     public GameObject NotEnoughAffection;
-
     public GameObject ChemistryBar;
-
+    public GameObject characterSlotPrefab;
+    
     ComboBar chemistryBar;
+    List<CharacterSlot> characterSlots = new List<CharacterSlot>();
 
     // Important Values // 
     public float threshold; // can be edited
@@ -62,265 +28,137 @@ public class PartyManager : MonoBehaviour
 
 
     // Input // 
-
     public int numberInBand; // number of musicians required for this song
-
-    public GameObject SongText; 
-    
-
-    // Output// 
-
-    public string[] selectedCharacters = new string[4]; // placeholder output 
+    public GameObject SongText;
 
     void Start()
     {
-        characterDictionary = new Dictionary<string, character>();
-
-        // Populate the dictionary with characterList data
-        PopulateCharacterDictionary();
-        DisplayCharacters();
-
-        SongText.GetComponent<TextMeshProUGUI>().text = songName;
-
+        print(roleColumns[0]);
+        InstantiateCharacterSlots(CharacterRole.Melodist, roleColumns[0]);
+        InstantiateCharacterSlots(CharacterRole.Counter, roleColumns[1]);
+        InstantiateCharacterSlots(CharacterRole.Percussion, roleColumns[2]);
+        InstantiateCharacterSlots(CharacterRole.Harmony, roleColumns[3]);
+        SongText.GetComponent<TextMeshProUGUI>().text = GameStateManager.Instance.currentSongName;
         chemistryBar = ChemistryBar.GetComponent<ComboBar>();
-
     }
 
-        void PopulateCharacterDictionary()
-        {
-        foreach (var character in characterList)
-        {
-            if (!characterDictionary.ContainsKey(character.name)) 
-            {
-                characterDictionary.Add(character.name, character);
-                Debug.Log("Added character: " + character.name);
-            }
-            else
-            {
-                Debug.LogWarning("Character with name " + character.name + " already exists in the dictionary.");
-            }
-        }
-        }
-
-   public void DisplayCharacters()
-   {
-    Debug.Log("Display Characters is called");
-
-    
-    foreach (GameObject slot in characterSlots)
+    public void InstantiateCharacterSlots(CharacterRole role, Transform column)
     {
-         Debug.Log("entered for loop");
+        CharacterData[] characterData = GameStateManager.Instance.characterData
+            .Values
+            .Where(c => c.character.role == role)
+            .ToArray();
 
-         CharacterSlot slotInfo = slot.GetComponent<CharacterSlot>();
+        float y = 0;
+        foreach (CharacterData data in characterData)
+        {
+            GameObject slot = Instantiate(characterSlotPrefab, column);
+            CharacterSlot script = slot.GetComponent<CharacterSlot>();
+            script.characterData = data;
+            script.isRequired = true;
+            script.isAvailable = GameStateManager.Instance.CurrentChart.Tracks.ContainsKey(data.character.name);
+            script.partyManager = this;
+            characterSlots.Add(script);
+            slot.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, y);
+            y -= 220f;
+        }
+    }
 
-         character characterInfo = characterDictionary[slotInfo.characterName];
+    public void DeselectAllSlots(CharacterRole role)
+    {
+        foreach (CharacterSlot c in characterSlots)
+        {
+            if (c.characterData.character.role == role)
+            {
+                c.Deselect();
+            }
+        }
+    }
 
-         if (characterInfo.isUnlocked)
-         {
-            Debug.Log("adding entry to CharacterSlot, as it is unlocked");
-            slotInfo.UnlockCharacter(characterInfo.instrument, characterInfo.role, characterInfo.affection, characterInfo.isUnlocked, characterInfo.isRequired, characterInfo.isAvailable);
+    public void SelectCharacter(CharacterData characterData)
+    {
+        int idx = (int)characterData.character.role - 1;
+        characterNameLabels[idx].text = characterData.character.name;
+        characterInstrumentLabels[idx].text = characterData.character.instrument;
+
+        RectTransform backgroundLabelRT = backgroundLabels[idx].GetComponent<RectTransform>();
+        LeanTween.scale(backgroundLabelRT, Vector3.zero, 0.5f)
+            .setEase(LeanTweenType.easeInElastic)
+            .setOnComplete(() => backgroundLabelRT.gameObject.SetActive(false));
+
         
-        }
-    }
-
-   }
-
-   public void DeselectAllSlots(int role)
-    {
-    foreach (GameObject slot in characterSlots)
-    {
-        // Get the CharacterSlot component
-        CharacterSlot slotInfo = slot.GetComponent<CharacterSlot>();
-        Image characterImage = slot.GetComponent<Image>();   
-
-        // Check if the role matches
-        if (role == slotInfo.role)
-        {
-            Debug.Log("deselected + " + slotInfo.characterName);
-            // Disable selection indicator
-            slotInfo.thisSelected = false;
-
-            // If the GameObject has a Renderer, adjust the outline material
-            
-            //Material mat = Instantiate(characterImage.material);
-            characterImage.material.SetFloat("_OutlineAlpha", 0f);
-            //mat.
-        }
-    }
-    }
-
-   public void SelectCharacter(int role, string name, string instrument)
-   {
-        selectedCharacters[role - 1] = name;
-        Debug.Log("Role" + role + " is given to" + name);
-
-        Transform imageTransform = nameTags[role - 1].transform.Find("Image");
-
-        if (imageTransform.Find("NameText") != null)
-        {
-            Debug.Log("found name text");
-        }
-
-        if (imageTransform.Find("NameText").GetComponent<TextMeshPro>() != null)
-        {
-            Debug.Log("text mesh pro is found");
-        }
-
-        // Set the text of 'NameText' child
-        imageTransform.Find("NameText").GetComponent<TextMeshProUGUI>().text = name;
-
-        // Set the text of 'InstrumentText' child
-        imageTransform.Find("InstrumentText").GetComponent<TextMeshProUGUI>().text = instrument;
-
-        // change character image below
-
-         Sprite newSprite = Resources.Load<Sprite>($"RhythmSprites/{name}");
-         if (newSprite == null)
-        {
-            Debug.Log("did not find sprite of" + name);
-            newSprite = Resources.Load<Sprite>("RhythmSprites/EMPTY");
-        }
-        else
-        {
-            Debug.Log("found sprite of" + name);
-        }
-      
-        Transform labelImage = backgrounds[role - 1].transform.Find("LabelImage");
-        Transform characterImage = backgrounds[role - 1].transform.Find("CharacterImage");
-
-        if (labelImage != null)
-        {
-            // Animate labelImage disappearing (scaling down before deactivating)
-            LeanTween.scale(labelImage.GetComponent<RectTransform>(), Vector3.zero, 0.5f)
-                .setEase(LeanTweenType.easeInElastic)
-                .setOnComplete(() => labelImage.gameObject.SetActive(false)); // Deactivate after animation
-        }
-
-        if (characterImage != null)
-        {
-            Debug.Log("Updating sprite of " + name);
-
-            Image imgComponent = characterImage.GetComponent<Image>();
-            if (imgComponent != null)
+        RectTransform backgroundHeroRT = backgroundHeros[idx].GetComponent<RectTransform>();
+        LeanTween.scale(backgroundHeroRT, Vector3.zero, 0.5f)
+            .setEase(LeanTweenType.easeInElastic)
+            .setOnComplete(() =>
             {
-                LeanTween.scale(characterImage.GetComponent<RectTransform>(), Vector3.zero, 0.5f)
-                    .setEase(LeanTweenType.easeInElastic)
+                backgroundHeros[idx].sprite = characterData.character.backgroundHero;
+                backgroundHeroRT.gameObject.SetActive(true);
+
+                LeanTween.scale(backgroundHeroRT, new Vector3(1f, 1f, 1f), 0.5f)
+                    .setEase(LeanTweenType.easeOutElastic);
+            });
+        
+        CheckIfReady();
+    }
+
+    public void CheckIfReady()
+    {
+        int selectedCount = characterSlots.Count(c => c.thisSelected);
+
+        if (selectedCount >= numberInBand)
+        {
+            if (CalculateChemistry())
+            {
+                LeanTween.scale(GoButton.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                        .setEase(LeanTweenType.easeInCubic)
+                        .setOnComplete(() =>
+                        {
+                            GoButton.SetActive(true);
+                            LeanTween.scale(GoButton.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.2f)
+                                .setEase(LeanTweenType.easeOutElastic);
+                        });
+                LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                    .setEase(LeanTweenType.easeInCubic)
                     .setOnComplete(() =>
-                    {
-                        
-                        // Change sprite after scaling down
-                        imgComponent.sprite = newSprite;
-                        characterImage.gameObject.SetActive(true);
-
-                        // Animate characterImage appearing
-                        LeanTween.scale(characterImage.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.5f)
-                            .setEase(LeanTweenType.easeOutElastic);
-                    });
-
-                 // Ensure it's visible before animation starts
+                NotEnoughAffection.SetActive(false));
             }
             else
             {
-                Debug.LogError("characterImage does not have an Image component!");
+                LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                        .setEase(LeanTweenType.easeInCubic)
+                        .setOnComplete(() =>
+                        {
+                            NotEnoughAffection.SetActive(true);
+                            LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.2f)
+                                .setEase(LeanTweenType.easeOutElastic);
+                        });
+                LeanTween.scale(GoButton.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
+                        .setEase(LeanTweenType.easeInCubic)
+                        .setOnComplete(() =>
+                GoButton.SetActive(false));
             }
         }
-
-
-        checkArray();
-   }
-   public void checkArray()
-    {
-    int nonEmptyCount = 0;  // To count the number of non-empty entries
-
-    // Loop through the selected characters
-    foreach (string character in selectedCharacters)
-    {
-        if (!string.IsNullOrEmpty(character))  // Check if the character is not null or empty
-        {
-            nonEmptyCount++;
-        }
-
-        // If we've already counted enough non-empty entries, we can break early
-        if (nonEmptyCount >= numberInBand)
-        {
-            break;
-        }
-    }
-
-    if (nonEmptyCount >= numberInBand)
-    {
-        // Enough entries are non-empty
-        Debug.Log("Enough characters are selected.");
-        if (CalculateChemistry())
-        {
-            LeanTween.scale(GoButton.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
-                    .setEase(LeanTweenType.easeInCubic)
-                    .setOnComplete(() =>
-                    {
-                         GoButton.SetActive(true);
-                        LeanTween.scale(GoButton.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.2f)
-                            .setEase(LeanTweenType.easeOutElastic);
-                    });
-           
-            LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
-                .setEase(LeanTweenType.easeInCubic)
-                .setOnComplete(() =>
-            NotEnoughAffection.SetActive(false));
-        }
-        else
-        {
-            LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
-                    .setEase(LeanTweenType.easeInCubic)
-                    .setOnComplete(() =>
-                    {
-                        NotEnoughAffection.SetActive(true);
-                        LeanTween.scale(NotEnoughAffection.GetComponent<RectTransform>(), new Vector3(1f, 1f, 1f), 0.2f)
-                            .setEase(LeanTweenType.easeOutElastic);
-                    });
-
-           LeanTween.scale(GoButton.GetComponent<RectTransform>(), Vector3.zero, 0.2f)
-                .setEase(LeanTweenType.easeInCubic)
-                .setOnComplete(() =>
-           GoButton.SetActive(false));
-        }
-    }
-    else
-    {
-        // Not enough entries are non-empty
-        Debug.Log("Not enough characters are selected.");
-    }
     }
     public bool CalculateChemistry()
     {
-        chemistry = 0; 
-
-        foreach (string bandmate in selectedCharacters)
-        {
-            chemistry += characterDictionary[bandmate].affection; 
-            Debug.Log("chemistry is now" + chemistry);
-        }
-        chemistry = chemistry / numberInBand; 
-
+        chemistry = characterSlots
+            .Where(c => c.thisSelected)
+            .Aggregate(0f, (acc, c) => acc + c.characterData.affection)
+            / numberInBand;
+        
         chemistryBar.SetScore((int)chemistry);
-
-        if (chemistry >= threshold)
-        {
-            Debug.Log("chemistry is above threshold");
-            return true;
-        }
-        else
-        {
-            Debug.Log("chemistry is below threshold");
-            return false; 
-        }
+        return chemistry >= threshold;
     }
+
     public void ProceedToRhythm()
     {
-        Debug.Log("Will head to the rhythm screen with these characters:");
-        foreach (string bandmate in selectedCharacters)
-        {
-            Debug.Log(bandmate);
-        }
+        GameStateManager.Instance.StartRhythmGame(
+            characterSlots
+                .Where(c => c.thisSelected)
+                .Select(c => c.characterData)
+                .ToArray()
+        );
     }
 
 
