@@ -33,24 +33,22 @@ public class CharacterDisplayUI : MonoBehaviour
         }
     }
 
-    public void SwitchToCharacter(GameManager.CharacterSelection character)
+    public void SwitchToCharacter(CharacterRole character)
     {
         if(coroutine != null) StopCoroutine(coroutine);
-        if(character == GameManager.CharacterSelection.Melodist) coroutine = StartCoroutine(Animate(0));
-        else if(character == GameManager.CharacterSelection.Drummer) coroutine = StartCoroutine(Animate(1));
-        else if(character == GameManager.CharacterSelection.Bassist) coroutine = StartCoroutine(Animate(2));
-        else if(character == GameManager.CharacterSelection.Guitarist) coroutine = StartCoroutine(Animate(3));
+        if(character == CharacterRole.Melodist) coroutine = StartCoroutine(Animate(0));
+        else if(character == CharacterRole.Counter) coroutine = StartCoroutine(Animate(1));
+        else if(character == CharacterRole.Harmony) coroutine = StartCoroutine(Animate(2));
+        else if(character == CharacterRole.Percussion) coroutine = StartCoroutine(Animate(3));
     }
 
     IEnumerator Animate(int featured)
 {
-    Debug.Log("animate" + featured);
     float t = 0;
 
     // Start LeanTween animations once for all elements
     for (int i = 0; i < images.Length; i++)
     {
-        Debug.Log("image Length" + images.Length);
         if (i == featured)
         {
             // Animate the spotlight to scale up
@@ -62,7 +60,6 @@ public class CharacterDisplayUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("index" + i);
             // Animate the spotlight to scale down
             LeanTween.scale(spotlights[i].GetComponent<RectTransform>(), Vector3.zero, 1.5f)
                 .setEaseOutElastic()

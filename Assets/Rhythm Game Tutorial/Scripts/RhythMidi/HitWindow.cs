@@ -10,8 +10,6 @@ namespace RhythMidi
 {
     public class HitWindow : MonoBehaviour
     {
-        public RhythMidiController rhythMidi;
-
         // Tried-and-true values
         public float coyoteTimeTooEarly = 0.1f;
         public float coyoteTimeTooLate = 0.2f;
@@ -22,8 +20,8 @@ namespace RhythMidi
 
         void Start()
         {
-            rhythMidi.CreateNoteNotifier(coyoteTimeTooEarly).OnNote += NoteEnterHitWindow;
-            rhythMidi.CreateNoteNotifier(-coyoteTimeTooLate).OnNote += NoteExitHitWindow;
+            RhythMidiController.Instance.CreateNoteNotifier(coyoteTimeTooEarly).OnNote += NoteEnterHitWindow;
+            RhythMidiController.Instance.CreateNoteNotifier(-coyoteTimeTooLate).OnNote += NoteExitHitWindow;
         }
 
         public bool CheckHit(int noteNum, bool removeIfHit = true)
