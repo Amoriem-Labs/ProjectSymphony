@@ -13,7 +13,7 @@ public class ResultsScreenManager : MonoBehaviour
     public TextMeshProUGUI ComboText;
     
     public TextMeshProUGUI RatioText;
-    public void ShowResultsScreen(int finalScore, int perfectHits, int goodHits, int missedHits, int largestCombo, Dictionary<CharacterSelection, List<int>> notes, Dictionary<CharacterSelection, float> timeSpentOnCharacter)
+    public void ShowResultsScreen(int finalScore, int perfectHits, int goodHits, int missedHits, int largestCombo, Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
         gameObject.SetActive(true);
 
@@ -49,7 +49,7 @@ public class ResultsScreenManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public double CalculateChemistry(Dictionary<CharacterSelection, List<int>> notes, Dictionary<CharacterSelection, float> timeSpentOnCharacter)
+    public double CalculateChemistry(Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
         double totalChemistryChange = 0.0;
         int characterCount = 0;
@@ -139,9 +139,9 @@ public class ResultsScreenManager : MonoBehaviour
         return affectionChange;
     }
 
-    public String GetFavoriteCharacter(Dictionary<CharacterSelection, float> timeSpentOnCharacter){
+    public String GetFavoriteCharacter(Dictionary<CharacterRole, float> timeSpentOnCharacter){
         float maxTime = 0f;
-        CharacterSelection favCharacter = CharacterSelection.None;
+        CharacterRole favCharacter = CharacterRole.None;
 
         foreach (var pair in timeSpentOnCharacter)
         {
@@ -179,7 +179,7 @@ public class ResultsScreenManager : MonoBehaviour
         }
     }
 
-    private int CalculateOverallGrade(Dictionary<CharacterSelection, List<int>> notes)
+    private int CalculateOverallGrade(Dictionary<CharacterRole, List<int>> notes)
     {
         int totalStellar = 0, totalGood = 0, totalMissed = 0;
         int totalNotes = 0;

@@ -16,13 +16,6 @@ using UnityEngine.UI;
 /// </summary>
 /// 
 
-public enum CharacterSelection {
-    None = 0,
-    Melodist = 36,
-    Drummer = 40,
-    Bassist = 44,
-    Guitarist = 48
-};
 public class Scoreboard
 {
 
@@ -45,7 +38,7 @@ public class Scoreboard
     ComboBar comboBar;
 
     // [0] = Stellar ; [1] = Good ; [2] = Missed
-    public Dictionary<CharacterSelection, List<int>> notesPerCharacter = new Dictionary<CharacterSelection, List<int>>(); 
+    public Dictionary<CharacterRole, List<int>> notesPerCharacter = new Dictionary<CharacterRole, List<int>>(); 
     public Scoreboard(int[] multiplierThresholds, int scorePerGoodNote, int scorePerPerfectNote, Text scoreText, Text multiplierText, ComboBar comboBar)
     {
         this.multiplierThresholds = multiplierThresholds;
@@ -58,9 +51,9 @@ public class Scoreboard
         largestCombo = 0;
         currentCombo = 0;
 
-        notesPerCharacter = new Dictionary<CharacterSelection, List<int>>();
-        foreach (CharacterSelection character in Enum.GetValues(typeof(CharacterSelection))){
-            if (character != CharacterSelection.None) 
+        notesPerCharacter = new Dictionary<CharacterRole, List<int>>();
+        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole))){
+            if (character != CharacterRole.None) 
             {
                 notesPerCharacter[character] = new List<int> { 0, 0, 0 }; 
             }
@@ -68,7 +61,7 @@ public class Scoreboard
 
     }
 
-    public void RegisterPerfectHit(CharacterSelection currCharacter)
+    public void RegisterPerfectHit(CharacterRole currCharacter)
     {
         numPerfectHits++;
         notesPerCharacter[currCharacter][0] += 1;
@@ -78,7 +71,7 @@ public class Scoreboard
         UpdateScoreUI();
     }
 
-    public void RegisterGoodHit(CharacterSelection currCharacter)
+    public void RegisterGoodHit(CharacterRole currCharacter)
     {
         numGoodHits++;
         notesPerCharacter[currCharacter][1] += 1;
@@ -88,7 +81,7 @@ public class Scoreboard
         UpdateScoreUI();
     }
 
-    public void RegisterNoteMissed(CharacterSelection currCharacter)
+    public void RegisterNoteMissed(CharacterRole currCharacter)
     {
         numMissedHits++;
         notesPerCharacter[currCharacter][2] += 1;
@@ -211,9 +204,9 @@ public class GameManager : MonoBehaviour
         RhythMidiController.Instance.CreateNoteNotifier(fallingNotesTime).OnNote += SpawnArrowSprite;
 
         //tracking character time spent
-        foreach (CharacterSelection character in Enum.GetValues(typeof(CharacterSelection)))
+        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole)))
         {
-            if(character != CharacterSelection.None)
+            if(character != CharacterRole.None)
             {
                 timeSpentOnCharacter[character] = 0f;
             }
