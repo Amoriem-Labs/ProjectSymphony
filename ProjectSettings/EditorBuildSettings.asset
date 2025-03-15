@@ -5,16 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/PartyScreen/Splash.unity
-    guid: 88d7f21484eca47bfb45421e3b5a2c82
+  - enabled: 0
+    path: Assets/118 sprite effects bundle/Scenes/Water splashes sprite effects.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/VN/Scenes/VN.unity
     guid: 801e952b4cb4d410d8a6d063f247f7e4
   - enabled: 1
-    path: Assets/PartyScreen/PartyScreen.unity
-    guid: 362856727ab3147e5b8eacdbe5edd1d0
-  - enabled: 1
-    path: Assets/Rhythm Game Tutorial/Scenes/Start copy.unity
-    guid: b227889911bbc466ca6e0747b2efbffb
+    path: Assets/Rhythm Game Tutorial/Scenes/Start.unity
+    guid: a7efac3f0da73e7439004acd29203987
   m_configObjects: {}
