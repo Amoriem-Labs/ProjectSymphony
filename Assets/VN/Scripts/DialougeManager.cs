@@ -131,18 +131,30 @@ public class DialougeManager : MonoBehaviour
 
             if (newSprite != null)
             {
-                 LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
-                .setEase(LeanTweenType.easeInElastic)
+                //  LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.2f)
+                // .setEase(LeanTweenType.easeInCubic)
+                // .setOnComplete(() =>
+                // {
+                //     // Change sprite after scaling down
+                //     characterSpriteImage.sprite = newSprite;
+
+                //     // Animate character sprite in
+                //     LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.2f)
+                //         .setEase(LeanTweenType.easeOutCubic);
+                // });
+                // characterSpriteImage.sprite = newSprite;
+
+                LeanTween.moveX(characterSpriteImage.rectTransform, -1548f, 0.2f)
+                .setEase(LeanTweenType.easeInCubic)
                 .setOnComplete(() =>
                 {
-                    // Change sprite after scaling down
+                    // Change sprite after moving off-screen
                     characterSpriteImage.sprite = newSprite;
 
-                    // Animate character sprite in
-                    LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.5f)
-                        .setEase(LeanTweenType.easeOutElastic);
+                    // Animate character sprite back on-screen
+                    LeanTween.moveX(characterSpriteImage.rectTransform, -531f, 0.2f)
+                        .setEase(LeanTweenType.easeOutCubic);
                 });
-                // characterSpriteImage.sprite = newSprite;
             }
             else
             {
@@ -215,6 +227,7 @@ public class DialougeManager : MonoBehaviour
         // set the name 
         if (nameText != null)
         {
+            Debug.Log("name is changed");
             nameText.text = curr_dialogue.name;
         }
         else

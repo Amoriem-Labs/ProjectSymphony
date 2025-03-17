@@ -61,7 +61,7 @@ public class AnimationManager : MonoBehaviour
             yield return null;
         }
 
-        transform.position = startPosition;
+        background.transform.position = new Vector2(0, 0);
     }
 
 }

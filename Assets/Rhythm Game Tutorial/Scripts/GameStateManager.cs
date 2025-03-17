@@ -48,6 +48,11 @@ public class GameStateManager : MonoBehaviour
     public string currentSongName;
     public CharacterData[] selectedCharacters;
 
+    // Animators
+
+    public Animator transition;
+    public float transitionTime = 1f;
+
     void Start()
     {
         if(Instance == null)
@@ -75,7 +80,11 @@ public class GameStateManager : MonoBehaviour
     public void LoadCharacterSelect(string song)
     {
         currentSongName = song;
-        SceneManager.LoadScene("PartyScreen");
+
+        Debug.Log("loading party screen");
+        StartCoroutine(LoadScene("PartyScreen"));
+
+        //SceneManager.LoadScene("PartyScreen");
     }
 
     public void StartRhythmGame(CharacterData[] selectedCharacters)
@@ -83,5 +92,20 @@ public class GameStateManager : MonoBehaviour
         this.selectedCharacters = selectedCharacters;
         RhythMidiController.Instance.ClearCallbacks();
         SceneManager.LoadScene("Start copy");
+    }
+
+    public void LoadNewScene(string sceneName)
+    {
+        
+         StartCoroutine(LoadScene(sceneName));
+
+    }
+    IEnumerator LoadScene(string sceneName)
+    {
+        Debug.Log("ienumerator started");
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneName);
+        transition.SetTrigger("EnterNewScene");
     }
 }
