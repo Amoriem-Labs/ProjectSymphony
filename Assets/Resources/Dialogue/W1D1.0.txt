@@ -1,5 +1,6 @@
 Name:  
 Sprite: EMPTY
+Animation: ScreenFlash
 BG: Park
 BGM: picnic-bgm
 The park is full of students enjoying their last day before the school semester begins.

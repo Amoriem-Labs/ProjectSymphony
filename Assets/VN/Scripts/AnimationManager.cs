@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnimationManager : MonoBehaviour
 {
@@ -13,12 +14,20 @@ public class AnimationManager : MonoBehaviour
     public AnimationCurve Shakecurve;
     List<string> AnimationDictionary;
 
+    public Image whiteScreen;
+
+    CanvasGroup screenGroup;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        
         // dictionary with all the animation names
-        AnimationDictionary = new List<string> {"ScreenShake"};
+        AnimationDictionary = new List<string> {"ScreenShake", "ScreenFlash"};
+
+        screenGroup = whiteScreen.GetComponent<CanvasGroup>();
+        screenGroup.alpha = 0; 
     
     }
 
@@ -33,10 +42,11 @@ public class AnimationManager : MonoBehaviour
             if (AnimationDictionary.Contains(animationName))
             {
                 Debug.Log("playing animation2" +  animationName);
-                if (animationName == "ScreenShake")
-                {
-                    StartCoroutine(animationName);
-                }
+                StartCoroutine(animationName);
+                // if (animationName == "ScreenShake")
+                // {
+                //     StartCoroutine(animationName);
+                // }
             }
             else
             {
@@ -62,6 +72,20 @@ public class AnimationManager : MonoBehaviour
         }
 
         background.transform.position = new Vector2(0, 0);
+    }
+
+    IEnumerator ScreenFlash()
+    {
+        Debug.Log("playing screen flash");
+        
+        // Set the alpha to fully visible (1)
+        screenGroup.alpha = 1f;
+
+        // Fade out over flashDuration
+        LeanTween.alphaCanvas(screenGroup, 0f, 0.2f).setEase(LeanTweenType.easeOutQuad);
+
+        yield return new WaitForSeconds(0.2f);
+
     }
 
 }
