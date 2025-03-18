@@ -5,8 +5,9 @@
     "artist": "Ellis",
     "mapper": "Chris",
     "midi": "Week1.mid",
-    "trackA": "DemoTrack.mp3",
-    "trackB": "",
-    "trackC": "",
-    "trackD": ""
+    "backingTrack": "Backing.mp3",
+    "tracks": {
+        "Sam": "Sam.mp3",
+        "Howard": "Howard.mp3"
+    }
 }
