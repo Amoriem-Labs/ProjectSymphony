@@ -16,13 +16,6 @@ using UnityEngine.UI;
 /// </summary>
 /// 
 
-public enum CharacterSelection {
-    None = 0,
-    Melodist = 36,
-    Drummer = 40,
-    Bassist = 44,
-    Guitarist = 48
-};
 public class Scoreboard
 {
 
@@ -45,7 +38,7 @@ public class Scoreboard
     ComboBar comboBar;
 
     // [0] = Stellar ; [1] = Good ; [2] = Missed
-    public Dictionary<CharacterSelection, List<int>> notesPerCharacter = new Dictionary<CharacterSelection, List<int>>(); 
+    public Dictionary<CharacterRole, List<int>> notesPerCharacter = new Dictionary<CharacterRole, List<int>>(); 
     public Scoreboard(int[] multiplierThresholds, int scorePerGoodNote, int scorePerPerfectNote, Text scoreText, Text multiplierText, ComboBar comboBar)
     {
         this.multiplierThresholds = multiplierThresholds;
@@ -58,9 +51,9 @@ public class Scoreboard
         largestCombo = 0;
         currentCombo = 0;
 
-        notesPerCharacter = new Dictionary<CharacterSelection, List<int>>();
-        foreach (CharacterSelection character in Enum.GetValues(typeof(CharacterSelection))){
-            if (character != CharacterSelection.None) 
+        notesPerCharacter = new Dictionary<CharacterRole, List<int>>();
+        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole))){
+            if (character != CharacterRole.None) 
             {
                 notesPerCharacter[character] = new List<int> { 0, 0, 0 }; 
             }
@@ -68,7 +61,7 @@ public class Scoreboard
 
     }
 
-    public void RegisterPerfectHit(CharacterSelection currCharacter)
+    public void RegisterPerfectHit(CharacterRole currCharacter)
     {
         numPerfectHits++;
         notesPerCharacter[currCharacter][0] += 1;
@@ -78,7 +71,7 @@ public class Scoreboard
         UpdateScoreUI();
     }
 
-    public void RegisterGoodHit(CharacterSelection currCharacter)
+    public void RegisterGoodHit(CharacterRole currCharacter)
     {
         numGoodHits++;
         notesPerCharacter[currCharacter][1] += 1;
@@ -88,7 +81,7 @@ public class Scoreboard
         UpdateScoreUI();
     }
 
-    public void RegisterNoteMissed(CharacterSelection currCharacter)
+    public void RegisterNoteMissed(CharacterRole currCharacter)
     {
         numMissedHits++;
         notesPerCharacter[currCharacter][2] += 1;
@@ -151,7 +144,7 @@ public class GameManager : MonoBehaviour
 
     public Character CurrentCharacter => GameStateManager.Instance.selectedCharacters.First(c => c.character.role == currentRole).character;
     public Character CurrentCharacterInAdvance => GameStateManager.Instance.selectedCharacters.First(c => c.character.role == currentRoleInAdvance).character;
-    private Dictionary<CharacterSelection, float> timeSpentOnCharacter = new Dictionary<CharacterSelection, float>();
+    private Dictionary<CharacterRole, float> timeSpentOnCharacter = new Dictionary<CharacterRole, float>();
     public bool startPlaying;
 
     public int scorePerGoodNote = 125;
@@ -211,9 +204,9 @@ public class GameManager : MonoBehaviour
         RhythMidiController.Instance.CreateNoteNotifier(fallingNotesTime).OnNote += SpawnArrowSprite;
 
         //tracking character time spent
-        foreach (CharacterSelection character in Enum.GetValues(typeof(CharacterSelection)))
+        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole)))
         {
-            if(character != CharacterSelection.None)
+            if(character != CharacterRole.None)
             {
                 timeSpentOnCharacter[character] = 0f;
             }
@@ -232,15 +225,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if(startPlaying && rhythMidi.IsPlaying)  
+        if(startPlaying && RhythMidiController.Instance.IsPlaying)  
         {
-            if (!rhythMidi.audioSources[0].isPlaying)
+            if (!RhythMidiController.Instance.IsFirstAudioSourcePlaying)
             {
-                rhythMidi.StopChart();
+                RhythMidiController.Instance.StopChart();
                 
                 ShowResultsScreen();
             }
-            timeSpentOnCharacter[currentCharacter] += Time.deltaTime;
+            timeSpentOnCharacter[CurrentCharacter.role] += Time.deltaTime;
         }
         // DEBUGGING 
         if (Input.GetKeyDown(KeyCode.R))
@@ -266,7 +259,7 @@ public class GameManager : MonoBehaviour
         if(perfect)
         {
             Instantiate(perfectEffect, columnTarget);
-            scoreboard.RegisterPerfectHit(currentCharacter);
+            scoreboard.RegisterPerfectHit(CurrentCharacter.role);
 
             Vector3 newPosition = columnTarget.position;
             newPosition.y -= 2.8f; // Adjust this value to move it lower (negative value moves it down)
@@ -279,7 +272,7 @@ public class GameManager : MonoBehaviour
         else if(good)
         {
             Instantiate(goodEffect, columnTarget);
-            scoreboard.RegisterGoodHit(currentCharacter);
+            scoreboard.RegisterGoodHit(CurrentCharacter.role);
             
             Vector3 newPosition = columnTarget.position;
             newPosition.y -= 2.8f; // Adjust this value to move it lower (negative value moves it down)
@@ -328,11 +321,12 @@ public class GameManager : MonoBehaviour
     private void SpawnArrowSprite(Note note) 
     {
         int i = note.NoteNumber - CurrentCharacterInAdvance.midiPitchStart;
-        if(i < 0 || i > 4) return;
-        RectTransform column = beatColumns[i];
-
+        if(i < 0 || i >= 4) return;
         // Debug.Log(note.NoteNumber);
         // Debug.Log(i);
+
+        RectTransform column = beatColumns[i];
+
 
         GameObject sprite = null; // Declare sprite outside the switch block.
 
@@ -390,15 +384,12 @@ public class GameManager : MonoBehaviour
     public void OnNoteMissed(Note note)
     {
         int i = note.NoteNumber - CurrentCharacter.midiPitchStart;
-        if(i < 0 || i > 4) return; // ignore other notes, like pulse and system events
+        if(i < 0 || i >= 4) return; // ignore other notes, like pulse and system events
         Transform column = beatColumns[i];
         Instantiate(missEffect, column);
 
-        scoreboard.RegisterNoteMissed(currentCharacter);
+        scoreboard.RegisterNoteMissed(CurrentCharacter.role);
     }
-
-
-
 
     public void ShowResultsScreen(){
         resultsScreenManager.ShowResultsScreen(
