@@ -6042,7 +6042,8 @@ MonoBehaviour:
   isW1D1: 0
   isW1D2: 0
   isW1D3: 0
-  isW2D1: 0
+  isW2D1A: 0
+  isW2D1B: 0
   isW2D2A: 0
   isW2D2B: 0
   isW2D3: 0
