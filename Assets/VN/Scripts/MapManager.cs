@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class MapManager : MonoBehaviour
 {
     [System.Serializable]
@@ -54,6 +55,22 @@ public class MapManager : MonoBehaviour
     public Dictionary<string, mapObject> finishedEvents;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        // locate all dialouge managers 
+        MapManager[] managers = FindObjectsOfType<MapManager>();
+
+        //singleton pattern to remove duplicate managers 
+        if (managers.Length > 1)
+        {
+            Debug.LogError($"Found {managers.Length} Map Manager instances in the scene. There should only be one.");
+
+            for (int i = 1; i < managers.Length; i++)
+            {
+                Destroy(managers[i].gameObject);
+            }
+        }
+    }
     void Start()
     {
         mainEventSelected = false;
