@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 
 public class DialougeManager : MonoBehaviour
@@ -26,6 +27,7 @@ public class DialougeManager : MonoBehaviour
     public bool isW3D2 = false;
     public bool isW3D3 = false;
     public bool isW3D4 = false;
+    bool loadedEvents = false;
 
 
     // default name 
@@ -67,7 +69,7 @@ public class DialougeManager : MonoBehaviour
     private AnimationManager animationManager;
 
     private bool startedFade = false;
-
+    private UnityEvent onFinishedDialogeLoading = new UnityEvent();
     // animations
 
     // UI Manager
@@ -75,6 +77,8 @@ public class DialougeManager : MonoBehaviour
     UIManager uiManager;
     void Awake()
     {
+        loadedEvents = false; // DELETE THIS IF BUGSS
+
         animationManager = GetComponent<AnimationManager>();
         uiManager = UIManager.GetComponent<UIManager>();
 
@@ -176,7 +180,7 @@ public class DialougeManager : MonoBehaviour
 
             if (newBG != null)
             {
-                                    backgroudSpriteImage.sprite = newBG;
+              backgroudSpriteImage.sprite = newBG;
 
                 //// Fade out current background
                 //LeanTween.alpha(backgroudSpriteImage.rectTransform, 0f, 0.5f).setOnComplete(() =>
@@ -205,7 +209,15 @@ public class DialougeManager : MonoBehaviour
 
         Debug.Log($"Dialogue name: {curr_dialogue.name}, Sentences count: {curr_dialogue.sentences.Length}");
 
-
+        // set the text animator 
+        if (animator != null)
+        {
+            animator.SetBool("IsOpen", true);
+        }
+        else
+        {
+            Debug.LogWarning("Animator is not set in DialougeManager");
+        }
 
 
         // set the name 
@@ -251,15 +263,7 @@ public class DialougeManager : MonoBehaviour
         Debug.Log($"Enqueued {sentences.Count} sentences");
 
         DisplayNextSentence();
-        // set the text animator 
-        if (animator != null)
-        {
-            animator.SetBool("IsOpen", true);
-        }
-        else
-        {
-            Debug.LogWarning("Animator is not set in DialougeManager");
-        }
+       
 
         // set the charcater animator
         if (characterAnimator != null)
@@ -348,7 +352,7 @@ public class DialougeManager : MonoBehaviour
     {
         if (isEndofScene)
         {
-            animator.SetBool("IsOpen", false);
+            //animator.SetBool("IsOpen", false);
             characterAnimator.SetBool("DialougeActive", false);
         }
         isDialogueActive = false;
@@ -466,6 +470,7 @@ public class DialougeManager : MonoBehaviour
         AddCurrentDialogue();
 
         Debug.Log($"Loaded {dialogueSequence.Count} dialogue entries");
+        
     }
 
     private void AddCurrentDialogue()
@@ -479,6 +484,7 @@ public class DialougeManager : MonoBehaviour
             }
             dialogueSequence.Add(loadedDialogue);
         }
+        loadedEvents = true;
     }
 
     public void ShowChoiceOptions(string[] options)
@@ -597,6 +603,10 @@ public class DialougeManager : MonoBehaviour
         for (int i = 0; i < dialogueFiles.Length; i++)
         {
             LoadDialogueSequence(dialogueFiles[i]);
+            //yield return new WaitForSeconds(4f);
+            yield return new WaitUntil(() => loadedEvents);
+            //yield return new WaitForSeconds(1f);
+            //loadedEvents = false; // DELETE THIS IF BUGSS
             StartDialogueSequence();
             yield return new WaitUntil(() => currentDialogueIndex >= dialogueSequence.Count);
 

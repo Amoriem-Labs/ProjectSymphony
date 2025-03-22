@@ -7,6 +7,7 @@ public class ReadPlayerName : MonoBehaviour
     private string input;
     private DialougeManager dialogueManager;
     public TMP_InputField playerNameReader;
+    public GameObject dialoguebox;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ReadPlayerName : MonoBehaviour
 
     public void ReadInput(string player_input)
     {
+        dialoguebox.SetActive(false);
         input = player_input;
         if(player_input == "")
         {
@@ -38,9 +40,11 @@ public class ReadPlayerName : MonoBehaviour
             Debug.Log("player name is: " + dialogueManager.inputtedName);
             dialogueManager.isW1D1 = true;
             playerNameReader.gameObject.SetActive(false);
+        }
 
-
-
+        if(dialogueManager.isW1D1 == true)
+        {
+            dialoguebox.SetActive(true);
         }
     }
 

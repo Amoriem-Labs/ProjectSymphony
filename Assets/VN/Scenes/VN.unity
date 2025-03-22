@@ -2094,6 +2094,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6842354325b4fbf8b03413c293545e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &558123877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3246224411268674410, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+  m_PrefabInstance: {fileID: 1187265760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &597654750
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,7 +6173,7 @@ MonoBehaviour:
   isW2D2A: 0
   isW2D2B: 0
   isW2D3: 0
-  isW2D4: 0
+  isW2D4: 1
   isW2D5: 0
   isW3D1: 0
   isW3D2: 0
@@ -7207,6 +7212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNameReader: {fileID: 1304385842}
+  dialoguebox: {fileID: 558123877}
 --- !u!1 &1608644430
 GameObject:
   m_ObjectHideFlags: 0
