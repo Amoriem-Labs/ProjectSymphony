@@ -82,7 +82,25 @@ public class GameStateManager : MonoBehaviour
 
     public void LoadVN()
     {
-        SceneManager.LoadScene("VN");
+        System.GC.Collect();
+        StartCoroutine(LoadSceneAsync("VN"));
+        //SceneManager.LoadScene("VN");
+    }
+    IEnumerator LoadSceneAsync(string sceneName)
+    {
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
+
+        while (!asyncLoad.isDone)
+        {
+            // Wait until the scene is nearly loaded
+            if (asyncLoad.progress >= 0.9f)
+            {
+                asyncLoad.allowSceneActivation = true;
+            }
+            yield return null;
+        }
     }
 
     public void StartRhythmGame(CharacterData[] selectedCharacters)

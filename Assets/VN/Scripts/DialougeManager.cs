@@ -175,7 +175,7 @@ public class DialougeManager : MonoBehaviour
 
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
 
-            Debug.Log("background is" + curr_dialogue.background);
+            //Debug.Log("background is" + curr_dialogue.background);
             uiManager.ShowLocation(curr_dialogue.background);
 
             if (newBG != null)
@@ -203,11 +203,11 @@ public class DialougeManager : MonoBehaviour
         // error checking and set variables
         if (curr_dialogue == null)
         {
-            Debug.Log("Dialouge is null");
+            //Debug.Log("Dialouge is null");
             return;
         }
 
-        Debug.Log($"Dialogue name: {curr_dialogue.name}, Sentences count: {curr_dialogue.sentences.Length}");
+        //Debug.Log($"Dialogue name: {curr_dialogue.name}, Sentences count: {curr_dialogue.sentences.Length}");
 
         // set the text animator 
         if (animator != null)
@@ -322,7 +322,7 @@ public class DialougeManager : MonoBehaviour
             //EndDialouge();
         }
     }
-
+    private readonly WaitForSeconds letterDelay = new WaitForSeconds(0.01f);
     IEnumerator TypeSentence(string sentence)
     {
         dialougeText.text = "";
@@ -331,7 +331,7 @@ public class DialougeManager : MonoBehaviour
         {
             dialougeText.text = sentence.Substring(0, visibleCharacters);
             visibleCharacters++;
-            yield return new WaitForSeconds(0.01f);
+            yield return letterDelay;
         }
     }
 
@@ -605,8 +605,9 @@ public class DialougeManager : MonoBehaviour
             LoadDialogueSequence(dialogueFiles[i]);
             //yield return new WaitForSeconds(4f);
             yield return new WaitUntil(() => loadedEvents);
+            yield return new WaitUntil(() => uiManager.IsReady);
             //yield return new WaitForSeconds(1f);
-            //loadedEvents = false; // DELETE THIS IF BUGSS
+            loadedEvents = false; // DELETE THIS IF BUGSS
             StartDialogueSequence();
             yield return new WaitUntil(() => currentDialogueIndex >= dialogueSequence.Count);
 
