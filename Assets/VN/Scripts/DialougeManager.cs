@@ -176,15 +176,17 @@ public class DialougeManager : MonoBehaviour
 
             if (newBG != null)
             {
-                // Fade out current background
-                LeanTween.alpha(backgroudSpriteImage.rectTransform, 0f, 0.5f).setOnComplete(() =>
-                {
-                    // Change background sprite after fade out
-                    backgroudSpriteImage.sprite = newBG;
+                                    backgroudSpriteImage.sprite = newBG;
 
-                    // Fade in the new background
-                    LeanTween.alpha(backgroudSpriteImage.rectTransform, 1f, 0.5f);
-                });
+                //// Fade out current background
+                //LeanTween.alpha(backgroudSpriteImage.rectTransform, 0f, 0.5f).setOnComplete(() =>
+                //{
+                //    // Change background sprite after fade out
+                //    backgroudSpriteImage.sprite = newBG;
+
+                //    // Fade in the new background
+                //    LeanTween.alpha(backgroudSpriteImage.rectTransform, 1f, 0.5f);
+                //});
                 // backgroudSpriteImage.sprite = newBG;
             }
             else
@@ -419,7 +421,7 @@ public class DialougeManager : MonoBehaviour
             {
                 animationManager.animationName = line.Substring(11);
                 Debug.Log($"Playing animation {animationManager.animationName}");
-                animationManager.playAnimation = true;
+                //animationManager.playAnimation = true;
 
             }
             else if (line.StartsWith("BG: "))
