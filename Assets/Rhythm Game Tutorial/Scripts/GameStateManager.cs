@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using RhythMidi;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,8 @@ public class Character
     public CharacterRole role;
     public string name;
     public string instrument;
+
+    public string bio; // PLACEHOLDER: can remove if needed
     public Sprite spriteUnlocked;
     public Sprite spriteLocked;
     public Sprite backgroundHero;
