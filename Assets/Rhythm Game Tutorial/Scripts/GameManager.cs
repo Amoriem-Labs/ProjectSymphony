@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Melanchall.DryWetMidi.Interaction;
 using RhythMidi;
 using Unity.VisualScripting;
@@ -13,8 +14,11 @@ using UnityEngine.UI;
 /// <summary>
 /// Class to keep track of scoring info
 /// </summary>
+/// 
+
 public class Scoreboard
 {
+
     int scorePerGoodNote;
     int scorePerPerfectNote;
     Text scoreText;
@@ -28,8 +32,13 @@ public class Scoreboard
     public int[] multiplierThresholds;
     public int multiplierTracker;
 
+    public int largestCombo;
+
+    public int currentCombo;
     ComboBar comboBar;
 
+    // [0] = Stellar ; [1] = Good ; [2] = Missed
+    public Dictionary<CharacterRole, List<int>> notesPerCharacter = new Dictionary<CharacterRole, List<int>>(); 
     public Scoreboard(int[] multiplierThresholds, int scorePerGoodNote, int scorePerPerfectNote, Text scoreText, Text multiplierText, ComboBar comboBar)
     {
         this.multiplierThresholds = multiplierThresholds;
@@ -38,32 +47,66 @@ public class Scoreboard
         this.scoreText = scoreText;
         this.multiplierText = multiplierText;
         this.comboBar = comboBar;
+
+        largestCombo = 0;
+        currentCombo = 0;
+
+        notesPerCharacter = new Dictionary<CharacterRole, List<int>>();
+        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole))){
+            if (character != CharacterRole.None) 
+            {
+                notesPerCharacter[character] = new List<int> { 0, 0, 0 }; 
+            }
+        }
+
     }
 
-    public void RegisterPerfectHit()
+    public void RegisterPerfectHit(CharacterRole currCharacter)
     {
         numPerfectHits++;
+        notesPerCharacter[currCharacter][0] += 1;
         currentScore += scorePerPerfectNote * currentMultiplier;
         UpdateMultiplier();
+        UpdateCombo(1);
         UpdateScoreUI();
     }
 
-    public void RegisterGoodHit()
+    public void RegisterGoodHit(CharacterRole currCharacter)
     {
         numGoodHits++;
+        notesPerCharacter[currCharacter][1] += 1;
         currentScore += scorePerGoodNote * currentMultiplier;
         UpdateMultiplier();
+        UpdateCombo(1);
         UpdateScoreUI();
     }
 
-    public void RegisterNoteMissed()
+    public void RegisterNoteMissed(CharacterRole currCharacter)
     {
         numMissedHits++;
+        notesPerCharacter[currCharacter][2] += 1;
         currentMultiplier = 1;
         multiplierTracker = 0;
+        UpdateCombo(-1);
         UpdateScoreUI();
     }
 
+    //can delete later maybe.
+    void UpdateCombo(int num)
+    {
+        if (num > 0)
+        {
+            currentCombo += num;
+            if (currentCombo > largestCombo)
+            {
+                largestCombo = currentCombo;
+            }
+        }
+        else
+        {
+            currentCombo = 0;
+        }
+    }
     public void UpdateScoreUI()
     {
         //scoreText.text = "Score: " + currentScore; 
@@ -92,23 +135,17 @@ public class Scoreboard
 
 public class GameManager : MonoBehaviour
 {
-    public enum CharacterSelection {
-        None = 0,
-        Melodist = 36,
-        Drummer = 40,
-        Bassist = 44,
-        Guitarist = 48
-    };
-
     // currentCharacterInAdvance takes currentCharacter's value after fallingNotesTime seconds
     // In other words, new arrows will spawn for currentChracterInAdvance's beatmap, but
     // the player will be judged based on currentCharacter's beatmap
-    public CharacterSelection currentCharacter = CharacterSelection.Melodist;
-    public CharacterSelection currentCharacterInAdvance = CharacterSelection.Melodist;
-    public CharacterSelection characterToSwitchTo = CharacterSelection.None;
+    public CharacterRole currentRole = CharacterRole.Melodist;
+    public CharacterRole currentRoleInAdvance = CharacterRole.Melodist;
+    public CharacterRole roleToSwitchTo = CharacterRole.None;
 
+    public Character CurrentCharacter => GameStateManager.Instance.selectedCharacters.First(c => c.character.role == currentRole).character;
+    public Character CurrentCharacterInAdvance => GameStateManager.Instance.selectedCharacters.First(c => c.character.role == currentRoleInAdvance).character;
+    private Dictionary<CharacterRole, float> timeSpentOnCharacter = new Dictionary<CharacterRole, float>();
     public bool startPlaying;
-    public string songToPlay;
 
     public int scorePerGoodNote = 125;
     public int scorePerPerfectNote = 150;
@@ -121,8 +158,6 @@ public class GameManager : MonoBehaviour
 
     public ComboBar comboBar;
     public Scoreboard scoreboard;
-
-    public RhythMidiController rhythMidi;
 
     public float fallingNotesTime = 1.0f; // how soon the notes appear (at 1.0, they will spawn one second before)
 
@@ -149,6 +184,7 @@ public class GameManager : MonoBehaviour
     public CharacterDisplayUI characterDisplayUI;
     public AudioSource sfxSource;
     public AudioClip[] hitAudioClips;
+    public ResultsScreenManager resultsScreenManager;
 
     // New UI below
     public Transform start;
@@ -156,7 +192,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-       
         if(instance != null) {
             Destroy(gameObject);
             return;
@@ -166,17 +201,47 @@ public class GameManager : MonoBehaviour
         scoreboard = new Scoreboard(multiplierThresholds, scorePerGoodNote, scorePerPerfectNote, scoreText, multiText, comboBar);
 
         goodHitWindow.OnNoteMissed += OnNoteMissed; //+= is same as .AddListener
-        rhythMidi.onFinishedLoading.AddListener(StartGame);
-        rhythMidi.CreateNoteNotifier(fallingNotesTime).OnNote += SpawnArrowSprite;
+        RhythMidiController.Instance.CreateNoteNotifier(fallingNotesTime).OnNote += SpawnArrowSprite;
+
+        //tracking character time spent
+        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole)))
+        {
+            if(character != CharacterRole.None)
+            {
+                timeSpentOnCharacter[character] = 0f;
+            }
+        }
 
         // Notifies on beat 1 of every measure, but fallingNotesTime seconds in advance
-        rhythMidi.CreateNoteNotifier(fallingNotesTime, (note) => note.NoteNumber == 25).OnNote += OnMeasureAdvance;
+        RhythMidiController.Instance.CreateNoteNotifier(fallingNotesTime, (note) => note.NoteNumber == 25).OnNote += OnMeasureAdvance;
         // Notifies on beat 1 of every measure
-        rhythMidi.CreateNoteNotifier(0f, (note) => note.NoteNumber == 25).OnNote += OnMeasure;
+        RhythMidiController.Instance.CreateNoteNotifier(0f, (note) => note.NoteNumber == 25).OnNote += OnMeasure;
+
+        StartGame();
+
+        startPlaying = true;
     }
 
     void Update()
     {
+
+        if(startPlaying && RhythMidiController.Instance.IsPlaying)  
+        {
+            if (!RhythMidiController.Instance.IsFirstAudioSourcePlaying)
+            {
+                RhythMidiController.Instance.StopChart();
+                
+                ShowResultsScreen();
+            }
+            timeSpentOnCharacter[CurrentCharacter.role] += Time.deltaTime;
+        }
+        // DEBUGGING 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("Showing Results Screen (R key pressed)");
+            ShowResultsScreen();
+        }
+
         RectTransform columnTarget = null;
         bool perfect = false;
         bool good = false;
@@ -185,8 +250,8 @@ public class GameManager : MonoBehaviour
         {
             if(Input.GetKeyDown(keyBindings[i]))
             {
-                if(perfectHitWindow.CheckHit((int)currentCharacter + i)) perfect = true;
-                if(goodHitWindow.CheckHit((int)currentCharacter + i)) good = true;
+                if(perfectHitWindow.CheckHit(CurrentCharacter.midiPitchStart + i)) perfect = true;
+                if(goodHitWindow.CheckHit(CurrentCharacter.midiPitchStart + i)) good = true;
                 columnTarget = beatColumns[i];
             }
         }
@@ -194,7 +259,7 @@ public class GameManager : MonoBehaviour
         if(perfect)
         {
             Instantiate(perfectEffect, columnTarget);
-            scoreboard.RegisterPerfectHit();
+            scoreboard.RegisterPerfectHit(CurrentCharacter.role);
 
             Vector3 newPosition = columnTarget.position;
             newPosition.y -= 2.8f; // Adjust this value to move it lower (negative value moves it down)
@@ -207,7 +272,7 @@ public class GameManager : MonoBehaviour
         else if(good)
         {
             Instantiate(goodEffect, columnTarget);
-            scoreboard.RegisterGoodHit();
+            scoreboard.RegisterGoodHit(CurrentCharacter.role);
             
             Vector3 newPosition = columnTarget.position;
             newPosition.y -= 2.8f; // Adjust this value to move it lower (negative value moves it down)
@@ -218,28 +283,28 @@ public class GameManager : MonoBehaviour
             PlayHitSoundEffect();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCharacter(CharacterSelection.Melodist);
-        else if(Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCharacter(CharacterSelection.Drummer);
-        else if(Input.GetKeyDown(KeyCode.Alpha3)) SwitchToCharacter(CharacterSelection.Bassist);
-        else if(Input.GetKeyDown(KeyCode.Alpha4)) SwitchToCharacter(CharacterSelection.Guitarist);
+        if(Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCharacter(CharacterRole.Melodist);
+        else if(Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCharacter(CharacterRole.Counter);
+        else if(Input.GetKeyDown(KeyCode.Alpha3)) SwitchToCharacter(CharacterRole.Harmony);
+        else if(Input.GetKeyDown(KeyCode.Alpha4)) SwitchToCharacter(CharacterRole.Percussion);
     }
 
     private void PlayHitSoundEffect() {
         sfxSource.PlayOneShot(hitAudioClips[UnityEngine.Random.Range(0, hitAudioClips.Length)]);
     }
 
-    private void SwitchToCharacter(CharacterSelection character)
+    private void SwitchToCharacter(CharacterRole character)
     {
-        if(character == currentCharacter) return;
-        characterToSwitchTo = character;
+        if(character == currentRole) return;
+        roleToSwitchTo = character;
         characterSwitchWarningEffect.SetActive(true);
     }
 
     private void OnMeasureAdvance(Note note)
     {
-        if(characterToSwitchTo == CharacterSelection.None) return;
-        currentCharacterInAdvance = characterToSwitchTo;
-        characterToSwitchTo = CharacterSelection.None;
+        if(roleToSwitchTo == CharacterRole.None) return;
+        currentRoleInAdvance = roleToSwitchTo;
+        roleToSwitchTo = CharacterRole.None;
 
         GameObject sprite = Instantiate(characterSwitchIndicatorPrefab, gameScreen);
         BeatScroller behavior = sprite.GetComponent<BeatScroller>();
@@ -247,20 +312,21 @@ public class GameManager : MonoBehaviour
     }
     private void OnMeasure(Note note)
     {
-        if(currentCharacterInAdvance == currentCharacter) return;
-        currentCharacter = currentCharacterInAdvance;
+        if(currentRoleInAdvance == currentRole) return;
+        currentRole = currentRoleInAdvance;
         characterSwitchWarningEffect.SetActive(false);
-        characterDisplayUI.SwitchToCharacter(currentCharacter);
+        characterDisplayUI.SwitchToCharacter(currentRole);
     }
 
     private void SpawnArrowSprite(Note note) 
     {
-        if(note.NoteNumber < ((int)currentCharacterInAdvance) || note.NoteNumber > (int)currentCharacterInAdvance + 3) return; // ignore other notes, like pulse and system events
-        int i = note.NoteNumber - (int)currentCharacterInAdvance;
+        int i = note.NoteNumber - CurrentCharacterInAdvance.midiPitchStart;
+        if(i < 0 || i >= 4) return;
+        // Debug.Log(note.NoteNumber);
+        // Debug.Log(i);
+
         RectTransform column = beatColumns[i];
 
-        Debug.Log(note.NoteNumber);
-        Debug.Log(i);
 
         GameObject sprite = null; // Declare sprite outside the switch block.
 
@@ -297,8 +363,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        rhythMidi.PrepareChart(songToPlay);
-        rhythMidi.PlayChart();
+        RhythMidiController.Instance.PrepareChart(GameStateManager.Instance.currentSongName);
+        RhythMidiController.Instance.PlayChart();
 
         Debug.Log("Start Game");
         start.localPosition = new Vector2(0, -Screen.height); // start below the screen
@@ -317,12 +383,24 @@ public class GameManager : MonoBehaviour
 
     public void OnNoteMissed(Note note)
     {
-        if(note.NoteNumber < (int)currentCharacter || note.NoteNumber > (int)currentCharacter + 3) return; // ignore other notes, like pulse and system events
-        int i = note.NoteNumber - (int)currentCharacter;
+        int i = note.NoteNumber - CurrentCharacter.midiPitchStart;
+        if(i < 0 || i >= 4) return; // ignore other notes, like pulse and system events
         Transform column = beatColumns[i];
         Instantiate(missEffect, column);
 
-        scoreboard.RegisterNoteMissed();
+        scoreboard.RegisterNoteMissed(CurrentCharacter.role);
+    }
+
+    public void ShowResultsScreen(){
+        resultsScreenManager.ShowResultsScreen(
+        scoreboard.currentScore,
+        scoreboard.numPerfectHits,
+        scoreboard.numGoodHits,
+        scoreboard.numMissedHits,
+        scoreboard.largestCombo,
+        scoreboard.notesPerCharacter,
+        timeSpentOnCharacter
+    );
     }
 }
 
