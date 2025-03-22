@@ -82,9 +82,11 @@ public class GameStateManager : MonoBehaviour
 
     public void LoadVN()
     {
-        System.GC.Collect();
+        //System.GC.Collect();
         StartCoroutine(LoadSceneAsync("VN"));
+
         //SceneManager.LoadScene("VN");
+        Time.timeScale = 1; // Add this line
     }
     IEnumerator LoadSceneAsync(string sceneName)
     {

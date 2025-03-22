@@ -143,8 +143,7 @@ public class DialougeManager : MonoBehaviour
 
         if (!string.IsNullOrEmpty(curr_dialogue.sprite) && characterSpriteImage != null)
         {
-            Sprite newSprite = Resources.Load<Sprite>($"Sprites/{curr_dialogue.sprite}");
-
+            Sprite newSprite = AssetCache.GetSprite($"Sprites/{curr_dialogue.sprite}");
             if (newSprite != null)
             {
                 LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
@@ -323,6 +322,7 @@ public class DialougeManager : MonoBehaviour
         }
     }
     private readonly WaitForSeconds letterDelay = new WaitForSeconds(0.01f);
+    private readonly WaitForSeconds secondDelay = new WaitForSeconds(1.0f);
     IEnumerator TypeSentence(string sentence)
     {
         dialougeText.text = "";
@@ -566,8 +566,7 @@ public class DialougeManager : MonoBehaviour
     {
         SFX.Stop();
 
-        AudioClip clip = Resources.Load<AudioClip>($"Audio/SFX/{sfxName}");
-        if (clip != null)
+        AudioClip clip = AssetCache.GetAudioClip($"Audio/SFX/{sfxName}"); if (clip != null)
         {
             Debug.Log($"Playing {clip}");
             SFX.PlayOneShot(clip);
@@ -606,6 +605,7 @@ public class DialougeManager : MonoBehaviour
             //yield return new WaitForSeconds(4f);
             yield return new WaitUntil(() => loadedEvents);
             yield return new WaitUntil(() => uiManager.IsReady);
+
             //yield return new WaitForSeconds(1f);
             loadedEvents = false; // DELETE THIS IF BUGSS
             StartDialogueSequence();
@@ -623,7 +623,7 @@ public class DialougeManager : MonoBehaviour
                 EndDialouge();
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return secondDelay;
         }
         activeDialogue = false;
     }
