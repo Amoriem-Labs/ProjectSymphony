@@ -9,7 +9,7 @@ public class DialougeManager : MonoBehaviour
 {
 
     // day activators
-    public bool activeDialogue =  false;
+    public bool activeDialogue = false;
     public bool isDay0 = false;
     public bool isW1D1 = false;
     public bool isW1D2 = false;
@@ -143,17 +143,17 @@ public class DialougeManager : MonoBehaviour
 
             if (newSprite != null)
             {
-                 LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
-                .setEase(LeanTweenType.easeInElastic)
-                .setOnComplete(() =>
-                {
+                LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
+               .setEase(LeanTweenType.easeInElastic)
+               .setOnComplete(() =>
+               {
                     // Change sprite after scaling down
                     characterSpriteImage.sprite = newSprite;
 
                     // Animate character sprite in
                     LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.5f)
-                        .setEase(LeanTweenType.easeOutElastic);
-                });
+                       .setEase(LeanTweenType.easeOutElastic);
+               });
                 // characterSpriteImage.sprite = newSprite;
             }
             else
@@ -168,12 +168,12 @@ public class DialougeManager : MonoBehaviour
                 Debug.LogError("curr_dialogue is null in StartDialouge!");
                 return;
             }
-            
+
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
-            
+
             Debug.Log("background is" + curr_dialogue.background);
-            uiManager.ShowLocation(curr_dialogue.background); 
-            
+            uiManager.ShowLocation(curr_dialogue.background);
+
             if (newBG != null)
             {
                 // Fade out current background
@@ -203,31 +203,13 @@ public class DialougeManager : MonoBehaviour
 
         Debug.Log($"Dialogue name: {curr_dialogue.name}, Sentences count: {curr_dialogue.sentences.Length}");
 
-        // set the text animator 
-        if (animator != null)
-        {
-            animator.SetBool("IsOpen", true);
-        }
-        else
-        {
-            Debug.LogWarning("Animator is not set in DialougeManager");
-        }
 
-        // set the charcater animator
-        if (characterAnimator != null)
-        {
-            characterAnimator.SetBool("DialougeActive", true);
-        }
-        else
-        {
-            Debug.LogWarning("Character animator is not set in DialougeManager");
-        }
 
 
         // set the name 
         if (nameText != null)
         {
-            if(curr_dialogue.name != " PC" && curr_dialogue.name != "PC" && curr_dialogue.name != " MC" && curr_dialogue.name != "MC")
+            if (curr_dialogue.name != " PC" && curr_dialogue.name != "PC" && curr_dialogue.name != " MC" && curr_dialogue.name != "MC")
             {
                 nameText.text = curr_dialogue.name;
             }
@@ -267,6 +249,25 @@ public class DialougeManager : MonoBehaviour
         Debug.Log($"Enqueued {sentences.Count} sentences");
 
         DisplayNextSentence();
+        // set the text animator 
+        if (animator != null)
+        {
+            animator.SetBool("IsOpen", true);
+        }
+        else
+        {
+            Debug.LogWarning("Animator is not set in DialougeManager");
+        }
+
+        // set the charcater animator
+        if (characterAnimator != null)
+        {
+            characterAnimator.SetBool("DialougeActive", true);
+        }
+        else
+        {
+            Debug.LogWarning("Character animator is not set in DialougeManager");
+        }
     }
 
     public void DisplayNextSentence()
@@ -285,7 +286,7 @@ public class DialougeManager : MonoBehaviour
             {
                 isEndofScene = true;
             }
-                MoveToNextDialogueEntry();
+            MoveToNextDialogueEntry();
         }
     }
 
@@ -329,19 +330,19 @@ public class DialougeManager : MonoBehaviour
     }
 
 
-//IEnumerator TypeSentence(string sentence)
-//{
-//    dialougeText.text = "";
+    //IEnumerator TypeSentence(string sentence)
+    //{
+    //    dialougeText.text = "";
 
-//    // <i> hid if < until > 
-//    for (int i = 0; i <= sentence.Length; i++)
-//    {
-//        dialougeText.text = sentence.Substring(0, i);
-//        yield return new WaitForSeconds(0.01f);
-//    }
-//}
+    //    // <i> hid if < until > 
+    //    for (int i = 0; i <= sentence.Length; i++)
+    //    {
+    //        dialougeText.text = sentence.Substring(0, i);
+    //        yield return new WaitForSeconds(0.01f);
+    //    }
+    //}
 
-public void EndDialouge()
+    public void EndDialouge()
     {
         if (isEndofScene)
         {
@@ -407,7 +408,7 @@ public void EndDialouge()
                     loadedDialogue.sprite = line.Substring(8);
                 }
             }
-            else if(line == "Options: ")
+            else if (line == "Options: ")
             {
                 AddCurrentDialogue();
                 loadedDialogue = new Dialouge();
@@ -419,10 +420,10 @@ public void EndDialouge()
                 animationManager.animationName = line.Substring(11);
                 Debug.Log($"Playing animation {animationManager.animationName}");
                 animationManager.playAnimation = true;
-   
+
             }
             else if (line.StartsWith("BG: "))
-            { 
+            {
                 if (loadedDialogue != null)
                 {
                     loadedDialogue.background = line.Substring(4);
@@ -431,13 +432,13 @@ public void EndDialouge()
             else if (line.StartsWith("BGM: "))
             {
                 loadedDialogue.bgm = line.Substring(5);
-       
+
             }
             else if (line.StartsWith("SFX: "))
             {
                 Debug.Log("SFX loaded");
                 loadedDialogue.sfx = line.Substring(5);
-   
+
             }
             else if (line.StartsWith("BG2: "))
             {
@@ -457,7 +458,7 @@ public void EndDialouge()
                 {
                     currentSentances.Add(line);
                 }
-                
+
             }
         }
         AddCurrentDialogue();
@@ -467,10 +468,10 @@ public void EndDialouge()
 
     private void AddCurrentDialogue()
     {
-        if(loadedDialogue != null)
+        if (loadedDialogue != null)
         {
             loadedDialogue.sentences = currentSentances.ToArray();
-            if(currentOptions.Count >0)
+            if (currentOptions.Count > 0)
             {
                 loadedDialogue.options = currentOptions.ToArray();
             }
@@ -481,7 +482,7 @@ public void EndDialouge()
     public void ShowChoiceOptions(string[] options)
     {
         dialougeText.enabled = false;
-        continueButton.gameObject.SetActive (false);
+        continueButton.gameObject.SetActive(false);
         nameText.text = "What should I do?";
 
         Debug.Log($"ShowChoiceOptions called with {options?.Length ?? 0} options");
@@ -492,12 +493,12 @@ public void EndDialouge()
             return;
         }
 
-        foreach(Button button in dialougueButtons)
+        foreach (Button button in dialougueButtons)
         {
             button.gameObject.SetActive(false);
         }
 
-        for(int i = 0; i < options.Length && i < dialougueButtons.Length; i++)
+        for (int i = 0; i < options.Length && i < dialougueButtons.Length; i++)
         {
             Button button = dialougueButtons[i];
 
@@ -528,7 +529,7 @@ public void EndDialouge()
             {
                 Debug.LogWarning($"Button at index {i} is null");
             }
-            
+
         }
     }
 
@@ -540,13 +541,13 @@ public void EndDialouge()
         selectedOption = dialogueSequence[currentDialogueIndex].options[optionIndex];
         Debug.Log($"Selected {selectedOption}");
         //currentDialogueIndex = 0;
-        choiceSelected = true; 
+        choiceSelected = true;
         MoveToNextDialogueEntry();
     }
 
     private void ClearActiveButtons()
     {
-        foreach(Button button in activeButtons)
+        foreach (Button button in activeButtons)
         {
             button.gameObject.SetActive(false);
         }
