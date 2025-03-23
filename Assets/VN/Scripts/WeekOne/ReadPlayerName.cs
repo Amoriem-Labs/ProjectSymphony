@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class ReadPlayerName : MonoBehaviour
 {
     private string input;
@@ -18,7 +19,7 @@ public class ReadPlayerName : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void ReadInput(string player_input)
@@ -46,6 +47,7 @@ public class ReadPlayerName : MonoBehaviour
         {
             dialoguebox.SetActive(true);
         }
+
     }
 
 }

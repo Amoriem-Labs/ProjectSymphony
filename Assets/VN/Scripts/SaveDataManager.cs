@@ -10,6 +10,14 @@ public class SaveDataManager : MonoBehaviour
     private const string PLAYER_NAME_KEY = "PlayerName.";
     private const string SLOT_NAME_KEY = "SlotName.";
     private const string SLOT_INDEX_KEY = "SlotIndex";
+    private const string CURRENT_DAY_KEY = "CurrentDay.";
+    private const string CURRENT_WEEK_KEY = "CurrentWeek.";
+    // week 1-3 affection keys 
+    private const string HOWARD_AFFECTION_KEY = "HowardAffection.";
+    private const string SAM_AFFECTION_KEY = "SamAffection.";
+    private const string DAYLO_AFFECTION_KEY = "DayloAffection.";
+    private const string CARTER_AFFECTION_KEY = "CarterAffection.";
+    private const string PAWLINE_AFFECTION_KEY = "PawlineAffection.";
 
     private DialougeManager dialogueManager;
     private MapManager mapManager;
@@ -19,6 +27,7 @@ public class SaveDataManager : MonoBehaviour
     //public Button Delete;
     public int saveSlotIndex = 0;
     public int saveSlotCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
