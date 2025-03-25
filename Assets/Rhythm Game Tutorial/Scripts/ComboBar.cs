@@ -9,8 +9,12 @@ public class ComboBar : MonoBehaviour
     public Slider slider;
     private Coroutine smoothTransitionCoroutine;
 
+    public Image barFill;
+
     void Start()
     {
+        LeanTween.color(barFill.rectTransform, Color.white, 1f)
+                    .setEase(LeanTweenType.easeInOutCubic);
         slider.value = 0;
     }
 
@@ -24,6 +28,18 @@ public class ComboBar : MonoBehaviour
             {
                 slider.value = value; // Update the slider value during the transition
             });
+        
+        
+    }
+    public void ChangeColorBlue()
+    {
+        LeanTween.color(barFill.rectTransform, Color.blue, 1.5f)
+            .setEase(LeanTweenType.easeInOutCubic);
+    }
+    public void ChanceColorYellow()
+    {
+         LeanTween.color(barFill.rectTransform, Color.yellow, 1.5f)
+                    .setEase(LeanTweenType.easeInOutCubic);
     }
 
 

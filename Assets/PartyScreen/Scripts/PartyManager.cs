@@ -20,6 +20,9 @@ public class PartyManager : MonoBehaviour
     ComboBar chemistryBar;
     List<CharacterSlot> characterSlots = new List<CharacterSlot>();
 
+    public AudioSource audioSource;
+    public AudioClip select;
+
     // Important Values // 
     public float threshold; // can be edited
 
@@ -77,6 +80,7 @@ public class PartyManager : MonoBehaviour
 
     public void SelectCharacter(CharacterData characterData)
     {
+        audioSource.PlayOneShot(select);
         int idx = (int)characterData.character.role - 1;
         characterNameLabels[idx].text = characterData.character.name;
         characterInstrumentLabels[idx].text = characterData.character.instrument;

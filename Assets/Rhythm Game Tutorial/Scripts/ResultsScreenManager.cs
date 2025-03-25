@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 using TMPro;
 using System;
+using System.Collections;
+using Unity.VisualScripting;
+
+
 public class ResultsScreenManager : MonoBehaviour
 {
     public Image gradeImage;
@@ -12,16 +16,42 @@ public class ResultsScreenManager : MonoBehaviour
     public TextMeshProUGUI favCharText;
     public TextMeshProUGUI ComboText;
     
-    public TextMeshProUGUI RatioText;
+    //public TextMeshProUGUI RatioText;
+
+    public TextMeshProUGUI StellarText;
+    public TextMeshProUGUI GoodText;
+    public TextMeshProUGUI MissText;
+
+    public Image header;
+    public Image body;
+
+    public GameObject AllStellar;
+    public GameObject FullCombo;
+
+    [SerializeField]
+    private float jumpingWait = 0.2f;
+
+    public AudioSource ResultsAudio;
+    public AudioClip[] SFX;
+
+    public ComboBar ChemistryBar;
     public void ShowResultsScreen(int finalScore, int perfectHits, int goodHits, int missedHits, int largestCombo, Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
         gameObject.SetActive(true);
+
+        ChemistryBar.SetScore(0); // PLACEHOLDER: NEED TO CHANGE TO CURRENT CHEMISTRY
 
         int totalNotes = perfectHits + goodHits + missedHits;
 
         favCharText.text = GetFavoriteCharacter(timeSpentOnCharacter);
         ComboText.text = largestCombo.ToString();
-        RatioText.text = perfectHits.ToString() + "/" + goodHits.ToString() + "/" + missedHits.ToString();
+        StellarText.text = perfectHits.ToString();
+        GoodText.text = goodHits.ToString();
+        MissText.text =  missedHits.ToString();
+
+        double chemistry = CalculateChemistry(notes, timeSpentOnCharacter);
+
+        StartCoroutine(ResultsAnimate(chemistry));
 
         foreach (var character in notes.Keys)
         {
@@ -38,6 +68,83 @@ public class ResultsScreenManager : MonoBehaviour
         UpdateGradeImage(CalculateOverallGrade(notes));
     }
 
+    IEnumerator ResultsAnimate(double chemistry)
+    {
+
+        LeanTween.scale(StellarText.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
+        LeanTween.scale(GoodText.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
+        LeanTween.scale(MissText.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
+
+        LeanTween.scale(ComboText.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
+        LeanTween.scale(favCharText.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
+
+        RectTransform headerRect = header.GetComponent<RectTransform>();
+        RectTransform bodyRect = body.GetComponent<RectTransform>();
+
+        // Start positions (off-screen)
+        headerRect.localPosition = new Vector3(-Screen.width, -Screen.height, 0); // Lower left
+        bodyRect.localPosition = new Vector3(Screen.width, Screen.height, 0);     // Upper right
+
+        // Scale down to zero initially
+        headerRect.localScale = Vector3.zero;
+        bodyRect.localScale = Vector3.zero;
+
+        // Move and scale header first
+        LeanTween.moveLocal(header.gameObject, new Vector3(-472, 200, 0), 0.3f)
+                .setEase(LeanTweenType.easeOutQuart);
+        LeanTween.scale(header.gameObject, new Vector3(10,10,10), 0.3f)
+                .setEase(LeanTweenType.easeOutBack)
+                .setOnComplete(() => {
+                    
+                    // Move and scale body after header animation
+                    LeanTween.moveLocal(body.gameObject, new Vector3(148, 8, 0), 0.3f)
+                            .setEase(LeanTweenType.easeOutQuart);
+                    LeanTween.scale(body.gameObject, new Vector3(16.5f,16.5f,16.5f), 0.3f)
+                            .setEase(LeanTweenType.easeOutBack);
+                });
+
+
+        yield return new WaitForSeconds(0.6f);
+
+        LeanTween.scale(StellarText.GetComponent<RectTransform>(), Vector3.one, jumpingWait)
+            .setEase(LeanTweenType.easeInBounce);
+        ResultsAudio.PlayOneShot(SFX[0]);
+        yield return new WaitForSeconds(0.1f);
+        LeanTween.scale(GoodText.GetComponent<RectTransform>(), Vector3.one, jumpingWait)
+            .setEase(LeanTweenType.easeInBounce);
+        ResultsAudio.PlayOneShot(SFX[0]);
+        yield return new WaitForSeconds(0.1f);
+        LeanTween.scale(MissText.GetComponent<RectTransform>(), Vector3.one, jumpingWait);
+         ResultsAudio.PlayOneShot(SFX[0]);
+        yield return new WaitForSeconds(0.1f);
+        LeanTween.scale(ComboText.GetComponent<RectTransform>(), new Vector3(0.1f, 0.1f, 0.1f), jumpingWait);
+        ResultsAudio.PlayOneShot(SFX[0]);
+        yield return new WaitForSeconds(0.1f);
+        LeanTween.scale(favCharText.GetComponent<RectTransform>(), new Vector3(0.1f, 0.1f, 0.1f), jumpingWait);
+        ResultsAudio.PlayOneShot(SFX[0]);
+
+        yield return new WaitForSeconds(0.5f);
+
+        if (chemistry < 0)
+        {
+            ChemistryBar.ChangeColorBlue();
+            Debug.Log("negative chemistry change");
+        }
+        // else if (chemistry > 0)
+        // {
+        //     ChemistryBar.ChangeColorBlue();
+        //     Debug.Log("positive chemistry change");
+        // }
+        // else
+        // {
+        //     Debug.Log("no change");
+        // }
+
+        ChemistryBar.SetScore(-50);
+        // change chemistry here PLACEHOLDER: CHEMISTRY HERE IS RETURNED AS THE NET CHANGE
+        
+        yield return null;
+    }
     public void HideResultsScreen()
     {
         gameObject.SetActive(false);
@@ -156,6 +263,8 @@ public class ResultsScreenManager : MonoBehaviour
 
     private void UpdateGradeImage(int grade)
     {
+        LeanTween.scale(gradeImage.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
+        Debug.Log("Update Grade Image");
         switch (grade)
         {
             case 5:
@@ -177,6 +286,18 @@ public class ResultsScreenManager : MonoBehaviour
                 gradeImage.sprite = SS_Grade;
                 break;
         }
+        StartCoroutine(AnimateGrade());
+    }
+    private IEnumerator AnimateGrade()
+    {
+        yield return new WaitForSeconds(2f);
+        Debug.Log("grade animated");
+         ResultsAudio.PlayOneShot(SFX[1]);
+         LeanTween.scale(gradeImage.GetComponent<RectTransform>(), new Vector3(0.15f, 0.15f, 0.15f), jumpingWait)
+        .setEase(LeanTweenType.easeInBounce);
+        
+        yield return null;
+
     }
 
     private int CalculateOverallGrade(Dictionary<CharacterRole, List<int>> notes)
@@ -205,6 +326,7 @@ public class ResultsScreenManager : MonoBehaviour
         if (stellarRatio >= 10 && (goodRatio > 75 || (missRatio >= 20 && missRatio <= 30))) return 1; 
         return 0; // F
     }
+    
 }
 
 

@@ -113,7 +113,7 @@ public class Scoreboard
         // made change here
         scoreText.text = "" + currentScore; 
         multiplierText.text = "Multiplier: x" + currentMultiplier;
-        comboBar.SetScore(currentScore); // will change here
+        comboBar.SetScore(currentCombo); // current combo instead
 
         
     }
