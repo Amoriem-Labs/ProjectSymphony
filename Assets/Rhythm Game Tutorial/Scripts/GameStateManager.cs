@@ -114,5 +114,9 @@ public class GameStateManager : MonoBehaviour
         RhythMidiController.Instance.ClearCallbacks();
         SceneManager.LoadScene("Start copy");
     }
+
+
+ 
 }
+
 

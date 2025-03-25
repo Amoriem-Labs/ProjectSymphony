@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 
 
 public class DialougeManager : MonoBehaviour
@@ -75,8 +77,13 @@ public class DialougeManager : MonoBehaviour
     // UI Manager
     public GameObject UIManager;
     UIManager uiManager;
+    private List<bool> SceneList;
+    public Button saveScreen;
     void Awake()
     {
+
+        SceneList = new List<bool>();
+        SetSceneBools();
         loadedEvents = false; // DELETE THIS IF BUGSS
 
         animationManager = GetComponent<AnimationManager>();
@@ -99,8 +106,49 @@ public class DialougeManager : MonoBehaviour
                 Destroy(managers[i].gameObject);
             }
         }
+        saveScreen.onClick.AddListener(SaveScreen);
+        InitArr(SceneList);
     }
 
+   
+
+    private void InitArr(List<bool> arr)
+    {
+        arr.Add(isDay0);
+        arr.Add(isW1D1);
+        arr.Add(isW1D2);
+        arr.Add(isW1D3);
+        arr.Add(isW2D1A);
+        arr.Add(isW2D1B);
+        arr.Add(isW2D2A);
+        arr.Add(isW2D2B);
+        arr.Add(isW2D3);
+        arr.Add(isW2D4);
+        arr.Add(isW2D5);
+        arr.Add(isW3D1);
+        arr.Add(isW3D2);
+        arr.Add(isW3D3);
+        arr.Add(isW3D4);
+    }
+    public void SetSceneBools()
+    {
+        for (int i = 0; i < SceneList.Count; i++)
+        {
+            if (i == PlayerPrefs.GetInt("SceneIndex."))
+            {
+                SceneList[i] = true;
+            }
+            else
+            {
+                SceneList[i] = false;
+            }
+        }
+    }
+    public void UpdatePPref(bool sceneBool)
+    {
+        int index = SceneList.IndexOf(sceneBool);
+        PlayerPrefs.SetInt("SceneIndex.", index);
+    }
     public void StartDialogueSequence()
     {
         if (dialogueSequence != null && dialogueSequence.Count > 0)
@@ -629,7 +677,10 @@ public class DialougeManager : MonoBehaviour
     }
 
 
-
+    public void SaveScreen()
+    {
+        SceneManager.LoadScene("SaveScreen");
+    }
 
 
 }

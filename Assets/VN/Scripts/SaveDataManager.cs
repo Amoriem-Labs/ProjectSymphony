@@ -18,12 +18,15 @@ public class SaveDataManager : MonoBehaviour
     private const string DAYLO_AFFECTION_KEY = "DayloAffection.";
     private const string CARTER_AFFECTION_KEY = "CarterAffection.";
     private const string PAWLINE_AFFECTION_KEY = "PawlineAffection.";
+    private const string SCENE_INDEX_KEY = "SceneIndex.";
 
     private DialougeManager dialogueManager;
     private MapManager mapManager;
     public GameObject saveSlotPanel;
     public GameObject saveSlotButtonPrefab;
     public Button SaveButton;
+    //public Button SaveButtonVN;
+
     //public Button Delete;
     public int saveSlotIndex = 0;
     public int saveSlotCount = 0;
@@ -31,24 +34,32 @@ public class SaveDataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         // 0 is VN
         // 1 is map
         // 2 is Rhythm
         PlayerPrefs.SetInt("SceneToLoad", 0);
         dialogueManager = FindAnyObjectByType<DialougeManager>();
         mapManager = FindAnyObjectByType<MapManager>();
-        DisplaySaves();
-        PlayerPrefs.SetInt(SLOT_INDEX_KEY, 1);
+
+        if (!PlayerPrefs.HasKey(SLOT_INDEX_KEY))
+        {
+            PlayerPrefs.SetInt(SLOT_INDEX_KEY, 1);
+
+        }
+        if (!PlayerPrefs.HasKey(SLOT_INDEX_KEY))
+        {
+            PlayerPrefs.SetInt(SCENE_INDEX_KEY, 0);
+
+        }
+
         SaveButton.onClick.AddListener(() => SaveGame(PlayerPrefs.GetInt(SLOT_INDEX_KEY)));
+        //SaveButtonVN.onClick.AddListener(() => SaveGame(PlayerPrefs.GetInt(SLOT_INDEX_KEY)));
+
         DisplaySaves();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
     void DisplaySaves()
     {
         // Clear any existing save slot buttons
@@ -108,6 +119,7 @@ public class SaveDataManager : MonoBehaviour
 
     public void SaveGame(int saveName)
     {
+       
         //saveSlotCount += 1;
         Debug.Log($"Save Name: {saveName}");
         //saveName
@@ -118,6 +130,7 @@ public class SaveDataManager : MonoBehaviour
         Debug.Log($"Save Count: {saveSlotCount}");
         PlayerPrefs.SetInt("Index" + saveName.ToString(), saveSlotCount);
         PlayerPrefs.SetInt(SLOT_INDEX_KEY, PlayerPrefs.GetInt(SLOT_INDEX_KEY) + 1);
+        PlayerPrefs.SetInt(SCENE_INDEX_KEY + saveName.ToString(), PlayerPrefs.GetInt(SCENE_INDEX_KEY)); 
         PlayerPrefs.Save();
         DisplaySaves();
 
@@ -128,7 +141,7 @@ public class SaveDataManager : MonoBehaviour
         Debug.Log("data loaded " + saveName.ToString());
         //dialogueManager.inputtedName = PlayerPrefs.GetString(PLAYER_NAME_KEY + saveName);
         saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
-
+        PlayerPrefs.SetInt(SCENE_INDEX_KEY, PlayerPrefs.GetInt(SCENE_INDEX_KEY + saveName.ToString()));
         SceneManager.LoadScene("Splash");
     }
 
@@ -137,6 +150,25 @@ public class SaveDataManager : MonoBehaviour
         PlayerPrefs.DeleteKey(PLAYER_NAME_KEY + saveName);
         PlayerPrefs.DeleteKey(SLOT_NAME_KEY + saveName);
 
+    }
+    private void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            DeleteAllPlayerPrefs();
+        }
+    }
+    void DeleteAllPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        
+        Debug.Log("All PlayerPrefs have been deleted.");
+        PlayerPrefs.SetInt(SLOT_INDEX_KEY, 1);
+        PlayerPrefs.SetInt(SCENE_INDEX_KEY, 0);
+        PlayerPrefs.SetInt("SceneToLoad", 0);
+        PlayerPrefs.Save();
+        DisplaySaves();
     }
 
 }
