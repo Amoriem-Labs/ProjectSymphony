@@ -11,7 +11,7 @@ using Unity.VisualScripting;
 public class ResultsScreenManager : MonoBehaviour
 {
     public Image gradeImage;
-    public Sprite SS_Grade, S_Grade, A_Grade, B_Grade, C_Grade, D_Grade;
+    public Sprite SS_Grade, S_Grade, A_Grade, B_Grade, C_Grade, D_Grade, F_Grade;
 
     public TextMeshProUGUI favCharText;
     public TextMeshProUGUI ComboText;
@@ -283,7 +283,7 @@ public class ResultsScreenManager : MonoBehaviour
                 gradeImage.sprite = D_Grade;
                 break;
             default:
-                gradeImage.sprite = SS_Grade;
+                gradeImage.sprite = F_Grade;
                 break;
         }
         StartCoroutine(AnimateGrade());

@@ -1647,6 +1647,7 @@ MonoBehaviour:
   B_Grade: {fileID: 21300000, guid: 047c3d47259391a4983cf42b80bcef56, type: 3}
   C_Grade: {fileID: 21300000, guid: b00ff68b988a740418edf48202f0f3a6, type: 3}
   D_Grade: {fileID: 21300000, guid: 1036bd0a78f2a5f4eb94e90bb3a97f85, type: 3}
+  F_Grade: {fileID: 21300000, guid: de20c356b7671431d8bf6728e2093a40, type: 3}
   favCharText: {fileID: 1915466564}
   ComboText: {fileID: 366181237}
   StellarText: {fileID: 724955864}
