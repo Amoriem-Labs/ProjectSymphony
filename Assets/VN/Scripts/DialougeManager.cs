@@ -149,6 +149,7 @@ public class DialougeManager : MonoBehaviour
         int index = SceneList.IndexOf(sceneBool);
         PlayerPrefs.SetInt("SceneIndex.", index);
     }
+
     public void StartDialogueSequence()
     {
         if (dialogueSequence != null && dialogueSequence.Count > 0)
