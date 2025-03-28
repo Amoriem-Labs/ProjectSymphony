@@ -7891,7 +7891,7 @@ MonoBehaviour:
   isW2D5: 0
   isW3D1: 0
   isW3D2: 0
-  isW3D3: 0
+  isW3D3: 1
   isW3D4: 0
   inputtedName: Chris
   nameText: {fileID: 1187265764}
@@ -11434,6 +11434,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d1aa37969e84f0e91f16313c73a531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStarted: 0
+  DP1_1: 1
+  DP1_2: 0
+  DP1_3: 0
+  DP1_4: 0
+  DP1_5: 0
+  DP1_6: 0
+  DP1_7: 0
+  DP1_8: 0
+  DP1_9: 0
 --- !u!1 &1933815000
 GameObject:
   m_ObjectHideFlags: 0

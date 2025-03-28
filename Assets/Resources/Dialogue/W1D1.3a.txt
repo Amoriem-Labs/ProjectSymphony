@@ -1,5 +1,6 @@
 Name: ???
 Sprite: Howard_At_Peace
+BGM: HowardTheme
 We're just chilling. People are being kind of intense right now.
 
 Name: ???
@@ -27,12 +28,12 @@ Sprite: Sam_Happy
 Hi! Nice to meet you!
 
 Name: PC
-I'm [WRITE-IN]. 
+I'm PC. 
 
 Name: Howard
 Sprite: Howard_Understanding
-Nice to meet you, MC! Where are you from?
+Nice to meet you, PC! Where are you from?
 
 Options: 
-I'm from PLANET ONE.
-I'm from PLANET TWO.
+I'm from Resonara.
+I'm from Zypharion.

@@ -83,6 +83,9 @@ public class DialougeManager : MonoBehaviour
     {
 
         SceneList = new List<bool>();
+        InitArr(SceneList);
+        SetSceneBools();
+
         loadedEvents = false; // DELETE THIS IF BUGSS
 
         animationManager = GetComponent<AnimationManager>();
@@ -106,8 +109,6 @@ public class DialougeManager : MonoBehaviour
             }
         }
         saveScreen.onClick.AddListener(SaveScreen);
-        InitArr(SceneList);
-        SetSceneBools();
 
     }
 
@@ -247,20 +248,14 @@ public class DialougeManager : MonoBehaviour
             {
               backgroudSpriteImage.sprite = newBG;
 
-                //// Fade out current background
-                //LeanTween.alpha(backgroudSpriteImage.rectTransform, 0f, 0.5f).setOnComplete(() =>
-                //{
-                //    // Change background sprite after fade out
-                //    backgroudSpriteImage.sprite = newBG;
-
-                //    // Fade in the new background
-                //    LeanTween.alpha(backgroudSpriteImage.rectTransform, 1f, 0.5f);
-                //});
-                // backgroudSpriteImage.sprite = newBG;
             }
             else
             {
-                Debug.LogWarning($"Failed to load background: {curr_dialogue.background}");
+                if(curr_dialogue.background != null)
+                {
+                    Debug.LogWarning($"Failed to load background: {curr_dialogue.background}");
+
+                }
             }
         }
 
