@@ -7,7 +7,7 @@ Name: PC
 
 Name: Sam 
 Sprite: Sam_Happy
-Oh my gosh here comes <i>Patricia</i>!
+Oh my gosh here comes <i>Isabella</i>!
 
 Name:   
 <i> Sam frantically pulls out her guitar. </i>

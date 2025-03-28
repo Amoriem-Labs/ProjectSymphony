@@ -1,5 +1,6 @@
 Name: Sam
 Sprite: Sam_Pensive
+BG: LockerRoom
 I think that's it!
 
 Name: Howard

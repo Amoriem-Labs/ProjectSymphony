@@ -20,6 +20,8 @@ A gust of wind seems to blow through the trees at Howard's words. The ground rum
 Name: Howard
 Sprite: Howard_Uncomfortable
 Anyway, let's go back to the main campus.
+BG: Hallway
+BGM: what_s next (hallway)
 Sprite: Howard_Shrug
 From here you can get anywhere in the school. Don't ask me how it works - I don't understand either.
 

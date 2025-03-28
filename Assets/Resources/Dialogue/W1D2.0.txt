@@ -1,6 +1,6 @@
 Name:   
 Sprite: EMPTY
-BG: LockerRoom
+BG: Bedroom
 <i>Your suitcase is finally empty on the floor before you, and all your possessions are strewn across your bed.</i>
 
 Name: PC

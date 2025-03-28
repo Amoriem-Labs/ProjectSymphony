@@ -1,7 +1,7 @@
 Name: Sam
 BG: LockerRoom
 Sprite: Sam_Pensive
-Ooh let me. I spend a lot of time there practicing my songs for Patricia!
+Ooh let me. I spend a lot of time there practicing my songs for Isabella!
 
 Name: Howard
 Sprite: Howard_Shrug
@@ -10,9 +10,8 @@ Oh geez, here we go again.
 Name: Sam
 Sprite: Sam_Happy
 Actually, I have a new one I've been working on recently! I'll run it by y'all as we walk.
-
-SFX: Sam_Guitar_Strum
 ♫ Like the sun, you are the only one for me–♫
+SFX: Sam_Guitar_Strum
 
 Name: Howard
 Sprite: Howard_Uncomfortable
