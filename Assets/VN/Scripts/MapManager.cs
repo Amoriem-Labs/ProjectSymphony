@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MapManager : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class MapManager : MonoBehaviour
         public bool isRequired;
         public string locationName;
         public string EventText;
-        public string SceneTransition;
+        public int SceneTransition;
         public int week;
-        public mapObject(Button btn, bool complete, bool unlocked, bool required, string name, int wk, string EventTxt, string sceneName)
+        public mapObject(Button btn, bool complete, bool unlocked, bool required, string name, int wk, string EventTxt, int sceneName)
         {
             button = btn;
             isComplete = complete;
@@ -71,8 +72,11 @@ public class MapManager : MonoBehaviour
             }
         }
     }
+    //private DialougeManager dialogueManager;
+
     void Start()
     {
+        //dialogueManager = FindAnyObjectByType<DialougeManager>();
         mainEventSelected = false;
         credits = 3;
         weekNum = 1;
@@ -166,12 +170,12 @@ public class MapManager : MonoBehaviour
     void initAllEvents()
     {
         //void addEvent(Button location, complete?, unlocked?, required?, string loc, int weeknum)
-        addEvent(School, false, true, true, "Library", 1, "Should I meet Carter at the School?", "W1D1");
-        addEvent(Gym, false, true, false, "Gym", 1, "Should I train with Sam in the gym?", "W1D2");
-        addEvent(Hanger, false, true, false, "Hanger", 1, "Should I meet Daylo at the hanger?", "W4D3");
-        addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", "W1D3");
-        addEvent(Tower, false, true, false, "Tower", 1, "Should I meet Carter at the tower?", "W4D2");
-        addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", "W5D2");
+        addEvent(School, false, true, true, "Library", 1, "Should I meet Carter at the School?", 1);
+        addEvent(Gym, false, true, false, "Gym", 1, "Should I train with Sam in the gym?", 2);
+        addEvent(Hanger, false, true, false, "Hanger", 1, "Should I meet Daylo at the hanger?", 3);
+        addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", 4);
+        addEvent(Tower, false, true, false, "Tower", 1, "Should I meet Carter at the tower?", 5);
+        addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", 6);
     }
 
     void initWeekEvents()
@@ -185,7 +189,7 @@ public class MapManager : MonoBehaviour
             }
         }
     }
-    void addEvent(Button location, bool comp, bool Unlock, bool require, string loc, int weeknum, string txtevent, string transitionName)
+    void addEvent(Button location, bool comp, bool Unlock, bool require, string loc, int weeknum, string txtevent, int transitionName)
     {
         if (allEvents.ContainsKey(loc))
         {
@@ -245,8 +249,11 @@ public class MapManager : MonoBehaviour
             }
 
             Debug.Log("Transition to " + obj.SceneTransition);
-
+            //dialogueManager.UpdatePPref(obj.SceneTransition);
+            PlayerPrefs.SetInt("SceneIndex.", obj.SceneTransition);
             credits -= 1;
+            PlayerPrefs.SetInt("SceneToLoad", 0);
+            SceneManager.LoadScene("Splash");        
         }
         else if (button == No)
         {
