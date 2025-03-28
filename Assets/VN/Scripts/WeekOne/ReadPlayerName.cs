@@ -31,7 +31,7 @@ public class ReadPlayerName : MonoBehaviour
             dialogueManager.inputtedName = "Chris";
             Debug.Log("player name entered was null default name is : " + dialogueManager.inputtedName);
             dialogueManager.isW1D1 = true;
-            dialogueManager.UpdatePPref(dialogueManager.isW1D1);
+            dialogueManager.UpdatePPref(1);
             playerNameReader.gameObject.SetActive(false);
 
 

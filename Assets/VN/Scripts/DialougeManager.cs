@@ -83,7 +83,6 @@ public class DialougeManager : MonoBehaviour
     {
 
         SceneList = new List<bool>();
-        SetSceneBools();
         loadedEvents = false; // DELETE THIS IF BUGSS
 
         animationManager = GetComponent<AnimationManager>();
@@ -108,9 +107,11 @@ public class DialougeManager : MonoBehaviour
         }
         saveScreen.onClick.AddListener(SaveScreen);
         InitArr(SceneList);
+        SetSceneBools();
+
     }
 
-   
+
 
     private void InitArr(List<bool> arr)
     {
@@ -143,11 +144,27 @@ public class DialougeManager : MonoBehaviour
                 SceneList[i] = false;
             }
         }
+        isDay0 = SceneList[0];
+        isW1D1 = SceneList[1];
+        isW1D2 = SceneList[2];
+        isW1D3 = SceneList[3];
+        isW2D1A = SceneList[4];
+        isW2D1B = SceneList[5];
+        isW2D2A = SceneList[6];
+        isW2D2B = SceneList[7];
+        isW2D3 = SceneList[8];
+        isW2D4 = SceneList[9];
+        isW2D5 = SceneList[10];
+        isW3D1 = SceneList[11];
+        isW3D2 = SceneList[12];
+        isW3D3 = SceneList[13];
+        isW3D4 = SceneList[14];
     }
-    public void UpdatePPref(bool sceneBool)
+    public void UpdatePPref(int index)
     {
-        int index = SceneList.IndexOf(sceneBool);
+        //int index = SceneList.IndexOf(sceneBool);
         PlayerPrefs.SetInt("SceneIndex.", index);
+        SetSceneBools();
     }
 
     public void StartDialogueSequence()

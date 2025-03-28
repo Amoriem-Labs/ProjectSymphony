@@ -230,7 +230,7 @@ public class W1D1 : MonoBehaviour
             {
                 END = false;
                 dialogueManager.isW1D2 = true;
-                dialogueManager.UpdatePPref(dialogueManager.isW1D2);
+                dialogueManager.UpdatePPref(2);
 
             }
 

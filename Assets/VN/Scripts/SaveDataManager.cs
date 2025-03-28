@@ -47,8 +47,9 @@ public class SaveDataManager : MonoBehaviour
             PlayerPrefs.SetInt(SLOT_INDEX_KEY, 1);
 
         }
-        if (!PlayerPrefs.HasKey(SLOT_INDEX_KEY))
+        if (!PlayerPrefs.HasKey(SCENE_INDEX_KEY))
         {
+            Debug.Log("SCEENE INDEX REPLACED");
             PlayerPrefs.SetInt(SCENE_INDEX_KEY, 0);
 
         }
@@ -130,7 +131,8 @@ public class SaveDataManager : MonoBehaviour
         Debug.Log($"Save Count: {saveSlotCount}");
         PlayerPrefs.SetInt("Index" + saveName.ToString(), saveSlotCount);
         PlayerPrefs.SetInt(SLOT_INDEX_KEY, PlayerPrefs.GetInt(SLOT_INDEX_KEY) + 1);
-        PlayerPrefs.SetInt(SCENE_INDEX_KEY + saveName.ToString(), PlayerPrefs.GetInt(SCENE_INDEX_KEY)); 
+        PlayerPrefs.SetInt(SCENE_INDEX_KEY + saveName.ToString(), PlayerPrefs.GetInt(SCENE_INDEX_KEY));
+        //dialogueManager.SetSceneBools();
         PlayerPrefs.Save();
         DisplaySaves();
 
