@@ -42,6 +42,6 @@ Name: Howard
 Sprite: Howard_at_peace
 Well you two are definitely getting along. Do you mind if I take his leash off? I know he's more comfortable without it.
 
-Options:  
+Options: 
 Let Howard take Ina's leash off.
 Do not let Howard take Ina's leash off.

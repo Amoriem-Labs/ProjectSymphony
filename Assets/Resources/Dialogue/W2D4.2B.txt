@@ -1,0 +1,7 @@
+Name: Sam
+Sprite: Sam_Happy
+You think so?
+I can totally see that.
+Name: Howard
+Sprite: Howard_Shrug
+I'm not sure... I've heard that Rival is an incredibly talented pianist.

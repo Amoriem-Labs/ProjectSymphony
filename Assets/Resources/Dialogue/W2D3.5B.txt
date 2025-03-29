@@ -1,0 +1,6 @@
+Name: Sam
+Sprite: Sam_Pensive
+Thank you.
+Name: Howard
+Sprite: Howard_Uncomfortable
+Huh, alright then.

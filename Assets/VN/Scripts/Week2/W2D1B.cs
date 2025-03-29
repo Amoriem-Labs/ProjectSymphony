@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class W2D1B : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class W2D1B : MonoBehaviour
     private bool DP1 = true;
     private bool DP2 = false;
     private bool DP3 = false;
+    private bool DP4 = false;
 
     bool END = false;
 
@@ -54,15 +56,15 @@ public class W2D1B : MonoBehaviour
                 if (currselectedOption == "Let Howard take Ina's leash off.")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.1a", "W1D1.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.1a", "W2D1.2" }));
                     DP2 = true;
 
                 }
-                else if (currselectedOption == "Do not Let Howard take Ina's leash off.")
+                else if (currselectedOption == "Do not let Howard take Ina's leash off.")
                 {
                     DP2 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.1b", "W1D1.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.1b", "W2D1.2" }));
                 }
 
 
@@ -83,7 +85,7 @@ public class W2D1B : MonoBehaviour
                 if (currselectedOption == "Go to the Park.")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2a", "W1D1.3" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2a", "W2D1.3" }));
                     DP3 = true;
 
                 }
@@ -91,7 +93,7 @@ public class W2D1B : MonoBehaviour
                 {
                     DP3 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2b", "W1D1.3" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2b", "W2D1.3" }));
                 }
 
 
@@ -109,24 +111,54 @@ public class W2D1B : MonoBehaviour
                 if (currselectedOption == "Catch the Ina by surprise.")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2a", "W1D1.3" }));
-                    DP3 = true;
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.3a", "W2D1.4" }));
+                    DP4 = true;
 
                 }
                 else if (currselectedOption == "Go to the Hallway.")
                 {
-                    DP3 = true;
+                    DP4 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2b", "W1D1.3" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.3b", "W2D1.4" }));
                 }
 
 
             }
 
-            if (END)
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP4)
             {
-                // go back to map 
+                string currselectedOption = dialogueManager.selectedOption;
+
+                // restart manager's selected option
+                DP4 = false;
+                dialogueManager.selectedOption = "";
+
+                // change this to the options that are in your file [up to 4]
+                if (currselectedOption == "Draw Inspiration from Sam.")
+                {
+                    // load the next dialogue
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.4a", "W2D1.5" }));
+                    END = true;
+
+
+                }
+                else if (currselectedOption == "Look for something to Trap the Dog in.")
+                {
+                    // load the next dialogue
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.4b", "W2D1.5" }));
+                    END = true;
+
+                }
+
+                if (dialogueManager.activeDialogue == false && END)
+                {
+                    // add scene management stuff
+                    SceneManager.LoadScene("MapScreen");
+                }
+
+
             }
+
 
 
         }

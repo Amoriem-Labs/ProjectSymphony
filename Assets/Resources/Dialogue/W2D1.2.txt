@@ -96,6 +96,6 @@ Darn it!
 Name: PC
 Ugh. Where could he have gone now?
 
-Options:  
+Options: 
 Go to the Park.
 Go to the Hallway.

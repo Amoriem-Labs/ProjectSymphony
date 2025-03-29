@@ -1,0 +1,15 @@
+Name: PC
+...What do you mean?
+Name: Ms.A
+Sprite: GC_Neutral
+Well, I just mean that I can tell you're having a little bit of a rough start. Are you in any clubs?
+
+Name: PC
+No...
+(Does this school have clubs?)
+
+Name: Ms.A
+And you don't have many friends yet, do you.
+Options: 
+I have Howard and Sam!
+No...

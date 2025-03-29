@@ -16,11 +16,7 @@ public class W2D1A : MonoBehaviour
     // make one bool for each decision point
     private bool DP1 = true;
     private bool DP2 = false;
-    private bool DP3 = false;
-    private bool A = false;
-    private bool B = false;
-    private bool C = false;
-    private bool D = false;
+
 
     bool END = false;
 
@@ -116,7 +112,7 @@ public class W2D1A : MonoBehaviour
                     if (dialogueManager.activeDialogue == false && END)
                     {
                         // add scene management stuff
-                        SceneManager.LoadScene("Splash");
+                        SceneManager.LoadScene("MapScreen");
                     }
 
                 }

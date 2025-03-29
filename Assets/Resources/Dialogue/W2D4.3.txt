@@ -1,0 +1,9 @@
+Name: Sam
+Sprite: Sam_Sad
+Well... now we have to go back to class.
+Name: Howard
+Sprite: Howard_At_Peace
+I'll catch up with you guys after school.
+Name: Sam
+Sprite: Sam_Happy
+See you later!

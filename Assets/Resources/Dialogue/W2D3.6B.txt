@@ -1,0 +1,25 @@
+Name: Howard
+Sprite: Howard_Understanding
+Oh, well that makes sense. She's really nice, I bet she just wanted to make you feel better starting out, like you have someone else to talk to besides us two.
+Name: PC
+Sprite: EMPTY
+Besides you two...
+Name: Howard
+Sprite: Howard_Uncomfortable
+What?
+Name: PC
+Sprite: EMPTY
+Nothing.
+I just, you guys don't know anyone else here?
+Name: Howard
+Sprite: Howard_Uncomfortable
+Do we need to?
+Name: PC
+Sprite: EMPTY
+I guess not. 
+Name: Sam
+Sprite: Sam_Pensive
+Sam [thinking]	I want to be in a band...
+Name: Howard
+Sprite: Howard_Shrug
+Oh jeez, not this again.
