@@ -100,6 +100,8 @@ public class W2D4 : MonoBehaviour
                     if (dialogueManager.activeDialogue == false)
                     {
                         END = false;
+                        dialogueManager.isW2D5 = true;
+                        dialogueManager.UpdatePPref(10);
                         // dialogueManager.isW3D4 = true;
                         // dialogueManager.UpdatePPref(14);
 

@@ -159,7 +159,7 @@ public class W2D3 : MonoBehaviour
                 {
                     DP6 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.4" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.5" }));
                 }
 
             }
@@ -217,8 +217,8 @@ public class W2D3 : MonoBehaviour
                 if (dialogueManager.activeDialogue == false)
                 {
                     END = false;
-                    dialogueManager.isW3D4 = true;
-                    dialogueManager.UpdatePPref(14);
+                    dialogueManager.isW2D4 = true;
+                    dialogueManager.UpdatePPref(9);
 
                 }
 

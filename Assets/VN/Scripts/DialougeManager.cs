@@ -24,6 +24,7 @@ public class DialougeManager : MonoBehaviour
     public bool isW2D3 = false;
     public bool isW2D4 = false;
     public bool isW2D5 = false;
+    public bool isW2D6 = false;
 
     public bool isW3D1 = false;
     public bool isW3D2 = false;
@@ -120,6 +121,7 @@ public class DialougeManager : MonoBehaviour
         arr.Add(isW1D1);
         arr.Add(isW1D2);
         arr.Add(isW1D3);
+
         arr.Add(isW2D1A);
         arr.Add(isW2D1B);
         arr.Add(isW2D2A);
@@ -127,10 +129,13 @@ public class DialougeManager : MonoBehaviour
         arr.Add(isW2D3);
         arr.Add(isW2D4);
         arr.Add(isW2D5);
+        arr.Add(isW2D6);
+
         arr.Add(isW3D1);
         arr.Add(isW3D2);
         arr.Add(isW3D3);
         arr.Add(isW3D4);
+
     }
     public void SetSceneBools()
     {
@@ -156,10 +161,12 @@ public class DialougeManager : MonoBehaviour
         isW2D3 = SceneList[8];
         isW2D4 = SceneList[9];
         isW2D5 = SceneList[10];
-        isW3D1 = SceneList[11];
-        isW3D2 = SceneList[12];
-        isW3D3 = SceneList[13];
-        isW3D4 = SceneList[14];
+        isW2D6 = SceneList[11];
+
+        isW3D1 = SceneList[12];
+        isW3D2 = SceneList[13];
+        isW3D3 = SceneList[14];
+        isW3D4 = SceneList[15];
     }
     public void UpdatePPref(int index)
     {

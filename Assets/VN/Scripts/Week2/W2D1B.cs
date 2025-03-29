@@ -153,7 +153,9 @@ public class W2D1B : MonoBehaviour
                 if (dialogueManager.activeDialogue == false && END)
                 {
                     // add scene management stuff
-                    SceneManager.LoadScene("MapScreen");
+                    PlayerPrefs.SetInt("CurrentWeek.", 21);
+                    PlayerPrefs.SetInt("SceneToLoad", 3);
+                    SceneManager.LoadScene("Splash");
                 }
 
 

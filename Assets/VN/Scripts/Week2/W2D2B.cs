@@ -51,8 +51,10 @@ public class W2D2B : MonoBehaviour
 
         if (END)
         {
+            dialogueManager.isW2D3 = true;
+            dialogueManager.UpdatePPref(8);
+
             END = false;
-            // add map logic
         }
 
     }

@@ -23,7 +23,7 @@ public class W2D2a1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueManager.isW2D1A)
+        if (dialogueManager.isW2D2A)
         {
             // Initial Dialogue
             if (dialogueManager.isW2D2A && !isStarted)
@@ -66,6 +66,9 @@ public class W2D2a1 : MonoBehaviour
             // End Condition - Wait for *activeDialogue* to be false
             if (END && !dialogueManager.activeDialogue)
             {
+                dialogueManager.isW2D3 = true;
+                dialogueManager.UpdatePPref(8);
+
                 END = false;
             }
         }

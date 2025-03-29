@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using RhythMidi;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Splash : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class Splash : MonoBehaviour
             case 2:
                 // Load Rhythm 
                 RhythMidiController.Instance.onFinishedLoading.AddListener(OnRhythMidiLoaded);
+                break;
+            case 4:
+                SceneManager.LoadScene("MapScene");
                 break;
             default:
                 Debug.LogError($"Scene to load recieved an unexpected value: {SceneToLoad}. Expected int 0,1, or 2.");
