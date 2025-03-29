@@ -220,7 +220,7 @@ public class DialougeManager : MonoBehaviour
             Sprite newSprite = AssetCache.GetSprite($"Sprites/{curr_dialogue.sprite}");
             if (newSprite != null)
             {
-                LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
+                LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.2f)
                .setEase(LeanTweenType.easeInCubic)
                .setOnComplete(() =>
                {
@@ -228,7 +228,7 @@ public class DialougeManager : MonoBehaviour
                    characterSpriteImage.sprite = newSprite;
 
                    // Animate character sprite in
-                   LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.5f)
+                   LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.2f)
                       .setEase(LeanTweenType.easeOutCubic);
                });
                 // characterSpriteImage.sprite = newSprite;
@@ -248,21 +248,25 @@ public class DialougeManager : MonoBehaviour
 
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
 
-            //Debug.Log("background is" + curr_dialogue.background);
+            Debug.Log("background is" + curr_dialogue.background);
             uiManager.ShowLocation(curr_dialogue.background);
 
             if (newBG != null)
             {
-                backgroudSpriteImage.sprite = newBG;
+                // Fade out current background
+                LeanTween.alpha(backgroudSpriteImage.rectTransform, 0f, 0.5f).setOnComplete(() =>
+                {
+                    // Change background sprite after fade out
+                    backgroudSpriteImage.sprite = newBG;
 
+                    // Fade in the new background
+                    LeanTween.alpha(backgroudSpriteImage.rectTransform, 1f, 0.5f);
+                });
+                // backgroudSpriteImage.sprite = newBG;
             }
             else
             {
-                if (curr_dialogue.background != null)
-                {
-                    Debug.LogWarning($"Failed to load background: {curr_dialogue.background}");
-
-                }
+                Debug.LogWarning($"Failed to load background: {curr_dialogue.background}");
             }
         }
 
