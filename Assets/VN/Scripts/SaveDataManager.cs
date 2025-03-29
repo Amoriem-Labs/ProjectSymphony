@@ -38,6 +38,7 @@ public class SaveDataManager : MonoBehaviour
         // 0 is VN
         // 1 is map
         // 2 is Rhythm
+        PlayerPrefs.SetInt(CURRENT_WEEK_KEY, 1);
         PlayerPrefs.SetInt("SceneToLoad", 0);
         dialogueManager = FindAnyObjectByType<DialougeManager>();
         mapManager = FindAnyObjectByType<MapManager>();

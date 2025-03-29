@@ -25,7 +25,7 @@ public class Splash : MonoBehaviour
                 // Load Rhythm 
                 RhythMidiController.Instance.onFinishedLoading.AddListener(OnRhythMidiLoaded);
                 break;
-            case 4:
+            case 3:
                 SceneManager.LoadScene("MapScene");
                 break;
             default:

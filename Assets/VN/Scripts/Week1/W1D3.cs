@@ -95,24 +95,28 @@ public class W1D3 : MonoBehaviour
                     if (currselectedOption == "Of course, I'll send you a photo!")
                     {
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.2A", "W1D3.3" }));
+                        END = true;
+
 
                     }
                     else if (currselectedOption == "Sorry, but not today.")
                     {
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.2B", "W1D3.3" }));
+                        END = true;
                     }
 
-                    if (dialogueManager.activeDialogue == false && END)
-                    {
-                        //dialogueManager.UpdatePPref(4);
-                        PlayerPrefs.SetInt("CurrentWeek.", 2);
-                        PlayerPrefs.SetInt("SceneToLoad", 3);
-                        SceneManager.LoadScene("Splash");
-                    }
+                    
 
                 }
 
-            
+                if (END)
+                {
+                    //dialogueManager.UpdatePPref(4);
+                    PlayerPrefs.SetInt("CurrentWeek.", 2);
+                    PlayerPrefs.SetInt("SceneToLoad", 3);
+                    SceneManager.LoadScene("Splash");
+                }
+
 
             }
 

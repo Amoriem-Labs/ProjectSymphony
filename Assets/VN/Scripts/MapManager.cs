@@ -79,7 +79,19 @@ public class MapManager : MonoBehaviour
         //dialogueManager = FindAnyObjectByType<DialougeManager>();
         mainEventSelected = false;
         credits = 3;
-        weekNum = PlayerPrefs.GetInt("CurrentWeek.");
+        PlayerPrefs.SetInt("CurrentWeek.", 1);
+        if (PlayerPrefs.HasKey("CurrentWeek."))
+        {
+            weekNum = PlayerPrefs.GetInt("CurrentWeek.");
+
+        }
+        else
+        {
+            weekNum = 1;
+
+        }
+
+        weekNum = 2;
         allEvents = new Dictionary<string, mapObject>();
         weekEvents = new Dictionary<string, mapObject>();
         finishedEvents = new Dictionary<string, mapObject>();
@@ -124,17 +136,26 @@ public class MapManager : MonoBehaviour
 
     void Update()
     {
+        
         Creds.text = "Credits: " + credits;
         if (credits == 1 && mainEventSelected == false)
         {
             nullUnrequiredEvents();
         }
         showEventButtons();
+
     }
 
     //Helper functions
     void showEventButtons()
     {
+        //School.interactable = false;
+        //Gym.interactable = false;
+        //Hanger.interactable = false;
+        //Trees.interactable = false;
+        //Tower.interactable = false;
+        //Islands.interactable = false;
+
         foreach (var kvp in weekEvents)
         {
             kvp.Value.button.GetComponentInChildren<Image>().enabled = true;
@@ -176,9 +197,9 @@ public class MapManager : MonoBehaviour
         addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", 6);
         addEvent(Tower, false, true, false, "Tower", 1, "Should I meet Carter at the tower?", 5);
         addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", 6);
-        addEvent(Islands, false, true, true, "Trees", 2, "Should I help Howard watch Ina?", 4);
+        addEvent(Trees, false, true, true, "Trees", 2, "Should I help Howard watch Ina?", 4);
         addEvent(Islands, false, true, true, "Islands", 2, "Should I help Sam with her event?", 5);
-        addEvent(Islands, false, true, true, "Trees", 21, "Should I meet  Howard at the park?", 6);
+        addEvent(Trees, false, true, true, "Trees", 21, "Should I meet  Howard at the park?", 6);
         addEvent(Islands, false, true, true, "Islands", 21, "Should I meet Sam at the lake?", 7);
 
 
