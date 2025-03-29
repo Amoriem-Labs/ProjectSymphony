@@ -1,20 +1,18 @@
 Name: Howard
 Sprite: Howard_at_peace
-Oh yeah, before I leave. Here are a couple of his favorite treats. This should help in getting him to like you.
+Before I leave, here are a couple of his favorite treats. This should help in getting him to like you.
 
 Name: PC
-Thanks! I'll make sure he doesn't get too big from these. ~Yes I will~
+Thanks! I'll make sure he doesn't get too big from these. Yes I will~
 
 Name: Howard
 Sprite: Howard_at_peace
-Well I'll be off. Thanks again for watching him.
+Well, I'll be off. Thanks again for watching him.
 
 Name: PC
 See you!
 
-Howard leaves
-
-Name: PC
+Sprite: EMPTY
 ...
 
 Name: Ina
@@ -22,13 +20,10 @@ Sprite: Ina_normal
 ...
 
 Name: PC
-...
-So, uhh, I guess, do you want to play–
+So, uhh, do you want to play–
 
 SFX: Zoom_Sound
-
-Animation: CharacterSlideout
-
+Sprite: EMPTY
 Name: PC
 Wait!
 
@@ -68,23 +63,15 @@ SFX: Muffled_Dog_Barking_Sound
 Name: PC
 (That sounded like it came from the Lake!)
 
-Player Map screen opens up. Player has to choose Lake location
-
 BG: Lake
-
-Sprite: Ina_Agressive
-
-Name:  
-Sprite: EMPTY
-Ina faces the tree line while standing competely still. His hair seems to stand on its edge as he frowns towards the forest. He's tense, as if ready to lunge.
-
-BGM: Ominous_Music
+Sprite: Ina_Neutral
 
 Name:  
-Sprite: EMPTY
-There's something... off about the forest right now. The leaves move and rustle, despite there being no wind.
+<i>Ina faces the tree line while standing competely still. His hair seems to stand on its edge as he frowns towards the forest. He's tense, as if ready to lunge.
 
-(Ina's monster / spirit features get more pronounced, or their eyes glow)
+<i>There's something... off about the forest right now. The leaves move and rustle, despite there being no wind.
+
+Ina's monster / spirit features get more pronounced, or their eyes glow SPRITE
 
 Name: PC
 (What is happening? Is something going to come from the forest?)
@@ -99,17 +86,16 @@ Name: Ina
 Sprite: Ina_normal
 ...
 
-Animation: CharacterSlideout
-
 Name:  
 Sprite: EMPTY
-As Ina runs off again into the distance, you look back at the forest. You rub your eyes, and everything seems normal again.
+<i>As Ina runs off again into the distance, you look back at the forest. You rub your eyes, and everything seems normal again.
 
 Name: PC
 Darn it!
 
 Name: PC
 Ugh. Where could he have gone now?
+
 Options:  
 Go to the Park.
 Go to the Hallway.

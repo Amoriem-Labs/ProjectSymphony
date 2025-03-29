@@ -173,7 +173,7 @@ public class MapManager : MonoBehaviour
         addEvent(School, false, true, true, "Library", 1, "Should I meet Carter at the School?", 1);
         addEvent(Gym, false, true, false, "Gym", 1, "Should I train with Sam in the gym?", 2);
         addEvent(Hanger, false, true, false, "Hanger", 1, "Should I meet Daylo at the hanger?", 3);
-        addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", 4);
+        addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", 5);
         addEvent(Tower, false, true, false, "Tower", 1, "Should I meet Carter at the tower?", 5);
         addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", 6);
     }

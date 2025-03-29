@@ -1,13 +1,13 @@
 Name: 
-**school bell rings**
 BG: LockerRoom
 Name: Sam
 Sprite: Sam_Sad
+SFX: school_bell2
 We'd better get going to our first classes.
 
 Name: Howard
 Sprite: Howard_At_Peace
-MC, let me see your schedule.
+PC, let me see your schedule.
 
 Name: Sam
 Sprite: Sam_Sad
@@ -15,17 +15,16 @@ Aw man, we won't be in your first class!
 
 Name: Howard
 Sprite: Howard_Understanding
-It's okay MC, my class is next to yours so I'll show you the way there.
+It's okay PC, my class is next to yours so I'll show you the way there.
 Name: PC
 Thanks Howard! I'll see you guys between classes.
 
 Name: Howard
 Sprite: Howard_At_Peace
-Alright MC, we'll catch up after class, see you!
+Alright PC, we'll catch up after class, see you!
 
 Name:  
 Sprite: EMPTY
-**School bell ring**
 
 Name: PC
 (First class done...)

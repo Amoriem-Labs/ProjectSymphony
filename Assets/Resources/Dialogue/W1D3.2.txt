@@ -23,10 +23,9 @@ You need to hangout with someone at least once before you can ask them to join y
 Sprite: Howard_Understanding
 That shouldn't be hard for you though - I'm sure everyone will be excited to meet a new student!
 
-sfx	School Bell Ring
 
 Sprite: Howard_Uncomfortable
-Sorry MC, I have to rush to class!
+Sorry PC, I have to rush to class!
 
 Name: PC
 Oh yeah, me too.
@@ -34,6 +33,7 @@ Oh yeah, me too.
 Name: Howard
 Sprite: Howard_Understanding
 When I looked at your schedule earlier, I saw that you and Sam have the same class right now, so hopefully you'll find her there.
+SFX: school_bell2
 
 Name: PC
 Sprite: EMPTY
@@ -51,13 +51,13 @@ Sprite: Sam_Happy
 But now that you're here, this class will definitely be fun!
 
 Name:  
-The teacher walks to the front of the room and opens a gigantic textbook.
-They proceed to read from it in a monotonous voice, and by the end of class you can barely keep your eyes open.
-You turn next to you and see that Sam is fast asleep.
-sfx	School Bell Ring
+<i>The teacher walks to the front of the room and opens a gigantic textbook.
+<i>They proceed to read from it in a monotonous voice, and by the end of class you can barely keep your eyes open.
+<i>You turn next to you and see that Sam is fast asleep.<i>
 
 Name: Teacher
 That's it for this class. Your homework is to read the next ten chapters by tomorrow.
+SFX: school_bell2
 
 Name: Sam
 Sprite: Sam_Pensive
@@ -70,7 +70,7 @@ You slept through it...
 Name: Sam
 Sprite: Sam_Sad
 Aw man, I was really hoping to be a good student and take some notes.
-MC... do you think you could share your notes with me? Pretty please?
+PC... do you think you could share your notes with me? Pretty please?
 
 Options: 
 Of course, I'll send you a photo!

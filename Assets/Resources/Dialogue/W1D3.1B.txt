@@ -3,7 +3,7 @@ Sprite: Howard_Uncomfortable
 Oh no! I'm sorry!
 
 Sprite: Howard_Understanding
-That's my bad if I stressed you out earlier, but I hope the rest of your day goes better.
+Sorry if I stressed you out earlier, but I hope the rest of your day goes better.
 
 Name: PC
 Thanks Howard, I hope so too.

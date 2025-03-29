@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class W2D1A : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class W2D1A : MonoBehaviour
     private bool DP1 = true;
     private bool DP2 = false;
     private bool DP3 = false;
+    private bool A = false;
+    private bool B = false;
+    private bool C = false;
+    private bool D = false;
 
     bool END = false;
 
@@ -29,45 +34,97 @@ public class W2D1A : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueManager.isW2D1A && !isStarted)
+        if (dialogueManager.isW2D1A)
         {
-            // start first texx file
-            StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.1" }));
-            // is started triggers the choice tests
-            isStarted = true; // MAKE SURE THIS IS AFTER THE FIRST LOAD 
-            startChoiceDetection = true;
-        }
-
-
-        if (startChoiceDetection)
-        {
-            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1)
+            if (dialogueManager.isW2D1A && !isStarted)
             {
-                string currselectedOption = dialogueManager.selectedOption;
+                // start first texx file
+                StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1A.1" }));
+                // is started triggers the choice tests
+                isStarted = true; // MAKE SURE THIS IS AFTER THE FIRST LOAD 
+                startChoiceDetection = true;
+            }
 
-                // restart manager's selected option
-                DP1 = false;
-                dialogueManager.selectedOption = "";
 
-                // change this to the options that are in your file [up to 4]
-                if (currselectedOption == "Accept the assignment.")
+            if (startChoiceDetection)
+            {
+                if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1)
                 {
-                    // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.1a", "W1D1.2.2" }));
-                    DP2 = true;
+                    string currselectedOption = dialogueManager.selectedOption;
+
+                    // restart manager's selected option
+                    DP1 = false;
+                    dialogueManager.selectedOption = "";
+
+                    // change this to the options that are in your file [up to 4]
+                    if (currselectedOption == "Accept the assignment.")
+                    {
+                        // load the next dialogue
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.1a", "W2D1.2.2" }));
+                        DP2 = true;
+
+                    }
+                    else if (currselectedOption == "Question Sam's sanity.")
+                    {
+                        DP2 = true;
+                        // load the next dialogue
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.1b", "W2D1.2.2" }));
+                    }
+
 
                 }
-                else if (currselectedOption == "Question Sam's sanity.")
+
+                if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP2)
                 {
-                    DP3 = true;
-                    // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.1b", "W1D1.2.2" }));
+                    string currselectedOption = dialogueManager.selectedOption;
+
+                    // restart manager's selected option
+                    DP2 = false;
+                    dialogueManager.selectedOption = "";
+
+                    // change this to the options that are in your file [up to 4]
+                    if (currselectedOption == "Draw attention to the spectacle.")
+                    {
+                        // load the next dialogue
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2a", "W2D1.2.3" }));
+                        END = true;
+
+                    }
+                    else if (currselectedOption == "Bring the danger into focus.")
+                    {
+                        // load the next dialogue
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2B", "W2D1.2.3" }));
+                        END = true;
+
+                    }
+
+                    else if (currselectedOption == "Give the crowd some context.")
+                    {
+                        // load the next dialogue
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2c", "W2D1.2.3" }));
+                        END = true;
+
+                    }
+                    else if (currselectedOption == "Hype up how cool Sam is.")
+                    {
+                        // load the next dialogue
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2d", "W2D1.2.3" }));
+                        END = true;
+
+                    }
+
+                    if (dialogueManager.activeDialogue == false && END)
+                    {
+                        // add scene management stuff
+                        SceneManager.LoadScene("Splash");
+                    }
+
                 }
 
 
             }
 
-
+           
         }
 
     }

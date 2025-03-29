@@ -1,8 +1,9 @@
-BG: Park
-BG2: Outside_Noises
-
 Name:  
 Sprite: EMPTY
+BG: Park
+BG2: Outside_Noises
+BGM: picnic-bgm
+
 The park is buzzing with activity. Distant voices and cheerful shouts intermingle with the rustling of leaves.
 As you walk further towards the center of the park, you see a crowd of students near one of the larger trees.
 Standing in the center of the students is Sam. Next to her is...
@@ -16,21 +17,19 @@ Sprite: Magical_Horse
 
 Name: Sam
 Sprite: Sam_Happy
-Oh great, [PC name], you came!
-I was starting to worry that I was going to have to do all this without my hype person!
+Oh great, PC, you came!
+I was starting to worry that I was going to have to do all this without my biggest supporter!
 
 Name: PC
-Huh? What do you mean hype person?
+Huh? What do you mean supporter?
 
 Name: Sam
 Sprite: Sam_Pensive
-Ah! Well... uh... Can you come a bit closer real quick?
-
-Animation: Sam_Close_Up
+Ah! Well... uh... Can you come closer ?
 
 Name: Sam
 Sprite: Sam_Normal
-That's ISABELLA. She's, like, the greatest in the world.
+That's Roxanne. She's, like, the greatest in the world.
 
 Name: PC
 Okay...
@@ -40,16 +39,14 @@ Sprite: Sam_Pensive
 Ah! I knew I was forgetting something. I need you to hold this–
 
 Name:  
-Sprite: EMPTY
-Sam hands you a bottle of liquid. The dark contents seem to bubble like tar. The label reads “Petrofizz.”
+<i>Sam hands you a bottle of liquid. The dark contents seem to bubble like tar. The label reads “Petrofizz."
 
 Name: Sam
 Sprite: Sam_Happy
 –while I hop on this horse!
 
 Name:  
-Sprite: EMPTY
-Sam moves to the side of the horse and begins pulling on the saddle.
+<i>Sam moves to the side of the horse and begins pulling on the saddle.
 
 Name: PC
 Wait! Is that all I need to do? Hold this?
@@ -57,8 +54,8 @@ Wait! Is that all I need to do? Hold this?
 Name: Sam
 Sprite: Sam_Happy
 Haha, of course not silly!!
-You're my hype person - I need you to make me look GOOD!
-Liven up the audience so Isabella notices me while I tame this horse!
+You're my hype person - I need you to make me look good!
+Liven up the audience so Roxanne notices me while I tame this horse!
 
 Name: Sam
 Sprite: Sam_Pensive

@@ -1,8 +1,8 @@
 Name: Howard
 Sprite: Howard_At_Peace
-That's great, MC.
+That's great, PC.
 
-Sprite: Howard_Shrug
+Sprite: Howard_Uncomfortable
 Sorry if I stressed you out earlier. I always get so worked up, but once I go to class everything's fine.
 
 Name: PC

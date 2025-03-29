@@ -2,14 +2,14 @@ BG: Hallway
 
 Name:  
 Sprite: EMPTY
-Walking through the school's hallway, you think back to Sam's description of the place.
+<i>Walking through the school's hallway, you think back to Sam's description of the place.
 
 Name: PC
 (Gotta let it carry me to where I need to go, huh?)
 
 Name:  
 Sprite: EMPTY
-You close your eyes and breathe. With a newfound confidence you step forward.
+<i>You close your eyes and breathe. With a newfound confidence you step forward.
 
 Name: PC
 (Let it carry me... and I will get to where–)
@@ -18,46 +18,40 @@ SFX: Barking_Sound
 
 Name:  
 Sprite: EMPTY
-Ina is barking loudly.
-The sound seems to come from your left. Opening your eyes, you see the entrance to the cafeteria in the same direction as Ina's barking.
-You glance behind you, and realize that you have only moved a couple of steps from where you started.
+<i>Ina is barking loudly.
+<i>The sound seems to come from your left. Opening your eyes, you see the entrance to the cafeteria in the same direction as Ina's barking.
+<i>You glance behind you, and realize that you have only moved a couple of steps from where you started.
 
 Name: PC
 (Whatever. Sam must have been being metaphorical or something.)
 
 BG: Cafeteria
-
 BG2: Busy_Cafeteria_Noises
-
 SFX: Crashing_Sound
 
 Name:  
 Sprite: EMPTY
-Entering the cafeteria, you are greeted with chaos. Chairs are overturned. Drinks are splattered across the wall. Food is thrown through the air.
-In the middle of it all, you can see Ina running around underneath tables and between people's legs. Multiple students reach out to grab him, but he always slips away at the last moment. Suddenly, he dissapears from sight.
+<i>Entering the cafeteria, you are greeted with chaos. Chairs are overturned.
+<i>Drinks are splattered across the wall. Food is thrown through the air.
+<i>In the middle of it all, you can see Ina running around underneath tables and between people's legs.
+<i>Multiple students reach out to grab him, but he always slips away at the last moment. Suddenly, he dissapears from sight.
 
 Name: Student 1
-Sprite: EMPTY
 What was that?
 
 Name: Student 2
-Sprite: EMPTY
 Not my hair!!
 
 Name: Student 3
-Sprite: EMPTY
 Aren't pets not allowed on campus?!
 
 Name: Student 4
-Sprite: EMPTY
 My father will hear about this!
 
 Name: PC
-Woah.
+(Woah. Thats bad)
 
-Name: Student 1
-Sprite: EMPTY
-Despite Ina's departure, more food is thrown around the room. You have to dodge a flying meatball before taking shelter behind an overturned table.
+<i>Despite Ina's departure, more food is thrown around the room. You have to dodge a flying meatball before taking shelter behind an overturned table.
 
 Name: Sam
 Howdy, partner!
@@ -66,21 +60,17 @@ Name: PC
 Ahh!
 
 Sprite: Sam_Happy
-Animation: CharacterSlideIn
 
-Name:  
-Sprite: EMPTY
-Sam sits beside you, also taking shelter behind the table. She has what looks to be bottle of soda in one hand, and a hamburger in the other.
+Name:
+<i>Sam sits beside you, also taking shelter behind the table. She has what looks to be bottle of soda in one hand, and a hamburger in the other.
 
 Name: Sam
-Sprite: Sam_Happy
 Let me guess, Ina got away from you.
 
 Name: PC
 ...yeah.
 
 Name: Sam
-Sprite: Sam_Happy
 Hah! Fiesty one, that dog. There's a reason I haven't say yes to Howard the last couple of months. I've learned my lesson.
 
 Name: Sam
@@ -92,33 +82,25 @@ Sprite: Sam_Happy
 Anyway, have fun! I'm going to finish my lunch somewhere a bit more quiet.
 
 Name: Sam
-Sprite: Sam_Normal
+Sprite: Sam_Neutral
 Oh, by the way, he's probably at the rehearsal room. He likes to chew on the drum sticks when Howard's not around.
-
-Sprite: Sam_Happy
-Animation: CharacterSlideout
 
 Name: PC
 Lucky.
 Alright, time for me to get moving.
 
-Map opens with rehearsal room as the only available option
-
 BG: Rehearsal_Room
 
 Name:  
 Sprite: EMPTY
-When you open the door to the rehearsal room, a slight scuffling sound escapes from the far corner. The room seems empty.
-Closing the door behind you and quietly moving to a better position, you see Ina laying on the ground with a drum stick in his mouth.
+<i>When you open the door to the rehearsal room, a slight scuffling sound escapes from the far corner. The room seems empty.
+<i>Closing the door behind you and quietly moving to a better position, you see Ina laying on the ground with a drum stick in his mouth.
 
 Sprite: Ina_normal
-
 Name: PC
 (I've got you now!)
 
 Options: 
 Catch the Ina by surprise.
 Throw a treat out as bait.
-
-
 

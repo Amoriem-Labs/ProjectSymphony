@@ -12,14 +12,14 @@ Sprite: Howard_At_Peace
 Ah! You took him out for a walk! Thank you so much for all of this.
 
 Name: PC
-Yeah.
+Yeah...
 
 Name: Howard
 Sprite: Howard_Understanding
 Is something wrong? You seem... a bit tired.
 
 Name: PC
-No no, nothing's wrong. It was just a long day. Here.
+No. Nothing's wrong. It was just a long day. Here.
 
 Name:  
 Sprite: EMPTY

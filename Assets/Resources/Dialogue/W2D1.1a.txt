@@ -1,5 +1,5 @@
 Name: PC
-Sure go ahead
+Sure go ahead!
 
 Name: Howard
 Sprite: Howard_at_peace
@@ -7,4 +7,4 @@ Thanks. Here, you can hold on to it in case you need it.
 
 Name:  
 Sprite: EMPTY
-You put the leash in your pocket.
+<i>You put the leash in your pocket.<i>

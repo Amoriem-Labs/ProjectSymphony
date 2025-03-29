@@ -11,8 +11,8 @@ Some of the audience is interested, but most are just confused about what Sam is
 Name: PC
 (Guess it's my turn to get started.)
 
-Options:
-Choice One: Draw attention to the spectacle
-Choice Two: Bring the danger into focus
-Choice Three: Give the crowd some context
-Choice Four: Hype up how cool Sam is
+Options: 
+Draw attention to the spectacle.
+Bring the danger into focus.
+Give the crowd some context.
+Hype up how cool Sam is.

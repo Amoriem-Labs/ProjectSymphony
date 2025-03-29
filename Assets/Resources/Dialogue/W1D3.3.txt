@@ -1,18 +1,16 @@
 Name: Sam
 Sprite: Sam_Happy
 BG: Classroom
-Oh my gosh MC look! It looks like drama is about to happen!
+Oh my gosh, PC look! It looks like drama is about to happen!
 
-sfx	thud
-
-Sprite: Sam_Neutral
 Name:  
 You look over to see a student slam a big pile of sheet music down on another student's desk.
+SFX: paper_plop
+Sprite: EMPTY
 
 Name: Student 1
 I quit!
 
-Sprite: Sam_Happy
 Name: Student 2
 You can't quit! We need you!
 
@@ -22,14 +20,13 @@ You didn't seem to need me when you let the trumpet play all over my solo.
 Name: Student 2	
 I didn't mean it! Please keep playing with us.
 
-Sprite: Sam_Neutral
 Name: Student 1	
 No way! I'm going to go find people that actually appreciate my talent.
 
 Name: 
 The student storms out of the classroom, slamming the door behind them.
 
-sfx	Door slam
+SFX: door_slam
 
 Name: Sam
 Sprite: Sam_Happy
@@ -55,30 +52,33 @@ Name: Sam
 Sprite: Sam_Pensive
 Well that's easy! Just be a good friend and make sure they get their moment to shine when you play together.
 
-Sprite: Sam_Happy
 Oh!
 I almost forgot!
 Another way to really make band members happy, is by having them play alongside their perfect match.
 
 Name: PC
 What's a perfect match?
+
 Name: Sam
+Sprite: Sam_Pensive
 It's exactly what it sounds like! Everyone has a musician that your sound compliments the most!
-Patricia and I are a perfect match obviously.
+Roxanne and I are a perfect match obviously.
+Sprite: Sam_Happy
+
 We just need to play together and then she'll see that I'm the only one for her.
 
 Name: PC
 So, I just have to find compatible instruments to play with each other?
 
 Name: Sam
-Sprite: Sam_Pensive
+Sprite: Sam_neutral
 That's one strategy for finding them, but some matches are more unexpected than you would think.
 But trust me, when you have a perfect match playing together, you'll know.
 
 Name: PC
 Okay... I think I'll take your word on this one.
-Name: Sam
 
+Name: Sam
 Sprite: Sam_Happy
 Yay! Howard is waiting for us in the hallway!
 
@@ -96,7 +96,7 @@ Sprite: Sam_Happy
 But we'll still have a great time!
 
 Name: 
-(I'm sure you'll have a great time sleeping.)
+(I'm sure you had a great time sleeping.)
 
 Name: Howard
 Sprite: Howard_At_Peace
@@ -104,14 +104,14 @@ So, since we're done with classes for the day, would you guys wanna have a littl
 
 Name: Sam
 Sprite: Sam_Happy
-Yippee! I thought you'd never ask!
+Yes! I thought you'd never ask!
 
 Name: PC
 Jam session?
 
 Name: Howard
 Sprite: Howard_Shrug
-Don't worry MC, it's super casual.
+Don't worry PC, it's super casual.
 
 Name: Sam
 Sprite: Sam_Happy
@@ -121,5 +121,5 @@ Name: Howard
 Sprite: Howard_Uncomfortable
 Ignore her, let's just play a little bit together and it should be fun!
 
-Name: MC
+Name: PC
 Sure, let's go!
