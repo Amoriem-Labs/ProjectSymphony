@@ -221,15 +221,15 @@ public class DialougeManager : MonoBehaviour
             if (newSprite != null)
             {
                 LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
-               .setEase(LeanTweenType.easeInElastic)
+               .setEase(LeanTweenType.easeInCubic)
                .setOnComplete(() =>
                {
-                    // Change sprite after scaling down
-                    characterSpriteImage.sprite = newSprite;
+                   // Change sprite after scaling down
+                   characterSpriteImage.sprite = newSprite;
 
-                    // Animate character sprite in
-                    LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.5f)
-                       .setEase(LeanTweenType.easeOutElastic);
+                   // Animate character sprite in
+                   LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.5f)
+                      .setEase(LeanTweenType.easeOutCubic);
                });
                 // characterSpriteImage.sprite = newSprite;
             }
@@ -253,12 +253,12 @@ public class DialougeManager : MonoBehaviour
 
             if (newBG != null)
             {
-              backgroudSpriteImage.sprite = newBG;
+                backgroudSpriteImage.sprite = newBG;
 
             }
             else
             {
-                if(curr_dialogue.background != null)
+                if (curr_dialogue.background != null)
                 {
                     Debug.LogWarning($"Failed to load background: {curr_dialogue.background}");
 
@@ -330,7 +330,7 @@ public class DialougeManager : MonoBehaviour
         Debug.Log($"Enqueued {sentences.Count} sentences");
 
         DisplayNextSentence();
-       
+
 
         // set the charcater animator
         if (characterAnimator != null)
@@ -538,7 +538,7 @@ public class DialougeManager : MonoBehaviour
         AddCurrentDialogue();
 
         Debug.Log($"Loaded {dialogueSequence.Count} dialogue entries");
-        
+
     }
 
     private void AddCurrentDialogue()
