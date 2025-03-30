@@ -174,6 +174,7 @@ public class W1D2 : MonoBehaviour
 
                 }
             }
+
             if (END)
             {
                 if (dialogueManager.activeDialogue == false)

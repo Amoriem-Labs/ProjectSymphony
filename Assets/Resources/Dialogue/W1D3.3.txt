@@ -121,5 +121,6 @@ Name: Howard
 Sprite: Howard_Uncomfortable
 Ignore her, let's just play a little bit together and it should be fun!
 
-Name: PC
+Options: 
 Sure, let's go!
+Let's do it!

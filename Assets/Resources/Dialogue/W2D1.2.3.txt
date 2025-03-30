@@ -64,5 +64,7 @@ Name: PC
 Name: Crowd
 ...
 
-Name: PC
-Well, that was fun. I'm just going to head back now. Thank you all for coming.
+
+Options: 
+Thanks for coming everyone!
+I'm going to head back now.

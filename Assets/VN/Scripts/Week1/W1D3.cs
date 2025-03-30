@@ -10,6 +10,8 @@ public class W1D3 : MonoBehaviour
     private bool DP1_1 = true;
     private bool DP1_2 = false;
     private bool DP1_3 = false;
+    private bool DP1_4 = false;
+
     bool startTESTS;
     bool END;
 
@@ -95,31 +97,56 @@ public class W1D3 : MonoBehaviour
                     if (currselectedOption == "Of course, I'll send you a photo!")
                     {
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.2A", "W1D3.3" }));
-                        END = true;
-
+                        DP1_4 = true;
 
                     }
                     else if (currselectedOption == "Sorry, but not today.")
                     {
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.2B", "W1D3.3" }));
-                        END = true;
+                        DP1_4 = true;
+
                     }
 
-                    
+                }
+                if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1_4)
+                {
+                    string currselectedOption = dialogueManager.selectedOption;
+
+                    // restart manager's selected option
+                    DP1_4 = false;
+                    dialogueManager.selectedOption = "";
+
+                    if (currselectedOption == "Sure, let's go!" || currselectedOption == "Let's do it!")
+                    {
+
+                        // restart manager's selected option
+                        DP1_4 = false;
+                        dialogueManager.selectedOption = "";
+
+                        //StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.3" }));
+                        startTESTS = false;
+                        END = true;
+
+                    }
+
 
                 }
+               
+            }
 
-                if (END)
+            if (END)
+            {
+                if (dialogueManager.activeDialogue == false)
                 {
+                    END = false;
+                    dialogueManager.isW1D3 = false;
+
                     //dialogueManager.UpdatePPref(4);
                     PlayerPrefs.SetInt("CurrentWeek.", 2);
                     PlayerPrefs.SetInt("SceneToLoad", 3);
                     SceneManager.LoadScene("Splash");
                 }
-
-
             }
-
 
 
         }

@@ -30,11 +30,12 @@ Sprite: EMPTY
 Ina, ever the picture of innocence, softly paws at Howard's leg.
 
 Name: PC
-I'm, uhh, just going to go back to my room to rest.
+I'm just going to go back to my room to rest.
 
 Name: Howard
-Sprite: Howard_At_Peace SMTH
+Sprite: Howard_At_Peace
 Oh okay. See you later, then.
 
-Name: PC
-Yeah, see you.
+Options: 
+Bye.
+See you!

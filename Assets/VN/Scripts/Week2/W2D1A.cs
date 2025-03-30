@@ -16,6 +16,7 @@ public class W2D1A : MonoBehaviour
     // make one bool for each decision point
     private bool DP1 = true;
     private bool DP2 = false;
+    private bool DP3 = false;
 
 
     bool END = false;
@@ -83,14 +84,14 @@ public class W2D1A : MonoBehaviour
                     {
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2a", "W2D1.2.3" }));
-                        END = true;
+                        DP3 = true;
 
                     }
                     else if (currselectedOption == "Bring the danger into focus.")
                     {
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2B", "W2D1.2.3" }));
-                        END = true;
+                        DP3 = true;
 
                     }
 
@@ -98,35 +99,62 @@ public class W2D1A : MonoBehaviour
                     {
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2c", "W2D1.2.3" }));
-                        END = true;
+                        DP3 = true;
 
                     }
                     else if (currselectedOption == "Hype up how cool Sam is.")
                     {
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.2.2d", "W2D1.2.3" }));
-                        END = true;
+                        DP3 = true;
 
                     }
 
-                    if ( END)
-                    {
-                        // add scene management stuff
-                        //update map week num
-                        Debug.Log("end scene");
-                        PlayerPrefs.SetInt("CurrentWeek.", 21);
-                        PlayerPrefs.SetInt("SceneToLoad", 3);
-                        SceneManager.LoadScene("Splash");
-     
-                    }
+
+                }
+
+            }
+
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP3)
+            {
+                string currselectedOption = dialogueManager.selectedOption;
+                DP3 = false;
+
+                // restart manager's selected option
+                dialogueManager.selectedOption = "";
+
+                if (currselectedOption == "Thanks for coming everyone!" || currselectedOption == "I'm going to head back now.")
+                {
+
+                    // restart manager's selected option
+                    DP3 = false;
+                    dialogueManager.selectedOption = "";
+
+                    //StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.3" }));
+                    startChoiceDetection = false;
+                    END = true;
 
                 }
 
 
+
+
             }
 
-           
+            if (END)
+            {
+                // add scene management stuff
+                //update map week num
+                PlayerPrefs.SetInt("CurrentWeek.", 21);
+                PlayerPrefs.SetInt("SceneToLoad", 3);
+                SceneManager.LoadScene("Splash");
+
+
+
+            }
         }
+
+        
 
     }
 }

@@ -18,6 +18,7 @@ public class W2D1B : MonoBehaviour
     private bool DP2 = false;
     private bool DP3 = false;
     private bool DP4 = false;
+    private bool DP5 = false;
 
     bool END = false;
 
@@ -138,7 +139,7 @@ public class W2D1B : MonoBehaviour
                 {
                     // load the next dialogue
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.4a", "W2D1.5" }));
-                    END = true;
+                    DP5 = true;
 
 
                 }
@@ -146,7 +147,7 @@ public class W2D1B : MonoBehaviour
                 {
                     // load the next dialogue
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D1.4b", "W2D1.5" }));
-                    END = true;
+                    DP5 = true;
 
                 }
 
@@ -154,6 +155,31 @@ public class W2D1B : MonoBehaviour
 
 
             }
+
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP5)
+            {
+                string currselectedOption = dialogueManager.selectedOption;
+
+                // restart manager's selected option
+                DP5 = false;
+                dialogueManager.selectedOption = "";
+
+                if (currselectedOption == "See you!" || currselectedOption == "Bye.")
+                {
+
+                    // restart manager's selected option
+                    DP5 = false;
+                    dialogueManager.selectedOption = "";
+
+                    //StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.3" }));
+                    startChoiceDetection = false;
+                    END = true;
+
+                }
+
+
+            }
+
             if (END)
             {
                 // add scene management stuff
