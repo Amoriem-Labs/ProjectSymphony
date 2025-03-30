@@ -73,6 +73,10 @@ public class GameStateManager : MonoBehaviour
             characterData.Add(c, cd);
         }
     }
+    public void SavePersistentData()
+    {
+        // TODO
+    }
     public void LoadCharacterSelect(string song)
     {
         currentSongName = song;

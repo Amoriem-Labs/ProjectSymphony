@@ -2174,15 +2174,7 @@ MonoBehaviour:
   characterDisplayUI: {fileID: 1219600510}
   sfxSource: {fileID: 1338444579}
   hitAudioClips:
-  - {fileID: 8300000, guid: 8d5fa97da05ed41b395f56e7469db8c6, type: 3}
-  - {fileID: 8300000, guid: d5c69eb675a5c4e2fabdbd21b83f0ccf, type: 3}
-  - {fileID: 8300000, guid: 25db858fa4cac40f291fe9f975dda49a, type: 3}
-  - {fileID: 8300000, guid: 33f5ffa2934594a5a8b6ba8772b181fa, type: 3}
-  - {fileID: 8300000, guid: 8d5fa97da05ed41b395f56e7469db8c6, type: 3}
-  - {fileID: 8300000, guid: d5c69eb675a5c4e2fabdbd21b83f0ccf, type: 3}
-  - {fileID: 8300000, guid: 25db858fa4cac40f291fe9f975dda49a, type: 3}
-  - {fileID: 8300000, guid: 33f5ffa2934594a5a8b6ba8772b181fa, type: 3}
-  - {fileID: 8300000, guid: 15aea3feeb38f450299fb1cd10f46102, type: 3}
+  - {fileID: 8300000, guid: ef0a3bc09dc0d4f7eae5d7e81706514e, type: 3}
   resultsScreenManager: {fileID: 518613119}
   start: {fileID: 8584764}
 --- !u!4 &624143334
@@ -4619,11 +4611,6 @@ MonoBehaviour:
   - {fileID: 368238761}
   - {fileID: 1916517932}
   - {fileID: 280482690}
-  names:
-  - Melodist
-  - Counter
-  - Percussion
-  - Harmony
   animationTime: 0.4
   smallScale: {x: 280, y: 280}
   largeScale: {x: 350, y: 350}
