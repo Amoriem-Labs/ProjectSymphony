@@ -90,22 +90,18 @@ namespace RhythMidi
 
         private void Start()
         {
-            if(PlayerPrefs.GetInt("SceneToLoad") == 2)
+            if (Instance == null)
             {
-                if (Instance == null)
-                {
-                    Instance = this;
-                    DontDestroyOnLoad(gameObject);
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
-
-                if (chartsPath.Length > 0) LoadAllFromStreamingAssets(chartsPath);
-                audioSources = gameObject.GetComponents<AudioSource>().ToList();
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
             }
-           
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            if (chartsPath.Length > 0) LoadAllFromStreamingAssets(chartsPath);
+            audioSources = gameObject.GetComponents<AudioSource>().ToList();
         }
 
         public void ClearCallbacks() {
