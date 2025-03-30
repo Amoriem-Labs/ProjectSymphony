@@ -1,0 +1,14 @@
+Name:  
+Sprite: EMPTY
+<i>As quietly as possible, you look around the room for something to trap Ina with.
+<i>You have to throw treats at Ina every now and then to distract him during your search.
+<i>Eventually, you manage to find a discarded drum case behind one of the benches.
+
+Name: PC
+(Okay, if I fold this like that, and move this here...)
+
+Name:  
+Sprite: EMPTY
+<i>You hold the modified drum case carefully as you sneak up behind the dog. He is so engrossed in his delicious snack that he fails to notice you before it's too late
+<i>With the swiftness of an arrow, you toss the drum case over Ina's head, trapping him beneath.
+<i>Ina tries to move, but the drum case doesn't budge.

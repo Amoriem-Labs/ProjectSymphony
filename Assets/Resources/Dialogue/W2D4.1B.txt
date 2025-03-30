@@ -1,0 +1,11 @@
+Name: PC
+Sprite: EMPTY
+I always go for a sweet treat!
+Name: Sam
+Sprite: Sam_Happy
+I knew you were my favorite, MC!
+Sweet treats are totally the best.
+Name: Howard
+Sprite: Howard_Shrug
+Aw man, I guess I'm the odd one out.
+I guess the both of you can make up for my lack of a sweet tooth.

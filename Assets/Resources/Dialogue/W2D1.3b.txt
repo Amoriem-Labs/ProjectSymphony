@@ -1,0 +1,10 @@
+Name: PC
+(Alright, let's try this.)
+
+Name:  
+Sprite: EMPTY
+<i>You pull one of the treats Howard gave you from your pocket before tossing it across the room.
+<i>Ina seems too absorbed in his glorious stick to notice the throw, though the smell of the treat draws his attention.
+
+Name: PC
+(Now to capture him.)

@@ -1,0 +1,11 @@
+Name: Sam
+Sprite: Sam_Happy
+BG: Park
+Wow, that was great! Thanks for jamming with us!
+Name: PC
+Of course! 
+It's really cool to have something you wrote made into reality like that.
+
+Options: 
+So... when's it going to be done?
+I especially liked the first pre-chorus, it was really cool!

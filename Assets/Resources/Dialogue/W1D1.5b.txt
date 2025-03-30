@@ -1,12 +1,13 @@
 Name: Howard
 Sprite: Howard_Shrug
-Yeah I think so, we've both been here for a year already...
+Yeah I would think so, we've both been here for a year already...
 
 Name: PC
 ...
 
+Name: Sam 
 Sprite: Sam_Happy
-Oh my gosh here comes <i>Patricia</i>!
+Oh my gosh here comes <i>Isabella</i>!
 
 Name:   
 <i> Sam frantically pulls out her guitar. </i>
@@ -27,7 +28,6 @@ Name: Howard
 Sprite: Howard_At_Peace
 Do you need any help getting around?
 We could show you some of the important places.
-
 
 Options: 
 That would be awesome! Let's do it!

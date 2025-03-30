@@ -5,7 +5,8 @@ using RhythMidi;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum CharacterRole {
+public enum CharacterRole
+{
     None = 0,
     Melodist = 1,
     Counter = 2,
@@ -14,17 +15,21 @@ public enum CharacterRole {
 };
 
 [System.Serializable]
-public class Character {
+public class Character
+{
     public CharacterRole role;
     public string name;
     public string instrument;
+
+    public string bio; // PLACEHOLDER: can remove if needed
     public Sprite spriteUnlocked;
     public Sprite spriteLocked;
     public Sprite backgroundHero;
     public int midiPitchStart;
 }
 
-public class CharacterData {
+public class CharacterData
+{
     public Character character;
     public float affection;
     public bool isUnlocked;
@@ -51,7 +56,7 @@ public class GameStateManager : MonoBehaviour
 
     void Start()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -66,9 +71,10 @@ public class GameStateManager : MonoBehaviour
     }
     public void LoadPersistentData()
     {
-        // TODO: Load persistent data from file/PlayerPrefs/whatever
-        characterData = new Dictionary<Character, CharacterData>();
-        foreach(Character c in characters) {
+        // TODO: Load persistent data from file/PlayerPrefs/whatever
+        characterData = new Dictionary<Character, CharacterData>();
+        foreach (Character c in characters)
+        {
             CharacterData cd = new CharacterData(c, 100f, true);
             characterData.Add(c, cd);
         }
@@ -83,10 +89,41 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene("PartyScreen");
     }
 
+
+    public void LoadVN()
+    {
+        //System.GC.Collect();
+        StartCoroutine(LoadSceneAsync("VN"));
+
+        //SceneManager.LoadScene("VN");
+        Time.timeScale = 1; // Add this line
+    }
+    IEnumerator LoadSceneAsync(string sceneName)
+    {
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
+
+        while (!asyncLoad.isDone)
+        {
+            // Wait until the scene is nearly loaded
+            if (asyncLoad.progress >= 0.9f)
+            {
+                asyncLoad.allowSceneActivation = true;
+            }
+            yield return null;
+        }
+    }
+
     public void StartRhythmGame(CharacterData[] selectedCharacters)
     {
         this.selectedCharacters = selectedCharacters;
         RhythMidiController.Instance.ClearCallbacks();
         SceneManager.LoadScene("Start copy");
     }
+
+
+ 
 }
+
+

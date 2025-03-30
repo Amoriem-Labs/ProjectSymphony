@@ -1,0 +1,10 @@
+Name: PC
+Can we keep it on for now? I don't know Ina that well yet.
+Maybe I'll take it off later, but I want the option for now.
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+That makes sense. Sorry for pressuring you.
+
+Name: PC
+Don't worry about it.

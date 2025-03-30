@@ -1,0 +1,27 @@
+Name:
+Sprite: EMPTY
+<i>Howard pulls Sam into a hug. He hesitates for a moment, and then reaches his arm out to you as well.<i>
+Name: PC	
+(That was nice of him...)
+Name:    
+<i>Looking over Howard's shoulder, you see a small building with the MIRA flag on it.<i>
+Name: PC
+What's that building over there?
+Name: Howard
+Sprite: Howard_Shrug
+I'm not actually sure.
+
+Name: Sam
+Sprite: Sam_Excited	
+Let's go check it out!
+BG: Classroom
+Name:      
+<i>The room is well-lit and adorned with dozens of potted venus flytraps. 
+A tall, snake-haired woman is sitting at what looks like a repurposed receptionist's desk, but the rest of the room is empty. <i>
+Name: Sam
+Sprite: Sam_Excited	
+Hey, it's Ms. A!
+
+Options: 
+Who's that?
+Oh, I think I recognize her from my audition.

@@ -1,0 +1,4 @@
+Name: Sam
+Sprite: Sam_Pensive
+Actually no I did not. 
+Hmph.

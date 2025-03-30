@@ -20,11 +20,29 @@ Oh wow. I see...
 
 Name: Sam
 Sprite: Sam_Neutral
-Patricia showed me this really cool place once - well, actually she just told me about it–
+Isabella showed me this really cool garden once! Well, actually she just told me about it–
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+...
+
+Name: Sam
 Sprite: Sam_Pensive
-Or, I mean, I listened while she was telling her friend -
+Or, I mean, I listened while she was telling her friend-
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+...
+
+Name: Sam
 Sprite: Sam_Happy
 I mean yes I was lip-reading so I didn't hear her beautiful voice...
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Yeah that's what I thought. 
+
+Name: Sam
 Sprite: Sam_Sad
 Okay, fine you win!
 Sprite: Sam_Happy
@@ -49,7 +67,7 @@ Not as if I have anything better to do!
 
 Name: Howard
 Sprite: Howard_Understanding
-Don't worry about it, you're new! You don't have to have everything figured out already.
+Don't worry about it! It's only your first day. You don't have to have everything figured out already.
 Does tomorrow at 5pm sound good?
 
 Name: PC

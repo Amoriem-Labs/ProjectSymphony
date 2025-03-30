@@ -1,0 +1,4 @@
+Name: Howard
+Sprite: Howard_Understanding
+Shoot, I'm sorry MC.
+Hopefully they'll get easier over time.

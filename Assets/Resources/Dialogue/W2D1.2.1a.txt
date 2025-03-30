@@ -1,0 +1,7 @@
+Name: PC
+Got it - of course I'll help.
+You focus on that horse-monster-thing and I'll work the crowd.
+
+Name: Sam
+Sprite: Sam_Happy
+I KNEW there was a reason I liked you!

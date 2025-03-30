@@ -1,0 +1,7 @@
+Name: PC
+Sprite: EMPTY
+(What should I do?)
+
+Options: 
+Draw Inspiration from Sam.
+Look for something to Trap the Dog in.

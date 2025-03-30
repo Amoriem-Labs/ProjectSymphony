@@ -19,7 +19,7 @@ No one's here right now because it's so late, but you can find the academic-mind
 
 Name: Sam
 Sprite: Sam_Happy
-Like Patricia! She's real smart.
+Like Isabella! She's real smart.
 
 Name: Howard
 Sprite: Howard_Shrug

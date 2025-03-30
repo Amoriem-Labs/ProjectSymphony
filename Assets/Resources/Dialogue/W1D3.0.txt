@@ -1,7 +1,8 @@
 Name: Sam
 Sprite: Sam_Happy
 BG: LockerRoom
-Hey MC! Hope you got a good night of sleep before the start of classes!
+BGM: classroom-bgm
+Hey PC! Hope you got a good night of sleep before the start of classes!
 
 Name: PC
 Hey guys, how have you been?

@@ -1,0 +1,12 @@
+Name: Howard
+Sprite: Howard_Uncomfortable
+I agree. I'm glad we're not caught up in all of that.
+Name: Sam
+Sprite: Sam_Pensive
+You guys worry too much! I'm sure the right band can win against those guys if they really tried.
+Sprite: Sam_Happy
+They're student musicians, just like us.
+We could even make a band and beat them!
+Name: Howard
+Sprite: Howard_Uncomfortable
+I don't know Sam...

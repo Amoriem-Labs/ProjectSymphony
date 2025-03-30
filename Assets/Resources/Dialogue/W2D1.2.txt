@@ -1,0 +1,101 @@
+Name: Howard
+Sprite: Howard_at_peace
+Before I leave, here are a couple of his favorite treats. This should help in getting him to like you.
+
+Name: PC
+Thanks! I'll make sure he doesn't get too big from these. Yes I will~
+
+Name: Howard
+Sprite: Howard_at_peace
+Well, I'll be off. Thanks again for watching him.
+
+Name: PC
+See you!
+
+Sprite: EMPTY
+...
+
+Name: Ina
+Sprite: Ina_normal
+...
+
+Name: PC
+So, uhh, do you want to play–
+
+SFX: Zoom_Sound
+Sprite: EMPTY
+Name: PC
+Wait!
+
+SFX: Heavy_footfalls
+
+Name:  
+Sprite: EMPTY
+Sprinting as fast as you can, you struggle to reach for Ina's leash while keeping up with the escaped dog.
+As you get closer, the dog seems to look back at you for a moment, before it starts to run even faster.
+
+Name: PC
+(How is it possible for a dog to look this smug??)
+
+Name:  
+Sprite: EMPTY
+Ina suddenly takes a sharp turn past a line of trees, vanishing from your sight. When you get to the corner, there is no dog to be found.
+
+Name: PC
+Haah... haah... haah...
+That... dog... is... really.... fast.
+
+Name:  
+Sprite: EMPTY
+You take a moment to calm your heavy breathing after the impromptu workout.
+
+Name: PC
+(Okay, where could Ina have gone?)
+
+Name: PC
+(He could be anywhere by now... he's small enough to get past the school security, too.)
+
+Name: PC
+(Darn it. I'm going to have to look everywhere.)
+
+SFX: Muffled_Dog_Barking_Sound
+
+Name: PC
+(That sounded like it came from the Lake!)
+
+BG: Lake
+Sprite: Ina_Neutral
+
+Name:  
+<i>Ina faces the tree line while standing competely still. His hair seems to stand on its edge as he frowns towards the forest. He's tense, as if ready to lunge.
+
+<i>There's something... off about the forest right now. The leaves move and rustle, despite there being no wind.
+
+Ina's monster / spirit features get more pronounced, or their eyes glow SPRITE
+
+Name: PC
+(What is happening? Is something going to come from the forest?)
+
+Name: PC
+(Wait, maybe Ina is just protecting the school!)
+
+Name: PC
+...
+
+Name: Ina
+Sprite: Ina_normal
+...
+
+Name:  
+Sprite: EMPTY
+<i>As Ina runs off again into the distance, you look back at the forest. You rub your eyes, and everything seems normal again.
+
+Name: PC
+Darn it!
+
+Name: PC
+Ugh. Where could he have gone now?
+
+Options: 
+Go to the Park.
+Go to the Hallway.

@@ -1,0 +1,41 @@
+Name: PC
+Phew. I'm glad that's over.
+
+Name:  
+Sprite: EMPTY
+Tightening the leash around Ina and ensuring it's connected to his collar, you begin to direct the dog back out towards the park.
+
+BG: Park
+
+Name: Howard
+Sprite: Howard_At_Peace
+Ah! You took him out for a walk! Thank you so much for all of this.
+
+Name: PC
+Yeah...
+
+Name: Howard
+Sprite: Howard_Understanding
+Is something wrong? You seem... a bit tired.
+
+Name: PC
+No. Nothing's wrong. It was just a long day. Here.
+
+Name:  
+Sprite: EMPTY
+You hand the leash over to Howard. A weight seems to dissapear from your shoulders after the exchange.
+
+Name:  
+Sprite: EMPTY
+Ina, ever the picture of innocence, softly paws at Howard's leg.
+
+Name: PC
+I'm just going to go back to my room to rest.
+
+Name: Howard
+Sprite: Howard_At_Peace
+Oh okay. See you later, then.
+
+Options: 
+Bye.
+See you!

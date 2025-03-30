@@ -1,0 +1,17 @@
+Name: PC
+(I know what I need to do. But I don't know if I have the strength to do it.)
+
+Name:  
+Sprite: EMPTY
+<i>You grab the leash from your back pocket and loop it around itself, creating a lasso. With newfound determination, you look at your target.
+
+SFX: Cowboy_Standoff_Effect
+
+Name: PC
+Yeehaw!
+
+Name:  
+Sprite: EMPTY
+<i>The lasso goes flying in a perfect arc and comes down around Ina's neck with the inevitability of the setting sun.
+<i>Ina seems startled for a moment, before looking up at you. You think you can see something like respect shining in his eyes.
+<i>The moment ends, and Ina goes back to his treat.

@@ -1,0 +1,17 @@
+Name: Howard
+Sprite:Howard_Uncomfortable
+Sam, can you stop saying that?
+You know it gets on my nerves.
+Name: Sam
+Sprite: Sam_Sad
+...sorry Howie.
+I think I'm kind of tired.
+Name: Howard
+Sprite: Howard_Understanding
+Maybe we should go back.
+Sprite: Howard_At_Peace
+Sorry to cut our journey short, PC.
+See you tomorrow for lunch?
+Name: PC
+Sprite: EMPTY
+Sounds good.

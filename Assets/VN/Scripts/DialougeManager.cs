@@ -3,21 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 
 
 public class DialougeManager : MonoBehaviour
 {
 
     // day activators
-    public bool activeDialogue =  false;
+    public bool activeDialogue = false;
     public bool isDay0 = false;
     public bool isW1D1 = false;
     public bool isW1D2 = false;
     public bool isW1D3 = false;
-    public bool isW2D1 = false;
-    public bool isW2D2 = false;
+    public bool isW2D1A = false;
+    public bool isW2D1B = false;
+    public bool isW2D2A = false;
+    public bool isW2D2B = false;
     public bool isW2D3 = false;
+    public bool isW2D4 = false;
+    public bool isW2D5 = false;
+    public bool isW2D6 = false;
 
+    public bool isW3D1 = false;
+    public bool isW3D2 = false;
+    public bool isW3D3 = false;
+    public bool isW3D4 = false;
+    bool loadedEvents = false;
+
+
+    // default name 
+    public string inputtedName = "Chris";
 
     // Start is called before the first frame update
     private Dialouge loadedDialogue;
@@ -40,7 +57,7 @@ public class DialougeManager : MonoBehaviour
     public int currentDialogueIndex = 0;
     public bool isDialogueActive = false;
     public bool isEndofScene = false;
-
+    public bool choiceSelected = false;
     public string selectedOption;
 
     // audio sources
@@ -55,14 +72,23 @@ public class DialougeManager : MonoBehaviour
     private AnimationManager animationManager;
 
     private bool startedFade = false;
-
+    private UnityEvent onFinishedDialogeLoading = new UnityEvent();
     // animations
 
     // UI Manager
     public GameObject UIManager;
     UIManager uiManager;
+    private List<bool> SceneList;
+    public Button saveScreen;
     void Awake()
     {
+
+        SceneList = new List<bool>();
+        InitArr(SceneList);
+        SetSceneBools();
+
+        loadedEvents = false; // DELETE THIS IF BUGSS
+
         animationManager = GetComponent<AnimationManager>();
         uiManager = UIManager.GetComponent<UIManager>();
 
@@ -83,6 +109,70 @@ public class DialougeManager : MonoBehaviour
                 Destroy(managers[i].gameObject);
             }
         }
+        saveScreen.onClick.AddListener(SaveScreen);
+
+    }
+
+
+
+    private void InitArr(List<bool> arr)
+    {
+        arr.Add(isDay0);
+        arr.Add(isW1D1);
+        arr.Add(isW1D2);
+        arr.Add(isW1D3);
+
+        arr.Add(isW2D1A);
+        arr.Add(isW2D1B);
+        arr.Add(isW2D2A);
+        arr.Add(isW2D2B);
+        arr.Add(isW2D3);
+        arr.Add(isW2D4);
+        arr.Add(isW2D5);
+        arr.Add(isW2D6);
+
+        arr.Add(isW3D1);
+        arr.Add(isW3D2);
+        arr.Add(isW3D3);
+        arr.Add(isW3D4);
+
+    }
+    public void SetSceneBools()
+    {
+        for (int i = 0; i < SceneList.Count; i++)
+        {
+            if (i == PlayerPrefs.GetInt("SceneIndex."))
+            {
+                SceneList[i] = true;
+            }
+            else
+            {
+                SceneList[i] = false;
+            }
+        }
+        isDay0 = SceneList[0];
+        isW1D1 = SceneList[1];
+        isW1D2 = SceneList[2];
+        isW1D3 = SceneList[3];
+        isW2D1A = SceneList[4];
+        isW2D1B = SceneList[5];
+        isW2D2A = SceneList[6];
+        isW2D2B = SceneList[7];
+        isW2D3 = SceneList[8];
+        isW2D4 = SceneList[9];
+        isW2D5 = SceneList[10];
+        isW2D6 = SceneList[11];
+
+        isW3D1 = SceneList[12];
+        isW3D2 = SceneList[13];
+        isW3D3 = SceneList[14];
+        isW3D4 = SceneList[15];
+    }
+    public void UpdatePPref(int index)
+    {
+        //int index = SceneList.IndexOf(sceneBool);
+        PlayerPrefs.SetInt("SceneIndex.", index);
+        SetSceneBools();
     }
 
     public void StartDialogueSequence()
@@ -127,21 +217,20 @@ public class DialougeManager : MonoBehaviour
 
         if (!string.IsNullOrEmpty(curr_dialogue.sprite) && characterSpriteImage != null)
         {
-            Sprite newSprite = Resources.Load<Sprite>($"Sprites/{curr_dialogue.sprite}");
-
+            Sprite newSprite = AssetCache.GetSprite($"Sprites/{curr_dialogue.sprite}");
             if (newSprite != null)
             {
-                 LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.5f)
-                .setEase(LeanTweenType.easeInElastic)
-                .setOnComplete(() =>
-                {
-                    // Change sprite after scaling down
-                    characterSpriteImage.sprite = newSprite;
+                LeanTween.scale(characterSpriteImage.rectTransform, Vector3.zero, 0.2f)
+               .setEase(LeanTweenType.easeInCubic)
+               .setOnComplete(() =>
+               {
+                   // Change sprite after scaling down
+                   characterSpriteImage.sprite = newSprite;
 
-                    // Animate character sprite in
-                    LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.5f)
-                        .setEase(LeanTweenType.easeOutElastic);
-                });
+                   // Animate character sprite in
+                   LeanTween.scale(characterSpriteImage.rectTransform, new Vector3(16f, 12.5f, 1f), 0.2f)
+                      .setEase(LeanTweenType.easeOutCubic);
+               });
                 // characterSpriteImage.sprite = newSprite;
             }
             else
@@ -156,12 +245,12 @@ public class DialougeManager : MonoBehaviour
                 Debug.LogError("curr_dialogue is null in StartDialouge!");
                 return;
             }
-            
+
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
-            
+
             Debug.Log("background is" + curr_dialogue.background);
-            uiManager.ShowLocation(curr_dialogue.background); 
-            
+            uiManager.ShowLocation(curr_dialogue.background);
+
             if (newBG != null)
             {
                 // Fade out current background
@@ -185,11 +274,11 @@ public class DialougeManager : MonoBehaviour
         // error checking and set variables
         if (curr_dialogue == null)
         {
-            Debug.Log("Dialouge is null");
+            //Debug.Log("Dialouge is null");
             return;
         }
 
-        Debug.Log($"Dialogue name: {curr_dialogue.name}, Sentences count: {curr_dialogue.sentences.Length}");
+        //Debug.Log($"Dialogue name: {curr_dialogue.name}, Sentences count: {curr_dialogue.sentences.Length}");
 
         // set the text animator 
         if (animator != null)
@@ -201,21 +290,19 @@ public class DialougeManager : MonoBehaviour
             Debug.LogWarning("Animator is not set in DialougeManager");
         }
 
-        // set the charcater animator
-        if (characterAnimator != null)
-        {
-            characterAnimator.SetBool("DialougeActive", true);
-        }
-        else
-        {
-            Debug.LogWarning("Character animator is not set in DialougeManager");
-        }
-
 
         // set the name 
         if (nameText != null)
         {
-            nameText.text = curr_dialogue.name;
+            if (curr_dialogue.name != " PC" && curr_dialogue.name != "PC" && curr_dialogue.name != " MC" && curr_dialogue.name != "MC")
+            {
+                nameText.text = curr_dialogue.name;
+            }
+            else
+            {
+                nameText.text = inputtedName;
+            }
+
         }
         else
         {
@@ -240,12 +327,24 @@ public class DialougeManager : MonoBehaviour
         foreach (string sentance in curr_dialogue.sentences)
         {
             // add to the queue
-            sentences.Enqueue(sentance);
+            string replacedSentence = sentance.Replace("PC", inputtedName).Replace(" PC", inputtedName);
+            sentences.Enqueue(replacedSentence);
         }
 
         Debug.Log($"Enqueued {sentences.Count} sentences");
 
         DisplayNextSentence();
+
+
+        // set the charcater animator
+        if (characterAnimator != null)
+        {
+            characterAnimator.SetBool("DialougeActive", true);
+        }
+        else
+        {
+            Debug.LogWarning("Character animator is not set in DialougeManager");
+        }
     }
 
     public void DisplayNextSentence()
@@ -264,13 +363,14 @@ public class DialougeManager : MonoBehaviour
             {
                 isEndofScene = true;
             }
-                MoveToNextDialogueEntry();
+            MoveToNextDialogueEntry();
         }
     }
 
     private void MoveToNextDialogueEntry()
     {
-        
+        choiceSelected = false;
+
         currentDialogueIndex++;
         if (currentDialogueIndex < dialogueSequence.Count)
         {
@@ -293,26 +393,42 @@ public class DialougeManager : MonoBehaviour
             //EndDialouge();
         }
     }
-
+    private readonly WaitForSeconds letterDelay = new WaitForSeconds(0.01f);
+    private readonly WaitForSeconds secondDelay = new WaitForSeconds(1.0f);
     IEnumerator TypeSentence(string sentence)
     {
         dialougeText.text = "";
-
-        for(int i = 0; i <= sentence.Length; i++)
+        int visibleCharacters = 0;
+        while (visibleCharacters <= sentence.Length)
         {
-            dialougeText.text = sentence.Substring(0, i);
-            yield return new WaitForSeconds(0.01f);
+            dialougeText.text = sentence.Substring(0, visibleCharacters);
+            visibleCharacters++;
+            yield return letterDelay;
         }
     }
+
+
+    //IEnumerator TypeSentence(string sentence)
+    //{
+    //    dialougeText.text = "";
+
+    //    // <i> hid if < until > 
+    //    for (int i = 0; i <= sentence.Length; i++)
+    //    {
+    //        dialougeText.text = sentence.Substring(0, i);
+    //        yield return new WaitForSeconds(0.01f);
+    //    }
+    //}
 
     public void EndDialouge()
     {
         if (isEndofScene)
         {
-            animator.SetBool("IsOpen", false);
+            //animator.SetBool("IsOpen", false);
             characterAnimator.SetBool("DialougeActive", false);
         }
         isDialogueActive = false;
+        activeDialogue = false;
 
     }
 
@@ -370,7 +486,7 @@ public class DialougeManager : MonoBehaviour
                     loadedDialogue.sprite = line.Substring(8);
                 }
             }
-            else if(line == "Options: ")
+            else if (line == "Options: ")
             {
                 AddCurrentDialogue();
                 loadedDialogue = new Dialouge();
@@ -381,11 +497,11 @@ public class DialougeManager : MonoBehaviour
             {
                 animationManager.animationName = line.Substring(11);
                 Debug.Log($"Playing animation {animationManager.animationName}");
-                animationManager.playAnimation = true;
-   
+                //animationManager.playAnimation = true;
+
             }
             else if (line.StartsWith("BG: "))
-            { 
+            {
                 if (loadedDialogue != null)
                 {
                     loadedDialogue.background = line.Substring(4);
@@ -394,13 +510,13 @@ public class DialougeManager : MonoBehaviour
             else if (line.StartsWith("BGM: "))
             {
                 loadedDialogue.bgm = line.Substring(5);
-       
+
             }
             else if (line.StartsWith("SFX: "))
             {
                 Debug.Log("SFX loaded");
                 loadedDialogue.sfx = line.Substring(5);
-   
+
             }
             else if (line.StartsWith("BG2: "))
             {
@@ -420,31 +536,33 @@ public class DialougeManager : MonoBehaviour
                 {
                     currentSentances.Add(line);
                 }
-                
+
             }
         }
         AddCurrentDialogue();
 
         Debug.Log($"Loaded {dialogueSequence.Count} dialogue entries");
+
     }
 
     private void AddCurrentDialogue()
     {
-        if(loadedDialogue != null)
+        if (loadedDialogue != null)
         {
             loadedDialogue.sentences = currentSentances.ToArray();
-            if(currentOptions.Count >0)
+            if (currentOptions.Count > 0)
             {
                 loadedDialogue.options = currentOptions.ToArray();
             }
             dialogueSequence.Add(loadedDialogue);
         }
+        loadedEvents = true;
     }
 
     public void ShowChoiceOptions(string[] options)
     {
         dialougeText.enabled = false;
-        continueButton.gameObject.SetActive (false);
+        continueButton.gameObject.SetActive(false);
         nameText.text = "What should I do?";
 
         Debug.Log($"ShowChoiceOptions called with {options?.Length ?? 0} options");
@@ -455,12 +573,12 @@ public class DialougeManager : MonoBehaviour
             return;
         }
 
-        foreach(Button button in dialougueButtons)
+        foreach (Button button in dialougueButtons)
         {
             button.gameObject.SetActive(false);
         }
 
-        for(int i = 0; i < options.Length && i < dialougueButtons.Length; i++)
+        for (int i = 0; i < options.Length && i < dialougueButtons.Length; i++)
         {
             Button button = dialougueButtons[i];
 
@@ -491,23 +609,25 @@ public class DialougeManager : MonoBehaviour
             {
                 Debug.LogWarning($"Button at index {i} is null");
             }
-            
+
         }
     }
+
     private void HandleOptionSelected(int optionIndex)
     {
         Debug.Log($"Option {optionIndex} selected");
         ClearActiveButtons();
 
         selectedOption = dialogueSequence[currentDialogueIndex].options[optionIndex];
-
+        Debug.Log($"Selected {selectedOption}");
         //currentDialogueIndex = 0;
+        choiceSelected = true;
         MoveToNextDialogueEntry();
     }
 
     private void ClearActiveButtons()
     {
-        foreach(Button button in activeButtons)
+        foreach (Button button in activeButtons)
         {
             button.gameObject.SetActive(false);
         }
@@ -518,8 +638,7 @@ public class DialougeManager : MonoBehaviour
     {
         SFX.Stop();
 
-        AudioClip clip = Resources.Load<AudioClip>($"Audio/SFX/{sfxName}");
-        if (clip != null)
+        AudioClip clip = AssetCache.GetAudioClip($"Audio/SFX/{sfxName}"); if (clip != null)
         {
             Debug.Log($"Playing {clip}");
             SFX.PlayOneShot(clip);
@@ -555,6 +674,12 @@ public class DialougeManager : MonoBehaviour
         for (int i = 0; i < dialogueFiles.Length; i++)
         {
             LoadDialogueSequence(dialogueFiles[i]);
+            //yield return new WaitForSeconds(4f);
+            yield return new WaitUntil(() => loadedEvents);
+            yield return new WaitUntil(() => uiManager.IsReady);
+
+            //yield return new WaitForSeconds(1f);
+            loadedEvents = false; // DELETE THIS IF BUGSS
             StartDialogueSequence();
             yield return new WaitUntil(() => currentDialogueIndex >= dialogueSequence.Count);
 
@@ -570,9 +695,15 @@ public class DialougeManager : MonoBehaviour
                 EndDialouge();
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return secondDelay;
         }
         activeDialogue = false;
+    }
+
+
+    public void SaveScreen()
+    {
+        SceneManager.LoadScene("SaveScreen");
     }
 
 

@@ -1,0 +1,18 @@
+Name: Sam
+Sprite: Sam_Happy
+Anyway, yip-yip!
+
+SFX: Magical_Horse_Neigh
+
+Name:  
+Sprite: EMPTY
+Some of the audience is interested, but most are just confused about what Sam is doing.
+
+Name: PC
+(Guess it's my turn to get started.)
+
+Options: 
+Draw attention to the spectacle.
+Bring the danger into focus.
+Give the crowd some context.
+Hype up how cool Sam is.
