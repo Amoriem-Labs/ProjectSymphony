@@ -283,10 +283,10 @@ public class GameManager : MonoBehaviour
             PlayHitSoundEffect();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1)) SwitchToCharacter(CharacterRole.Melodist);
-        else if(Input.GetKeyDown(KeyCode.Alpha2)) SwitchToCharacter(CharacterRole.Counter);
-        else if(Input.GetKeyDown(KeyCode.Alpha3)) SwitchToCharacter(CharacterRole.Harmony);
-        else if(Input.GetKeyDown(KeyCode.Alpha4)) SwitchToCharacter(CharacterRole.Percussion);
+        if(Input.GetKeyDown(KeyCode.Alpha1) && GameStateManager.Instance.SelectedCharactersContainsRole(CharacterRole.Melodist)) SwitchToCharacter(CharacterRole.Melodist);
+        if(Input.GetKeyDown(KeyCode.Alpha2) && GameStateManager.Instance.SelectedCharactersContainsRole(CharacterRole.Counter)) SwitchToCharacter(CharacterRole.Counter);
+        if(Input.GetKeyDown(KeyCode.Alpha3) && GameStateManager.Instance.SelectedCharactersContainsRole(CharacterRole.Percussion)) SwitchToCharacter(CharacterRole.Percussion);
+        if(Input.GetKeyDown(KeyCode.Alpha4) && GameStateManager.Instance.SelectedCharactersContainsRole(CharacterRole.Harmony)) SwitchToCharacter(CharacterRole.Harmony);
     }
 
     private void PlayHitSoundEffect() {

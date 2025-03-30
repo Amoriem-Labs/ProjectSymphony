@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using RhythMidi;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -45,6 +46,9 @@ public class GameStateManager : MonoBehaviour
     public string currentSongName;
     public CharacterData[] selectedCharacters;
 
+    public bool SelectedCharactersContainsRole(CharacterRole role) => selectedCharacters.Any(c => c.character.role == role);
+    public CharacterData GetSelectedCharacterWithRole(CharacterRole role) => selectedCharacters.First(c => c.character.role == role);
+
     void Start()
     {
         if(Instance == null)
@@ -68,6 +72,10 @@ public class GameStateManager : MonoBehaviour
             CharacterData cd = new CharacterData(c, 100f, true);
             characterData.Add(c, cd);
         }
+    }
+    public void SavePersistentData()
+    {
+        // TODO
     }
     public void LoadCharacterSelect(string song)
     {

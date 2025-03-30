@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using RhythMidi;
+using System;
 
 public class PartyManager : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class PartyManager : MonoBehaviour
     // Input // 
     public int numberInBand; // number of musicians required for this song
     public GameObject SongText;
+
+    int RequiredForSong => Mathf.Min(GameStateManager.Instance.CurrentChart.Tracks.Count, numberInBand);
 
     void Start()
     {
@@ -110,7 +113,7 @@ public class PartyManager : MonoBehaviour
     {
         int selectedCount = characterSlots.Count(c => c.thisSelected);
 
-        if (selectedCount >= numberInBand)
+        if (selectedCount >= RequiredForSong)
         {
             if (CalculateChemistry())
             {
@@ -149,7 +152,7 @@ public class PartyManager : MonoBehaviour
         chemistry = characterSlots
             .Where(c => c.thisSelected)
             .Aggregate(0f, (acc, c) => acc + c.characterData.affection)
-            / numberInBand;
+            / RequiredForSong;
         
         chemistryBar.SetScore((int)chemistry);
         return chemistry >= threshold;

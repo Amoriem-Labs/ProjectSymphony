@@ -49,7 +49,7 @@ public class ResultsScreenManager : MonoBehaviour
         GoodText.text = goodHits.ToString();
         MissText.text =  missedHits.ToString();
 
-        double chemistry = CalculateChemistry(notes, timeSpentOnCharacter);
+        double chemistry = UpdateAffections(notes, timeSpentOnCharacter);
 
         StartCoroutine(ResultsAnimate(chemistry));
 
@@ -62,7 +62,7 @@ public class ResultsScreenManager : MonoBehaviour
         }
         Debug.Log($"Largest Combo: {largestCombo}");
         Debug.Log($"Combined Overall Ratio: {perfectHits}/{goodHits}/{missedHits}");
-        Debug.Log($"Overall Chem: {CalculateChemistry(notes, timeSpentOnCharacter)}");
+        Debug.Log($"Overall Chem: {UpdateAffections(notes, timeSpentOnCharacter)}");
         Debug.Log($"Fav Charcter: {GetFavoriteCharacter(timeSpentOnCharacter)}");
 
         UpdateGradeImage(CalculateOverallGrade(notes));
@@ -156,7 +156,11 @@ public class ResultsScreenManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public double CalculateChemistry(Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
+/// <summary>
+/// Updates character affections and calculates total chemistry.
+/// </summary>
+/// <returns>The total chemistry.</returns>
+    public double UpdateAffections(Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
         double totalChemistryChange = 0.0;
         int characterCount = 0;
@@ -168,7 +172,7 @@ public class ResultsScreenManager : MonoBehaviour
         }
 
 
-        foreach (var character in notes.Keys)
+        foreach (CharacterRole character in notes.Keys)
         {
             float timeSpent = timeSpentOnCharacter[character]; 
             List<int> hitCounts = notes[character];
@@ -177,6 +181,7 @@ public class ResultsScreenManager : MonoBehaviour
             float timeSpentPercentage = timeSpent / totalTime;
             
             float affectionChange = CalculateAffectionChange(timeSpentPercentage, grade);
+            GameStateManager.Instance.GetSelectedCharacterWithRole(character).affection += affectionChange;
             Debug.Log($"Time%: {timeSpentPercentage}, Grade: {grade}, affchange: {affectionChange}");
             totalChemistryChange += affectionChange;
             characterCount++;

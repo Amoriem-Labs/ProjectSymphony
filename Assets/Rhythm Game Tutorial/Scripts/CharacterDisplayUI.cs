@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
-using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 using TMPro;
-using UnityEditor.PackageManager.UI;
+using UnityEngine.UI;
 
 public class CharacterDisplayUI : MonoBehaviour
 {
@@ -12,10 +10,11 @@ public class CharacterDisplayUI : MonoBehaviour
 
     public GameObject[] spotlights;
 
-    public string[] names = new string[4]; // Placeholder 
     public float animationTime;
     public Vector2 smallScale;
     public Vector2 largeScale;
+    
+    string[] names = new string[4]; 
 
     Coroutine coroutine;
 
@@ -25,6 +24,17 @@ public class CharacterDisplayUI : MonoBehaviour
 
         for (int i = 0; i < images.Length; i++)
         {
+            CharacterRole role = (CharacterRole)(i + 1);
+            if(!GameStateManager.Instance.SelectedCharactersContainsRole(role))
+            {
+                images[i].gameObject.SetActive(false);
+                continue;
+            }
+            Image imgScript = images[i].GetComponent<Image>();
+            Character c = GameStateManager.Instance.GetSelectedCharacterWithRole(role).character;
+            imgScript.sprite = c.spriteUnlocked;
+            names[i] = c.name;
+
             Transform childTransform = spotlights[i].transform.GetChild(0); // Index starts at 0
             GameObject childGameObject = childTransform.gameObject;
             TMP_Text characterText = childGameObject.GetComponent<TMP_Text>();
@@ -36,10 +46,9 @@ public class CharacterDisplayUI : MonoBehaviour
     public void SwitchToCharacter(CharacterRole character)
     {
         if(coroutine != null) StopCoroutine(coroutine);
-        if(character == CharacterRole.Melodist) coroutine = StartCoroutine(Animate(0));
-        else if(character == CharacterRole.Counter) coroutine = StartCoroutine(Animate(1));
-        else if(character == CharacterRole.Harmony) coroutine = StartCoroutine(Animate(2));
-        else if(character == CharacterRole.Percussion) coroutine = StartCoroutine(Animate(3));
+        if((int)character < 0 || (int)character > 4) return;
+        if(!GameStateManager.Instance.SelectedCharactersContainsRole(character)) return;
+        StartCoroutine(Animate((int)character - 1));
     }
 
     IEnumerator Animate(int featured)
