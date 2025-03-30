@@ -115,7 +115,7 @@ public class W2D1B : MonoBehaviour
                     DP4 = true;
 
                 }
-                else if (currselectedOption == "Go to the Hallway.")
+                else if (currselectedOption == "Throw a treat out as bait.")
                 {
                     DP4 = true;
                     // load the next dialogue
@@ -150,15 +150,16 @@ public class W2D1B : MonoBehaviour
 
                 }
 
-                if (dialogueManager.activeDialogue == false && END)
-                {
-                    // add scene management stuff
-                    PlayerPrefs.SetInt("CurrentWeek.", 21);
-                    PlayerPrefs.SetInt("SceneToLoad", 3);
-                    SceneManager.LoadScene("Splash");
-                }
+                
 
 
+            }
+            if (END)
+            {
+                // add scene management stuff
+                PlayerPrefs.SetInt("CurrentWeek.", 21);
+                PlayerPrefs.SetInt("SceneToLoad", 3);
+                SceneManager.LoadScene("Splash");
             }
 
 
