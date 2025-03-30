@@ -79,7 +79,7 @@ public class MapManager : MonoBehaviour
         //dialogueManager = FindAnyObjectByType<DialougeManager>();
         mainEventSelected = false;
         credits = 3;
-        PlayerPrefs.SetInt("CurrentWeek.", 1);
+        //PlayerPrefs.SetInt("CurrentWeek.", 2);
         if (PlayerPrefs.HasKey("CurrentWeek."))
         {
             weekNum = PlayerPrefs.GetInt("CurrentWeek.");
@@ -197,8 +197,8 @@ public class MapManager : MonoBehaviour
         addEvent(Trees, false, true, false, "Trees", 1, "Should I meet Howard by the park?", 6);
         addEvent(Tower, false, true, false, "Tower", 1, "Should I meet Carter at the tower?", 5);
         addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", 6);
-        addEvent(Trees, false, true, true, "Trees2", 2, "Should I help Howard watch Ina?", 4);
-        addEvent(Islands, false, true, true, "Islands2", 2, "Should I help Sam with her event?", 5);
+        addEvent(Trees, false, true, true, "Trees2", 2, "Should I help Sam with her event?", 4);
+        addEvent(Islands, false, true, true, "Islands2", 2, "Should I help Howard watch Ina?", 5);
         addEvent(Trees, false, true, true, "Trees3", 21, "Should I meet  Howard at the park?", 6);
         addEvent(Islands, false, true, true, "Islands3", 21, "Should I meet Sam at the lake?", 7);
 

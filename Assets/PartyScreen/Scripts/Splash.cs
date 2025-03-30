@@ -26,7 +26,7 @@ public class Splash : MonoBehaviour
                 RhythMidiController.Instance.onFinishedLoading.AddListener(OnRhythMidiLoaded);
                 break;
             case 3:
-                SceneManager.LoadScene("MapScene");
+                SceneManager.LoadScene("MapScreen");
                 break;
             default:
                 Debug.LogError($"Scene to load recieved an unexpected value: {SceneToLoad}. Expected int 0,1, or 2.");
