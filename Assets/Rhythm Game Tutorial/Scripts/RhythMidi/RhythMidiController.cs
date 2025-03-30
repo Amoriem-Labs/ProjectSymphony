@@ -380,9 +380,13 @@ namespace RhythMidi
         }
 
         public bool IsFirstAudioSourcePlaying {
-    get {
-        return audioSources != null && audioSources.Count > 0 && audioSources[0].isPlaying;
-    }
-}
+            get {
+                return audioSources != null && audioSources.Count > 0 && audioSources[0].isPlaying;
+            }
+        }
+
+        public List<ChartResource> GetAllCharts(){
+            return loadedCharts;
+        }
     }
 }

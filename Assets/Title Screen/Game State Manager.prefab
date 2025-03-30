@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2898350413375007694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5263558564316170246}
+  - component: {fileID: 1210394681428425408}
+  m_Layer: 0
+  m_Name: Game State Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5263558564316170246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898350413375007694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1210394681428425408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898350413375007694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdaa0e6632f3049cb9b72542ae80d693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - role: 1
+    name: Sam
+    instrument: Recorder
+    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
+    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    midiPitchStart: 36
+  - role: 2
+    name: Sam
+    instrument: Recorder
+    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
+    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    midiPitchStart: 36
+  - role: 2
+    name: Evil Sam
+    instrument: Recorder
+    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
+    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    midiPitchStart: 36
+  - role: 2
+    name: Evil Sam
+    instrument: Recorder
+    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
+    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    midiPitchStart: 36
+  - role: 4
+    name: Sam
+    instrument: Recorder
+    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
+    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    midiPitchStart: 36
+  - role: 4
+    name: Evil Sam
+    instrument: Recorder
+    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
+    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    midiPitchStart: 36
+  - role: 4
+    name: Evil Sam
+    instrument: Recorder
+    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
+    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    midiPitchStart: 36
+  - role: 3
+    name: Howard
+    instrument: Drumset
+    spriteUnlocked: {fileID: 21300000, guid: 47ee57557a0f1462693289bc19dc9dad, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 1d6ad9ff6b34b4e349b7f8af416e68e0, type: 3}
+    backgroundHero: {fileID: 21300000, guid: a3857d9087a3e4084b95beaec55e530d, type: 3}
+    midiPitchStart: 40
+  - role: 3
+    name: Howard
+    instrument: Drumset
+    spriteUnlocked: {fileID: 21300000, guid: 47ee57557a0f1462693289bc19dc9dad, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 1d6ad9ff6b34b4e349b7f8af416e68e0, type: 3}
+    backgroundHero: {fileID: 21300000, guid: a3857d9087a3e4084b95beaec55e530d, type: 3}
+    midiPitchStart: 40
+  currentSongName: 

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/VN/Scenes/MapScreen.unity
     guid: 51f1cc764b7c54160aff07ed6bcd5ffe
+  - enabled: 1
+    path: Assets/Title Screen/FreePlayScene.unity
+    guid: c430a1ae443d6eb4f9125c970a745c23
   m_configObjects: {}
