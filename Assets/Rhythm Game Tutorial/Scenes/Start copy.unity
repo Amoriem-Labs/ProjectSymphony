@@ -4324,7 +4324,7 @@ GameObject:
   - component: {fileID: 1144152882}
   - component: {fileID: 1144152881}
   m_Layer: 5
-  m_Name: Drummer
+  m_Name: Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4620,10 +4620,10 @@ MonoBehaviour:
   - {fileID: 1916517932}
   - {fileID: 280482690}
   names:
-  - Sam
-  - Howard
-  - N/A
-  - N/A
+  - Melodist
+  - Counter
+  - Percussion
+  - Harmony
   animationTime: 0.4
   smallScale: {x: 280, y: 280}
   largeScale: {x: 350, y: 350}
@@ -4803,7 +4803,7 @@ GameObject:
   - component: {fileID: 1318620125}
   - component: {fileID: 1318620124}
   m_Layer: 5
-  m_Name: Bassist
+  m_Name: Percussion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5951,7 +5951,7 @@ GameObject:
   - component: {fileID: 1514804800}
   - component: {fileID: 1514804799}
   m_Layer: 5
-  m_Name: Guitarist
+  m_Name: Harmony
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
