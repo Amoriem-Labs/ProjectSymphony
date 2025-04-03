@@ -35,6 +35,7 @@ public class MapManager : MonoBehaviour
 
     public int weekNum;
     public TextMeshProUGUI Creds;
+    public Canvas loadingScreen; 
     public Canvas YesNoUI;
     public Button Yes;
     public Button No;
@@ -55,9 +56,14 @@ public class MapManager : MonoBehaviour
     public Dictionary<string, mapObject> weekEvents;
     public Dictionary<string, mapObject> finishedEvents;
 
+
+    private LoadingScreens LS;
+
+
     // Start is called before the first frame update
     private void Awake()
     {
+        LS = FindAnyObjectByType<LoadingScreens>();
         // locate all dialouge managers 
         MapManager[] managers = FindObjectsOfType<MapManager>();
 
@@ -130,7 +136,7 @@ public class MapManager : MonoBehaviour
         Yes.onClick.AddListener(() => YesNoClicked(Yes));
         No.onClick.AddListener(() => YesNoClicked(No));
         YesNoUI.enabled = false;
-
+        loadingScreen.enabled = false;
 
     }
 
@@ -281,7 +287,9 @@ public class MapManager : MonoBehaviour
             PlayerPrefs.SetInt("SceneIndex.", obj.SceneTransition);
             credits -= 1;
             PlayerPrefs.SetInt("SceneToLoad", 0);
-            SceneManager.LoadScene("Splash");        
+            LS.loaded = false;
+            loadingScreen.enabled = true;
+            //SceneManager.LoadScene("Splash");        
         }
         else if (button == No)
         {

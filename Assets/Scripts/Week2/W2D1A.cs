@@ -147,7 +147,8 @@ public class W2D1A : MonoBehaviour
                 //update map week num
                 PlayerPrefs.SetInt("CurrentWeek.", 21);
                 PlayerPrefs.SetInt("SceneToLoad", 3);
-                SceneManager.LoadScene("Splash");
+                //SceneManager.LoadScene("Splash");
+                SceneManager.LoadScene("MapScreen");
 
 
 
