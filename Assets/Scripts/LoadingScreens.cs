@@ -10,7 +10,7 @@ public class LoadingScreens : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GSM = FindAnyObjectByType<GameStateManager>();
+        //GSM = FindAnyObjectByType<GameStateManager>();
         loaded = true;
     }
 
@@ -27,8 +27,7 @@ public class LoadingScreens : MonoBehaviour
                     Debug.Log("here");
                     // Load VN
                     new WaitForSeconds(3f);
-                    GSM.LoadVN();
-
+                    GameStateManager.Instance.LoadVN();
                     break;
                 case 1:
                     // Load Map
