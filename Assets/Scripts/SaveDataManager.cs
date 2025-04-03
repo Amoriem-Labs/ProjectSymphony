@@ -25,6 +25,8 @@ public class SaveDataManager : MonoBehaviour
     public GameObject saveSlotPanel;
     public GameObject saveSlotButtonPrefab;
     public Button SaveButton;
+    public Canvas LoadingScreen;
+    private LoadingScreens LS;
     //public Button SaveButtonVN;
 
     //public Button Delete;
@@ -34,6 +36,8 @@ public class SaveDataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadingScreen.enabled = false;
+        LS = FindAnyObjectByType<LoadingScreens>();
         //PlayerPrefs.DeleteAll();
         // 0 is VN
         // 1 is map
@@ -147,7 +151,10 @@ public class SaveDataManager : MonoBehaviour
         saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
         PlayerPrefs.SetInt(SCENE_INDEX_KEY, PlayerPrefs.GetInt(SCENE_INDEX_KEY + saveName.ToString()));
         Debug.Log("Loading:   Scene index is: " + PlayerPrefs.GetInt(SCENE_INDEX_KEY));
-        SceneManager.LoadScene("Splash");
+        //SceneManager.LoadScene("Splash");
+        LoadingScreen.enabled = true;
+        LS.loaded = false;
+
     }
 
     public void DeleteData(int saveName)
