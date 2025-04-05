@@ -4091,7 +4091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19fa1e09959d7440b8e6499d517d4d23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be3cf68c847354206a371e60e1930e7c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6731,12 +6731,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 329839408}
     m_Modifications:
     - target: {fileID: 2731984631581605402, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731984631581605402, guid: 7dfd246284ba84da5995828b68222084, type: 3}
       propertyPath: m_margin.w
-      value: -57.835716
+      value: -52.832108
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731984631581605402, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+      propertyPath: m_margin.y
+      value: 17.733425
       objectReference: {fileID: 0}
     - target: {fileID: 2731984631581605402, guid: 7dfd246284ba84da5995828b68222084, type: 3}
       propertyPath: m_margin.z
       value: 179.03427
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731984631581605402, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3246224411268674410, guid: 7dfd246284ba84da5995828b68222084, type: 3}
       propertyPath: m_Name
@@ -6880,7 +6892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8464749218764627482, guid: 7dfd246284ba84da5995828b68222084, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -23
+      value: -26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -11865,7 +11877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ebae64b7a3bfd4b1190153014e2c62ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4db1dca10cd04096bdf652d439109fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
