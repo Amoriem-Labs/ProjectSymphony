@@ -703,7 +703,7 @@ public class DialougeManager : MonoBehaviour
 
     public void SaveScreen()
     {
-        SceneManager.LoadScene("SaveScreen");
+        GameStateManager.Instance.LoadNewScene("SaveScreen");
     }
 
 

@@ -45,14 +45,15 @@ public class CharacterData
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager Instance { get; private set; }
+
     public Character[] characters;
     public Dictionary<Character, CharacterData> characterData;
     public ChartResource CurrentChart => RhythMidiController.Instance.GetChartByName(currentSongName);
     public string currentSongName;
     public CharacterData[] selectedCharacters;
 
-    public bool SelectedCharactersContainsRole(CharacterRole role) => selectedCharacters.Any(c => c.character.role == role);
-    public CharacterData GetSelectedCharacterWithRole(CharacterRole role) => selectedCharacters.First(c => c.character.role == role);
+    public Animator transition;
+    public float transitionTime = 1f;
 
     void Start()
     {
@@ -69,61 +70,66 @@ public class GameStateManager : MonoBehaviour
 
         LoadPersistentData();
     }
+
     public void LoadPersistentData()
     {
-        // TODO: Load persistent data from file/PlayerPrefs/whatever
-        characterData = new Dictionary<Character, CharacterData>();
+        characterData = new Dictionary<Character, CharacterData>();
         foreach (Character c in characters)
         {
             CharacterData cd = new CharacterData(c, 100f, true);
             characterData.Add(c, cd);
         }
     }
+
     public void SavePersistentData()
     {
         // TODO
     }
+
     public void LoadCharacterSelect(string song)
     {
         currentSongName = song;
-        SceneManager.LoadScene("PartyScreen");
+        StartCoroutine(LoadScene("PartyScreen"));
     }
-
 
     public void LoadVN()
     {
-        //System.GC.Collect();
-        StartCoroutine(LoadSceneAsync("VN"));
-
-        //SceneManager.LoadScene("VN");
-        Time.timeScale = 1; // Add this line
-    }
-    IEnumerator LoadSceneAsync(string sceneName)
-    {
-        
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        asyncLoad.allowSceneActivation = false;
-
-        while (!asyncLoad.isDone)
-        {
-            // Wait until the scene is nearly loaded
-            if (asyncLoad.progress >= 0.9f)
-            {
-                asyncLoad.allowSceneActivation = true;
-            }
-            yield return null;
-        }
+        Time.timeScale = 1;
+        StartCoroutine(LoadScene("VN"));
     }
 
     public void StartRhythmGame(CharacterData[] selectedCharacters)
     {
         this.selectedCharacters = selectedCharacters;
         RhythMidiController.Instance.ClearCallbacks();
-        SceneManager.LoadScene("RhythmGame");
+        StartCoroutine(LoadScene("RhythmGame"));
     }
 
+    public bool SelectedCharactersContainsRole(CharacterRole role) =>
+        selectedCharacters.Any(c => c.character.role == role);
 
- 
+    public CharacterData GetSelectedCharacterWithRole(CharacterRole role) =>
+        selectedCharacters.First(c => c.character.role == role);
+
+    public void LoadNewScene(string sceneName)
+    {
+        StartCoroutine(LoadScene(sceneName));
+    }
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        if (transition != null)
+        {
+            transition.SetTrigger("Start");
+            yield return new WaitForSeconds(transitionTime);
+        }
+
+        SceneManager.LoadScene(sceneName);
+
+        if (transition != null)
+        {
+            yield return new WaitForSeconds(transitionTime);
+            transition.SetTrigger("EnterNewScene");
+        }
+    }
 }
-
-
