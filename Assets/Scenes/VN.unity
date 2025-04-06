@@ -1655,6 +1655,10 @@ MonoBehaviour:
   right: {fileID: 1859160786}
   profile: {fileID: 1925829820}
   bio: {fileID: 1248428088}
+  nameText: {fileID: 1077081963}
+  bioText: {fileID: 1603457837}
+  instrumentText: {fileID: 1027693563}
+  roleText: {fileID: 1235635323}
   forward: {fileID: 1129820534}
   back: {fileID: 523405924}
   on: {fileID: 1136943514}
@@ -4204,6 +4208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters: []
   currentSongName: 
+  transition: {fileID: 0}
+  transitionTime: 1
 --- !u!4 &861990970
 Transform:
   m_ObjectHideFlags: 0
