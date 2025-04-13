@@ -1,13 +1,11 @@
 Name:  
 BG: Library
-BGM: 
+BGM: carter_sax
 Sprite: EMPTY
 <i>You decide to explore the library for a change. It’s been a while since you read something other than sheet music.
 <i>As you walk around, you see a couple students studying. Taking a look at the book covers tells you that they are mostly exploring their personal hobbies. 
 <i>Why else would someone be reading a book on the  ̶̦̤̯͈̀̏͐͒ć̴͙̝̠̇̊͂r̴̗͎̀͆̕͠ó̸͖͛͠s̶̲̩̆̀̉̇s̶̼̏̉̓ ̴̰͈̔͋͜-̵̜̰͖͉͆̉̽̀̓̓d̶̙̫͙̂͒į̵͔̝̘̒͂͂̎m̵̱͕̹̈ȩ̸̱͐̆̕n̵̹͆́͒s̴̗̦̖̓i̶̩̠̒͗̂͛ǫ̵̛̞͕́̓n̴̹̥̙̑a̵̫̬̮̎͑̄l̴̝͎̬̀ ̴̱̲͎͠n̷̘̣͚̂̊ą̸͔̮̫̉̒͠t̴̛̮̆͝u̶͖̜̲̼͌͋̌͋r̸̨͂͂̔͌e̶̖̖̜͗̌̀͝ͅ ̷̡̝͐̍̓o̷̭̣̻̅́̈́͠f̵̨͙͙̘̓ ̷͎̥̗̙͋t̸̡̙͇̤̽̕͠h̴̡̪͕́͠e̵̛̩͛͑̚ ̸̮͍̫̑̓̕ȍ̴̝̾̋̄l̵̦͊̎̅̿d̴̮̭̰͇̿-̶̭͑̓̕͝ó̶͈n̸̮͐͘ẻ̶͔̊͑ś̶͎́̀͘?
 	
-BGM: STOP
-SFX: Record_Scratch
 Pain shoots through your mind, zipping from behind your eyes to your temples. Your face feels wet.
 	
 Name: ???

@@ -1,7 +1,6 @@
-BG:	Hallway
-SFX:	School Bell
 Name: Sam
 Sprite: Sam_Sad
+BG:	Hallway
 Ughhhh, this class is so BORING!
 
 Name: Howard

@@ -42,9 +42,9 @@ But for now, I must disappear into the crowds...
 Goodbye, PC.
 Thank you for your help.
 
-Sprite: EMPTY
 
 Name: PC
+Sprite: EMPTY
 (They seemed pretty interesting.)
 (I guess I'll wait to see what Sam thinks of this prank.)
 
@@ -61,7 +61,7 @@ Sorry for holding you guys up.
 How's it going?
 
 Name: Sam
-Sprite: Sam_Excited
+Sprite: Sam_Happy
 
 It's going SO good!
 When I was in class with Roxanne earlier, I raised my hand to answer a question.
@@ -69,11 +69,11 @@ I said the wrong answer, but then Roxanne raised her hand and said the right one
 We are such a complementary duo!
 
 Name: Howard
-Sprite: Howard_Shurg
+Sprite: Howard_Shrug
 Sometimes I envy your positivity Sam.
 
 Name: Sam
-Sprite: Sam_Happy
+Sprite: Sam_Neutral
 Anyways, now I have to grab my notebook before we get going to our next class.
 
 Options: 

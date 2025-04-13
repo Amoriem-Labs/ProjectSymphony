@@ -47,7 +47,7 @@ In my hands lies the vehicle for madness.
 It will unleash terror and confusion upon the owner of this locker, throwing their life into complete disarray.
 
 Name: Daylo	
-Sprite: Daylo_Smug
+Sprite: Daylo_Mischievous
 Lay your eyes upon it and witness my dark, chaotic nature!
 Name:    
 <i> Daylo brandishes a plastic snake, fashioned of cheap plastic and chipping paint. 

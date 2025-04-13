@@ -12,11 +12,14 @@ public class DialougeManager : MonoBehaviour
 {
 
     // day activators
+    // week 1
     public bool activeDialogue = false;
     public bool isDay0 = false;
     public bool isW1D1 = false;
     public bool isW1D2 = false;
     public bool isW1D3 = false;
+
+    // week 2
     public bool isW2D1A = false;
     public bool isW2D1B = false;
     public bool isW2D2A = false;
@@ -26,12 +29,21 @@ public class DialougeManager : MonoBehaviour
     public bool isW2D5 = false;
     public bool isW2D6 = false;
 
+    // week 3
     public bool isW3D1A = false;
     public bool isW3D1B = false;
     public bool isW3D1C = false;
-    public bool isW3D2 = false;
-    public bool isW3D3 = false;
-    public bool isW3D4 = false;
+
+    public bool isW3D2A = false;
+    public bool isW3D2B = false;
+    public bool isW3D2C = false;
+
+    public bool isW3D5 = false;
+    public bool isW3D6 = false;
+    public bool isW3D7 = false;
+    public bool isW3D8 = false;
+
+
     bool loadedEvents = false;
 
 
@@ -119,11 +131,13 @@ public class DialougeManager : MonoBehaviour
 
     private void InitArr(List<bool> arr)
     {
+        // week 1
         arr.Add(isDay0);
         arr.Add(isW1D1);
         arr.Add(isW1D2);
         arr.Add(isW1D3);
 
+        // week 2
         arr.Add(isW2D1A);
         arr.Add(isW2D1B);
         arr.Add(isW2D2A);
@@ -133,13 +147,19 @@ public class DialougeManager : MonoBehaviour
         arr.Add(isW2D5);
         arr.Add(isW2D6);
 
+        // week 3
         arr.Add(isW3D1A);
         arr.Add(isW3D1B);
         arr.Add(isW3D1C);
+        arr.Add(isW3D2A);
+        arr.Add(isW3D2B);
+        arr.Add(isW3D2C);
 
-        arr.Add(isW3D2);
-        arr.Add(isW3D3);
-        arr.Add(isW3D4);
+        arr.Add(isW3D5);
+        arr.Add(isW3D6);
+        arr.Add(isW3D7);
+        arr.Add(isW3D8);
+
 
     }
     public void SetSceneBools()
@@ -159,6 +179,7 @@ public class DialougeManager : MonoBehaviour
         isW1D1 = SceneList[1];
         isW1D2 = SceneList[2];
         isW1D3 = SceneList[3];
+
         isW2D1A = SceneList[4];
         isW2D1B = SceneList[5];
         isW2D2A = SceneList[6];
@@ -168,11 +189,19 @@ public class DialougeManager : MonoBehaviour
         isW2D5 = SceneList[10];
         isW2D6 = SceneList[11];
 
-        isW3D1 = SceneList[12];
-        isW3D2 = SceneList[13];
-        isW3D3 = SceneList[14];
-        isW3D4 = SceneList[15];
-    }
+        isW3D1A = SceneList[12];
+        isW3D1B = SceneList[13];
+        isW3D1C = SceneList[14];
+        isW3D2A = SceneList[15];
+        isW3D2B = SceneList[16];
+        isW3D2C = SceneList[17];
+
+        isW3D5 = SceneList[18];
+        isW3D6 = SceneList[19];
+        isW3D7 = SceneList[20];
+        isW3D8 = SceneList[21];
+
+    }   
     public void UpdatePPref(int index)
     {
         //int index = SceneList.IndexOf(sceneBool);

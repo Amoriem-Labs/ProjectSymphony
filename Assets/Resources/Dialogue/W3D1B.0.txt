@@ -1,0 +1,14 @@
+Name:  
+Sprite: EMPTY
+BG: Park
+<i>The park is beautiful this time of day...
+<i>There's plenty of fresh grass and a little pond.
+<i>The flowers are in bloom, and it looks like all of the bugs are happy and thriving.
+Name: PC
+(Is there someone sitting on that bench over there? Why is she sitting alone?)
+(Perfect opportunity to recruit someone for the band.)
+
+Options: 
+Hey, I'm PC, what's your name?
+Actually, I think that'd be rude. I'll just wait.
+Approach Silently.

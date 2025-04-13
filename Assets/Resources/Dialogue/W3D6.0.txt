@@ -1,14 +1,16 @@
-BG:	Practice_Rule
 Name: Howard
-Sprite: Howard_At_Peace	
+Sprite: Howard_At_Peace
+BG: PracticeStage
 Ready?
+
 Name: PC
 Ready.
+
 Name: Sam
 Sprite: Sam_Happy
 Ready as hardy hamsters in the tunnels of Abu Glida Prime!
 
-Howard 
+Name: Howard 
 Sprite: Howard_At_Peace	
 On my mark. 
 Ready. 

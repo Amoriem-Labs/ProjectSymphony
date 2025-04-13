@@ -38,7 +38,8 @@ Let's meet up again after class.
 
 Name: Sam
 Sprite: Sam_Happy
-Sam	Sounds good!
+Sounds good!
 
-Name: PC
-See you later guys!
+Options: 
+See you then!
+Ok.

@@ -53,6 +53,6 @@ Sprite: Carter_Neutral
 I'm in!
 Few things bring me greater pleasure than seeing a colleague gain power through cooperation.
 
-Name: PC
+Options: 
 Oh...
 I'm glad!

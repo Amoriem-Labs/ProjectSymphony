@@ -1,0 +1,14 @@
+Name: Pauline
+Sprite: Pauline_Neutral
+...
+Name: PC
+...
+Hello?
+Name: Pauline
+Sprite: Pauline_Neutral
+
+Oh, hey.
+I didn't think you were talking to me, sorry.
+Options: 
+What's your name?
+What were you looking at?

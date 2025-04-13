@@ -1,0 +1,77 @@
+Name:  
+Sprite: EMPTY
+He begins to walk towards you with a hand reached out, a casual smirk on his face.
+
+Name: Carter
+Sprite: Carter_Nonchalant
+They've been quiet for a bit now. Guess the book was a dud–
+
+SFX: Big_Fire
+
+Animation: Screen_Flashes_Purple
+
+BGM: Battle_eldritch_horror_music
+
+Name:  
+Sprite: EMPTY
+Out of the corner of your eye, you can see an explosion of purple flames rise from the center of the circle.
+You should be able to feel the heat from here. You don't.
+
+SFX: Running_sounds
+
+Name:  
+Sprite: EMPTY
+Carter immediately wrestles his sax free from its case while running towards the group.
+In the center of the circle, you can see an amorphous block of eyes and flesh.
+Its limbs seem to warp back in on themselves, emerging from nowhere and yet never ending. It hurts to look at.
+
+*****Visual of carter running towards the fire with his saxophone in hand. Necklace hanging free. vfx of necklace pulsing and eyes glowing.
+
+Name:  
+Sprite: EMPTY
+Carter's necklace hangs free in the air, glowing with an eldritch light as he yells towards the group. his necklace seems to pulse with his words
+
+Name: Carter
+RUN!
+
+Name:  
+Sprite: EMPTY
+You feel like you should listen to him. Hell, you're halfway through turning around when you wrestle control back over fight or flight instinct.
+Suddenly, you hear music notes ring out.
+
+*****Carter facing away from you. His body is blocking the player's sight of the monster, though some vfx effects are visible. He is holding his saxophone
+
+****Carter's theme plays, starting softly before getting louder. As it does, the horror battle music fades
+
+SFX: Monster_Screaming
+
+Animation: Screen_Flashes_DarkPurple
+
+Name:  
+Sprite: EMPTY
+With a cry, the beast disappears in another flash of eldritch, purple light.
+The clearing is silent save everyone's labored breaths.
+
+Name: PC
+What... How? Urgh!
+
+Name:  
+Sprite: EMPTY
+A spike of pain shoots through your skull. You find it difficult to string together coherent thoughts.
+
+SFX: Walking_Noises
+
+Name: Carter
+Sprite: Carter_Understanding
+Hey, you don't look so good. Better than I'd be in your situation, though.
+...
+Sorry in advance.
+
+Animation: Carter_Glowing_Eyes
+
+Name: Carter
+You should head back to your dorm and sleep. We'll talk later.
+
+Animation: Screen_purple
+
+Animation: Fade_to_black

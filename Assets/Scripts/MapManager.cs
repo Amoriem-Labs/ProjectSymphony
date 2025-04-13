@@ -85,7 +85,7 @@ public class MapManager : MonoBehaviour
         //dialogueManager = FindAnyObjectByType<DialougeManager>();
         mainEventSelected = false;
         credits = 3;
-        PlayerPrefs.SetInt("CurrentWeek.", 2);
+        //PlayerPrefs.SetInt("CurrentWeek.", 2);
         if (PlayerPrefs.HasKey("CurrentWeek."))
         {
             weekNum = PlayerPrefs.GetInt("CurrentWeek.");

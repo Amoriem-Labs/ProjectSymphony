@@ -1,4 +1,6 @@
 Name: Student
+Sprite: EMPTY
+BG: Cafeteria
 I can't believe we have a math midterm next week and our teacher only gave us two months to study for it! 
 Name: PC
 (Is that not normal...?)

@@ -104,7 +104,7 @@ public class W3D1A : MonoBehaviour
                     {
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.1C", "W3D1A.2" }));
-                        END = true;
+                        DP4 = true;
 
                     }
                     else if (currselectedOption == "Don't tell Sam about the prank.")
@@ -113,31 +113,51 @@ public class W3D1A : MonoBehaviour
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.2" }));
 
                         // restart manager's selected option
-                        DP3 = false;
                         dialogueManager.selectedOption = "";
 
                         //StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D3.3" }));
                         startChoiceDetection = false;
-                        END = true;
+                        DP4 = true;
                     }
 
                 }
 
-                if (END)
+            }
+
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP4)
+            {
+                string currselectedOption = dialogueManager.selectedOption;
+
+                // restart manager's selected option
+                dialogueManager.selectedOption = "";
+
+                if (currselectedOption == "Ok." || currselectedOption == "See you then!")
                 {
-                    if (dialogueManager.activeDialogue == false)
-                    {
-                        END = false;
-            // add scene management stuff
-                //update map week num
-                PlayerPrefs.SetInt("CurrentWeek.", 21);
-                PlayerPrefs.SetInt("SceneToLoad", 3);
-                //SceneManager.LoadScene("Splash");
-                SceneManager.LoadScene("MapScreen");
-                    }
 
+                    // restart manager's selected option
+                    DP4 = false;
+                    dialogueManager.selectedOption = "";
+
+                    startChoiceDetection = false;
+                    END = true;
 
                 }
+
+            }
+
+            if (END)
+            {
+                if (dialogueManager.activeDialogue == false)
+                {
+                    END = false;
+                    // add scene management stuff
+                    //update map week num
+                    PlayerPrefs.SetInt("CurrentWeek.", 21);
+                    PlayerPrefs.SetInt("SceneToLoad", 3);
+                    //SceneManager.LoadScene("Splash");
+                    SceneManager.LoadScene("MapScreen");
+                }
+
 
             }
 

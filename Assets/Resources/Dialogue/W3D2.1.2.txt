@@ -1,0 +1,145 @@
+Name:  
+Sprite: EMPTY
+You take a seat next to Carter on a rock overlooking the lake.
+From this position, you can almost see the entire clearing, including some of the surrounding woods.
+It'd be beautiful if not for the weird group of students holding torches smack dab in the middle of it all.
+
+Name: Carter
+Sprite: Carter_Neutral
+Heh, guess I owe you a bit of an explanation for all this. I'm not involved myself, but I know what's happening.
+
+Name: PC
+That'd be nice, yeah. This looks like the opening scene to a horror movie right now.
+
+Name: Carter
+Sprite: Carter_Smile
+Alright, but let me give you some context first, just so you can understand my place in all this.
+Sprite: Carter_Angry
+First of all, this right here is the Occult Club. Ironically, it is made up of students from non-magical worlds.
+I mean, Greg over there is from some intergalactic sci-fi empire, and I think Maddy said her home planet had a broken moon or something.
+Regardless, they are all... curious.
+The other day, one of them found a book in the library with instructions on how to summon some voidbeast or something.
+Never heard the term before, but I'm not exactly an authority on all this.
+I heard them planning and decided that they needed at least one responsible kid with more than two brain cells.
+I mean, the book isn't familiar to me, which is a good sign, but you never know. Better to be cautious.
+
+Name: PC
+That's a lot to take in, but it makes sense.
+I can't really blame them for their curiosity since I decided the smart thing to do was walk towards them.
+
+Name: Carter
+Sprite: Carter_Neutral
+Hah! Just be careful, you know what they say about curiosity. There's a wisdom to deciding that something isn't your problem to deal with.
+
+Name: PC
+Hey, curiosity may kill the cat, but satisfaction always brings it back.
+
+Name: Carter
+Sprite: Carter_Neutral
+Sure, but I bet it comes back differently. Moves a bit strange and disappears at odd hours.
+Maybe it has a few extra eyes. There's always a cost.
+
+
+Name: PC
+Uhh I guess so.
+You, uhh, seem to have a lot of experience with all of this.
+
+Name: Carter
+Sprite: Carter_Smile
+There's a lot of things that need to go wrong before we get to that point
+Assuming anything happens at all.
+
+Name: PC
+Are you expecting something to happen?
+
+Name: Carter
+Sprite: Carter_Neutral
+I hope not. I really hope not. I mean, what are the chances that book is legit?
+I'd know if it was from my world. Hell, even you might be able to notice.
+Sprite: Carter_Smile
+All the classics have this taint. The Book of the Dead, the good old play about the Saffron King, hell even some of our guidebooks started to show signs of the corruption.
+
+Name: PC
+Guidebooks?
+
+Name: Carter
+Sprite: Carter_Neutral
+Ah, yeah. Curiosity and ignorance kill, so some of the leaders in my world created these info-guides that tell you what to look out for and what to avoid.
+It's a smart solution. Assuming the reader has some base level of intelligence. Something that seems to be lacking from these fools.
+This school is already magic enough. We literally have an infinite, pathfinding hallway.
+What more could they want? How much more otherworldly does it have to get?
+
+Name: Carter
+Sprite: Carter_Angry
+Sorry about burdening you with all that. Thanks for listening to me though.
+It's been a while since I felt like I could let my walls down like that.
+
+Name: PC
+No problem. You can talk with me anytime. I'll always lend an ear.
+
+Name: Carter
+Sprite: Carter_Neutral
+Be careful with that promise. I half talked your ear off this time and yet you're still smiling.
+You're a special one, you know?
+They've been quiet for a bit now. Guess the book was a dud–
+
+SFX: Big_Fire
+BGM: Battle_eldritch_horror_music
+
+Name:  
+Out of the corner of your eye, you can see an explosion of purple flames rise from the center of the circle.
+You should be able to feel the heat from here. You don't.
+SFX: Running_sounds
+
+Name:  
+Sprite: EMPTY
+In the center of the circle, you can see an amorphous block of eyes and flesh.
+Its limbs seem to warp back in on themselves, emerging from nowhere and yet never ending. It hurts to look at.
+
+Name:  
+Carter's necklace hangs free in the air, glowing with an eldritch light as he yells towards the group. his necklace seems to pulse with his words
+
+Name: Carter
+Sprite: Carter_Angry
+RUN!
+
+Name:  
+Sprite: EMPTY
+You feel like you should listen to him. Hell, you're halfway through turning around when you wrestle control back over fight or flight instinct.
+Suddenly, you hear music notes ring out.
+
+*****Carter facing away from you. His body is blocking the player's sight of the monster, though some vfx effects are visible. He is holding his saxophone
+
+****Carter's theme plays, starting softly before getting louder. As it does, the horror battle music fades
+
+SFX: Monster_Screaming
+
+Name:  
+Sprite: EMPTY
+With a cry, the beast disappears in another flash of eldritch, purple light.
+The clearing is silent save everyone's labored breaths.
+
+Name: PC
+What... How? Urgh!
+
+Name:  
+Sprite: EMPTY
+A spike of pain shoots through your skull. You find it difficult to string together coherent thoughts.
+
+SFX: Walking_Noises
+
+Name: Carter
+Sprite: Carter_Neutral
+Hey, you don't look so good. Better than I'd be in your situation, though.
+...
+Sorry in advance.
+
+Animation: Carter_Glowing_Eyes
+
+Name: Carter
+Sprite: Carter_Neutral
+You should head back to your dorm and sleep. We'll talk later.
+
+Options: 
+Okay!
+Whatever.

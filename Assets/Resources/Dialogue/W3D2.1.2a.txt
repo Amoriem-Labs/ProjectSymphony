@@ -1,0 +1,17 @@
+Name:  
+Sprite: EMPTY
+He looks away for a moment. You catch a conflicted grimace flash across his face before it's gone.
+
+Name: Carter
+Sprite: Carter_Nonchalant
+Ehh not really. I mean, I've read a couple stories and seen TV shows with similar ideas.
+It's just common sense.
+I was just a student before coming here. School's a bit easier now than before, but unlike some of these kids, I was just a regular old dude back home.
+I mean, I've seen some messed-up stuff, but who hasn't nowadays?
+
+Name: PC
+I guess you're right. Trope recognition can go a long way, right?
+
+Name: Carter
+Sprite: Carter_Nonchalant
+Yeah. Exactly.
