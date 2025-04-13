@@ -1,0 +1,50 @@
+BG:	Hallway
+SFX:	School Bell
+Name: Sam
+Sprite: Sam_Sad
+Ughhhh, this class is so BORING!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+You should be nicer to Ms. C. 
+She's just trying to deal with a bunch of rowdy students.
+Name: Sam
+Sprite: Sam_Sad
+She's not a good teacher!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Yeah... okay. That's true. 
+
+Name: Sam
+Sprite: Sam_Sad
+I just can't stop thinking about the band during class!
+
+Name: PC
+What's happening with that?
+I mean...
+Well, we need two more people. 
+Do you guys know anyone?
+
+Name: Sam
+Sprite: Sam_Confused
+Uhh, what do you mean?
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+PC, if you haven't noticed, we're kind of outcasts here. 
+Do YOU know anyone?
+
+Name: PC
+Well, I did meet one person... but they're kind of–
+Name: Sam
+Sprite: Sam_Happy
+
+Wait, you should ask them!
+Ask them to join our band!
+What's their name?
+
+Options: 
+Daylo.
+Carter.
+Pauline.

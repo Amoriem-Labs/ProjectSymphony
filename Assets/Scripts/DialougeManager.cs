@@ -26,7 +26,9 @@ public class DialougeManager : MonoBehaviour
     public bool isW2D5 = false;
     public bool isW2D6 = false;
 
-    public bool isW3D1 = false;
+    public bool isW3D1A = false;
+    public bool isW3D1B = false;
+    public bool isW3D1C = false;
     public bool isW3D2 = false;
     public bool isW3D3 = false;
     public bool isW3D4 = false;
@@ -131,7 +133,10 @@ public class DialougeManager : MonoBehaviour
         arr.Add(isW2D5);
         arr.Add(isW2D6);
 
-        arr.Add(isW3D1);
+        arr.Add(isW3D1A);
+        arr.Add(isW3D1B);
+        arr.Add(isW3D1C);
+
         arr.Add(isW3D2);
         arr.Add(isW3D3);
         arr.Add(isW3D4);

@@ -1,0 +1,41 @@
+Name:  
+<i> Sythia and the Start Catchers is set up on the left side of the stage, already in the midst of tuning. 
+Name: Howard
+Sprite: Howard_Uncomfortable
+Those guys look so confident...
+Name: Sam
+Sprite: Sam_Happy
+Nah, we GOT this!
+
+Name: Carter
+Sprite: Carter_Neutral
+They're unprepared.
+
+Name: Anouncer 
+Sprite: EMPTY
+A new challenger has emerged! 
+We'll see if they have what it takes against Sythia and the Start Catchers in this showdown!
+
+SFX: Scattered_applause
+
+Name:   
+<i> Carter jumps onto the stage and walks straight up to the announcer. 
+Name:   
+I'd like the mic if that's alright with you.
+Name: Anouncer 
+Uh, sure...
+Name: Carter
+I'd like to welcome the crowd to enjoy our original song, entitled Demise of Sythia and the Start Catchers!
+Name: Sam
+Sprite: Sam_Sad
+Wait THAT'S not what we–
+Name: Carter	
+Good luck, guys. 
+
+Name: Anouncer 
+Sprite: EMPTY
+
+All right then. Well, I guess it's time to get started! You're first!
+Name: PC	
+Just like we practiced guys. We got this.
+Three, two, one–

@@ -1,0 +1,37 @@
+Name:  
+<i> Sythia and the Start Catchers is set up on the left side of the stage, already in the midst of tuning. 
+Name: Howard
+Sprite: Howard_Uncomfortable
+Those guys look so confident...
+
+Name: Sam
+Sprite: Sam_Happy
+Nah, we GOT this!
+
+Name: Daylo
+Sprite: Daylo_Smug
+They will fall to my chaotic melodies!
+
+Name: Anouncer 
+Sprite: EMPTY
+A new challenger has emerged! 
+We'll see if they have what it takes against Sythia and the Start Catchers in this showdown!
+
+SFX: Scattered_applause
+
+Name:   
+Sprite: Daylo_Smug
+<i>Daylo is discreetly trying to put a plastic spider into the other band's instrument case.
+Name: Howard
+Sprite: Howard_Uncomfortable
+Umm, PC, are you seeing this?
+Name: PC
+Yeah... it's.. fine.
+
+Name: Anouncer 
+Sprite: EMPTY
+
+All right then. Well, I guess it's time to get started! You're first!
+Name: PC	
+Just like we practiced guys. We got this.
+Three, two, one–

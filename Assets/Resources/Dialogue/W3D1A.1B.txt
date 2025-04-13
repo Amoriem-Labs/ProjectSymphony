@@ -1,0 +1,81 @@
+Name: PC
+Uh sure, I'll help you out.
+
+Name: Daylo
+Sprite: Daylo_Mischievous
+I knew you were someone who enjoyed a little excitement in their life.
+Now, you may do the honors of unzipping this backpack.
+
+Go forth, little snake. Unleash your madness upon this world.
+Name: PC
+What do we do next?
+
+Name: Daylo
+Sprite: Daylo_Smug
+
+Now we flee the scene.
+A good agent of chaos never waits around to be caught.
+You know the owner of this locker right?
+
+Name: PC
+Yes, I do.
+
+Name: Daylo
+Sprite: Daylo_Mischievous
+Then I need you to be my eyes and ears for the aftermath.
+Comfort your friend as best you can and I will await your candid report of how much chaos we caused.
+
+Name: PC
+Okay. . .
+
+Name: Daylo
+When you return to me, we shall celebrate with a serenade from my harp.
+
+Name: PC
+You play the harp?
+
+Name: Daylo
+Sprite: Daylo_Smug
+We all do, where I come from. I just happen to be far more proficient than my peers.
+I shall grace your ears with my music sometime.
+But for now, I must disappear into the crowds...
+Goodbye, PC.
+Thank you for your help.
+
+Sprite: EMPTY
+
+Name: PC
+(They seemed pretty interesting.)
+(I guess I'll wait to see what Sam thinks of this prank.)
+
+Name: Sam
+Sprite: Sam_Happy
+Hey PC!
+
+Name: Howard
+Sprite: Howard_Neutral
+We got tired of waiting so we figured we'd walk to your class and see where you were.
+
+Name: PC
+Sorry for holding you guys up.
+How's it going?
+
+Name: Sam
+Sprite: Sam_Excited
+
+It's going SO good!
+When I was in class with Roxanne earlier, I raised my hand to answer a question.
+I said the wrong answer, but then Roxanne raised her hand and said the right one!
+We are such a complementary duo!
+
+Name: Howard
+Sprite: Howard_Shurg
+Sometimes I envy your positivity Sam.
+
+Name: Sam
+Sprite: Sam_Happy
+Anyways, now I have to grab my notebook before we get going to our next class.
+
+Options: 
+Tell Sam about the prank.
+Don't tell Sam about the prank.

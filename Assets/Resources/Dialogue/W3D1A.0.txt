@@ -1,0 +1,14 @@
+BGM: chool Day
+BG: Classroom
+Name: PC
+Another class done!
+(I should put this textbook back in my locker before I  meet up with Howard and Sam.)
+BG:	Locker_Room
+SFX: Rummaging
+Sprite: Daylo_Neutral
+Name: PC
+(Wait a second. There's someone messing with Sam's locker!)
+
+Options: 
+Call them out.
+Approach them.

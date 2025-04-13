@@ -1,0 +1,10 @@
+Name: PC
+
+Sam, I have something to tell you. . .
+Someone put a plastic snake in your bag, hoping to scare you.
+I just wanted to let you know, just in case.
+
+Name: Sam
+Sprite: Sam_Confused
+What?
+Someone really did that?

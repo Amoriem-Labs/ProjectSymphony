@@ -1,0 +1,47 @@
+Name: PC
+Her name is Pauline.
+
+Name: Howard_Uncomfortable
+Is she the bassoonist who always sits on that bench by the lake?
+
+Name: PC
+Yes, that's her!
+
+Name: Howard
+Sprite: Howard_Understanding
+She seems nice, you should go and ask her. I bet she's there today, actually. It's so nice out. 
+
+Name: PC
+You know what? I'll run over there right now!
+
+BG: Lake
+
+Name: PC
+Hey, Pauline!
+
+Name: Pauline
+Sprite: Pauline_Confused
+Who's there!
+
+Name: PC
+Oh, it's PC. Sorry if I'm disturbing you!
+
+Name: Pauline
+Sprite: Pauline_Neutral
+PC. Hi! No problem, I just didn't know who it was.
+
+Name: PC
+I actually have a question for you. 
+
+Name: Pauline
+You do?
+MC	Yes! Would you like to join my band?
+
+Name: Pauline
+Ohh...
+I did have a lot of fun the other day playing with you...
+Maybe... maybe I would like to join your band. 
+It would be a good experience for me, I think. 
+
+Name: PC
+Okay!

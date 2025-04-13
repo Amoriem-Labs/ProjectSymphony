@@ -1,0 +1,5 @@
+Name: ???
+Sprite: Carter_Blushing
+No problem. It’s what anyone would do.
+Sprite: Carter_Neutral
+Anyway.
