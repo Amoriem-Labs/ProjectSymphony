@@ -1,12 +1,15 @@
 Name: Sam
 Sprite: Sam_Sad
-BG:	Hallway
+BG: LockerRoom
+
 Ughhhh, this class is so BORING!
 
 Name: Howard
 Sprite: Howard_Uncomfortable
+
 You should be nicer to Ms. C. 
 She's just trying to deal with a bunch of rowdy students.
+
 Name: Sam
 Sprite: Sam_Sad
 She's not a good teacher!

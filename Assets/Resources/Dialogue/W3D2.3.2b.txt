@@ -1,0 +1,24 @@
+Name: Pauline
+Sprite: Pauline_Spaced_Out_Positive
+Sorry, I did not mean to attract attention.
+
+Name: PC
+No, I'm happy I heard it, you're really good!
+
+Name: Pauline
+Sprite: Pauline_locked_in
+Thanks, this level of skill runs in the family.
+Even so, I thought some practice would be good.
+
+Name: PC
+Sprite: Pauline_Confused
+I could use some more practice as well, why don't we practice some together?
+I have my keyboard with me, so let's play together!
+
+Name: Pauline
+Sprite: Pauline_Spaced_Out_Negative
+How will you power your keyboard?
+
+Options:
+Why don't we catch some of these lighting bugs? +1 (go to 2ba)
+You collect bugs right? Do you have any of these flies already in a jar? (go to 3bb) -4

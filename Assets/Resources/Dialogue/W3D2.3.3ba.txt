@@ -1,0 +1,40 @@
+Name: Pauline
+Sprite: Pauline_positive
+"Lighting bugs"... that's a cute name.
+
+Name: PC
+Thanks, I came up with it myself!
+What are they actually called?
+
+Name: Pauline
+Sprite: Pauline_positive
+They are called sparcituris, but I call them glowflies.
+
+Name: PC
+That's a nice nickname!
+Let's get to bug catching!
+
+Animation: Fade_to_black_and_back
+
+Name: PC
+Alright, are you ready to play?
+
+Name: Pauline
+Sprite: Pauline_Locked_In
+I will follow your lead, MC.
+
+BGM2: Bassoon_and_Piano
+
+Name:  
+As your fingers glide across the keyboard, Pauline flawlessly follows your lead.
+You find yourself playing well into the night, lit by the glowbugs and the moon.
+Sprite: Pauline_confused
+SFX: Glass_Breaking
+Your song is abruptly cut off by the sound of a glass breaking and bugs flying away.
+
+Name: PC
+That was a lot of fun Pauline. I hope we can play together again soon!
+
+Options: 
+See you later!
+Hopefully we can do this again!

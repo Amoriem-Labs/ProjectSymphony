@@ -1,0 +1,15 @@
+Name: Pauline
+Sprite: Pauline_Neutral
+...
+
+Name: PC
+Hello?
+
+Name: Pauline
+Sprite: Pauline_Confused
+MC, hey.
+What brings you here tonight?
+
+Options: 
+I saw you by the glowing bugs and wondered what was up.
+I heard you playing the bassoon! 

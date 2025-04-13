@@ -1,0 +1,16 @@
+Name: Pauline
+Sprite: Pauline_Spaced_out_positive
+"Lighting bugs"... that's a cute name.
+
+Name: PC
+Thanks, I came up with it myself!
+What are they actually called?
+
+Name: Pauline
+Sprite: casually_locked_in
+They are called sparcituris, but I call them glowflies.
+Maybe you can help suggest a name for another sneaky creature.
+
+Options:
+Sure! What's the next insect you have in mind? +1 (go to 4)
+While I'm happy to help, I'm more curious as to why you were playing bassoon out here. (go to 3b)

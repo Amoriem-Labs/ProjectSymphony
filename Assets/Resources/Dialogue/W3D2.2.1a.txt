@@ -1,0 +1,14 @@
+
+Name: Daylo
+Sprite: Daylo_Neutral
+BG: Hallway
+BGM: Hallway
+
+Ah, there you are, PC. I am looking forward to your report.
+Sprite: Daylo_Mischievous
+So tell me, was your friend distraught?
+Did they fall into a state of misery from their chaos-filled life?
+
+Options: 
+Lie to Daylo.
+Tell Daylo the truth.

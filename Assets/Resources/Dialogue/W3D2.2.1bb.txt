@@ -1,0 +1,9 @@
+Name: Daylo
+Sprite: Daylo_Neutral
+Very sappy, but I suppose it makes sense.
+Sprite: Daylo_Smug
+Well, I'd be happy to become your friend.
+Sprite: Daylo_Mischievous
+Corrupting a do-gooder student will be the ultimate act of madness.
+That'll show my parents that I won't fall prey to their expectations of perfection.
+

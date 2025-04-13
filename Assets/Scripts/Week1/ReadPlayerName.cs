@@ -42,8 +42,8 @@ public class ReadPlayerName : MonoBehaviour
             Debug.Log("player name is: " + dialogueManager.inputtedName);
 
             //dialogueManager.isW1D1 = true;
-            dialogueManager.isW3D5 = true;
-            dialogueManager.UpdatePPref(18);
+            dialogueManager.isW3D2A = true;
+            dialogueManager.UpdatePPref(15);
             playerNameReader.gameObject.SetActive(false);
         }
 

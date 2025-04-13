@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class W3D5 : MonoBehaviour
+public class W3D7 : MonoBehaviour
 {
-
     private DialougeManager dialogueManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
     private bool DP1 = true;
+    private bool DP2 = false;
+    private bool DP3 = false;
     private bool DP4 = false;
 
 
@@ -26,12 +27,12 @@ public class W3D5 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueManager.isW3D5)
+        if (dialogueManager.isW3D7)
         {
-            if (dialogueManager.isW3D5 && !isStarted)
+            if (dialogueManager.isW3D7 && !isStarted)
             {
                 // start first texx file
-                StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D5.0" }));
+                StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D8.0" }));
                 // is started triggers the choice tests
                 isStarted = true; // MAKE SURE THIS IS AFTER THE FIRST LOAD 
                 startChoiceDetection = true;
@@ -49,24 +50,18 @@ public class W3D5 : MonoBehaviour
                     dialogueManager.selectedOption = "";
 
                     // change this to the options that are in your file [up to 4]
-                    if (currselectedOption == "Carter.")
+                    if (currselectedOption == "Sympathize with them.")
                     {
                         // load the next dialogue
-                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D5.1" }));
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D8.1", "W3D8.3" }));
                         DP4 = true;
 
                     }
-                    else if (currselectedOption == "Daylo.")
+                    else if (currselectedOption == "Disagree with them.")
                     {
                         DP4 = true;
                         // load the next dialogue
-                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D5.2" }));
-                    }
-                    else if (currselectedOption == "Pauline.")
-                    {
-                        DP4 = true;
-                        // load the next dialogue
-                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D5.3" }));
+                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D8.2", "W3D8.3" }));
                     }
                 }
 
@@ -81,7 +76,7 @@ public class W3D5 : MonoBehaviour
                 // restart manager's selected option
                 dialogueManager.selectedOption = "";
 
-                if (currselectedOption == "Oh..." || currselectedOption == "I'm glad!")
+                if (currselectedOption == "Okay." || currselectedOption == "Let's do it!")
                 {
 
                     // restart manager's selected option

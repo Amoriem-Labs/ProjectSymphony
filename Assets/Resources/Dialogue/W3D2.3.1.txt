@@ -1,0 +1,23 @@
+
+Name:  
+Sprite: EMPTY
+BG: Lake
+Pauline isn't here. Maybe you should try the lake this time.
+
+
+Name:  
+The lake looks really different at night. 
+The pond shines like the face of the moon, not from its reflection, but from the thousands of glowing bugs clinging to its surface.
+
+Name: PC
+(Where is that music coming from?)
+
+Name:  
+You squint and see Pauline in the distance, sitting near the pond playing her bassoon.
+
+Name: PC
+(I should go see what she is up to!)
+
+Options: 
+Hey Pauline! What are you up to?
+Hey Pauline, the bassoon is sounding really nice!
