@@ -365,7 +365,18 @@ public class GameManager : MonoBehaviour
         RhythMidiController.Instance.PrepareChart(GameStateManager.Instance.currentSongName);
         RhythMidiController.Instance.PlayChart();
 
-        Debug.Log("Start Game");
+        // Disable AudioSources for characters that aren't being played
+        AudioSource[] audioSources = RhythMidiController.Instance.gameObject.GetComponents<AudioSource>();
+        // Set all audio sources, except backing track, to disabled
+        for(int i = 1; i < audioSources.Length; i++) audioSources[i].enabled = false;
+        // For each selected character, enable their audio source
+        for(int i = 0; i < RhythMidiController.Instance.currentChart.Tracks.Count; i++) {
+            string characterName = RhythMidiController.Instance.currentChart.Tracks.Keys.ElementAt(i);
+            bool found = GameStateManager.Instance.selectedCharacters.Any(c => c.character.name == characterName);
+            if(!found) continue;
+            audioSources[i + 1].enabled = true;
+        }
+
         start.localPosition = new Vector2(0, -Screen.height); // start below the screen
         start.LeanMoveLocalY(0, 0.5f)
         .setEaseOutExpo()
