@@ -27,8 +27,12 @@ public class CharacterDict : MonoBehaviour
 
     Image profileImg;
     public GameObject bio;
-    
-    
+
+    public GameObject nameText;
+    public GameObject bioText;
+    public GameObject instrumentText;
+    public GameObject roleText;
+
     public Button forward;
     public Button back;
     public Button on;
@@ -65,7 +69,7 @@ public class CharacterDict : MonoBehaviour
         //         Dict[i].Add("Affection", Random.Range(0, 6));
         //         Dict[i].Add("Popularity", Random.Range(0, 6));
         //     }
-            
+
 
         // }
 
@@ -92,7 +96,7 @@ public class CharacterDict : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         //UpdateDict();
     }
 
@@ -100,11 +104,7 @@ public class CharacterDict : MonoBehaviour
     {
         Debug.Log("move foward one");
         currPageNum += 1;
-        // TODO: acccess dictionary from GameStatemana
-        if (currPageNum == characterNum)
-        {
-            currPageNum = 0;
-        }
+
         UpdateDict();
     }
 
@@ -114,63 +114,68 @@ public class CharacterDict : MonoBehaviour
         currPageNum -= 1;
         if (currPageNum == -1)
         {
-            currPageNum = characterNum -1;
+            currPageNum = characterNum - 1;
         }
-            UpdateDict();
-        
+        UpdateDict();
+
 
     }
+
+
 
     private void UpdateDict()
     {
-        // Debug.Log("Index is: " + currPageNum);
-        // CharName.text = Dict[currPageNum]["name"].ToString();
-        // CharBio.text = Dict[currPageNum]["bio"].ToString();
-        // float fill1 = (float)((int)Dict[currPageNum]["Percussion"]) / 5f;
-        // float fill2 = (float)((int)Dict[currPageNum]["Melody"]) / 5f;
-        // float fill3 = (float)((int)Dict[currPageNum]["Harmony"]) / 5f;
-        // float fill4 = (float)((int)Dict[currPageNum]["Counter-Melody"]) / 5f;
-        // float fill5 = (float)((int)Dict[currPageNum]["Affection"]) / 5f;
-        // float fill6 = (float)((int)Dict[currPageNum]["Popularity"]) / 5f;
-        // CharSkill1.fillAmount = fill1;
-        // CharSkill2.fillAmount = fill2;
-        // CharSkill3.fillAmount = fill3;
-        // CharSkill4.fillAmount = fill4;
-        // CharSkill5.fillAmount = fill5;
-        // CharSkill6.fillAmount = fill6;
-        // if (Dict[currPageNum]["name"].ToString() == "Carter")
-        // {
-        //     Debug.Log("Image is Carter!");
-        //     CharIm.sprite = Carter;
-        // }
-        // else
-        // {
-        //     CharIm.sprite = null;
-        //     Debug.Log("Image is null!");
+        if (characterNames == null || characterNames.Length == 0)
+        {
+            Debug.LogWarning("Character names array is empty.");
+            return;
+        }
 
-        // }
+        if (currPageNum >= characterNames.Length)
+        {
+            currPageNum = 0;
+        }
 
-        /*TODO
+        string charName = characterNames[currPageNum];
 
-        Logic below:
+        CharacterData cd = null;
 
-            1. Check pageNumber, get the name form liost
-            2. check name against dict
-            3. get name, bio, image, role, instrument from dict
-            4. spring out image
-            5. change bio and name, role, bio
-            6. spring in image
-            7. make sure page number is same 
-        
+        // Find the character by name
+        foreach (var kvp in GameStateManager.Instance.characterData)
+        {
+            if (kvp.Key.name == charName)
+            {
+                cd = kvp.Value;
+                break;
+            }
+        }
 
-        */
+        if (cd == null)
+        {
+            Debug.LogWarning($"No character data found for name: {charName}");
+            return;
+        }
 
+        Character character = cd.character;
 
+        // Set visuals
+        profileImg.sprite = character.backgroundHero;
 
+        bioText.GetComponent<TextMeshPro>();
+
+        // Set text fields
+        nameText.GetComponent<TextMeshProUGUI>().text = character.name;
+        bioText.GetComponent<TextMeshProUGUI>().text = character.bio;
+        instrumentText.GetComponent<TextMeshProUGUI>().text = character.instrument;
+        roleText.GetComponent<TextMeshProUGUI>().text = character.role.ToString();
     }
+
+
+
+
     private void OnClicked()
     {
-        
+
         if (canvas.enabled)
         {
             Debug.Log("Clicked off");
@@ -179,11 +184,11 @@ public class CharacterDict : MonoBehaviour
         }
         else
         {
-            left.localPosition = new Vector2(-Screen.width-500, -70);
-             right.localPosition = new Vector2(Screen.width+500, -36);
+            left.localPosition = new Vector2(-Screen.width - 500, -70);
+            right.localPosition = new Vector2(Screen.width + 500, -36);
             StartCoroutine(AnimateSequence());
 
-            
+
         }
     }
 
@@ -198,18 +203,18 @@ public class CharacterDict : MonoBehaviour
         //yield return new WaitForSeconds(0.2f); // Small delay before next animation
 
         // Move in left panel
-        
+
         LeanTween.moveLocalX(left.gameObject, -377.86f, 0.5f).setEase(LeanTweenType.easeInElastic);
         //yield return new WaitForSeconds(0.1f); // Delay before moving right panel
 
         // Move in right panel
-       
+
         LeanTween.moveLocalX(right.gameObject, 626.43f, 0.5f).setEase(LeanTweenType.easeInElastic);
         yield return new WaitForSeconds(0.3f); // Slight delay before scaling animations
 
         // Scale profile image
         LeanTween.scale(profileImg.rectTransform, Vector3.zero, 0.1f)
-            
+
             .setOnComplete(() =>
             {
                 LeanTween.scale(profileImg.rectTransform, Vector3.one, 0.5f).setEase(LeanTweenType.easeOutElastic);
@@ -218,7 +223,7 @@ public class CharacterDict : MonoBehaviour
 
         // Scale bio
         LeanTween.scale(bio, Vector3.zero, 0.1f)
-            
+
             .setOnComplete(() =>
             {
                 LeanTween.scale(bio, Vector3.one, 0.5f).setEase(LeanTweenType.easeOutElastic);
@@ -236,32 +241,32 @@ public class CharacterDict : MonoBehaviour
                     .setOnComplete(() =>
                     {
                         // Move out right panel
-                        LeanTween.moveLocalX(right.gameObject, Screen.width+500, 0.5f).setEase(LeanTweenType.easeInElastic);
+                        LeanTween.moveLocalX(right.gameObject, Screen.width + 500, 0.5f).setEase(LeanTweenType.easeInElastic);
                         // Move out left panel
-                        LeanTween.moveLocalX(left.gameObject, -Screen.width-500, 0.5f).setEase(LeanTweenType.easeInElastic);
-                        
+                        LeanTween.moveLocalX(left.gameObject, -Screen.width - 500, 0.5f).setEase(LeanTweenType.easeInElastic);
+
                         StartCoroutine(FadeOutAndDisable());
                     });
             });
-            yield return null;
-       
+        yield return null;
+
     }
 
-        private IEnumerator FadeOutAndDisable()
+    private IEnumerator FadeOutAndDisable()
+    {
+        yield return new WaitForSeconds(0.3f); // Slight delay before fade out
+
+        // Fade out background
+        LeanTween.alphaCanvas(backgroundGroup, 0, 0.5f).setOnComplete(() =>
         {
-            yield return new WaitForSeconds(0.3f); // Slight delay before fade out
-            
-            // Fade out background
-            LeanTween.alphaCanvas(backgroundGroup, 0, 0.5f).setOnComplete(() =>
-            {
-                canvas.enabled = false;
-            });
-        }
+            canvas.enabled = false;
+        });
+    }
 
 
-    
 
-    
-  
+
+
+
 
 }

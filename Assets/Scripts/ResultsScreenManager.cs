@@ -15,7 +15,7 @@ public class ResultsScreenManager : MonoBehaviour
 
     public TextMeshProUGUI favCharText;
     public TextMeshProUGUI ComboText;
-    
+
     //public TextMeshProUGUI RatioText;
 
     public TextMeshProUGUI StellarText;
@@ -47,7 +47,7 @@ public class ResultsScreenManager : MonoBehaviour
         ComboText.text = largestCombo.ToString();
         StellarText.text = perfectHits.ToString();
         GoodText.text = goodHits.ToString();
-        MissText.text =  missedHits.ToString();
+        MissText.text = missedHits.ToString();
 
         double chemistry = UpdateAffections(notes, timeSpentOnCharacter);
 
@@ -55,7 +55,7 @@ public class ResultsScreenManager : MonoBehaviour
 
         foreach (var character in notes.Keys)
         {
-            if (notes[character].Count > 0) 
+            if (notes[character].Count > 0)
             {
                 Debug.Log($"{character}: {notes[character][0]}/{notes[character][1]}/{notes[character][2]} Time: {timeSpentOnCharacter[character]} Grade: {CalculateGrade(notes[character])}");
             }
@@ -92,14 +92,15 @@ public class ResultsScreenManager : MonoBehaviour
         // Move and scale header first
         LeanTween.moveLocal(header.gameObject, new Vector3(-472, 200, 0), 0.3f)
                 .setEase(LeanTweenType.easeOutQuart);
-        LeanTween.scale(header.gameObject, new Vector3(10,10,10), 0.3f)
+        LeanTween.scale(header.gameObject, new Vector3(10, 10, 10), 0.3f)
                 .setEase(LeanTweenType.easeOutBack)
-                .setOnComplete(() => {
-                    
+                .setOnComplete(() =>
+                {
+
                     // Move and scale body after header animation
                     LeanTween.moveLocal(body.gameObject, new Vector3(148, 8, 0), 0.3f)
                             .setEase(LeanTweenType.easeOutQuart);
-                    LeanTween.scale(body.gameObject, new Vector3(16.5f,16.5f,16.5f), 0.3f)
+                    LeanTween.scale(body.gameObject, new Vector3(16.5f, 16.5f, 16.5f), 0.3f)
                             .setEase(LeanTweenType.easeOutBack);
                 });
 
@@ -115,7 +116,7 @@ public class ResultsScreenManager : MonoBehaviour
         ResultsAudio.PlayOneShot(SFX[0]);
         yield return new WaitForSeconds(0.1f);
         LeanTween.scale(MissText.GetComponent<RectTransform>(), Vector3.one, jumpingWait);
-         ResultsAudio.PlayOneShot(SFX[0]);
+        ResultsAudio.PlayOneShot(SFX[0]);
         yield return new WaitForSeconds(0.1f);
         LeanTween.scale(ComboText.GetComponent<RectTransform>(), new Vector3(0.1f, 0.1f, 0.1f), jumpingWait);
         ResultsAudio.PlayOneShot(SFX[0]);
@@ -142,7 +143,9 @@ public class ResultsScreenManager : MonoBehaviour
 
         ChemistryBar.SetScore(-50);
         // change chemistry here PLACEHOLDER: CHEMISTRY HERE IS RETURNED AS THE NET CHANGE
-        
+
+        ResultsAudio.PlayOneShot(SFX[2]);
+
         yield return null;
     }
     public void HideResultsScreen()
@@ -156,10 +159,10 @@ public class ResultsScreenManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-/// <summary>
-/// Updates character affections and calculates total chemistry.
-/// </summary>
-/// <returns>The total chemistry.</returns>
+    /// <summary>
+    /// Updates character affections and calculates total chemistry.
+    /// </summary>
+    /// <returns>The total chemistry.</returns>
     public double UpdateAffections(Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
         double totalChemistryChange = 0.0;
@@ -174,12 +177,12 @@ public class ResultsScreenManager : MonoBehaviour
 
         foreach (CharacterRole character in notes.Keys)
         {
-            float timeSpent = timeSpentOnCharacter[character]; 
+            float timeSpent = timeSpentOnCharacter[character];
             List<int> hitCounts = notes[character];
 
             int grade = (int)Math.Round(CalculateGrade(hitCounts));
             float timeSpentPercentage = timeSpent / totalTime;
-            
+
             float affectionChange = CalculateAffectionChange(timeSpentPercentage, grade);
             print(character);
             GameStateManager.Instance.GetSelectedCharacterWithRole(character).affection += affectionChange;
@@ -189,7 +192,7 @@ public class ResultsScreenManager : MonoBehaviour
         }
 
         Debug.Log($"TotalChem: {totalChemistryChange}, characterCount: {characterCount}");
-        return totalChemistryChange / characterCount; 
+        return totalChemistryChange / characterCount;
     }
 
     public double CalculateGrade(List<int> hitCounts)
@@ -201,7 +204,7 @@ public class ResultsScreenManager : MonoBehaviour
 
         if (totalHits == 0)
         {
-            return 0; 
+            return 0;
         }
 
         float stellarRatio = (float)stellar / totalHits * 100;
@@ -252,7 +255,8 @@ public class ResultsScreenManager : MonoBehaviour
         return affectionChange;
     }
 
-    public String GetFavoriteCharacter(Dictionary<CharacterRole, float> timeSpentOnCharacter){
+    public String GetFavoriteCharacter(Dictionary<CharacterRole, float> timeSpentOnCharacter)
+    {
         float maxTime = 0f;
         CharacterRole favCharacter = CharacterRole.None;
 
@@ -298,10 +302,10 @@ public class ResultsScreenManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Debug.Log("grade animated");
-         ResultsAudio.PlayOneShot(SFX[1]);
-         LeanTween.scale(gradeImage.GetComponent<RectTransform>(), new Vector3(0.15f, 0.15f, 0.15f), jumpingWait)
-        .setEase(LeanTweenType.easeInBounce);
-        
+        ResultsAudio.PlayOneShot(SFX[1]);
+        LeanTween.scale(gradeImage.GetComponent<RectTransform>(), new Vector3(0.15f, 0.15f, 0.15f), jumpingWait)
+       .setEase(LeanTweenType.easeInBounce);
+
         yield return null;
 
     }
@@ -325,14 +329,14 @@ public class ResultsScreenManager : MonoBehaviour
         float goodRatio = (float)totalGood / totalNotes * 100;
         float missRatio = (float)totalMissed / totalNotes * 100;
 
-        if (stellarRatio >= 85 && missRatio == 0) return 5; 
-        if (stellarRatio >= 65 && missRatio < 5) return 4; 
+        if (stellarRatio >= 85 && missRatio == 0) return 5;
+        if (stellarRatio >= 65 && missRatio < 5) return 4;
         if (stellarRatio >= 40 && missRatio < 10) return 3;
-        if (stellarRatio >= 20 && missRatio < 20) return 2; 
-        if (stellarRatio >= 10 && (goodRatio > 75 || (missRatio >= 20 && missRatio <= 30))) return 1; 
+        if (stellarRatio >= 20 && missRatio < 20) return 2;
+        if (stellarRatio >= 10 && (goodRatio > 75 || (missRatio >= 20 && missRatio <= 30))) return 1;
         return 0; // F
     }
-    
+
 }
 
 
