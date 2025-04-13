@@ -1,0 +1,24 @@
+Name: Carter
+Sprite: Carter_Understanding
+There's a lot of things that need to go wrong before we get to that point
+Assuming anything happens at all.
+
+Name: PC
+Are you expecting something to happen?
+
+Name: Carter
+Sprite: Carter_Understanding
+I hope not. I really hope not. I mean, what are the chances that book is legit?
+I'd know if it was from my world. Hell, even you might be able to notice.
+Sprite: Carter_Nonchalant
+All the classics have this taint. The Book of the Dead, the good old play about the Saffron King, hell even some of our guidebooks started to show signs of the corruption.
+
+Name: PC
+Guidebooks?
+
+Name: Carter
+Sprite: Carter_Nonchalant
+Ah, yeah. Curiosity and ignorance kill, so some of the leaders in my world created these info-guides that tell you what to look out for and what to avoid.
+It's a smart solution. Assuming the reader has some base level of intelligence. Something that seems to be lacking from these fools.
+This school is already magic enough. We literally have an infinite, pathfinding hallway.
+What more could they want? How much more otherworldly does it have to get?

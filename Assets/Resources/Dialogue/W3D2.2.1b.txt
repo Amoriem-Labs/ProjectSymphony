@@ -1,0 +1,11 @@
+Name: Daylo
+Sprite: Daylo_Smug
+You're PC, right?
+I was wondering if you'd find me at some point.
+Though we clearly have different views on how chaos should operate in this school, I suppose I'll give you a chance to redeem yourself.
+Why did you come to this school, MC?
+
+Options: 
+To become a better musician.
+To make new friends.
+To form the best band in the multiverse.

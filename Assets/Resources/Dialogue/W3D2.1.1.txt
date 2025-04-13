@@ -1,0 +1,46 @@
+
+Name:  
+Sprite: Empty
+BG: Lake
+The cold wind bites into you as you walk around the school grounds. 
+It is somewhat haunting seeing the once vibrant green leaves and shrubs lose their color in the dark of dusk. Everything seems... muted.
+As you approach Ariel Lake, the wind, paradoxically, seems to calm, 
+the air becomes still, as if waiting for something to happen.
+
+Name: PC
+(What did I just stumble into…)
+
+Name:   
+The whispers increase in frequency for a moment before–
+SFX: fire_fwhooshing_sound
+
+Name:   
+Sprite: Empty
+In the torchlight, you can make out some of the people around you. There are about a dozen other students standing in a circle, all wearing dark, crimson robes.
+While you don't know any of their names, you have definitely seen their faces before in classes or in the cafeteria.
+
+Name: PC
+(Uh oh...)
+
+SFX: fire_fwhooshing_sound
+
+Name:  
+Sprite: Empty
+Ignoring the warning signs and literal red flags, you begin to walk towards the group.
+
+Name: ???  
+Sprite: Empty
+Hey PC! Wait a sec.
+
+Name: PC
+Huh?
+
+Name: Carter
+Sprite: Carter_Neutral
+Glad I caught you before you could get closer.
+Think you could do me a favor? I need you to walk towards me while curving to your right.
+Uhh, how should I say this? Imagine that there is a 10 foot circle around the group. Avoid that circle.
+
+Options: 
+Do what he says.
+Walk straight towards him anyway.

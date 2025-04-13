@@ -1,0 +1,33 @@
+Name: Carter
+Spriter: Carter_Nonchalant
+I guess you could say that.
+
+Name:  
+Sprite: EMPTY
+He sighs before taking off his sunglasses. He rubs a hand across his face and lets out a weary sigh.
+
+Name: Carter
+Sprite: Carter_Nonchalant
+So, uhh, I come from a world with magic. At least some definition of it.
+What's happening here, this curiosity, I've seen it all before.
+Sprite: Carter_Glitching
+I've seen it go wrong.
+Sprite: Carter_Nonchalant
+I'm not looking for that to happen again today, you get me?
+So I guess you could say I am acting as a supervisor right now. A shitty supervisor, but whatever.
+I set up a couple contingencies in case anything goes wrong, but I'm hoping I don't have to use any of them.
+It's why I asked you to walk around in a loop. I set up a salt circle earlier just in case.
+
+Name: PC
+Wait, but wouldn't the students be stuck inside of the circle?
+
+Name:  
+Sprite: EMPTY
+He looks at you with a look of bone-deep exhaustion. He nods his head.
+
+Name: Carter
+Sprite: Carter_Nonchalant
+Yeah.
+
+Name: PC
+Oh.

@@ -1,7 +1,9 @@
-BG: PracticeStage
-Name:  
+Name:   
 Sprite: EMPTY
-One band is already set up on the left of the stage. The drummer is fiddling with his drumsticks. 
+BG: PracticeStage
+
+One band is already set up on the left of the stage. The drummer is fiddling with his drumsticks.
+
 Name: Howard
 Sprite: Howard_Understanding
 That guy looks so nervous...

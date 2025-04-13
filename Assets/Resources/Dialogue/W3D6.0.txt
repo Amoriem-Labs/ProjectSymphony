@@ -1,0 +1,17 @@
+Name: Howard
+Sprite: Howard_At_Peace
+BG: PracticeStage
+Ready?
+
+Name: PC
+Ready.
+
+Name: Sam
+Sprite: Sam_Happy
+Ready as hardy hamsters in the tunnels of Abu Glida Prime!
+
+Name: Howard 
+Sprite: Howard_At_Peace	
+On my mark. 
+Ready. 
+Set.

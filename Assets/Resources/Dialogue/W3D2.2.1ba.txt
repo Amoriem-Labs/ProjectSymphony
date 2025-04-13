@@ -1,0 +1,10 @@
+Name: Daylo
+Sprite: Daylo_Smug
+I see.
+You're ambitious.
+I can understand that.
+Though I was regarded to be a natural prodigy on the harp, I was still taught to always strive for perfection.
+Sprite: Daylo_Neutral
+(Though that turned out to be a very oppressive mindset.)
+Sprite: Daylo_Smug
+No matter, I'll show my perfectionist parents back home that I will break free from their expectations.

@@ -1,0 +1,65 @@
+Name: PC
+How come you're so against your parents?
+
+Name: Daylo
+Sprite: Daylo_Neutral
+You see, ever since I was a child they considered me the epitome of perfection.
+They held me up on a pedestal no matter what I did.
+I was always their "little angel".
+That's what everyone back home is obsessed with.
+The idea of life being perfect.
+I'm tired of living in their status quo.
+Sprite: Daylo_Smug
+I came to this school to escape my parent's overbearing love.
+And to show once and for all that I am not their perfect child.
+Sprite: Daylo_Mischievous
+But an agent of chaos that will throw this school into madness!
+
+Name: PC
+So your parents don't like chaos?
+
+Name: Daylo
+Sprite: Daylo_Neutral
+Well...
+They were actually quite encouraging of my new aspirations.
+They saw my enrollment in this school as making the most of an opportunity.
+And told me to come here to "find myself".
+But I know who I am already.
+Sprite: Daylo_Mischievous
+I will inflict this school with chaos and show my parents that they can't tie me down with their beliefs.
+
+Name: PC
+It sounds like they're actually pretty supportive of you.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+They don't understand me.
+I need to find someone who truly gets why chaos is needed in this world.
+
+Name: PC
+Or you could try to really find yourself, like your parents said.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+Hm…
+Sprite: Daylo_Smug
+I believe that I will find myself... in the midst of this chaos.
+When the school is embraced by madness, then I will truly discover what matters most.
+
+Name: PC
+Wow, that's kind of deep, Daylo.
+
+Name: Daylo
+Sprite: Daylo_Smug
+Just one of the many complex thoughts whirling around in my brain.
+
+Name: PC
+Well, I'm not too sure about causing chaos myself, but I would still like to be friends.
+
+Name: Daylo
+Sprite: Daylo_Smug
+Thanks MC, you're a good listener.
+I suppose I would enjoy being your friend too.
+Options: 
+My pleasure!
+Okay.

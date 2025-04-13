@@ -1,0 +1,9 @@
+Name: PC
+What are you talking about? What's going on here?
+
+Name: Carter
+Sprite: Carter_Angry
+Dammit, alright. I'm going to have to change my plans a bit.
+Sprite: Carter_Neutral
+Nothing can be that easy for me, I guess. Thanks for that, by the way.
+Take a seat.

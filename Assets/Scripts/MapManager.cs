@@ -85,7 +85,7 @@ public class MapManager : MonoBehaviour
         //dialogueManager = FindAnyObjectByType<DialougeManager>();
         mainEventSelected = false;
         credits = 3;
-        PlayerPrefs.SetInt("CurrentWeek.", 2);
+        //PlayerPrefs.SetInt("CurrentWeek.", 2);
         if (PlayerPrefs.HasKey("CurrentWeek."))
         {
             weekNum = PlayerPrefs.GetInt("CurrentWeek.");
@@ -208,6 +208,9 @@ public class MapManager : MonoBehaviour
         addEvent(Trees, false, true, true, "Trees3", 21, "Should I meet  Howard at the park?", 6);
         addEvent(Islands, false, true, true, "Islands3", 21, "Should I meet Sam at the lake?", 7);
 
+        addEvent(School, false, true, true, "Daylo", 3, "Should I meet Daylo at the lake?", 12);
+        addEvent(Hanger, false, true, true, "Carter", 3, "Should I meet Sam at the lake?", 13);
+        addEvent(Islands, false, true, true, "pauline", 3, "Should I meet Sam at the lake?", 14);
 
     }
 
@@ -216,7 +219,7 @@ public class MapManager : MonoBehaviour
         //iterate through all events and populate weekly events which are unlocked
         foreach (var kvp in allEvents)
         {
-            if (kvp.Value.week == weekNum && kvp.Value.isUnlocked == true)
+            if (kvp.Value.week == weekNum && kvp.Value.isUnlocked == true && kvp.Value.isComplete == false)
             {
                 weekEvents.Add(kvp.Key, kvp.Value);
                 Debug.Log("Added event for week " + weekNum + ": " + kvp.Key);
@@ -283,6 +286,7 @@ public class MapManager : MonoBehaviour
             }
 
             Debug.Log("Transition to " + obj.SceneTransition);
+            obj.isComplete = true;
             //dialogueManager.UpdatePPref(obj.SceneTransition);
             PlayerPrefs.SetInt("SceneIndex.", obj.SceneTransition);
             credits -= 1;

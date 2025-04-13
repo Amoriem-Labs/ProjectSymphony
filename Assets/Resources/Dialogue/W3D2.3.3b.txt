@@ -1,0 +1,17 @@
+Name: Pauline
+Sprite: Pauline_spaced_out_positive
+Yeah, I like to practice outside sometimes, it's like the insects are my audience.
+
+Name: PC
+Sprite: Pauline_Confused
+Why don't I jump in?
+I could use some more practice as well, why don't we practice some together?
+I have my keyboard with me, so let's play together!
+
+Name: Pauline
+Sprite: Pauline_spaced_out_negative
+How will you power your keyboard?
+
+Options: 
+Why don't we catch some of these lighting bugs?
+You collect bugs right? Do you have any of these flies already in a jar?

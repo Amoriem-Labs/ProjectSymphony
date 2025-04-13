@@ -1,0 +1,9 @@
+Name: ???
+Sprite: Carter_Angry 
+What was what? You just suddenly seemed to hunch over in pain for no reason. 
+I saw you from my desk and decided to help,
+Name: PC
+(He seems a bit… defensive. Maybe he's hiding something.)
+Name: ???
+Sprite: Carter_Neutral
+Anyway.

@@ -1,0 +1,7 @@
+Name:  
+Sprite: EMPTY
+Carter shakes his head as if trying to dispel his worry.
+With a grunt of exertion, he stands up, grabbing his saxophone case as he does so.
+
+Options:
+Dialogue 1 Carter_afp≥3 Affection Dependent Dialogue Branch 3

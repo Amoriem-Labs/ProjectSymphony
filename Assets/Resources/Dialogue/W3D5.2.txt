@@ -1,0 +1,44 @@
+Name:     
+<i> Out of the corner of your eye you see Daylo messing with another student's locker. 
+Name: PC
+They're actually right over there - should I go ask them?
+
+Name: Sam
+Sprite: Sam_Happy
+Yes, yes. Go ask them! You got this!
+
+Name: PC
+Are you still trying to put stuff in other student's lockers?
+
+Name: Daylo
+Sprite: Daylo_Smug
+It's none of YOUR business, you foolish–
+<i>Daylo looks up from their bag of supplies. <i>
+Oh, it's you! I knew you would return to aid me in my quest.
+
+Name: PC
+Actually, I had another idea–
+
+Name: Daylo
+Sprite: Daylo_Mischevious
+For a prank?!
+
+Name: PC
+Umm... kind of. Yes, it's for a prank. 
+
+Name: Daylo
+Sprite: Daylo_Smug
+I hear you. 
+Just like you'll hear the screams of Jerald the accordion player when I'm done with him.
+
+Name: PC
+Uh. Anyway. Do you want to join my band?
+Name: Daylo
+Hmm…
+Yes I think I would quite enjoy that.
+Perhaps I could sway more students to the side of chaos if I were to be well-known.
+I accept your offer, PC.
+
+Options: 
+I'm glad!
+Oh...

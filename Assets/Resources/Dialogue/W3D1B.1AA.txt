@@ -1,0 +1,37 @@
+Name: Pauline
+Sprite: Pauline_Neutral
+I'm Pauline, nice to meet you.
+Name: PC
+I'm PC, I'm a new student here.
+Name: Pauline
+New student? That's cool.
+Hm...
+Name: PC
+...
+(She's staring into space again...)
+Uh, what instrument do you play?
+Name: Pauline
+Sprite: Pauline_Annoyed
+Oh! Sorry, I got lost in thought.
+I play the bassoon, pretty common in my family.
+Name: PC
+That's awesome!
+Name: Pauline
+Pauline	How about you?
+I play the piano.
+Cool.
+Name: PC
+...
+(She's not making any effort to further the conversation, but at least she doesn't look annoyed.)
+What were you looking at? 
+Name: Pauline
+Oh, just those damselflies.
+MC	Ah I see.
+Name:  
+The damselflies circle her legs like as if they were flowers.
+Name: Pauline
+They're so cute. I wish I was a damselfly.
+...
+Name: PC
+...
+(She 's gone back to watching them again.)

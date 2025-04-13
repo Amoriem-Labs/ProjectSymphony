@@ -1,0 +1,52 @@
+
+Name: Pauline
+Sprite: Pauline_Neutral
+BG: Park
+That's a good one!
+Thanks for humoring me. It's nice to talk to people about things like this.
+I will tell you one more thing about the noxsire.
+One thing it cannot resist is music. Thats where the "bass" part of it's name comes from. My family always thought it stems from bassoon.
+So I often find myself playing bassoon by the water at night.
+Sprite: Pauline_Confused
+I hope I can see it one day.
+
+Name: PC
+Why don't I help out?
+I have my keyboard! And I bet these bugs can help power it up!
+
+Name: Pauline
+Sprite: Pauline_confused
+...!
+
+Name: PC
+What are you waiting for? Come on!
+
+Name:  
+Sprite: Pauline_Neutral
+You and Pauline quickly grab the empty glass jars she brought and begin catching glow bugs
+
+Name:  
+Previously empty jars slowly start to glow with each capture. When you finish, you hooked them up to your keyboard.
+
+Name: PC
+Alright, let's play!
+
+Name:  
+Sprite: Pauline_Neutral
+As your fingers glide across the keyboard, Pauline flawlessly follows your lead.
+You find yourself playing well into the night, lit by the glowbugs and the moon.
+Your song is abruptly cut off by the sound of a glass breaking and bugs flying away.
+
+Sprite: Pauline_Confused
+SFX: Glass_Breaking
+
+Name: PC
+That was some amazing bassoon playing, Pauline!
+
+Name: Pauline
+Sprite: Pauline_Neutral
+Thank you, MC.
+
+Animation: Fade_to_black
+
+

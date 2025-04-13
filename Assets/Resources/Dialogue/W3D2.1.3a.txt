@@ -1,0 +1,12 @@
+Name: Carter
+Sprite: Carter_Nonchalant
+Sorry about burdening you with all that. Thanks for listening to me though.
+It's been a while since I felt like I could let my walls down like that.
+
+Name: PC
+No problem. You can talk with me anytime. I'll always lend an ear.
+
+Name: Carter
+Sprite: Carter_Nonchalant
+Be careful with that promise. I half talked your ear off this time and yet you're still smiling.
+You're a special one, you know?

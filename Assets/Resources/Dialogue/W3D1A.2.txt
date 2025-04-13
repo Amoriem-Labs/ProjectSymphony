@@ -1,0 +1,45 @@
+Name: Sam
+Sprite: Sam_Confused
+Huh? This is a plastic snake!
+
+Sprite: Sam_Happy
+Oh my GOD!
+You guys, this looks exactly like the snake I had when I was a little girl!
+His name was Fluffy and he looked even cuter than this and he was the best snake ever.
+This is so cute! I'm gonna keep him as a good luck charm!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Why would someone put a plastic snake in your bag?
+
+Name: Sam
+Sprite: Sam_Happy
+Maybe it was Roxanne, maybe she knows how much I like snakes and wanted to send me a gift!
+Name: PC
+I actually saw someone else put the snake in your bag.
+Daylo, the harp player.
+Name: Sam
+Sprite: Sam_Sad
+Oh...
+
+Name: Sam
+Sprite: Sam_Happy
+Well, that was still very nice of them, I'll have to thank them when I see them next.
+
+Name: PC
+(I'm not sure they'll be happy to hear this reaction...)
+
+Name: Howard
+Sprite: Howard_At_Peace
+
+That's very nice, I'm glad you got a nice surprise today, Sam.
+SFX: bellring
+Let's meet up again after class.
+
+Name: Sam
+Sprite: Sam_Happy
+Sounds good!
+
+Options: 
+See you then!
+Ok.

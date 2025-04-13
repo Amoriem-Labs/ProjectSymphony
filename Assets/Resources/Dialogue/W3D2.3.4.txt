@@ -1,0 +1,49 @@
+Name: Pauline
+Sprite: space_out_positive
+Less an insect, more of a "creature of the night".
+
+Name: PC
+(Night Creature? Well, anything is possible out here.)
+Alright! What's it named?
+
+Name: Pauline
+Sprite: casually_locked_in
+In books, its called the Lunae Bassirelle noxsire.
+
+Name: PC
+Woah, that's quite the name! What is it?
+
+Name: Pauline
+Sprite: spaced_out_negative
+It's a creature from a tale commonly told on my planet.
+While some believe it to be more like a hound, a canine like creature, others think it to be more... insect-like.
+The creature lurks in the darkness, is quick to dash away from light and curious eyes, and hides out near bodies of water.
+Many people have attempted to find it, to no avail.
+Some who were lucky enough to witness it say it ran on all fours, dashing through the woods as fast as a bear.
+Other witnesses say it scaled trees like a spider, only dropping down to quickly snatch up its prey.
+
+Name: PC
+Thats... quite the creature!
+
+Name: Pauline
+Sprite: spaced_out_positive
+Sorry, I didn't mean to scare you. To me, the noxsire is just like any other insect, a creature just trying to survive.
+That's why it is always hiding or on the run
+
+Name: PC
+Hmm... the noxsire?
+
+Name: Pauline
+Sprite: locked_in
+The Lunae Bassirelle noxsire. Good luck with trying to find a name for that.
+
+Name: PC
+(Hmm...)
+
+Options: 
+How about "Noir Stalker"? +1 (go to 4a)
+What do you think of "Dark Hound"? +1 (4a)
+
+
+
+

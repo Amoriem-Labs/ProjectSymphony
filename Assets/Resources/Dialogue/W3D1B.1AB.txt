@@ -1,0 +1,40 @@
+Name: ???
+Sprite: Pauline_Annoyed
+Oh, just those damselflies.
+Name: PC
+Ah I see.
+(She was just looking at the bugs flying around the flowers near her feet.)
+Sprite: Pauline_Neutral
+Name: ???
+They're so cute, I wish I was a damselfly.
+...
+Name: PC
+...
+(She 's gone back to watching them again.)
+What's your name?
+
+Name: Pauline
+I'm Pauline Meowzart.
+Name: PC
+I'm MC, I'm a new student here.
+Name: Pauline
+New student? That's cool.
+Hm...
+Name: PC
+...
+(She's staring into space again...)
+Uh, what instrument do you play?
+Name: Pauline
+Oh! Sorry, I got lost in thought.
+I play the bassoon, pretty common in my family.
+Name: PC
+That's awesome!
+Name: Pauline
+How about you?
+Name: PC
+I play the piano.
+Name: Pauline
+Cool.
+Pauline
+...
+(She's not making any effort to further the conversation, but at least she doesn't look annoyed.)

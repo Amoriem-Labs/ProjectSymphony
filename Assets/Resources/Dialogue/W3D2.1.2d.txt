@@ -1,0 +1,11 @@
+Name:  
+Sprite: EMPTY
+He sighs again while looking up at night sky.
+It's a new moon tonight, so the only thing you can see are the stars and unrecognizable constellations.
+
+Name: Carter
+Sprite: Carter_Hurt
+I'm just so done with it all, you know?
+This was supposed to be a break. I was going to focus on my music, get more sleep every night, and actually be able to learn in school without info hazards at every corner.
+Instead, I had to show up and do some prep just in case it's legit. I'm not a grizzled detective or an uncompromising doctor. 
+I don't hear the call like them. I'm just me.

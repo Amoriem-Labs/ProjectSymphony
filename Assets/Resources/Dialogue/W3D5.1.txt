@@ -1,0 +1,58 @@
+Name: PC
+His name is Carter. 
+Name: Sam
+Sprite: Sam_Confused
+Is that–
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Yeah. 
+Name: PC
+...what?
+
+Name: Howard
+Nothing, nothing. 
+I think he just intimidates people a little bit. Something happened last year. It doesn't matter. 
+
+Name: Howard
+Sprite: Howard_Understanding
+Anyway, I'm sure he's a really nice guy. 
+You should go ask him to join!
+
+Name: PC
+Okay! I bet he's in the library right now. I'll head there and let you guys know what happens. 
+
+BG: Library
+
+Name: Carter 
+Sprite: Carter_Neutral
+Hello there. 
+Name: PC
+(How did he see me??)
+Hey... how are you doing?
+Name: Carter 
+Sprite: Carter_Smile
+Oh, hey PC! What's up?
+Ohh, don't worry about me. I can tell you're here to ask me something, though. 
+Out with it!
+
+Name: PC
+Well, yes, that's true!
+I was going to ask you, would you want to join a band I'm part of?
+
+Name: Carter 
+Sprite: Carter_Neutral
+Ahh, I see...
+You want me to participate in society's neverending rat-race. You want to use me to get to the top.
+
+Name: PC
+No! I mean, not when you put it like that! I think it'd just be–
+
+Name: Carter 
+Sprite: Carter_Neutral
+I'm in!
+Few things bring me greater pleasure than seeing a colleague gain power through cooperation.
+
+Options: 
+Oh...
+I'm glad!

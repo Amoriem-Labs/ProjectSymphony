@@ -1,0 +1,17 @@
+Name: Pauline
+Sprite: Pauline_Neutral
+Oh these, they are technically sparcituris, but I call them glowflies.
+
+Name: PC
+Wow, that's an interesting name! Now that I'm up close, they flash really bright, like lightning.
+Another name for them could be "lighting bugs"!
+
+Name: Pauline
+Sprite: Pauline_Confused
+"Lighting bugs"... that's a cute name.
+Sprite: casually_locked_in
+Maybe you can help suggest a name for another sneaky creature.
+
+Options: 
+Sure! What's the next insect you have in mind?
+While I'm happy to help, I'm more curious as to why you were playing bassoon out here.
