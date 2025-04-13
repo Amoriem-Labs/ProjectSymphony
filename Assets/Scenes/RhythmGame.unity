@@ -2176,7 +2176,7 @@ MonoBehaviour:
   characterDisplayUI: {fileID: 1219600510}
   sfxSource: {fileID: 1338444579}
   hitAudioClips:
-  - {fileID: 8300000, guid: ef0a3bc09dc0d4f7eae5d7e81706514e, type: 3}
+  - {fileID: 8300000, guid: 170c3494c995d41dcaaa4df36ea3ceb6, type: 3}
   resultsScreenManager: {fileID: 518613119}
   start: {fileID: 8584764}
 --- !u!4 &624143334

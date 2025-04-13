@@ -605,14 +605,6 @@ MonoBehaviour:
     spriteLocked: {fileID: 21300000, guid: 666ec741db78d4f168c49e8e5201f7b4, type: 3}
     backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
     midiPitchStart: 44
-  - role: 3
-    name: Howard
-    instrument: Drumset
-    bio: 
-    spriteUnlocked: {fileID: 21300000, guid: 47ee57557a0f1462693289bc19dc9dad, type: 3}
-    spriteLocked: {fileID: 21300000, guid: 1d6ad9ff6b34b4e349b7f8af416e68e0, type: 3}
-    backgroundHero: {fileID: 21300000, guid: a3857d9087a3e4084b95beaec55e530d, type: 3}
-    midiPitchStart: 48
   currentSongName: 
   transition: {fileID: 915082322}
   transitionTime: 2
