@@ -52,7 +52,7 @@ public class Scoreboard
         currentCombo = 0;
 
         notesPerCharacter = new Dictionary<CharacterRole, List<int>>();
-        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole))){
+        foreach (CharacterRole character in GameStateManager.Instance.ActiveRoles){
             if (character != CharacterRole.None) 
             {
                 notesPerCharacter[character] = new List<int> { 0, 0, 0 }; 
@@ -114,8 +114,7 @@ public class Scoreboard
         scoreText.text = "" + currentScore; 
         multiplierText.text = "Multiplier: x" + currentMultiplier;
         comboBar.SetScore(currentCombo); // current combo instead
-
-        
+        Debug.Log(currentCombo);
     }
 
     void UpdateMultiplier()
@@ -204,7 +203,7 @@ public class GameManager : MonoBehaviour
         RhythMidiController.Instance.CreateNoteNotifier(fallingNotesTime).OnNote += SpawnArrowSprite;
 
         //tracking character time spent
-        foreach (CharacterRole character in Enum.GetValues(typeof(CharacterRole)))
+        foreach (CharacterRole character in GameStateManager.Instance.ActiveRoles)
         {
             if(character != CharacterRole.None)
             {
@@ -227,7 +226,7 @@ public class GameManager : MonoBehaviour
 
         if(startPlaying && RhythMidiController.Instance.IsPlaying)  
         {
-            if (!RhythMidiController.Instance.IsFirstAudioSourcePlaying)
+            if (!RhythMidiController.Instance.IsAudioStillPlaying)
             {
                 RhythMidiController.Instance.StopChart();
                 

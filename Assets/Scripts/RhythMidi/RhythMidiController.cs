@@ -293,7 +293,15 @@ namespace RhythMidi
                 noteNotifier.EnqueueNotes(allNotes);
             }
 
-            int i = 0;
+            // Add the backing track
+            if(audioSources.Count == 0)
+            {
+                audioSources.Add(gameObject.AddComponent<AudioSource>());
+                audioSources[0].clip = currentChart.BackingTrack;
+                audioSources[0].Stop();
+            }
+
+            int i = 1;
             foreach(string key in currentChart.Tracks.Keys)
             {
                 AudioClip track = currentChart.Tracks[key];
@@ -304,14 +312,6 @@ namespace RhythMidi
                 audioSources[i].clip = track;
                 audioSources[i].Stop();
                 i++;
-            }
-
-            // Add the backing track
-            if(i >= audioSources.Count)
-            {
-                audioSources.Add(gameObject.AddComponent<AudioSource>());
-                audioSources[i].clip = currentChart.BackingTrack;
-                audioSources[i].Stop();
             }
 
             IsPlaying = false;
@@ -375,7 +375,7 @@ namespace RhythMidi
             }
         }
 
-        public bool IsFirstAudioSourcePlaying {
+        public bool IsAudioStillPlaying {
             get {
                 return audioSources != null && audioSources.Count > 0 && audioSources[0].isPlaying;
             }

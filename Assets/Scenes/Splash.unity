@@ -557,53 +557,21 @@ MonoBehaviour:
     backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
     midiPitchStart: 36
   - role: 2
-    name: Sam
+    name: Linda
     instrument: Recorder
     bio: 
     spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
     spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
     backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
-    midiPitchStart: 36
-  - role: 2
-    name: Evil Sam
-    instrument: Recorder
-    bio: 
-    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
-    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
-    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
-    midiPitchStart: 36
-  - role: 2
-    name: Evil Sam
-    instrument: Recorder
-    bio: 
-    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
-    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
-    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
-    midiPitchStart: 36
+    midiPitchStart: 40
   - role: 4
-    name: Sam
+    name: Peter Griffin
     instrument: Recorder
     bio: 
     spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
     spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
     backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
-    midiPitchStart: 36
-  - role: 4
-    name: Evil Sam
-    instrument: Recorder
-    bio: 
-    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
-    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
-    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
-    midiPitchStart: 36
-  - role: 4
-    name: Evil Sam
-    instrument: Recorder
-    bio: 
-    spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
-    spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
-    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
-    midiPitchStart: 36
+    midiPitchStart: 44
   - role: 3
     name: Howard
     instrument: Drumset
@@ -611,15 +579,7 @@ MonoBehaviour:
     spriteUnlocked: {fileID: 21300000, guid: 47ee57557a0f1462693289bc19dc9dad, type: 3}
     spriteLocked: {fileID: 21300000, guid: 1d6ad9ff6b34b4e349b7f8af416e68e0, type: 3}
     backgroundHero: {fileID: 21300000, guid: a3857d9087a3e4084b95beaec55e530d, type: 3}
-    midiPitchStart: 40
-  - role: 3
-    name: Howard
-    instrument: Drumset
-    bio: 
-    spriteUnlocked: {fileID: 21300000, guid: 47ee57557a0f1462693289bc19dc9dad, type: 3}
-    spriteLocked: {fileID: 21300000, guid: 1d6ad9ff6b34b4e349b7f8af416e68e0, type: 3}
-    backgroundHero: {fileID: 21300000, guid: a3857d9087a3e4084b95beaec55e530d, type: 3}
-    midiPitchStart: 40
+    midiPitchStart: 48
   currentSongName: 
   transition: {fileID: 915082322}
   transitionTime: 2

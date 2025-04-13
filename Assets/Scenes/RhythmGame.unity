@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 154424525}
   barFill: {fileID: 1090649132}
+  comboText: {fileID: 0}
 --- !u!114 &154424525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3190,9 +3191,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 3000
+  m_MaxValue: 15
   m_WholeNumbers: 1
-  m_Value: 1784
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3210,6 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 839392491}
   barFill: {fileID: 1810740524}
+  comboText: {fileID: 888608902}
 --- !u!1 &875399374
 GameObject:
   m_ObjectHideFlags: 0

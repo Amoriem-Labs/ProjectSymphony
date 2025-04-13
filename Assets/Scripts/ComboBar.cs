@@ -10,6 +10,7 @@ public class ComboBar : MonoBehaviour
     private Coroutine smoothTransitionCoroutine;
 
     public Image barFill;
+    public Text comboText;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class ComboBar : MonoBehaviour
     // Sets the slider value with a smooth transition
     public void SetScore(int score)
     {
-
+        if(comboText != null) comboText.text = score.ToString();
         LeanTween.value(slider.gameObject, slider.value, score, 0.5f)
             .setEase(LeanTweenType.easeInOutCubic) // Cubic easing
             .setOnUpdate((float value) =>

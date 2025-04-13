@@ -181,6 +181,7 @@ public class ResultsScreenManager : MonoBehaviour
             float timeSpentPercentage = timeSpent / totalTime;
             
             float affectionChange = CalculateAffectionChange(timeSpentPercentage, grade);
+            print(character);
             GameStateManager.Instance.GetSelectedCharacterWithRole(character).affection += affectionChange;
             Debug.Log($"Time%: {timeSpentPercentage}, Grade: {grade}, affchange: {affectionChange}");
             totalChemistryChange += affectionChange;
