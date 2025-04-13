@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class W2D6 : MonoBehaviour
 {
@@ -30,7 +31,14 @@ public class W2D6 : MonoBehaviour
             if (END && !dialogueManager.activeDialogue)
             {
 
-                // scene transition to map?
-            }
+            // scene transition to map?
+            END = false;
+            // add scene management stuff
+            //update map week num
+            PlayerPrefs.SetInt("CurrentWeek.", 3);
+            PlayerPrefs.SetInt("SceneToLoad", 3);
+            //SceneManager.LoadScene("Splash");
+            SceneManager.LoadScene("MapScreen");
+        }
     }
 }
