@@ -55,9 +55,6 @@ public class GameStateManager : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    public CharacterRole[] ActiveRoles =>
-        selectedCharacters.Select(c => c.character.role).ToArray();
-
     void Start()
     {
         if (Instance == null)
@@ -113,6 +110,16 @@ public class GameStateManager : MonoBehaviour
 
     public CharacterData GetSelectedCharacterWithRole(CharacterRole role) =>
         selectedCharacters.First(c => c.character.role == role);
+
+    public CharacterRole[] ActiveRoles =>
+        selectedCharacters.Select(c => c.character.role).ToArray();
+
+    public CharacterRole[] AllowedRolesInChart =>
+        CurrentChart.Tracks.Keys
+            .Select(characterName => characters.FirstOrDefault(c => c.name == characterName))
+            .Select(character => character.role)
+            .Distinct()
+            .ToArray();
 
     public void LoadNewScene(string sceneName)
     {

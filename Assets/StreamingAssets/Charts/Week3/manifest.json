@@ -1,0 +1,16 @@
+{
+    "game": "ProjectSymphony",
+    "manifestVersion": 1,
+    "title": "Week 3",
+    "artist": "Music Team",
+    "mapper": "Amoriem Mappers",
+    "midi": "Midi.mid",
+    "backingTrack": "Backing.mp3",
+    "tracks": {
+        "Sam": "guitar.mp3",
+        "Howard": "Drums.mp3",
+        "Carter": "Sax.mp3",
+        "Pauline": "Bassoon.mp3",
+        "Daylo": "Harp.mp3"
+    }
+}

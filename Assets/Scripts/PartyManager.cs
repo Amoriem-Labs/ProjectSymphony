@@ -35,11 +35,11 @@ public class PartyManager : MonoBehaviour
     public int numberInBand; // number of musicians required for this song
     public GameObject SongText;
 
-    int RequiredForSong => Mathf.Min(GameStateManager.Instance.CurrentChart.Tracks.Count, numberInBand);
+    int RequiredForSong => Mathf.Min(GameStateManager.Instance.AllowedRolesInChart.Length, numberInBand);
 
     void Start()
     {
-        print(roleColumns[0]);
+        print(GameStateManager.Instance.AllowedRolesInChart.Length);
         InstantiateCharacterSlots(CharacterRole.Melodist, roleColumns[0]);
         InstantiateCharacterSlots(CharacterRole.Counter, roleColumns[1]);
         InstantiateCharacterSlots(CharacterRole.Percussion, roleColumns[2]);
