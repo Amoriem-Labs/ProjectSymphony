@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 154424525}
   barFill: {fileID: 1090649132}
+  comboText: {fileID: 0}
 --- !u!114 &154424525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1662,6 +1663,7 @@ MonoBehaviour:
   SFX:
   - {fileID: 8300000, guid: ef0a3bc09dc0d4f7eae5d7e81706514e, type: 3}
   - {fileID: 8300000, guid: a21ce1e80ad5e4c639169b676aec140a, type: 3}
+  - {fileID: 8300000, guid: c18bec53e4b874f2189f9bb108fcdd17, type: 3}
   ChemistryBar: {fileID: 154424524}
 --- !u!114 &518613120
 MonoBehaviour:
@@ -2174,7 +2176,7 @@ MonoBehaviour:
   characterDisplayUI: {fileID: 1219600510}
   sfxSource: {fileID: 1338444579}
   hitAudioClips:
-  - {fileID: 8300000, guid: ef0a3bc09dc0d4f7eae5d7e81706514e, type: 3}
+  - {fileID: 8300000, guid: 170c3494c995d41dcaaa4df36ea3ceb6, type: 3}
   resultsScreenManager: {fileID: 518613119}
   start: {fileID: 8584764}
 --- !u!4 &624143334
@@ -3190,9 +3192,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 3000
+  m_MaxValue: 15
   m_WholeNumbers: 1
-  m_Value: 1784
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3210,6 +3212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 839392491}
   barFill: {fileID: 1810740524}
+  comboText: {fileID: 888608902}
 --- !u!1 &875399374
 GameObject:
   m_ObjectHideFlags: 0

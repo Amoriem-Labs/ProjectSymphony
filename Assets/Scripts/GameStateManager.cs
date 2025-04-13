@@ -55,6 +55,9 @@ public class GameStateManager : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    public CharacterRole[] ActiveRoles =>
+        selectedCharacters.Select(c => c.character.role).ToArray();
+
     void Start()
     {
         if (Instance == null)
