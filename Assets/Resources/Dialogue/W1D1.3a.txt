@@ -6,7 +6,7 @@ We're just chilling. People are being kind of intense right now.
 Name: ???
 Sprite: Sam_Pensive
 It's because everyone's already in a <b>band</b>.
-<i>Isabella's</i> in a <b>band</b>.
+<i>Roxanne's</i> in a <b>band</b>.
 Sprite: Sam_Sad
 Why does she have to be in a <b>band</b>!
 

@@ -16,12 +16,12 @@ But I feel like people don't need a band to be happy.
 
 Name: Sam
 Sprite: Sam_Happy
-Wait, I see <i>Isabella</i>!
+Wait, I see <i>Roxanne</i>!
 
 Name: Howard
 Sprite: Howard_Uncomfortable
 Oh no...
 
 Options: 
-Who's Isabella?
+Who's Roxanne?
 Do you guys know how to find all of your classes?

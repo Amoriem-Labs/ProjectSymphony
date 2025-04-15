@@ -21,8 +21,8 @@ Oh, I'm sorry Sam! You don't deserve that.
 Name: Sam
 Sprite: Sam_Sad
 It's okay. I'm not that good at guitar. 
-That's why Isabella doesn't like me. 
+That's why Roxanne doesn't like me. 
 
 Options: 
 That's not true Sam - you're an amazing guitarist!!
-Well then Isabella doesn't deserve you.
+Well then Roxanne doesn't deserve you.

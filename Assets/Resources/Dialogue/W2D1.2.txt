@@ -71,7 +71,6 @@ Name:
 
 <i>There's something... off about the forest right now. The leaves move and rustle, despite there being no wind.
 
-Ina's monster / spirit features get more pronounced, or their eyes glow SPRITE
 
 Name: PC
 (What is happening? Is something going to come from the forest?)

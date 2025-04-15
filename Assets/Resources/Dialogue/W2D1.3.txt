@@ -71,7 +71,7 @@ Name: PC
 ...yeah.
 
 Name: Sam
-Hah! Fiesty one, that dog. There's a reason I haven't say yes to Howard the last couple of months. I've learned my lesson.
+Hah! Feisty one, that dog. There's a reason I haven't say yes to Howard the last couple of months. I've learned my lesson.
 
 Name: Sam
 Sprite: Sam_Sad

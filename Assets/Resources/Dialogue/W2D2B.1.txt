@@ -10,7 +10,7 @@ Sprite: Howard_At_Peace
 But if there's one thing I know, Sam is really hardworking.
 She practices so much and music really seems to be her passion.
 Sprite: Howard_Uncomfortable
-Even if a lot of that passion is directed toward Isabella...
+Even if a lot of that passion is directed toward Roxanne...
 Sprite: Howard_At_Peace
 All that said, I'm glad to have her as a friend.
 And we're happy to have you as a friend now too, PC.

@@ -131,7 +131,7 @@ public class W1D3 : MonoBehaviour
 
 
                 }
-               
+
             }
 
             if (END)
@@ -145,6 +145,7 @@ public class W1D3 : MonoBehaviour
                     PlayerPrefs.SetInt("CurrentWeek.", 2);
                     PlayerPrefs.SetInt("SceneToLoad", 3);
                     SceneManager.LoadScene("MapScreen");
+                    //SceneManager.LoadScene("MapScreen");
                     //SceneManager.LoadScene("Splash");
                 }
             }

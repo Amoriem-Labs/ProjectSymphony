@@ -1,5 +1,4 @@
-BG: Hallway
-
 Name: PC
+BG: Hallway
 Whew... haah... that air conditioning is nice...
 (Ugh, I have to focus.)

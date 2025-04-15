@@ -1,7 +1,7 @@
 Name: Sam
 BG: LockerRoom
 Sprite: Sam_Pensive
-Ooh let me. I spend a lot of time there practicing my songs for Isabella!
+Ooh let me. I spend a lot of time there practicing my songs for Roxanne!
 
 Name: Howard
 Sprite: Howard_Shrug

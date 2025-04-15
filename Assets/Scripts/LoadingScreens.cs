@@ -43,7 +43,7 @@ public class LoadingScreens : MonoBehaviour
                 default:
                     Debug.LogError($"Scene to load recieved an unexpected value: {SceneToLoad}. Expected int 0,1, or 2.");
                     break;
-               
+
             }
 
             loaded = true;

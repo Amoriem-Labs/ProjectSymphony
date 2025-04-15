@@ -20,7 +20,7 @@ Sprite: EMPTY
 The Rivalsbandians walk on slowly, waving towards the crowd. The bassist makes a heart with their hands and pretends to throw it into the audience, who eats it up. 
 Name: Sam
 Sprite: Sam_Happy
-ISABELLA!!!!!
+Roxanne!!!!!
 Name:  
 Sprite: EMPTY
 The pianist–RIVALNAME–grabs the mic.

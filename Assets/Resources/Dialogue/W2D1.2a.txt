@@ -1,5 +1,4 @@
 BG: Park
-
 Name:  
 Sprite: EMPTY
 You race into the park, retracing your steps in hope that Ina returned to where the chase started.

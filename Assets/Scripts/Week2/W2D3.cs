@@ -56,7 +56,7 @@ public class W2D3 : MonoBehaviour
                     DP2 = true;
 
                 }
-                else if (currselectedOption == "Well then Isabella doesn't deserve you.")
+                else if (currselectedOption == "Well then Roxanne doesn't deserve you.")
                 {
                     DP2 = true;
                     // load the next dialogue
@@ -226,7 +226,7 @@ public class W2D3 : MonoBehaviour
             }
 
 
-            
+
         }
     }
 }

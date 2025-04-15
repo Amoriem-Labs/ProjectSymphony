@@ -22,7 +22,7 @@ SFX: Cheering_Noises
 
 Name:  
 Sprite: EMPTY
-Sam looks up from her mount to see the excited crowed surrounding her. She sees Isabella looking at her with interest too.
+Sam looks up from her mount to see the excited crowed surrounding her. She sees Roxanne looking at her with interest too.
 
 BG: Park
 
@@ -30,7 +30,7 @@ Name: Sam
 Sprite: Sam_Happy
 Ha-ha! I actuallly did it!
 You know what...
-[PC], can you give me my soda back?
+PC, can you give me my soda back?
 
 Name: PC
 Oh sure, here.

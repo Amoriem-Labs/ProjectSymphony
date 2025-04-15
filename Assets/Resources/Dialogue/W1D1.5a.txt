@@ -20,7 +20,7 @@ Oh wow. I see...
 
 Name: Sam
 Sprite: Sam_Neutral
-Isabella showed me this really cool garden once! Well, actually she just told me about it–
+Roxanne showed me this really cool garden once! Well, actually she just told me about it–
 
 Name: Howard
 Sprite: Howard_Uncomfortable

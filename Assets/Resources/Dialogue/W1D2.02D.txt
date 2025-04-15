@@ -16,7 +16,7 @@ I'm sure you could learn anything you want here. Science, magic, music. Everythi
 Name: Sam
 Sprite: Sam_Pensive
 That section over there is where you can find the romance books. Any pairing you've ever thought of exists here.
-I wonder if Isabella and I are in there...
+I wonder if Roxanne and I are in there...
 
 Name: Howard
 Sprite: Howard_Uncomfortable
