@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 3551637809063667741}
   - component: {fileID: 3299139806897850761}
   - component: {fileID: 4635983408322694287}
+  - component: {fileID: 7841846971890900334}
   - component: {fileID: 558075338476330223}
   - component: {fileID: 3602811928163232088}
   m_Layer: 5
@@ -242,12 +243,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8585be7c0852949f28a60fd0eac7b107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  available: {fileID: 1630100671146929702}
-  required: {fileID: 4651457212914112938}
   thisSelected: 0
   isAvailable: 0
   isRequired: 0
-  PartyManager: {fileID: 0}
+  partyManager: {fileID: 0}
+--- !u!114 &7841846971890900334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438444862494756814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4635983408322694287}
+          m_TargetAssemblyTypeName: CharacterSlot, Assembly-CSharp
+          m_MethodName: hoverBigger
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4635983408322694287}
+          m_TargetAssemblyTypeName: CharacterSlot, Assembly-CSharp
+          m_MethodName: hoverSmaller
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &558075338476330223
 MonoBehaviour:
   m_ObjectHideFlags: 0

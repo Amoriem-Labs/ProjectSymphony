@@ -675,6 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 261495346}
   barFill: {fileID: 1442814695}
+  comboText: {fileID: 0}
 --- !u!1 &281375966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,7 +3781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: bcccc28125f0740fbb8c530fc9310da1, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c12f806a2a3ae954ebb1771c65441e4c, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1

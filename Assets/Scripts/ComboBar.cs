@@ -22,15 +22,17 @@ public class ComboBar : MonoBehaviour
     // Sets the slider value with a smooth transition
     public void SetScore(int score)
     {
-        if(comboText != null) comboText.text = score.ToString();
+
+        if (comboText != null) comboText.text = score.ToString();
         LeanTween.value(slider.gameObject, slider.value, score, 0.5f)
             .setEase(LeanTweenType.easeInOutCubic) // Cubic easing
             .setOnUpdate((float value) =>
             {
+                Debug.Log("tweening");
                 slider.value = value; // Update the slider value during the transition
             });
-        
-        
+
+
     }
     public void ChangeColorBlue()
     {
@@ -39,8 +41,8 @@ public class ComboBar : MonoBehaviour
     }
     public void ChanceColorYellow()
     {
-         LeanTween.color(barFill.rectTransform, Color.yellow, 1.5f)
-                    .setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.color(barFill.rectTransform, Color.yellow, 1.5f)
+                   .setEase(LeanTweenType.easeInOutCubic);
     }
 
 

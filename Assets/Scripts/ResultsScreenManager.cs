@@ -90,7 +90,7 @@ public class ResultsScreenManager : MonoBehaviour
         bodyRect.localScale = Vector3.zero;
 
         // Move and scale header first
-        LeanTween.moveLocal(header.gameObject, new Vector3(-472, 200, 0), 0.3f)
+        LeanTween.moveLocal(header.gameObject, new Vector3(-472, 230, 0), 0.3f)
                 .setEase(LeanTweenType.easeOutQuart);
         LeanTween.scale(header.gameObject, new Vector3(10, 10, 10), 0.3f)
                 .setEase(LeanTweenType.easeOutBack)
@@ -98,7 +98,7 @@ public class ResultsScreenManager : MonoBehaviour
                 {
 
                     // Move and scale body after header animation
-                    LeanTween.moveLocal(body.gameObject, new Vector3(148, 8, 0), 0.3f)
+                    LeanTween.moveLocal(body.gameObject, new Vector3(148, 30, 0), 0.3f)
                             .setEase(LeanTweenType.easeOutQuart);
                     LeanTween.scale(body.gameObject, new Vector3(16.5f, 16.5f, 16.5f), 0.3f)
                             .setEase(LeanTweenType.easeOutBack);

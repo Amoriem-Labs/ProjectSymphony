@@ -13,6 +13,6 @@ public class Splash : MonoBehaviour
 
     void OnRhythMidiLoaded()
     {
-        SceneManager.LoadScene("TitleScene");
+        GameStateManager.Instance.LoadNewScene("TitleScene");
     }
 }

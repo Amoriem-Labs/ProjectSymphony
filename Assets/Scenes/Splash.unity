@@ -592,7 +592,7 @@ MonoBehaviour:
       Pauline would never squash a bug.) "
     spriteUnlocked: {fileID: 21300000, guid: bc78c3e8757834aedababe3c076f12cd, type: 3}
     spriteLocked: {fileID: 21300000, guid: fe4eae4534e094b1a941a9e3aa74e28c, type: 3}
-    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    backgroundHero: {fileID: 21300000, guid: 9147c34fa6fff45d1a39d98303e8634c, type: 3}
     midiPitchStart: 48
   - role: 2
     name: Daylo
@@ -603,11 +603,20 @@ MonoBehaviour:
       parental issues. . .
     spriteUnlocked: {fileID: 21300000, guid: 73f3067bc492546719a5fdfecb78feea, type: 3}
     spriteLocked: {fileID: 21300000, guid: 666ec741db78d4f168c49e8e5201f7b4, type: 3}
-    backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
+    backgroundHero: {fileID: 21300000, guid: f4e38857cfc7e4603a257ad52f55f7e6, type: 3}
     midiPitchStart: 52
+  - role: 1
+    name: You
+    instrument: Keyboard
+    bio: You are a new student at MIRA, seeking to form a band...what adventures
+      will you go on?
+    spriteUnlocked: {fileID: 21300000, guid: e02ad82c4f8144e6989cffd3246ed2a0, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 9db87bfd3d9454a6cb6e3ff95ad5f33b, type: 3}
+    backgroundHero: {fileID: 21300000, guid: be3cf68c847354206a371e60e1930e7c, type: 3}
+    midiPitchStart: 36
   currentSongName: 
   transition: {fileID: 915082322}
-  transitionTime: 2
+  transitionTime: 1
 --- !u!4 &1309415893
 Transform:
   m_ObjectHideFlags: 0

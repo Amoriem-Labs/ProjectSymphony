@@ -53,7 +53,7 @@ public class GameStateManager : MonoBehaviour
     public CharacterData[] selectedCharacters;
 
     public Animator transition;
-    public float transitionTime = 1f;
+    public float transitionTime;
 
     void Start()
     {
@@ -128,6 +128,11 @@ public class GameStateManager : MonoBehaviour
 
     IEnumerator LoadScene(string sceneName)
     {
+        AudioSource audio = FindObjectOfType<AudioSource>();
+
+        if (audio != null)
+            yield return StartCoroutine(FadeOutAudio(audio, 1f)); // 1 second fade-out
+
         if (transition != null)
         {
             transition.SetTrigger("Start");
@@ -141,5 +146,54 @@ public class GameStateManager : MonoBehaviour
             yield return new WaitForSeconds(transitionTime);
             transition.SetTrigger("EnterNewScene");
         }
+
+        AudioSource newAudio = FindObjectOfType<AudioSource>();
+
+        if (newAudio != null)
+            yield return StartCoroutine(FadeInAudio(newAudio, 1f)); // 1 second fade-in
     }
+
+    IEnumerator FadeOutAudio(AudioSource audio, float duration)
+    {
+        float startVolume = audio.volume;
+
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            audio.volume = Mathf.Lerp(startVolume, 0f, t / duration);
+            yield return null;
+        }
+
+        audio.volume = 0f;
+        audio.Pause(); // optional: stop playback
+    }
+
+    IEnumerator FadeInAudio(AudioSource audio, float duration)
+    {
+        audio.Play(); // make sure it starts playing
+        audio.volume = 0f;
+        float targetVolume = 1f;
+
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+            audio.volume = Mathf.Lerp(0f, targetVolume, t / duration);
+            yield return null;
+        }
+
+        audio.volume = targetVolume;
+
+        GameObject buttonManager = GameObject.Find("ButtonManager");
+        if (buttonManager != null)
+        {
+            AudioSource buttonAudio = buttonManager.GetComponent<AudioSource>();
+            if (buttonAudio != null)
+            {
+                buttonAudio.volume = 0.5f; // or fade it in if you want:
+                                           // yield return StartCoroutine(FadeInAudio(buttonAudio, 0.5f, 0.5f));
+            }
+        }
+    }
+
+
 }
+
+
