@@ -1398,8 +1398,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 897256845}
   m_HandleRect: {fileID: 897256844}
   m_Direction: 0
-  m_Value: 0.42853877
-  m_Size: 0.6137183
+  m_Value: 0.4285386
+  m_Size: 0.61371833
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1587,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1596,14 +1596,14 @@ PrefabInstance:
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1885366430}
+      objectReference: {fileID: 1047812322}
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CancelButton
       objectReference: {fileID: 0}
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: LoadNewScene
+      value: ExitScreen
       objectReference: {fileID: 0}
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1611,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameStateManager, Assembly-CSharp
+      value: SaveDataManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 571223634524155941, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 712925916}
   m_HandleRect: {fileID: 712925915}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

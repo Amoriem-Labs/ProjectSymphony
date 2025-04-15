@@ -135,6 +135,10 @@ public class CharacterDict : MonoBehaviour
         {
             currPageNum = 0;
         }
+        if (currPageNum < 0)
+        {
+            currPageNum = characterNames.Length - 1;
+        }
 
         string charName = characterNames[currPageNum];
 

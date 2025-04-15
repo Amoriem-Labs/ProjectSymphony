@@ -31,7 +31,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
         // required.SetActive(isRequired);
         // available.SetActive(isAvailable);
 
-        characterImage.material.SetFloat("_AlphaOutlineGlow", 0f);
+        characterImage.material.SetFloat("_AlphaOutlineBlend", 0f);
         characterImage.material.SetFloat("_HologramBlend", 0f);
     }
 
@@ -49,7 +49,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
         if (!characterData.isUnlocked || !isAvailable) return;
         partyManager.DeselectAllSlots(characterData.character.role);
 
-        characterImage.material.SetFloat("_AlphaOutlineGlow", 1f);
+        characterImage.material.SetFloat("_AlphaOutlineBlend", 1f);
         characterImage.material.SetFloat("_HologramBlend", 0.1f);
         thisSelected = true;
 
@@ -59,7 +59,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     public void Deselect()
     {
         thisSelected = false;
-        characterImage.material.SetFloat("_AlphaOutlineGlow", 0f);
+        characterImage.material.SetFloat("_AlphaOutlineBlend", 0f);
         characterImage.material.SetFloat("_HologramBlend", 0f);
     }
     public void hoverBigger()

@@ -201,7 +201,7 @@ public class DialougeManager : MonoBehaviour
         isW3D7 = SceneList[20];
         isW3D8 = SceneList[21];
 
-    }   
+    }
     public void UpdatePPref(int index)
     {
         //int index = SceneList.IndexOf(sceneBool);
@@ -211,6 +211,24 @@ public class DialougeManager : MonoBehaviour
 
     public void StartDialogueSequence()
     {
+        if (isDay0 || isW1D1 || isW1D2 || isW1D3) // testing here
+        {
+            uiManager.ShowTime("Week1");
+        }
+        else if (isW2D1A || isW2D1B || isW2D2A || isW2D2B || isW2D3 || isW2D4 || isW2D5 || isW2D6)
+        {
+            uiManager.ShowTime("Week2");
+        }
+        else if (isW3D1A || isW3D1B || isW3D1C || isW3D2A || isW3D2B || isW3D2C || isW3D5 || isW3D6 || isW3D7 || isW3D8)
+        {
+            uiManager.ShowTime("Week3");
+        }
+        else
+        {
+            Debug.LogWarning("Unknown scene state: no matching week.");
+        }
+
+
         if (dialogueSequence != null && dialogueSequence.Count > 0)
         {
             dialougeText.enabled = true;
@@ -277,6 +295,13 @@ public class DialougeManager : MonoBehaviour
             if (curr_dialogue == null)
             {
                 Debug.LogError("curr_dialogue is null in StartDialouge!");
+                return;
+            }
+
+            // Check if current background is the same as the new one
+            if (backgroudSpriteImage.sprite != null && backgroudSpriteImage.sprite.name == curr_dialogue.background)
+            {
+                Debug.Log("Background already set, skipping fade and location update.");
                 return;
             }
 

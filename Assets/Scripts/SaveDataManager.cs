@@ -43,7 +43,7 @@ public class SaveDataManager : MonoBehaviour
         // 1 is map
         // 2 is Rhythm
         PlayerPrefs.SetInt(CURRENT_WEEK_KEY, 1);
-        PlayerPrefs.SetInt("SceneToLoad", 0);
+        PlayerPrefs.SetInt("SceneToLoad", 0);
         dialogueManager = FindAnyObjectByType<DialougeManager>();
         mapManager = FindAnyObjectByType<MapManager>();
 
@@ -125,9 +125,9 @@ public class SaveDataManager : MonoBehaviour
 
     public void SaveGame(int saveName)
     {
-       
-        //saveSlotCount += 1;
-        Debug.Log($"Save Name: {saveName}");
+
+        //saveSlotCount += 1;
+        Debug.Log($"Save Name: {saveName}");
         //saveName
         Debug.Log($"Slot index key: {PlayerPrefs.GetInt(SLOT_INDEX_KEY)}");
         PlayerPrefs.SetInt(SLOT_NAME_KEY + saveName.ToString(), PlayerPrefs.GetInt(SLOT_INDEX_KEY));
@@ -136,7 +136,7 @@ public class SaveDataManager : MonoBehaviour
         Debug.Log($"Save Count: {saveSlotCount}");
         PlayerPrefs.SetInt("Index" + saveName.ToString(), saveSlotCount);
         PlayerPrefs.SetInt(SLOT_INDEX_KEY, PlayerPrefs.GetInt(SLOT_INDEX_KEY) + 1);
-        Debug.Log("Scene index is: "+ PlayerPrefs.GetInt(SCENE_INDEX_KEY));
+        Debug.Log("Scene index is: " + PlayerPrefs.GetInt(SCENE_INDEX_KEY));
         PlayerPrefs.SetInt(SCENE_INDEX_KEY + saveName.ToString(), PlayerPrefs.GetInt(SCENE_INDEX_KEY));
         //dialogueManager.SetSceneBools();
         PlayerPrefs.Save();
@@ -165,7 +165,7 @@ public class SaveDataManager : MonoBehaviour
     }
     private void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.D))
         {
             DeleteAllPlayerPrefs();
@@ -174,13 +174,18 @@ public class SaveDataManager : MonoBehaviour
     void DeleteAllPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
-        
+
         Debug.Log("All PlayerPrefs have been deleted.");
         PlayerPrefs.SetInt(SLOT_INDEX_KEY, 1);
         PlayerPrefs.SetInt(SCENE_INDEX_KEY, 0);
         PlayerPrefs.SetInt("SceneToLoad", 0);
         PlayerPrefs.Save();
         DisplaySaves();
+    }
+
+    public void ExitScreen()
+    {
+        GameStateManager.Instance.LoadNewScene("TitleScene");
     }
 
 }

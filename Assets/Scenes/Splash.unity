@@ -611,12 +611,12 @@ MonoBehaviour:
     bio: You are a new student at MIRA, seeking to form a band...what adventures
       will you go on?
     spriteUnlocked: {fileID: 21300000, guid: e02ad82c4f8144e6989cffd3246ed2a0, type: 3}
-    spriteLocked: {fileID: 21300000, guid: 9db87bfd3d9454a6cb6e3ff95ad5f33b, type: 3}
+    spriteLocked: {fileID: 21300000, guid: 2d7d6dfa45b42459487828e8499f9dc8, type: 3}
     backgroundHero: {fileID: 21300000, guid: be3cf68c847354206a371e60e1930e7c, type: 3}
     midiPitchStart: 36
   currentSongName: 
   transition: {fileID: 915082322}
-  transitionTime: 1
+  transitionTime: 0.6
 --- !u!4 &1309415893
 Transform:
   m_ObjectHideFlags: 0

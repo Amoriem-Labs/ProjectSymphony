@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     public UIImage[] uiLocations; // Array of UI Images
     public UIImage[] uiTimes;  // Array of UI Backgrounds
 
+    private string currentTimeName = "";
+
     // Use a coroutine in Start to delay setting IsReady until the end of the first frame,
     // ensuring that all components are initialized.
     private IEnumerator Start()
@@ -60,10 +62,17 @@ public class UIManager : MonoBehaviour
 
     public void ShowTime(string name) // PLACEHOLDER: come back to add variability for showing other elements
     {
+
+        if (currentTimeName == name)
+        {
+            return;
+        }
         foreach (var uiImage in uiTimes)
         {
             if (uiImage.name == name)
             {
+
+                currentTimeName = name; // Update current time
                 time.GetComponent<RectTransform>().localScale = Vector3.zero;
                 // Animate and show the element
                 LeanTween.scale(time.GetComponent<RectTransform>(), Vector3.one, 1.5f) // Increase duration
