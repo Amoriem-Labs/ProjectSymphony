@@ -1,4 +1,4 @@
 Name: Howard
 Sprite: Howard_Understanding
-Shoot, I'm sorry MC.
+Shoot, I'm sorry PC.
 Hopefully they'll get easier over time.

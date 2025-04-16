@@ -2,9 +2,8 @@ Name: Sam
 Sprite: Sam_Happy
 BG: Cafeteria
 BG2: zapsplat_cafeteria
-BGM: what_s next(hallway)
+BGM: what_s next (hallway)
 
-sfx	student chatter
 Looks like it's a good lunch day today! Shwamp soup is my favorite!
 Name: Howard
 Sprite: Howard_At_Peace

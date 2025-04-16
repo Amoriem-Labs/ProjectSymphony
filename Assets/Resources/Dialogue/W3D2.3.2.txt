@@ -7,7 +7,7 @@ Hello?
 
 Name: Pauline
 Sprite: Pauline_Confused
-MC, hey.
+PC, hey.
 What brings you here tonight?
 
 Options: 

@@ -16,7 +16,7 @@ What's your name?
 Name: Pauline
 I'm Pauline Meowzart.
 Name: PC
-I'm MC, I'm a new student here.
+I'm PC, I'm a new student here.
 Name: Pauline
 New student? That's cool.
 Hm...

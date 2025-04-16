@@ -353,7 +353,7 @@ public class DialougeManager : MonoBehaviour
         // set the name 
         if (nameText != null)
         {
-            if (curr_dialogue.name != " PC" && curr_dialogue.name != "PC" && curr_dialogue.name != " MC" && curr_dialogue.name != "MC")
+            if (curr_dialogue.name != " PC" && curr_dialogue.name != "PC" && curr_dialogue.name != " PC" && curr_dialogue.name != "PC")
             {
                 nameText.text = curr_dialogue.name;
             }
@@ -556,7 +556,7 @@ public class DialougeManager : MonoBehaviour
             {
                 animationManager.animationName = line.Substring(11);
                 Debug.Log($"Playing animation {animationManager.animationName}");
-                //animationManager.playAnimation = true;
+                //animationManager.playAnimation = true; 
 
             }
             else if (line.StartsWith("BG: "))

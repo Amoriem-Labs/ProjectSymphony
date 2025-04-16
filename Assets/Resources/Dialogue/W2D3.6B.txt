@@ -19,7 +19,7 @@ Sprite: EMPTY
 I guess not. 
 Name: Sam
 Sprite: Sam_Pensive
-Sam [thinking]	I want to be in a band...
+I want to be in a band...
 Name: Howard
 Sprite: Howard_Shrug
 Oh jeez, not this again.

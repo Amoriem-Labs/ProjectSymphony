@@ -1,5 +1,5 @@
 Name: Howard
-Sprite:Howard_Uncomfortable
+Sprite: Howard_Uncomfortable
 Sam, can you stop saying that?
 You know it gets on my nerves.
 Name: Sam

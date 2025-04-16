@@ -19,7 +19,15 @@ Sprite: EMPTY
 Name: Sam
 Sprite: Sam_Pensive
 I want to be in a band...
-Narration	Howard rubs his forehead with the back of his hand.
-Howard [uncomfortable]	It's not good to do things just because other people are doing them.
-PC	That's true, that's true. You're probably right, Howard. 
-Sam [thinking]	I want to be in a band...
+Name:
+Sprite: EMPTY
+Howard rubs his forehead with the back of his hand.
+Name: Howard
+Sprite: Howard_Uncomfortable
+It's not good to do things just because other people are doing them.
+Name: PC
+Sprite: EMPTY
+That's true, that's true. You're probably right, Howard. 
+Name: Sam
+Sprite: Sam_Pensive
+I want to be in a band...

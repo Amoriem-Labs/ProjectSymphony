@@ -45,7 +45,7 @@ That was some amazing bassoon playing, Pauline!
 
 Name: Pauline
 Sprite: Pauline_Neutral
-Thank you, MC.
+Thank you, PC.
 
 Animation: Fade_to_black
 

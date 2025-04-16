@@ -26,7 +26,7 @@ Name: PC
 What were you looking at? 
 Name: Pauline
 Oh, just those damselflies.
-MC	Ah I see.
+PC	Ah I see.
 Name:  
 The damselflies circle her legs like as if they were flowers.
 Name: Pauline

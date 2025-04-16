@@ -21,7 +21,7 @@ Alright, are you ready to play?
 
 Name: Pauline
 Sprite: Pauline_Locked_In
-I will follow your lead, MC.
+I will follow your lead, PC.
 
 BGM2: Bassoon_and_Piano
 

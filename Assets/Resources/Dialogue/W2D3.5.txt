@@ -10,6 +10,7 @@ Name: Ms. A
 Sprite: GC_Happy
 Go on, find your friends.
 Name:  
+BG: Lake
 Sprite: EMPTY
 Howard and Sam are sitting on the sidewalk, leaning against the concrete.
 Name: PC
@@ -72,7 +73,9 @@ Name: Sam
 Sprite: Sam_Happy
 You guys can't look! This is a private wish.
 I'm only allowed to tell you after I wish it.
-Narration	You turn away, and Howard covers his eyes half-heartedly.
+Name:
+Sprite: EMPTY
+You turn away, and Howard covers his eyes half-heartedly.
 Name: Sam
 Sprite: Sam_Happy
 I'll just toss this in and done!
@@ -81,7 +84,7 @@ Sprite: EMPTY
 (That can't be sanitary...)
 Name: Howard
 Sprite: Howard_Uncomfortable
-o... what did you wish for?
+Oh... what did you wish for?
 Name: Sam
 Sprite: Sam_Pensive
 Actually, I'm not going to tell you. I don't think that will help it come true.

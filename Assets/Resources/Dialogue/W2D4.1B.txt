@@ -3,7 +3,7 @@ Sprite: EMPTY
 I always go for a sweet treat!
 Name: Sam
 Sprite: Sam_Happy
-I knew you were my favorite, MC!
+I knew you were my favorite, PC!
 Sweet treats are totally the best.
 Name: Howard
 Sprite: Howard_Shrug

@@ -35,7 +35,7 @@ I actually have a question for you.
 
 Name: Pauline
 You do?
-MC	Yes! Would you like to join my band?
+PC	Yes! Would you like to join my band?
 
 Name: Pauline
 Ohh...

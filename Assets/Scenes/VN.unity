@@ -5334,6 +5334,18 @@ PrefabInstance:
       value: DialougeBox (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3264888207478765854, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.29636878
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264888207478765854, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.29636878
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264888207478765854, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264888207478765854, guid: 7dfd246284ba84da5995828b68222084, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1339945242}
@@ -5473,7 +5485,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -26
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8828411274182549317, guid: 7dfd246284ba84da5995828b68222084, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: a00d732761e004c6c96c6f16d6c5fe5b, type: 2}
+    m_RemovedComponents:
+    - {fileID: 8401829867048959972, guid: 7dfd246284ba84da5995828b68222084, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7953711576669404171, guid: 7dfd246284ba84da5995828b68222084, type: 3}
     m_AddedGameObjects: []

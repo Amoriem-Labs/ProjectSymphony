@@ -69,7 +69,7 @@ Name: PC
 I do.
 Name: Howard
 Sprite: Howard_Uncomfortable
-I don't know, MC, it'd be pretty hard.
+I don't know, PC, it'd be pretty hard.
 We'd have to find two more people. 
 And a bassist and someone to play the countermelody at that! Those are the two hardest people to find!
 PC	We can ask around!
@@ -82,7 +82,7 @@ People who are searching for a group just like us.
 We'll be the best band in the school one day.
 Name: Howard
 Sprite: Howard_Uncomfortable
-Woah there, MC. Me and Sam aren't actually that good. Don't get ahead of–
+Woah there, PC. Me and Sam aren't actually that good. Don't get ahead of–
 Name: Sam
 Sprite: Sam_Happy
 WE'RE GONNA WIN BATTLE OF THE BANDS.

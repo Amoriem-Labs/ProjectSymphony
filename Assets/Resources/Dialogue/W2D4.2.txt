@@ -11,19 +11,19 @@ They smile smugly down at all of the students before opening their mouth to spea
 Name: ???
 Sprite: Rival_Shaddow
 Attention everyone!
-sfx	student chatter stops
 Name: Cynthia
+BG2: Silence
 Sprite: Rival_Smirk
 I'm Cynthia, and you'll remember my band, Synthia and the Star Chasers, from last year. 
 Sprite: Rival_Think
-We'll be expecting some challengers tomorrow at the [MusicalGenreOfRival'sInitialSong] scrimmage. 
+We'll be expecting some challengers tomorrow at the Jazz Disco scrimmage. 
 Sprite: Rival_Smirk
 Good luck, but don't get your hopes up too high. 
 Name:  
 Sprite: EMPTY
 The student sits back down as their bandmates cheer and clap. 
 The other students in the cafeteria seem to have a mix of reactions: some angry, some worried, but everyone seems to be taking this declaration seriously.
-sfx	Student chatter
+BG2: zapsplat_cafeteria
 Sprite: Sam_Sad
 Roxanne's in Cynthia's band...
 Name:  
@@ -39,7 +39,9 @@ That'll probably only make other people practice harder.
 Name: Howard
 Sprite: Howard_Understanding 
 I suppose you're right, but Cynthia's band does sound pretty tough to beat. Maybe they want some competition.
-Sam	What do you think PC?
+Name: Sam
+Sprite: Sam_Happy
+What do you think PC?
 Options: 
 They do sound hard to beat.
 They're probably just being over-confident

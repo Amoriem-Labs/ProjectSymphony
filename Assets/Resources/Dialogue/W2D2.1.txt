@@ -29,7 +29,7 @@ I don't personally think it's that–
 Name: Sam
 Sprite: Sam_Happy
 Wait, Howard! There's the wishing well there, remember?
-We saw it on our tour of the school! It's so tragic and romanic we have to go!
+We saw it on our tour of the school! It's so tragic and romantic we have to go!
 
 
 Name: Howard

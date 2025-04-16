@@ -46,6 +46,10 @@ public class AnimationManager : MonoBehaviour
                 {
                     StartCoroutine(animationName);
                 }
+                else if (animationName == "ScreenFlash")
+                {
+                    StartCoroutine(animationName);
+                }
             }
             else
             {

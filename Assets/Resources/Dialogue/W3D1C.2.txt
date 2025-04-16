@@ -2,10 +2,13 @@ Name: PC
 Can I study with you?
 Name: Carter
 Be my guest.
+Name:
+Sprite: EMPTY
 Carter walks back over to the table. On it, you can see a book about higher-dimensional geometry.
 Name: PC
 (What are those symbols in his book??)
 (This is nice silence though. I don't want to interrupt to ask him.)
+Name:
 <i>A couple of hours pass like this before Carter stands up.
 Name: Carter
 Sprite: Carter_Smile

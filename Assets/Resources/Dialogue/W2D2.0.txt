@@ -1,6 +1,7 @@
 Name: Howard
 Sprite: Howard_At_Peace
 BG: Park
+BGM: picnic-bgm
 It's so nice out...
 
 Name: PC
@@ -27,4 +28,5 @@ Uhh...
 Name: Sam
 Sprite: Sam_Happy
 Let's do it! Three, two, one–
-music	rhythm game first song
+BGM: Week1Snippet
+
