@@ -23,7 +23,8 @@ public class W1D1 : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
-
+        
+  
     }
 
     // Update is called once per frame
