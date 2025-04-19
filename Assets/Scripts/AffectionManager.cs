@@ -7,14 +7,14 @@ public class AffectionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("getting affection:");
-        float affection = GetCharacterAffection("Carter");
-        Debug.Log("updating affection:");
-        UpdateCharacterAffection("Carter", 10);
-        Debug.Log("getting unlock:");
-        bool unlocked = CharacterIsUnlocked("Carter");
-        Debug.Log("updating unlock: (ADD NEXT)");
-        UpdateCharacterUnlock("Carter", false);
+        //Debug.Log("getting affection:");
+        //float affection = GetCharacterAffection("Carter");
+        //Debug.Log("updating affection:");
+        //UpdateCharacterAffection("Carter", 10);
+        //Debug.Log("getting unlock:");
+        //bool unlocked = CharacterIsUnlocked("Carter");
+        //Debug.Log("updating unlock: (ADD NEXT)");
+        //UpdateCharacterUnlock("Carter", false);
     }
 
     // Update is called once per frame
@@ -23,7 +23,58 @@ public class AffectionManager : MonoBehaviour
         //GameStateManager.Instance.characterData.ElementAt(0);
     }
 
+    void UpdatePlayerPrefAffections()
+    {
+        int affection = (int)GetCharacterAffection("Carter");
+        if(affection != -1)
+        {
+            PlayerPrefs.SetInt("CarterAffection", affection);
+        }
+        else
+        {
+            Debug.Log("Error, affection failed retrieval");
+        }
 
+        affection = (int)GetCharacterAffection("Sam");
+        if (affection != -1)
+        {
+            PlayerPrefs.SetInt("SamAffection", affection);
+        }
+        else
+        {
+            Debug.Log("Error, affection failed retrieval");
+        }
+
+        affection = (int)GetCharacterAffection("Howard");
+        if (affection != -1)
+        {
+            PlayerPrefs.SetInt("HowardAffection", affection);
+        }
+        else
+        {
+            Debug.Log("Error, affection failed retrieval");
+        }
+
+        affection = (int)GetCharacterAffection("Daylo");
+        if (affection != -1)
+        {
+            PlayerPrefs.SetInt("DayloAffection", affection);
+        }
+        else
+        {
+            Debug.Log("Error, affection failed retrieval");
+        }
+
+        affection = (int)GetCharacterAffection("Pauline");
+        if (affection != -1)
+        {
+            PlayerPrefs.SetInt("PaulineAffection", affection);
+        }
+        else
+        {
+            Debug.Log("Error, affection failed retrieval");
+        }
+    }
 
     float GetCharacterAffection(string searchName)
     {
