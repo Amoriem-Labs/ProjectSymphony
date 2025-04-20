@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class W3D2B : MonoBehaviour
 {
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
@@ -24,6 +25,7 @@ public class W3D2B : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
+        affectionManager = FindAnyObjectByType<AffectionManager>();
 
     }
 
@@ -57,6 +59,7 @@ public class W3D2B : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Lie to Daylo.")
                     {
+                        affectionManager.UpdateCharacterAffection("Daylo", 2);
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.2.1aa", "W3D2.2.1b" }));
                         DP2 = true;
@@ -64,6 +67,7 @@ public class W3D2B : MonoBehaviour
                     }
                     else if (currselectedOption == "Tell Daylo the truth.")
                     {
+                        affectionManager.UpdateCharacterAffection("Daylo", -1);
                         DP2 = true;
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.2.1ab", "W3D2.2.1b" }));
@@ -82,6 +86,7 @@ public class W3D2B : MonoBehaviour
                 // change this to the options that are in your file [up to 4]
                 if (currselectedOption == "To become a better musician.")
                 {
+                    affectionManager.UpdateCharacterAffection("Daylo", 2);
                     // load the next dialogue
                   
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.2.1ba", "W3D2.2.3" }));
@@ -90,6 +95,7 @@ public class W3D2B : MonoBehaviour
                 }
                 else if (currselectedOption == "To make new friends.")
                 {
+                    affectionManager.UpdateCharacterAffection("Daylo", -1);
                     // load the next dialogue
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[]{ "W3D2.2.1bb", "W3D2.2.3" }));
                     DP4 = true;
@@ -97,6 +103,7 @@ public class W3D2B : MonoBehaviour
                 }
                 else if(currselectedOption == "To form the best band in the multiverse.")
                 {
+                    affectionManager.UpdateCharacterAffection("Daylo", 1);
                     // load the next dialogue
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[]{ "W3D2.2.1bc", "W3D2.2.3" }));
                     DP4 = true;

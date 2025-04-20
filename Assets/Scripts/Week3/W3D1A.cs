@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class W3D1A : MonoBehaviour
 {
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
@@ -21,6 +22,7 @@ public class W3D1A : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
+        affectionManager = FindAnyObjectByType<AffectionManager>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,7 @@ public class W3D1A : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Call them out.")
                     {
+                        affectionManager.UpdateCharacterAffection("Daylo", -1);
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.0A", "W3D1A.1" }));
                         DP2 = true;
@@ -76,6 +79,8 @@ public class W3D1A : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Leave them alone.")
                     {
+                        affectionManager.UpdateCharacterAffection("Daylo", -1);
+                        
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.1A" }));
                         END = true;
@@ -83,6 +88,7 @@ public class W3D1A : MonoBehaviour
                     }
                     else if (currselectedOption == "Help them with their plan.")
                     {
+                        affectionManager.UpdateCharacterAffection("Daylo", 3);
                         DP3 = true;
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.1B" }));
@@ -102,6 +108,7 @@ public class W3D1A : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Tell Sam about the prank.")
                     {
+                        affectionManager.UpdateCharacterAffection("Daylo", 1);
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.1C", "W3D1A.2" }));
                         DP4 = true;
@@ -109,6 +116,7 @@ public class W3D1A : MonoBehaviour
                     }
                     else if (currselectedOption == "Don't tell Sam about the prank.")
                     {
+                        affectionManager.UpdateCharacterAffection("Daylo", 2);
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.2" }));
 
