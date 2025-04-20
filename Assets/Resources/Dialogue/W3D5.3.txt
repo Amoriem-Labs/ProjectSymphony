@@ -1,47 +1,48 @@
+Name:     
+BGM: daylo
+<i> Out of the corner of your eye you see Daylo messing with another student's locker. 
 Name: PC
-Her name is Pauline.
+They're actually right over there - should I go ask them?
 
-Name: Howard_Uncomfortable
-Is she the bassoonist who always sits on that bench by the lake?
-
-Name: PC
-Yes, that's her!
-
-Name: Howard
-Sprite: Howard_Understanding
-She seems nice, you should go and ask her. I bet she's there today, actually. It's so nice out. 
+Name: Sam
+Sprite: Sam_Happy
+Yes, yes. Go ask them! You got this!
 
 Name: PC
-You know what? I'll run over there right now!
+Are you still trying to put stuff in other student's lockers?
 
-BG: Lake
+Name: Daylo
+Sprite: Daylo_Smug
+It's none of YOUR business, you foolish–
 
-Name: PC
-Hey, Pauline!
-
-Name: Pauline
-Sprite: Pauline_Confused
-Who's there!
-
-Name: PC
-Oh, it's PC. Sorry if I'm disturbing you!
-
-Name: Pauline
-Sprite: Pauline_Neutral
-PC. Hi! No problem, I just didn't know who it was.
+Name: 
+Sprite: EMPTY
+<i>Daylo looks up from their bag of supplies. <i>
+Oh, it's you! I knew you would return to aid me in my quest.
 
 Name: PC
-I actually have a question for you. 
+Actually, I had another idea–
 
-Name: Pauline
-You do?
-PC	Yes! Would you like to join my band?
+Name: Daylo
+Sprite: Daylo_Mischevious
+For a prank?!
 
-Name: Pauline
-Ohh...
-I did have a lot of fun the other day playing with you...
-Maybe... maybe I would like to join your band. 
-It would be a good experience for me, I think. 
+Name: PC
+Umm... kind of. Yes, it's for a prank. 
+
+Name: Daylo
+Sprite: Daylo_Smug
+I hear you. 
+Just like you'll hear the screams of Jerald the accordion player when I'm done with him.
+
+Name: PC
+Uh. Anyway. Do you want to join my band?
+
+Name: Daylo
+Hmm…
+Yes I think I would quite enjoy that.
+Perhaps I could sway more students to the side of chaos if I were to be well-known.
+I accept your offer, PC.
 
 Options: 
 I'm glad!

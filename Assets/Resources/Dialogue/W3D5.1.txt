@@ -22,16 +22,16 @@ You should go ask him to join!
 Name: PC
 Okay! I bet he's in the library right now. I'll head there and let you guys know what happens. 
 
-BG: Library
-
 Name: Carter 
 Sprite: Carter_Neutral
+BG: Library
+BGM: carter_sax
 Hello there. 
 Name: PC
 (How did he see me??)
 Hey... how are you doing?
 Name: Carter 
-Sprite: Carter_Smile
+Sprite: Carter_Neutral
 Oh, hey PC! What's up?
 Ohh, don't worry about me. I can tell you're here to ask me something, though. 
 Out with it!

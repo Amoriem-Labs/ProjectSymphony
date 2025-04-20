@@ -5,7 +5,7 @@ Name: PC
 Oh! I’m PC. It’s nice to meet you too.
 (Why am I so off today? My attention span isn’t normally this bad.)
 Name: Carter
-Sprite: Carter_Smile
+Sprite: Carter_Neutral
 Cool. What were you doing before whatever that was happened? 
 Don’t let me interrupt you if you need to get somewhere.
 Options: 

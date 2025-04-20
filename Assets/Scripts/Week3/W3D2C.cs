@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class W3D2C : MonoBehaviour
 {
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
@@ -23,6 +24,7 @@ public class W3D2C : MonoBehaviour
     {
 
         dialogueManager = FindAnyObjectByType<DialougeManager>();
+        affectionManager = FindAnyObjectByType<AffectionManager>();
 
 
     }
@@ -56,6 +58,7 @@ public class W3D2C : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Do what he says.")
                     {
+                        affectionManager.UpdateCharacterAffection("Carter", 4);
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.1.1a", "W3D2.1.2" }));
                         DP4 = true;
@@ -63,6 +66,7 @@ public class W3D2C : MonoBehaviour
                     }
                     else if (currselectedOption == "Walk straight towards him anyway.")
                     {
+                        affectionManager.UpdateCharacterAffection("Carter", -2);
                         DP4 = true;
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.1.1b", "W3D2.1.2" }));
@@ -104,10 +108,9 @@ public class W3D2C : MonoBehaviour
                     END = false;
                     // add scene management stuff
                     //update map week num
-                    PlayerPrefs.SetInt("CurrentWeek.", 3);
-                    PlayerPrefs.SetInt("SceneToLoad", 3);
-                    //SceneManager.LoadScene("Splash");
-                    SceneManager.LoadScene("MapScreen");
+                    dialogueManager.isW3D5 = true;
+                    dialogueManager.UpdatePPref(18);
+
                 }
 
 

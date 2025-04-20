@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class W3D7 : MonoBehaviour
 {
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
@@ -21,6 +22,7 @@ public class W3D7 : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
+        affectionManager = FindAnyObjectByType<AffectionManager>();
 
     }
 
@@ -28,83 +30,77 @@ public class W3D7 : MonoBehaviour
     void Update()
     {
         if (dialogueManager.isW3D7)
-        {
             if (dialogueManager.isW3D7 && !isStarted)
             {
-                // start first texx file
-                StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D8.0" }));
-                // is started triggers the choice tests
-                isStarted = true; // MAKE SURE THIS IS AFTER THE FIRST LOAD 
-                startChoiceDetection = true;
-            }
-
-
-            if (startChoiceDetection)
-            {
-                if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1)
+                if (affectionManager.CharacterIsUnlocked("Carter"))
                 {
-                    string currselectedOption = dialogueManager.selectedOption;
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D7A.0" }));
+                    isStarted = true;
+                    startChoiceDetection = true;
 
-                    // restart manager's selected option
-                    DP1 = false;
-                    dialogueManager.selectedOption = "";
+                }
+                if (affectionManager.CharacterIsUnlocked("Pauline"))
+                {
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D7B.0" }));
+                    isStarted = true;
+                    startChoiceDetection = true;
 
-                    // change this to the options that are in your file [up to 4]
-                    if (currselectedOption == "Sympathize with them.")
-                    {
-                        // load the next dialogue
-                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D8.1", "W3D8.3" }));
-                        DP4 = true;
+                }
+                if (affectionManager.CharacterIsUnlocked("Daylo"))
+                {
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D7C.0" }));
+                    isStarted = true;
+                    startChoiceDetection = true;
 
-                    }
-                    else if (currselectedOption == "Disagree with them.")
-                    {
-                        DP4 = true;
-                        // load the next dialogue
-                        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D8.2", "W3D8.3" }));
-                    }
                 }
 
 
-
             }
-
-            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP4)
+        if (startChoiceDetection)
+        {
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1)
             {
                 string currselectedOption = dialogueManager.selectedOption;
+                Debug.Log("enter this part");
 
                 // restart manager's selected option
+                DP1 = false;
                 dialogueManager.selectedOption = "";
 
-                if (currselectedOption == "Okay." || currselectedOption == "Let's do it!")
+                // change this to the options that are in your file [up to 4]
+                if (currselectedOption == "Just like we practiced guys.")
                 {
-
-                    // restart manager's selected option
-                    DP4 = false;
+                    DP1 = false;
                     dialogueManager.selectedOption = "";
 
                     startChoiceDetection = false;
                     END = true;
 
+
                 }
-
-            }
-
-            if (END)
-            {
-                if (dialogueManager.activeDialogue == false)
+                else if (currselectedOption == "We got this.")
                 {
-                    END = false;
-                    // add scene management stuff
-                    //update map week num
-                    PlayerPrefs.SetInt("CurrentWeek.", 3);
-                    PlayerPrefs.SetInt("SceneToLoad", 3);
-                    //SceneManager.LoadScene("Splash");
-                    SceneManager.LoadScene("MapScreen");
+                    DP1 = false;
+
+                    dialogueManager.selectedOption = "";
+
+                    startChoiceDetection = false;
+                    END = true; ;
                 }
-
-
             }
+
+
+
+        }
+
+        if (END && !dialogueManager.activeDialogue)
+        {
+
+            // end, reset here 
+            END = false;
+            GameStateManager.Instance.DemoComplete = true;
+            GameStateManager.Instance.LoadCharacterSelect("Week 3");
+
 
         }
     }
