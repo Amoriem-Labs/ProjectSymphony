@@ -49,5 +49,6 @@ Name:
 Sprite: EMPTY
 Sam rushes off without her guitar or backpack before running right back and grabbing them.
 It's pretty late - you spent the whole night navigating!
+
 Options: 
 Head back to your room.

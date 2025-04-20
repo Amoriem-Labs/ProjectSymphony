@@ -177,16 +177,17 @@ public class W1D2 : MonoBehaviour
                 }
             }
 
-            if (DP1_4)
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1_4)
             {
                 string currselectedOption = dialogueManager.selectedOption;
 
                 // restart manager's selected option
-                DP1_3 = false;
-                dialogueManager.selectedOption = "";
-
                 if (currselectedOption == "Head back to your room.")
                 {
+                    DP1_4 = false;
+
+                    dialogueManager.selectedOption = "";
+                    startTESTS = false;
                     END = true;
 
                 }
@@ -201,6 +202,8 @@ public class W1D2 : MonoBehaviour
                 {
                     dialogueManager.isW1D3 = true;
                     dialogueManager.UpdatePPref(3);
+                    END = false;
+
 
                 }
             }

@@ -305,11 +305,11 @@ public class DialougeManager : MonoBehaviour
             }
 
             // Check if current background is the same as the new one
-            if (backgroudSpriteImage.sprite != null && backgroudSpriteImage.sprite.name == curr_dialogue.background)
-            {
-                Debug.Log("Background already set, skipping fade and location update.");
-                return;
-            }
+            //if (backgroudSpriteImage.sprite != null && backgroudSpriteImage.sprite.name == curr_dialogue.background)
+            //{
+            //    Debug.Log("Background already set, skipping fade and location update.");
+            //    return;
+            //}
 
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
 
