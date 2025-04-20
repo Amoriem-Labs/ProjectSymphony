@@ -153,7 +153,7 @@ public class W3D1A : MonoBehaviour
                     //update map week num
                     dialogueManager.isW3D2B = true;
                     dialogueManager.UpdatePPref(16);
-                    PlayerPrefs.SetInt("Looping3", 1);
+                    //PlayerPrefs.SetInt("Looping3", 1);
                     END = false;
 
                 }

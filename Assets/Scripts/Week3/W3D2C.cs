@@ -104,10 +104,9 @@ public class W3D2C : MonoBehaviour
                     END = false;
                     // add scene management stuff
                     //update map week num
-                    PlayerPrefs.SetInt("CurrentWeek.", 3);
-                    PlayerPrefs.SetInt("SceneToLoad", 3);
-                    //SceneManager.LoadScene("Splash");
-                    SceneManager.LoadScene("MapScreen");
+                    dialogueManager.isW3D5 = true;
+                    dialogueManager.UpdatePPref(18);
+
                 }
 
 
