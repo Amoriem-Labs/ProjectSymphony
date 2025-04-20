@@ -10,13 +10,23 @@ public class FreePlayManger : MonoBehaviour
 {
     public GameObject songButtonPrefab;
     public Transform buttonContainer;
-
+    private AffectionManager affectionManager;
     public GameObject ButtonManager;
 
     ButtonManager buttonManager;
-
+    bool oldCarter;
+    bool oldDaylo;
+    bool oldPauline;
     void Start()
     {
+        affectionManager = FindAnyObjectByType<AffectionManager>();
+        oldCarter = affectionManager.CharacterIsUnlocked("Carter");
+        oldDaylo = affectionManager.CharacterIsUnlocked("Daylo");
+        oldPauline = affectionManager.CharacterIsUnlocked("Pauline");
+        affectionManager.UpdateCharacterUnlock("Carter", true);
+        affectionManager.UpdateCharacterUnlock("Daylo", true);
+        affectionManager.UpdateCharacterUnlock("Pauline", true);
+
         List<ChartResource> loadedCharts = RhythMidiController.Instance.GetAllCharts();
         buttonManager = ButtonManager.GetComponent<ButtonManager>();
 
@@ -59,6 +69,9 @@ public class FreePlayManger : MonoBehaviour
     }
     public void ExitScreen()
     {
+        affectionManager.UpdateCharacterUnlock("Carter", oldCarter);
+        affectionManager.UpdateCharacterUnlock("Daylo", oldDaylo);
+        affectionManager.UpdateCharacterUnlock("Pauline", oldPauline);
         GameStateManager.Instance.LoadNewScene("TitleScene");
     }
 }
