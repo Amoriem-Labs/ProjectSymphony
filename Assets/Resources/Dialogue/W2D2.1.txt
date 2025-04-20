@@ -1,15 +1,15 @@
 Name: PC
 Sprite: Sam_Neutral
 I love feeling the melody of people's thoughts.
-sfx	chimes play
+SFX: chimes play
 
 Name:   
-<i> The wind blows, and you hear chimes ringing in the distance.</i>
+<i>The wind blows, and you hear chimes ringing in the distance.
 Name: PC
 (That doesn't sound like the schoolbell.)
 Where's that noise coming from?
 
-<i>Sam and Howard put down their instruments and cup their ears. </i>
+<i>Sam and Howard put down their instruments and cup their ears.
 Name: Sam
 Sprite: Sam_Pensive
 Uh, maybe it's–

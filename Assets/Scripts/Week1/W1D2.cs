@@ -9,6 +9,7 @@ public class W1D2 : MonoBehaviour
     private bool DP1_1 = true;
     private bool DP1_2 = false;
     private bool DP1_3 = false;
+    private bool DP1_4 = false;
 
     bool startTESTS = false;
     bool reherse = false;
@@ -150,6 +151,7 @@ public class W1D2 : MonoBehaviour
                     if (classroom && library && park && reherse)
                     {
                         DP1_3 = true;
+
                     }
 
 
@@ -166,8 +168,8 @@ public class W1D2 : MonoBehaviour
                         dialogueManager.selectedOption = "";
 
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D2.03" }));
-                        startTESTS = false;
-                        END = true;
+
+                        DP1_4 = true;
 
                     }
 
@@ -175,15 +177,38 @@ public class W1D2 : MonoBehaviour
                 }
             }
 
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1_4)
+            {
+                string currselectedOption = dialogueManager.selectedOption;
+
+                // restart manager's selected option
+                if (currselectedOption == "Head back to your room.")
+                {
+                    DP1_4 = false;
+
+                    dialogueManager.selectedOption = "";
+                    startTESTS = false;
+                    END = true;
+
+                }
+
+            }
+
+
+
             if (END)
             {
                 if (dialogueManager.activeDialogue == false)
                 {
                     dialogueManager.isW1D3 = true;
                     dialogueManager.UpdatePPref(3);
+                    END = false;
+
 
                 }
             }
+
+
         }
     }
 

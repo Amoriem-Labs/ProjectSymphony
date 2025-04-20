@@ -133,8 +133,9 @@ public class W3D2B : MonoBehaviour
                     // dialogueManager.isW3D4 = true;
                     // dialogueManager.UpdatePPref(14);
 
-                    dialogueManager.isW3D5 = true;
-                    dialogueManager.UpdatePPref(18);
+                    dialogueManager.isW3D1B = true;
+                    dialogueManager.UpdatePPref(13);
+                    //PlayerPrefs.SetInt("Looping3", 1);
                     END = false;
 
                 }

@@ -5,7 +5,7 @@ Sprite: EMPTY
 <i>Walking through the school's hallway, you think back to Sam's description of the place.
 
 Name: PC
-(Gotta let it carry me to where I need to go, huh?)
+(Let it carry me to where I need to go...)
 
 Name:  
 Sprite: EMPTY
@@ -40,7 +40,7 @@ Name: Student 1
 What was that?
 
 Name: Student 2
-Not my hair!!
+Not my hair!
 
 Name: Student 3
 Aren't pets not allowed on campus?!
@@ -49,9 +49,9 @@ Name: Student 4
 My father will hear about this!
 
 Name: PC
-(Woah. Thats bad)
+(Woah. This is bad)
 
-<i>Despite Ina's departure, more food is thrown around the room. You have to dodge a flying meatball before taking shelter behind an overturned table.
+<i>Despite Ina's departure, more food is thrown around the room. You dodge a flying meatball before taking shelter behind an overturned table.
 
 Name: Sam
 Howdy, partner!
@@ -68,14 +68,14 @@ Name: Sam
 Let me guess, Ina got away from you.
 
 Name: PC
-...yeah.
+Yeah...
 
 Name: Sam
 Hah! Feisty one, that dog. There's a reason I haven't say yes to Howard the last couple of months. I've learned my lesson.
 
 Name: Sam
 Sprite: Sam_Sad
-There are some beasties that are just untamable.
+There are some beasts that just can't be tamed.
 
 Name: Sam
 Sprite: Sam_Happy
@@ -103,4 +103,3 @@ Name: PC
 Options: 
 Catch the Ina by surprise.
 Throw a treat out as bait.
-

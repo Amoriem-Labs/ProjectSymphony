@@ -97,11 +97,41 @@ public class AffectionManager : MonoBehaviour
         SetCharacterAffection("Daylo", PlayerPrefs.GetInt(DAYLO_AFFECTION_KEY));
         SetCharacterAffection("Pauline", PlayerPrefs.GetInt(PAULINE_AFFECTION_KEY));
         int newUnlock;
-        UpdateCharacterUnlock("Carter", (newUnlock = PlayerPrefs.GetInt(CARTER_UNLOCKED_KEY)) == 1);
+        if(PlayerPrefs.GetInt(CARTER_UNLOCKED_KEY) == 1)
+        {
+            UpdateCharacterUnlock("Carter", true);
+        }
+        else
+        {
+            UpdateCharacterUnlock("Carter", false);
+        }
+        if (PlayerPrefs.GetInt(SAM_UNLOCKED_KEY ) == 1)
+        {
+            UpdateCharacterUnlock("Sam", true);
+        }
+        else
+        {
+            UpdateCharacterUnlock("Sam", false);
+        }
         UpdateCharacterUnlock("Sam", (newUnlock = PlayerPrefs.GetInt(SAM_UNLOCKED_KEY)) == 1);
         UpdateCharacterUnlock("Pauline", (newUnlock = PlayerPrefs.GetInt(PAULINE_UNLOCKED_KEY)) == 1);
         UpdateCharacterUnlock("Daylo", (newUnlock = PlayerPrefs.GetInt(DAYLO_UNLOCKED_KEY)) == 1);
         UpdateCharacterUnlock("Howard", (newUnlock = PlayerPrefs.GetInt(HOWARD_UNLOCKED_KEY)) == 1);
+    }
+
+    public void InitPPrefs()
+    {
+        PlayerPrefs.SetInt(HOWARD_AFFECTION_KEY, 0);
+        PlayerPrefs.SetInt(SAM_AFFECTION_KEY, 0);
+        PlayerPrefs.SetInt(CARTER_AFFECTION_KEY, 0);
+        PlayerPrefs.SetInt(DAYLO_AFFECTION_KEY, 0);
+        PlayerPrefs.SetInt(PAULINE_AFFECTION_KEY, 0);
+        PlayerPrefs.SetInt(HOWARD_UNLOCKED_KEY, 1);
+        PlayerPrefs.SetInt(SAM_UNLOCKED_KEY, 1);
+        PlayerPrefs.SetInt(CARTER_UNLOCKED_KEY, 0);
+        PlayerPrefs.SetInt(DAYLO_UNLOCKED_KEY, 0);
+        PlayerPrefs.SetInt(PAULINE_UNLOCKED_KEY, 0);
+        UpdateGsmAffection();
     }
     public float GetCharacterAffection(string searchName)
     {

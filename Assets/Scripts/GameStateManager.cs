@@ -215,6 +215,7 @@ public class GameStateManager : MonoBehaviour
     {
         panel.SetActive(true);
         closeButton.onClick.AddListener(ClosePanel);
+        DemoComplete = false;
     }
     public void ClosePanel()
     {

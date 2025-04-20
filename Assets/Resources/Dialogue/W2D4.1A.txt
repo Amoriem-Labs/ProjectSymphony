@@ -1,16 +1,20 @@
 Name: PC
 Sprite: EMPTY
 Something salty would be my pick!
+
 Name: Howard
 Sprite: Howard_Understanding
 I agree, salty food is definitely top tier.
+
 Name: Sam
 Sprite: Sam_Pensive
 We must have different taste buds...
-Sweets are by far the best choice. 
+Sweets are by far the best choice.
+
 Name: Howard
 Sprite: Howard_Shrug
 It's two against one Sam! We have you beat.
+
 Name: Sam
 Sprite: Sam_Happy
 Well that just leaves more sweets for me!

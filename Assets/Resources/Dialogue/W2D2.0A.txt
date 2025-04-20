@@ -4,6 +4,7 @@ Sprite: Sam_Happy
 BG: Park
 BGM: picnic-bgm
 Wow, that was great! Thanks for jamming with us!
+
 Name: PC
 Of course! 
 It's really cool to have something you wrote made into reality like that.

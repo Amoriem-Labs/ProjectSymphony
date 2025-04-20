@@ -1,16 +1,20 @@
 Name: PC
 Sprite: EMPTY
 Something spicy for sure!
+
 Name: Sam
 Sprite: Sam_Pensive
 Whoa. PC.
 That is so brave of you.
 I can't stomach the tiniest bit of spice.
+
 Name: Howard
 Sprite: Howard_Understanding
 I can't take too much spice either to be honest.
+
 Sprite: Howard_Shrug
 I'm more of a salty or savory kind of guy.
+
 Sprite:Sam_Happy
 And I like sweet!
 I guess all of our food tastes can balance each other out!

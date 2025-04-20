@@ -49,7 +49,6 @@ Name:
 Sprite: EMPTY
 Sam rushes off without her guitar or backpack before running right back and grabbing them.
 It's pretty late - you spent the whole night navigating!
-Name: Tutorial
-<i>Click the 'Map' tab. You can now visit any of these locations using this screen. </i>
-<i>Click on your Dorm Room.</i>
-<i>Now click 'Fast Travel' to travel to the location.</i>
+
+Options: 
+Head back to your room.

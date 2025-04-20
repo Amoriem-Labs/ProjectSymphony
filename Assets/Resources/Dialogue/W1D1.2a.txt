@@ -13,8 +13,8 @@ Name: PC
 Uh, can I join?
 
 Name:  
-Now all of the nerds turn around. Their eyes bore straight into your soul.
-One of them starts playing the tambourine softly, and then louder. Then they stop.
+<i>Now all of the nerds turn around. Their eyes bore straight into your soul.
+<i>One of them starts playing the tambourine softly, and then louder. Then they stop.
 
 Name: Nerd
 Sprite: EMPTY

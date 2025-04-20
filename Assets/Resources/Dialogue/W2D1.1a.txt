@@ -7,4 +7,4 @@ Thanks. Here, you can hold on to it in case you need it.
 
 Name:  
 Sprite: EMPTY
-<i>You put the leash in your pocket.<i>
+<i>You put the leash in your pocket.

@@ -4,12 +4,12 @@ BG: Park
 BG2: Outside_Noises
 BGM: picnic-bgm
 
-The park is buzzing with activity. Distant voices and cheerful shouts intermingle with the rustling of leaves.
-As you walk further towards the center of the park, you see a crowd of students near one of the larger trees.
-Standing in the center of the students is Sam. Next to her is...
+<i>The park is buzzing with activity. Distant voices and cheerful shouts intermingle with the rustling of leaves.
+<i>As you walk further towards the center of the park, you see a crowd of students near one of the larger trees.
+<i>Standing in the center of the students is Sam. Next to her is...
 
 Name: PC
-(Wait, is that a horse?)
+(Is that a horse?)
 
 Sprite: Sam_Happy
 
@@ -53,13 +53,15 @@ Wait! Is that all I need to do? Hold this?
 
 Name: Sam
 Sprite: Sam_Happy
-Haha, of course not silly!!
-You're my hype person - I need you to make me look good!
+Haha, of course not silly!
+You're my spokesperson - I need you to make me look good!
 Liven up the audience so Roxanne notices me while I tame this horse!
 
 Name: Sam
 Sprite: Sam_Pensive
 Although it is a little bit wild...
+I need your help!
+What do you say?
 
 Options: 
 Accept the assignment.

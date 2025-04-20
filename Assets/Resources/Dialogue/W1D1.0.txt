@@ -11,9 +11,9 @@ Sprite: EMPTY
 
 Name: 
 Sprite: EMPTY
-Groups of students on blankets are scattered over the grass. Each group seems to fit together in its own way.
-One blanket is full of mustached artists, and another with only those clothed in only bright green.
-The members of a third have muscles as big as the bell of a trombone.
+<i>Groups of students on blankets are scattered over the grass. Each group seems to fit together in its own way.
+<i>One blanket is full of mustached artists, and another with only those clothed in only bright green.
+<i>The members of a third have muscles as big as the bell of a trombone.
 
 Name: PC
 Sprite: EMPTY
