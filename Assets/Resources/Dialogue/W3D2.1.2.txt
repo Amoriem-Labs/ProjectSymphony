@@ -46,7 +46,7 @@ You, uhh, seem to have a lot of experience with all of this.
 
 Name: Carter
 Sprite: Carter_Smile
-There's a lot of things that need to go wrong before we get to that point
+There's a lot of things that need to go wrong before we get to that point.
 Assuming anything happens at all.
 
 Name: PC
@@ -97,7 +97,7 @@ In the center of the circle, you can see an amorphous block of eyes and flesh.
 Its limbs seem to warp back in on themselves, emerging from nowhere and yet never ending. It hurts to look at.
 
 Name:  
-Carter's necklace hangs free in the air, glowing with an eldritch light as he yells towards the group. his necklace seems to pulse with his words
+Carter's necklace hangs free in the air, glowing with an eldritch light as he yells towards the group. his necklace seems to pulse with his words.
 
 Name: Carter
 Sprite: Carter_Angry
@@ -107,10 +107,6 @@ Name:
 Sprite: EMPTY
 You feel like you should listen to him. Hell, you're halfway through turning around when you wrestle control back over fight or flight instinct.
 Suddenly, you hear music notes ring out.
-
-*****Carter facing away from you. His body is blocking the player's sight of the monster, though some vfx effects are visible. He is holding his saxophone
-
-****Carter's theme plays, starting softly before getting louder. As it does, the horror battle music fades
 
 SFX: Monster_Screaming
 

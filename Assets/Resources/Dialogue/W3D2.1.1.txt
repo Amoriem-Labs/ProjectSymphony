@@ -4,8 +4,7 @@ Sprite: Empty
 BG: Lake
 The cold wind bites into you as you walk around the school grounds. 
 It is somewhat haunting seeing the once vibrant green leaves and shrubs lose their color in the dark of dusk. Everything seems... muted.
-As you approach Ariel Lake, the wind, paradoxically, seems to calm, 
-the air becomes still, as if waiting for something to happen.
+As you approach Ariel Lake, the wind, paradoxically, seems to calm, the air becomes still, as if waiting for something to happen.
 
 Name: PC
 (What did I just stumble into…)

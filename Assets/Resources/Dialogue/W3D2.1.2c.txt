@@ -1,6 +1,6 @@
 Name: Carter
 Sprite: Carter_Understanding
-There's a lot of things that need to go wrong before we get to that point
+There's a lot of things that need to go wrong before we get to that point.
 Assuming anything happens at all.
 
 Name: PC
