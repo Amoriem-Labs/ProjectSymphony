@@ -211,6 +211,9 @@ public class MapManager : MonoBehaviour
         addEvent(School, false, true, true, "Daylo", 3, "Should I meet Daylo at the lake?", 12);
         addEvent(Hanger, false, true, true, "Carter", 3, "Should I meet Sam at the lake?", 13);
         addEvent(Islands, false, true, true, "pauline", 3, "Should I meet Sam at the lake?", 14);
+        addEvent(School, false, true, false, "Daylo", 3, "Should I meet Daylo at the lake?", 12);
+        addEvent(Hanger, false, true, false, "Carter", 3, "Should I meet Sam at the lake?", 13);
+        addEvent(Islands, false, true, false, "pauline", 3, "Should I meet Sam at the lake?", 14);
 
     }
 
