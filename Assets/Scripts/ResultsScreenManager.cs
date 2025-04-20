@@ -34,6 +34,8 @@ public class ResultsScreenManager : MonoBehaviour
     public AudioSource ResultsAudio;
     public AudioClip[] SFX;
 
+    public Button nextButton;
+
     public ComboBar ChemistryBar;
     public void ShowResultsScreen(int finalScore, int perfectHits, int goodHits, int missedHits, int largestCombo, Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
@@ -66,6 +68,10 @@ public class ResultsScreenManager : MonoBehaviour
         Debug.Log($"Fav Charcter: {GetFavoriteCharacter(timeSpentOnCharacter)}");
 
         UpdateGradeImage(CalculateOverallGrade(notes));
+
+        nextButton.onClick.AddListener(LeaveResults);
+
+
     }
 
     IEnumerator ResultsAnimate(double chemistry)
@@ -335,6 +341,42 @@ public class ResultsScreenManager : MonoBehaviour
         if (stellarRatio >= 20 && missRatio < 20) return 2;
         if (stellarRatio >= 10 && (goodRatio > 75 || (missRatio >= 20 && missRatio <= 30))) return 1;
         return 0; // F
+    }
+
+    public void LeaveResults()
+    {
+        Debug.Log("clicked next button");
+        if (GameStateManager.Instance.freePlay)
+        {
+            GameStateManager.Instance.LoadNewScene("TitleScene");
+            GameStateManager.Instance.freePlay = false;
+        }
+        else
+        {
+            Debug.Log("Scene Index" + PlayerPrefs.GetInt("SceneIndex."));
+            Debug.Log("Current Week" + PlayerPrefs.GetInt("CurrentWeek."));
+            if (PlayerPrefs.GetInt("SceneIndex.") == 1)
+            {
+                Debug.Log("loading week 1 VN");
+                GameStateManager.Instance.LoadNewScene("VN");
+            }
+            else if (PlayerPrefs.GetInt("CurrentWeek.") == 2)
+            {
+                Debug.Log("loading week 2 VN");
+                GameStateManager.Instance.LoadNewScene("MapScreen");
+            }
+            else if (GameStateManager.Instance.DemoComplete == true)
+            {
+                Debug.Log("demo complete, returning to title");
+                GameStateManager.Instance.LoadNewScene("TitleScene");
+            }
+            else if (PlayerPrefs.GetInt("CurrentWeek.") == 3)
+            {
+                Debug.Log("loading week 3 VN");
+                GameStateManager.Instance.LoadNewScene("MapScreen");
+            }
+
+        }
     }
 
 }

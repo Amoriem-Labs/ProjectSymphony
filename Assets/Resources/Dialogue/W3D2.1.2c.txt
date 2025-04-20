@@ -17,7 +17,7 @@ Name: PC
 Guidebooks?
 
 Name: Carter
-Sprite: Carter_Nonchalant
+Sprite: Carter_Neutral
 Ah, yeah. Curiosity and ignorance kill, so some of the leaders in my world created these info-guides that tell you what to look out for and what to avoid.
 It's a smart solution. Assuming the reader has some base level of intelligence. Something that seems to be lacking from these fools.
 This school is already magic enough. We literally have an infinite, pathfinding hallway.

@@ -1664,6 +1664,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ef0a3bc09dc0d4f7eae5d7e81706514e, type: 3}
   - {fileID: 8300000, guid: a21ce1e80ad5e4c639169b676aec140a, type: 3}
   - {fileID: 8300000, guid: c18bec53e4b874f2189f9bb108fcdd17, type: 3}
+  nextButton: {fileID: 1377226574}
   ChemistryBar: {fileID: 154424524}
 --- !u!114 &518613120
 MonoBehaviour:

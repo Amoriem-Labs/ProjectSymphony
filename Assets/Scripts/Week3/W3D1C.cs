@@ -7,6 +7,7 @@ public class W3D1C : MonoBehaviour
 {
 
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
@@ -22,6 +23,7 @@ public class W3D1C : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
+        affectionManager = FindAnyObjectByType<AffectionManager>();
 
     }
 
@@ -53,6 +55,7 @@ public class W3D1C : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Thanks for the help.")
                     {
+                        affectionManager.UpdateCharacterAffection("Carter", 1);
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1C.0A", "W3D1C.1" }));
                         DP2 = true;
@@ -83,6 +86,7 @@ public class W3D1C : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Leave.")
                     {
+                        affectionManager.UpdateCharacterAffection("Carter", -1);
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1C.1A" }));
                         END = true;
@@ -90,7 +94,8 @@ public class W3D1C : MonoBehaviour
                     }
                     else if (currselectedOption == "Study with Carter.")
                     {
-                        DP4= true;
+                        affectionManager.UpdateCharacterAffection("Carter", 2);
+                        DP4 = true;
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1C.2" }));
                     }

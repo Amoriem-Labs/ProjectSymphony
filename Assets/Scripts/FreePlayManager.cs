@@ -17,6 +17,7 @@ public class FreePlayManger : MonoBehaviour
 
     void Start()
     {
+        GameStateManager.Instance.freePlay = true;
         List<ChartResource> loadedCharts = RhythMidiController.Instance.GetAllCharts();
         buttonManager = ButtonManager.GetComponent<ButtonManager>();
 
@@ -59,6 +60,7 @@ public class FreePlayManger : MonoBehaviour
     }
     public void ExitScreen()
     {
+        GameStateManager.Instance.freePlay = false;
         GameStateManager.Instance.LoadNewScene("TitleScene");
     }
 }

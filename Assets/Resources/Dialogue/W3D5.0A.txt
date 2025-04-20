@@ -1,0 +1,9 @@
+Name: Sam
+Sprite: Sam_Happy
+BGM: what_s next (hallway)
+Wait, you should ask them!
+Ask them to join our band!
+What's their name?
+
+Options: 
+Carter.

@@ -10,7 +10,7 @@ SFX: Big_Fire
 
 Animation: Screen_Flashes_Purple
 
-BGM: Battle_eldritch_horror_music
+BGM: eldritch_horror
 
 Name:  
 Sprite: EMPTY

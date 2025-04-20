@@ -5,7 +5,7 @@ Name: Carter
 Sprite: Carter_Neutral
 Be my guest.
 
-Name:
+Name: 
 Sprite: EMPTY
 Carter walks back over to the table. On it, you can see a book about higher-dimensional geometry.
 
@@ -13,7 +13,7 @@ Name: PC
 (What are those symbols in his book??)
 (This is nice silence though. I don't want to interrupt to ask him.)
 
-Name:
+Name: 
 Sprite: EMPTY
 <i>A couple of hours pass like this before Carter stands up.
 
@@ -28,10 +28,10 @@ Sprite: EMPTY
 
 Name: Carter
 Sprite: Carter_Neutral
-
-Name:   
-Sprite: EMPTY
 You can probably find me here again during the day. I spend a lot of time with these books.
+
+Name: 
+Sprite: EMPTY
 <i> He finishes packing up his belongings, and leaves with a backwards wave over his shoulder.
 
 Options: 
