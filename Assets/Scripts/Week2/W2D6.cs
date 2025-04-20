@@ -39,6 +39,9 @@ public class W2D6 : MonoBehaviour
             PlayerPrefs.SetInt("SceneToLoad", 3);
             //SceneManager.LoadScene("Splash");
             SceneManager.LoadScene("MapScreen");
+            PlayerPrefs.SetInt("Looping3", 0);
+
+
         }
     }
 }

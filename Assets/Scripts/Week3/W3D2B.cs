@@ -133,8 +133,10 @@ public class W3D2B : MonoBehaviour
                     // dialogueManager.isW3D4 = true;
                     // dialogueManager.UpdatePPref(14);
 
-                    dialogueManager.isW3D5 = true;
-                    dialogueManager.UpdatePPref(18);
+                    PlayerPrefs.SetInt("CurrentWeek.", 3);
+                    PlayerPrefs.SetInt("SceneToLoad", 3);
+                    //SceneManager.LoadScene("Splash");
+                    SceneManager.LoadScene("MapScreen");
                     END = false;
 
                 }

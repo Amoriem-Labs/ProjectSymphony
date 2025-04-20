@@ -82,6 +82,7 @@ public class MapManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("in start)");
         //dialogueManager = FindAnyObjectByType<DialougeManager>();
         mainEventSelected = false;
         credits = 3;
@@ -101,7 +102,15 @@ public class MapManager : MonoBehaviour
         allEvents = new Dictionary<string, mapObject>();
         weekEvents = new Dictionary<string, mapObject>();
         finishedEvents = new Dictionary<string, mapObject>();
-        initializeEvents();
+        if(PlayerPrefs.GetInt("Looping3") != 1)
+        {
+            initializeEvents();
+
+        }
+        else
+        {
+            initWeekEvents();
+        }
         Image SchoolIm = School.GetComponentInChildren<Image>();
         Image GymIm = Gym.GetComponentInChildren<Image>();
         Image HangerIm = Hanger.GetComponentInChildren<Image>();
@@ -142,14 +151,15 @@ public class MapManager : MonoBehaviour
 
     void Update()
     {
-        
+        //initWeekEvents();
         Creds.text = "Credits: " + credits;
         if (credits == 1 && mainEventSelected == false)
         {
             nullUnrequiredEvents();
         }
-        showEventButtons();
+        //nullCompleteEvents();
 
+        showEventButtons();
     }
 
     //Helper functions
@@ -175,6 +185,7 @@ public class MapManager : MonoBehaviour
                 ButtonSetInteractable(Tower);
                 ButtonSetInteractable(Islands);
             }
+
             
         }
     }
@@ -183,6 +194,16 @@ public class MapManager : MonoBehaviour
         foreach (var kvp in weekEvents)
         {
             if (kvp.Value.isRequired == false && kvp.Value.isUnlocked == true)
+            {
+                kvp.Value.isUnlocked = false;
+            }
+        }
+    }
+    void nullCompleteEvents()
+    {
+        foreach (var kvp in weekEvents)
+        {
+            if (kvp.Value.isComplete == true)
             {
                 kvp.Value.isUnlocked = false;
             }
@@ -208,12 +229,12 @@ public class MapManager : MonoBehaviour
         addEvent(Trees, false, true, true, "Trees3", 21, "Should I meet  Howard at the park?", 6);
         addEvent(Islands, false, true, true, "Islands3", 21, "Should I meet Sam at the lake?", 7);
 
-        addEvent(School, false, true, true, "Daylo", 3, "Should I meet Daylo at the lake?", 12);
-        addEvent(Hanger, false, true, true, "Carter", 3, "Should I meet Sam at the lake?", 13);
-        addEvent(Islands, false, true, true, "pauline", 3, "Should I meet Sam at the lake?", 14);
-        addEvent(School, false, true, false, "Daylo", 3, "Should I meet Daylo at the lake?", 12);
-        addEvent(Hanger, false, true, false, "Carter", 3, "Should I meet Sam at the lake?", 13);
-        addEvent(Islands, false, true, false, "pauline", 3, "Should I meet Sam at the lake?", 14);
+        addEvent(School, false, true, true, "Daylo", 3, "Should I head to the locker room?", 12);
+        addEvent(Hanger, false, true, true, "Carter", 3, "Should I head to the library?", 14);
+        addEvent(Islands, false, true, true, "pauline", 3, "Should I head to the park?", 13);
+        //addEvent(School, false, true, false, "Daylo", 3, "Should I meet Daylo at the lake?", 12);
+        //addEvent(Hanger, false, true, false, "Carter", 3, "Should I meet Sam at the lake?", 13);
+        //addEvent(Islands, false, true, false, "pauline", 3, "Should I meet Sam at the lake?", 14);
 
     }
 
@@ -226,6 +247,17 @@ public class MapManager : MonoBehaviour
             {
                 weekEvents.Add(kvp.Key, kvp.Value);
                 Debug.Log("Added event for week " + weekNum + ": " + kvp.Key);
+            }
+        }
+    }
+    public void unlockEvent(int sceneNumber)
+    {
+        foreach (var kvp in allEvents)
+        {
+            if (kvp.Value.week == weekNum && kvp.Value.SceneTransition == sceneNumber)
+            {
+                kvp.Value.isUnlocked = true;
+                Debug.Log("Unlocked event for week " + weekNum + ": " + kvp.Key);
             }
         }
     }
@@ -303,8 +335,11 @@ public class MapManager : MonoBehaviour
             // Add No button logic here
             Debug.Log("No button clicked. Cancelling action.");
         }
+
+        weekEvents.Clear();
+        initWeekEvents();
         YesNoClickable = false;
-            YesNoUI.enabled = false;
+        YesNoUI.enabled = false;
     }
 
     mapObject getObjFromButton(Button button)
