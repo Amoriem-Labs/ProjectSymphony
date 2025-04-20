@@ -37,7 +37,11 @@ public class W2D6 : MonoBehaviour
             //update map week num
             PlayerPrefs.SetInt("CurrentWeek.", 3);
             dialogueManager.isW3D2B = true;
-            dialogueManager.UpdatePPref(12);
+
+            PlayerPrefs.SetInt("SceneIndex.", 12);
+            GameStateManager.Instance.LoadCharacterSelect("Week 2");
+
+            //dialogueManager.UpdatePPref(12);
             //PlayerPrefs.SetInt("Looping3", 1);
 
 

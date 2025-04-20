@@ -18,7 +18,8 @@ Name: PC
 That's awesome! Let's play it!
 
 Name:    
-<i>Howard hands you a tattered piece of music paper with lyrics scrawled over it in bright green pen.</i>
+<i>Howard hands you a tattered piece of music paper with lyrics scrawled over it in bright green pen.
+
 Name: Howard
 Sprite: Howard_Understanding
 Do you still remember the tune?

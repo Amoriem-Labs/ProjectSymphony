@@ -1,5 +1,5 @@
 Name: PC
-Are you crazy? It looks like that thing could kill somebody.
+Are you crazy? That thing looks like it could kill somebody!
 
 Name: Sam
 Sprite: Sam_Pensive

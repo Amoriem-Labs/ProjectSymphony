@@ -3,57 +3,48 @@ Sprite: Sam_Sad
 Hrrmph!
 
 Name:  
-Sprite: EMPTY
-With a final grunt of effort, Sam pulls the reins of the horse taut before slowly lowering her hands.
+<i>With a final grunt of effort, Sam pulls the reins of the horse taut before slowly lowering her hands.
+<i>The horse seems to have calmed down from its rage.
 
-BG: Sam_On_Horse
-
-Name:  
-Sprite: EMPTY
-The horse seems to have calmed down from its rage.
-
+Sprite: Sam_Happy
 Name: PC
-(Whew, she actually did it. That's a weight off my shoulders)
+(She actually did it!)
 (Okay, time to wrap this up.)
 You saw it first here, folks!
-Our very own Sam just managed to tame the untamable beast with nothing but her two slightly translucent hands!
+Sam just managed to tame the untamable beast with nothing but her own two hands!
 
 SFX: Cheering_Noises
 
 Name:  
-Sprite: EMPTY
-Sam looks up from her mount to see the excited crowed surrounding her. She sees Roxanne looking at her with interest too.
+<i>Sam looks up from her mount to see the excited crowed surrounding her. She sees Roxanne looking at her with interest too.
 
 BG: Park
 
 Name: Sam
-Sprite: Sam_Happy
 Ha-ha! I actuallly did it!
 You know what...
 PC, can you give me my soda back?
 
 Name: PC
-Oh sure, here.
+Sure, here.
 
 Name: Sam
 Sprite: Sam_Pensive
-Heh, thanks for everything.
+Thanks for everything.
 
 Name:  
-Sprite: EMPTY
-A gust of wind blows through the park, blowing Sam's hair to the side dramatically as she grips her bottle.
-
-Name: Sam
-Sprite: Sam_Pensive
-Well, I'll see you all later.
+<i>A gust of wind blows through the park, blowing Sam's hair to the side dramatically as she grips her bottle.
 
 Name: Sam
 Sprite: Sam_Happy
+Well, I'll see you all later.
+
+Name: Sam
 For now, I'm going to give this bad-boy a spin!
 
 Name:  
 Sprite: EMPTY
-And with that, she rides off into the distance. She seems to struggle at first with the speed of the horse, but she eventually finds her groove.
+<i>And with that, she rides off into the distance. She seems to struggle at first with the speed of the horse, but she eventually finds her groove.
 
 BG: Sam_Riding_Off_Into_The_Sunset
 BG: Park

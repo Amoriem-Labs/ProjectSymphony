@@ -33,10 +33,10 @@ public class UIManager : MonoBehaviour
 
     public void ShowLocation(string name) // PLACEHOLDER: come back to add variability for showing other elements
     {
-        Debug.Log("ShowLocation called, looking for: " + name);
+        //Debug.Log("ShowLocation called, looking for: " + name);
         foreach (var uiImage in uiLocations)
         {
-            Debug.Log("Image name is " + uiImage.name);
+            //Debug.Log("Image name is " + uiImage.name);
             if (uiImage.name == name)
             {
                 location.GetComponent<RectTransform>().localScale = Vector3.zero;

@@ -31,7 +31,10 @@ public class ReadPlayerName : MonoBehaviour
         {
             dialogueManager.inputtedName = "Chris";
             Debug.Log("player name entered was null default name is : " + dialogueManager.inputtedName);
-            dialogueManager.isW1D1 = true;
+
+            GameStateManager.Instance.LoadCharacterSelect("Prelude");
+
+            //dialogueManager.isW1D1 = true;
             dialogueManager.UpdatePPref(1);
             playerNameReader.gameObject.SetActive(false);
 
@@ -42,7 +45,6 @@ public class ReadPlayerName : MonoBehaviour
             dialogueManager.inputtedName = player_input;
             Debug.Log("player name is: " + dialogueManager.inputtedName);
 
-            playerNameReader.gameObject.SetActive(false);
             // GameStateManager.Instance.LoadCharacterSelect("Prelude");
 
             // //dialogueManager.isW1D1 = true; // commented out bc of rhythm transition 
@@ -52,7 +54,9 @@ public class ReadPlayerName : MonoBehaviour
 
             GameStateManager.Instance.LoadCharacterSelect("Prelude");
 
-            dialogueManager.UpdatePPref(1);
+            //dialogueManager.UpdatePPref(1);
+            PlayerPrefs.SetInt("SceneIndex.", 1);
+            playerNameReader.gameObject.SetActive(false);
 
             Debug.Log("set player pref scene index to 1");
             ////dialogueManager.isW = true;
@@ -64,6 +68,7 @@ public class ReadPlayerName : MonoBehaviour
         }
 
     }
+
     private IEnumerator WaitForSceneLoad()
     {
         // Trigger scene load

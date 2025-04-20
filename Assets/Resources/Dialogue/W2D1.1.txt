@@ -19,16 +19,19 @@ We wouldn't want that to happen. Especially not to this little fluffball.
 (That dog is so cute with Howard!)
 
 Name: Howard
-Thank you again for agreeing to do this on such late notice! He's getting pretty low on fuel and the cafeteria doesn't have dog food. I think they have some in the town!
+Thank you again for agreeing to do this on such late notice!
+He's getting pretty low on fuel and the cafeteria doesn't have dog food. I think they have some in the town!
 
 Sprite: Howard_uncomfortable
-I can't bring him with me to the store... Not after the bubble incident.
+I can't bring him with me to the store...
+Not after the bubble incident...
 
 Name: PC
 (The bubble incident?)
 
 Name: Howard
-I usually just lock the door to my room and hope for the best or bribe Sam. That sometimes works.
+Sprite: Howard_Shrug
+I usually just lock the door to my room and hope for the best or bribe Sam. That works sometimes.
 Sprite: Howard_at_peace
 Anyway, you're a lifesaver. Thank you.
 
