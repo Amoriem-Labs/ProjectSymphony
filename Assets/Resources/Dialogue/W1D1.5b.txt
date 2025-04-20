@@ -10,12 +10,12 @@ Sprite: Sam_Happy
 Oh my gosh here comes <i>Roxanne</i>!
 
 Name:   
-<i> Sam frantically pulls out her guitar. </i>
+<i> Sam frantically pulls out her guitar. 
 
 Name: Sam
 Sprite: Sam_Pensive
 SFX: Sam_Guitar_Strum
-♫ <i> Oh fiery tree, oh woodwind-y log, how you– </i> ♫
+<i>♫ Oh fiery tree, oh woodwind-y log, how you–  ♫
 
 Name: PC
 ...

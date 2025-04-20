@@ -23,9 +23,9 @@ Name: Howard
 Sprite: Howard_At_Peace
 Alright PC, we'll catch up after class, see you!
 
-BG: Classroom
 Name:  
 Sprite: EMPTY
+BG: Classroom
 
 Name: PC
 (First class done...)

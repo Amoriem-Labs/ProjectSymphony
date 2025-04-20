@@ -1,6 +1,7 @@
 Name:   
 Sprite: EMPTY
 BG: Bedroom
+BGM: PCTheme
 <i>Your suitcase is finally empty on the floor before you, and all your possessions are strewn across your bed.</i>
 
 Name: PC

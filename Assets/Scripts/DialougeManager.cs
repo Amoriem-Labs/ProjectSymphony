@@ -110,7 +110,7 @@ public class DialougeManager : MonoBehaviour
 
         // create a new queue for the dialogue 
         sentences = new Queue<string>();
-        Debug.Log("DialougeManager Awake method called, sentences queue initialized");
+        //Debug.Log("DialougeManager Awake method called, sentences queue initialized");
 
         // locate all dialouge managers 
         DialougeManager[] managers = FindObjectsOfType<DialougeManager>();
@@ -211,7 +211,7 @@ public class DialougeManager : MonoBehaviour
     public void UpdatePPref(int index)
     {
         //int index = SceneList.IndexOf(sceneBool);
-        Debug.Log("updated to scene index" + index);
+        //Debug.Log("updated to scene index" + index);
         PlayerPrefs.SetInt("SceneIndex.", index);
         SetSceneBools();
     }
@@ -269,7 +269,6 @@ public class DialougeManager : MonoBehaviour
 
         if (!string.IsNullOrEmpty(curr_dialogue.bgm2))
         {
-            Debug.Log("ENTERED");
             PlayBGM2(curr_dialogue.bgm2);
         }
 
@@ -305,7 +304,7 @@ public class DialougeManager : MonoBehaviour
                 return;
             }
 
-            //// Check if current background is the same as the new one
+            // Check if current background is the same as the new one
             //if (backgroudSpriteImage.sprite != null && backgroudSpriteImage.sprite.name == curr_dialogue.background)
             //{
             //    Debug.Log("Background already set, skipping fade and location update.");
@@ -314,7 +313,7 @@ public class DialougeManager : MonoBehaviour
 
             Sprite newBG = Resources.Load<Sprite>($"Backgrounds/{curr_dialogue.background}");
 
-            Debug.Log("background is" + curr_dialogue.background);
+            //Debug.Log("background is" + curr_dialogue.background);
             uiManager.ShowLocation(curr_dialogue.background);
 
             if (newBG != null)
@@ -397,7 +396,7 @@ public class DialougeManager : MonoBehaviour
             sentences.Enqueue(replacedSentence);
         }
 
-        Debug.Log($"Enqueued {sentences.Count} sentences");
+        //Debug.Log($"Enqueued {sentences.Count} sentences");
 
         DisplayNextSentence();
 
@@ -562,7 +561,7 @@ public class DialougeManager : MonoBehaviour
             else if (line.StartsWith("Animation: "))
             {
                 animationManager.animationName = line.Substring(11);
-                Debug.Log($"Playing animation {animationManager.animationName}");
+                //Debug.Log($"Playing animation {animationManager.animationName}");
                 //animationManager.playAnimation = true; 
 
             }
@@ -580,7 +579,7 @@ public class DialougeManager : MonoBehaviour
             }
             else if (line.StartsWith("SFX: "))
             {
-                Debug.Log("SFX loaded");
+                //Debug.Log("SFX loaded");
                 loadedDialogue.sfx = line.Substring(5);
 
             }
@@ -607,7 +606,7 @@ public class DialougeManager : MonoBehaviour
         }
         AddCurrentDialogue();
 
-        Debug.Log($"Loaded {dialogueSequence.Count} dialogue entries");
+        //Debug.Log($"Loaded {dialogueSequence.Count} dialogue entries");
 
     }
 
@@ -631,7 +630,7 @@ public class DialougeManager : MonoBehaviour
         continueButton.gameObject.SetActive(false);
         nameText.text = "What should I do?";
 
-        Debug.Log($"ShowChoiceOptions called with {options?.Length ?? 0} options");
+        //Debug.Log($"ShowChoiceOptions called with {options?.Length ?? 0} options");
 
         if (dialougueButtons == null || options == null)
         {
@@ -681,11 +680,11 @@ public class DialougeManager : MonoBehaviour
 
     private void HandleOptionSelected(int optionIndex)
     {
-        Debug.Log($"Option {optionIndex} selected");
+        //Debug.Log($"Option {optionIndex} selected");
         ClearActiveButtons();
 
         selectedOption = dialogueSequence[currentDialogueIndex].options[optionIndex];
-        Debug.Log($"Selected {selectedOption}");
+        //Debug.Log($"Selected {selectedOption}");
         //currentDialogueIndex = 0;
         choiceSelected = true;
         MoveToNextDialogueEntry();
@@ -706,7 +705,7 @@ public class DialougeManager : MonoBehaviour
 
         AudioClip clip = AssetCache.GetAudioClip($"Audio/SFX/{sfxName}"); if (clip != null)
         {
-            Debug.Log($"Playing {clip}");
+            //Debug.Log($"Playing {clip}");
             SFX.PlayOneShot(clip);
         }
     }
@@ -717,7 +716,7 @@ public class DialougeManager : MonoBehaviour
         if (clip != null)
         {
             BGM.clip = clip;
-            Debug.Log($"Playing {clip}");
+            //Debug.Log($"Playing {clip}");
             BGM.Play();
         }
     }
@@ -729,7 +728,7 @@ public class DialougeManager : MonoBehaviour
         if (clip != null)
         {
             SecondaryBG.clip = clip;
-            Debug.Log($"Playing {clip}");
+            //Debug.Log($"Playing {clip}");
             SecondaryBG.Play();
         }
     }

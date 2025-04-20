@@ -1,6 +1,7 @@
 Name: Sam
 Sprite: Sam_Pensive
 Oh my gosh! Excuse you she's only the most talented pistol player in Kansasia?
+
 Sprite: Sam_Happy
 And not to mention she is an amazing bassist, and–
 
@@ -13,7 +14,7 @@ Name:
 Name: Sam
 SFX: Sam_Guitar_Strum
 Sprite: Sam_Neutral
-♫ <i> Oh fiery tree, oh woodwind-y log, how you– </i> ♫
+<i>♫ Oh fiery tree, oh woodwind-y log, how you– ♫
 
 Name: PC
 Oh wow. I see...

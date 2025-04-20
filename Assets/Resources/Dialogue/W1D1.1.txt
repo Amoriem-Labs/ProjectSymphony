@@ -1,7 +1,7 @@
 Name: 
 Sprite: EMPTY
-The next blanket you see is laced with crystals, and a large mirror is propped up on a stack of four or five tiny backpacks.
-The sound of gossip is as defeaning as the principal's falsetto and unfortunately so.
+<i>The next blanket you see is laced with crystals, and a large mirror is propped up on a stack of four or five tiny backpacks.
+<i>The sound of gossip is as defeaning as the principal's falsetto and unfortunately so.
 
 Name: PC
 Sprite: EMPTY
