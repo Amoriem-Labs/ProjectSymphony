@@ -347,10 +347,9 @@ namespace RhythMidi
         public void StopChart()
         {
             foreach(AudioSource source in audioSources) {
-                source.Stop();
-                source.time = 0;
-                source.clip = null;
+                Destroy(source);
             }
+            audioSources.Clear();
             IsPlaying = false;
             foreach(NoteNotifier noteNotifier in noteNotifiers) noteNotifier.Clear();
         }
