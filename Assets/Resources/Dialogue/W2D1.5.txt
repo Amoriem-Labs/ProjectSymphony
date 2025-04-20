@@ -3,7 +3,7 @@ Phew. I'm glad that's over.
 
 Name:  
 Sprite: EMPTY
-Tightening the leash around Ina and ensuring it's connected to his collar, you begin to direct the dog back out towards the park.
+<i> Tightening the leash around Ina and ensuring it's connected to his collar, you begin to direct the dog back out towards the park.
 
 BG: Park
 
@@ -22,11 +22,10 @@ Name: PC
 No. Nothing's wrong. It was just a long day. Here.
 
 Name:  
-Sprite: EMPTY
-You hand the leash over to Howard. A weight seems to dissapear from your shoulders after the exchange.
+<i> You hand the leash over to Howard. A weight seems to dissapear from your shoulders after the exchange.
 
 Name:  
-Sprite: EMPTY
+Sprite: Ina_Neutral
 Ina, ever the picture of innocence, softly paws at Howard's leg.
 
 Name: PC

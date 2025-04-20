@@ -137,8 +137,8 @@ public class GameManager : MonoBehaviour
     // currentCharacterInAdvance takes currentCharacter's value after fallingNotesTime seconds
     // In other words, new arrows will spawn for currentChracterInAdvance's beatmap, but
     // the player will be judged based on currentCharacter's beatmap
-    public CharacterRole currentRole = CharacterRole.Melodist;
-    public CharacterRole currentRoleInAdvance = CharacterRole.Melodist;
+    public CharacterRole currentRole = CharacterRole.None;
+    public CharacterRole currentRoleInAdvance = CharacterRole.None;
     public CharacterRole roleToSwitchTo = CharacterRole.None;
 
     public Character CurrentCharacter => GameStateManager.Instance.selectedCharacters.First(c => c.character.role == currentRole).character;
@@ -210,6 +210,9 @@ public class GameManager : MonoBehaviour
                 timeSpentOnCharacter[character] = 0f;
             }
         }
+
+        currentRole = GameStateManager.Instance.ActiveRoles[0];
+        currentRoleInAdvance = currentRole;
 
         // Notifies on beat 1 of every measure, but fallingNotesTime seconds in advance
         RhythMidiController.Instance.CreateNoteNotifier(fallingNotesTime, (note) => note.NoteNumber == 25).OnNote += OnMeasureAdvance;

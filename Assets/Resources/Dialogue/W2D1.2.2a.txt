@@ -1,7 +1,6 @@
 Name: PC
-Oh my! Are the tides turning? Is Sam making a comeback?!
+Oh my! Are the tides turning? Is Sam making a comeback?
 
 Name:  
-Sprite: EMPTY
-The crowd's whispers grow louder as excitement seems to build.
-Out of the corner of your eye, you spot Roxanne closing her book to look at the events.
+<i>The crowd's whispers grow louder as excitement seems to build.
+<i>Out of the corner of your eye, you spot Roxanne closing her book to look at the events.

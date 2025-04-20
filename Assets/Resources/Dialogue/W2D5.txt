@@ -10,36 +10,33 @@ That guy looks so nervous...
 Name: Sam
 Sprite: Sam_Happy
 They're just really excited!
-Name: Scrawny_Announcer
+Name: Announcer
 Sprite: EMPTY
 And now, I am honored to welcome last year's champions...
-...THE RIVALSBANDIANS!
-sfx	huge applause
+...<b>Synthia and The Star Chasers<\b>!
 Name:  
 Sprite: EMPTY
-The Rivalsbandians walk on slowly, waving towards the crowd. The bassist makes a heart with their hands and pretends to throw it into the audience, who eats it up. 
+Synthia and The Star Chasers walk on slowly, waving towards the crowd. The bassist makes a heart with their hands and pretends to throw it into the audience, who start cheering. 
 Name: Sam
 Sprite: Sam_Happy
-Roxanne!!!!!
+Roxanne!
 Name:  
 Sprite: EMPTY
-The pianist–RIVALNAME–grabs the mic.
+<i> The pianist–Cynthhia–grabs the mic.<\i>
 Name: Rival
 Sprite: Rival_Smirk
-Thanks man. We appreciate it. See you on the other side. 
+Thank you all! Sending love to all the Star Chasers out there! 
 Name:   
 Sprite: EMPTY
-The Rivalsbandians start playing. It seems like more a single band's concert than a battle.
-sfx	rival band song
-Sam is staring up at the stage, lovestruck, but what catches your eye is Howard: he is bobbing to the music, his elbows and wrists moving to the beat of the music. He is in the groove.
+<i>They start playing. It seems like more a their concert than a battle.<\i>
+Sam is staring up at the stage, lovestruck, but what catches your eye is Howard: he is bobbing his head to the music.
 Name: PC
 Sprite: Howard_At_Peace
 You look like you're having a lot of fun, Howard.
 Name:  
-Howard doesn't seem to hear you.
-sfx	song plays until end
+<i>Howard doesn't seem to hear you.<\i>
 Name: PC
-Hey Howard?
+Howard are you with me?
 Name: Howard
 Sprite: Howard_At_Peace
 Yeah?
@@ -55,16 +52,16 @@ Sprite: Howard_Uncomfortable
 Who needs a band?
 Name: Sam
 Sprite: Sam_Happy
-WE DO.
+We need a band!
 Come on Howard this is our chance! You've secretly wanted this for a whole semester!
 Name: Howard
 Sprite: Howard_Uncomfortable
 That's not true...
-Sprite: EMPTY
+Name: PC
 I think we'd be awesome together.
 Name: Howard
 Sprite: Howard_At_Peace
-...you really do?
+You really think so?
 Name: PC
 I do.
 Name: Howard
@@ -72,12 +69,13 @@ Sprite: Howard_Uncomfortable
 I don't know, PC, it'd be pretty hard.
 We'd have to find two more people. 
 And a bassist and someone to play the countermelody at that! Those are the two hardest people to find!
-PC	We can ask around!
+Name: PC
+We can ask around!
 Name: Sam
 Sprite: Sam_Sad
-But everyone cool is already in bands...
+But everyone cool is already in a band.
 Name: PC
-I'm sure there are SOME people left over.
+I'm sure there are people who are still solo.
 People who are searching for a group just like us.
 We'll be the best band in the school one day.
 Name: Howard
@@ -85,13 +83,10 @@ Sprite: Howard_Uncomfortable
 Woah there, PC. Me and Sam aren't actually that good. Don't get ahead of–
 Name: Sam
 Sprite: Sam_Happy
-WE'RE GONNA WIN BATTLE OF THE BANDS.
+We're winning the battle of the bands!
 Name: PC
 Just trust me. We can do this.
 Hey Sam, how's that song you've been working on?
-Name:  
-Sprite: EMPTY
-Sam turns to you, eyes sparkling. A maniacal grin spreads across her face. 
 Name: Sam
 Sprite: Sam_Pensive
 I thought you'd never ask...

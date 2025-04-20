@@ -23,7 +23,6 @@ Name: Sam
 Sprite: Sam_Excited
 Have fun!
 
-Sprite: EMPTY
 Name: PC
 (I wonder what they're saying...)
 

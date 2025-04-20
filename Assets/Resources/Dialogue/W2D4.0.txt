@@ -5,16 +5,20 @@ BG2: zapsplat_cafeteria
 BGM: what_s next (hallway)
 
 Looks like it's a good lunch day today! Shwamp soup is my favorite!
+
 Name: Howard
 Sprite: Howard_At_Peace
 It's better than the usual slop they serve...
 I guess it's early enough in the semester for them to still care about the quality.
+
 Name: Sam
 Sprite: Sam_Happy
 Howard! The food is great here, you're just really picky.
+
 Name: PC
 Sprite:  
 (I'm glad my tuition is going towards that...)
+
 Name: Sam
 Sprite: Sam_Happy
 What do you usually have for lunch PC?

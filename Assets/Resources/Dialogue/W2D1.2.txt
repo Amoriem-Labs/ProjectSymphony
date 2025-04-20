@@ -12,11 +12,10 @@ Well, I'll be off. Thanks again for watching him.
 Name: PC
 See you!
 
-Sprite: EMPTY
+Sprite: Ina_Neutral
 ...
 
 Name: Ina
-Sprite: Ina_normal
 ...
 
 Name: PC
@@ -51,16 +50,10 @@ You take a moment to calm your heavy breathing after the impromptu workout.
 
 Name: PC
 (Okay, where could Ina have gone?)
-
-Name: PC
 (He could be anywhere by now... he's small enough to get past the school security, too.)
-
-Name: PC
 (Darn it. I'm going to have to look everywhere.)
 
 SFX: Muffled_Dog_Barking_Sound
-
-Name: PC
 (That sounded like it came from the Lake!)
 
 BG: Lake
@@ -68,9 +61,7 @@ Sprite: Ina_Neutral
 
 Name:  
 <i>Ina faces the tree line while standing competely still. His hair seems to stand on its edge as he frowns towards the forest. He's tense, as if ready to lunge.
-
 <i>There's something... off about the forest right now. The leaves move and rustle, despite there being no wind.
-
 
 Name: PC
 (What is happening? Is something going to come from the forest?)

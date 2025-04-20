@@ -189,17 +189,13 @@ public class W3D5 : MonoBehaviour
                     END = false;
                     // add scene management stuff
                     //update map week num
-
-                    // COMMENTED OUT TO TEST
-                    // PlayerPrefs.SetInt("CurrentWeek.", 3);
-                    // PlayerPrefs.SetInt("SceneToLoad", 3);
-                    // //SceneManager.LoadScene("Splash");
-                    // SceneManager.LoadScene("MapScreen");
-
-                    dialogueManager.UpdatePPref(20);
-                    dialogueManager.isW3D7 = true; // FOR TESTING W3D7
-
-
+                    PlayerPrefs.SetInt("CurrentWeek.", 3);
+                    //dialogueManager.isW3D2C = true;
+                    //dialogueManager.UpdatePPref(21);
+                    //PlayerPrefs.SetInt("SceneToLoad", 3);
+                    ////SceneManager.LoadScene("Splash");
+                    //SceneManager.LoadScene("MapScreen");
+                    //PlayerPrefs.SetInt("Looping3", 0);
 
                 }
 

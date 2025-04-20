@@ -39,7 +39,6 @@ public class PartyManager : MonoBehaviour
 
     void Start()
     {
-        print(GameStateManager.Instance.AllowedRolesInChart.Length);
         InstantiateCharacterSlots(CharacterRole.Melodist, roleColumns[0]);
         InstantiateCharacterSlots(CharacterRole.Counter, roleColumns[1]);
         InstantiateCharacterSlots(CharacterRole.Percussion, roleColumns[2]);

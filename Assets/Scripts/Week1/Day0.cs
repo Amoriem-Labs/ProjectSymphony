@@ -29,9 +29,13 @@ public class Day0 : MonoBehaviour
     private DialougeManager dialogueManager;
     private bool DP0_1;
     public TMP_InputField playerNameReader;
+    private AffectionManager affectionManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        affectionManager = FindAnyObjectByType<AffectionManager>();
+        affectionManager.InitPPrefs();
         DP0_1 = false;
         playerNameReader.gameObject.SetActive(false); 
 

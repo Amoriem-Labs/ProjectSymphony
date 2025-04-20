@@ -2,7 +2,6 @@ Name: PC
 (I know what I need to do. But I don't know if I have the strength to do it.)
 
 Name:  
-Sprite: EMPTY
 <i>You grab the leash from your back pocket and loop it around itself, creating a lasso. With newfound determination, you look at your target.
 
 SFX: Cowboy_Standoff_Effect

@@ -1,7 +1,7 @@
 Name:  
 Sprite: EMPTY
-There's one more group you see before the park ends.
-Two students sitting on the grass, wet with dew, one of them playing guitar.
+<i>There's one more group you see before the park ends.
+<i>Two students sitting on the grass, wet with dew, one of them playing guitar.
 
 (These people look more approachable.)
 (I'll try to talk to them!)

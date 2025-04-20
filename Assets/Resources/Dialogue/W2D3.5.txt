@@ -1,90 +1,117 @@
 Name: PC
 Sprite: EMPTY
 Thanks, Ms. A.
+
 Name: Ms. A
 Sprite: GC_Neutral
 Call me Aria.
+
 Name: PC
 I will try to do that.
 Name: Ms. A
 Sprite: GC_Happy
 Go on, find your friends.
+
 Name:  
 BG: Lake
 Sprite: EMPTY
 Howard and Sam are sitting on the sidewalk, leaning against the concrete.
+
 Name: PC
 Hey guys! What've you been up to?
+
 Name: Sam
 Sprite: Sam_Sad
 Literally nothing.
+
 Name: Howard
 Sprite: Howard_At_Peace
 We've just been sitting here. It's been nice. You can hear a lot of things from here because there isn't a lot of interference.
+
 Name: Sam
 Sprite: Sam_Pensive
 Howard has very good ears.
+
 Name: Howard
 Sprite: Howard_Shrug
 That's why I'm a drummer I guess.
+
 Name: Sam
 Sprite: Sam_Pensive
 He says there's some flutes or something over there but I can't hear anything!
+
 SFX: chimes
 Name: Howard
 Sprite: Howard_Uncomfortable
 Actually, I think I said they were over–
+
 Name: PC
 Sprite: EMPTY
 I can hear them!
+
 Name: Howard
 Sprite: Howard_Understanding
 Really!
+
 Name: PC
 Sprite: EMPTY
 I've always been told I had good ears too.
+
 Name: Howard
 Sprite: Howard_At_Peace
 Want to go check them out?
+
 Name: PC
 Sprite: EMPTY
 Let's do it!
+
 Name: Sam
 Sprite: Sam_Happy
 I bet my golden capo you guys don't hear anything.
+
 SFX: chimes
 Name: 
 Sprite: EMPTY
 You reach a small well built into the side of a half-crumbled wall, with chimes hanging from the top.
+
 Name: Sam
 Sprite: Sam_Happy
 Wait! This is the well I was telling you about Howard!
 I have to write a wish! Do either of you have paper?
+
 Name: Howard
 Sprite: Howard_Uncomfortable
 No, sorry.
+
 Name: PC
 Sprite: EMPTY
 Sorry, Sam.
+
 Name: Sam
 Sprite: Sam_Pensive
 Well I'll have to make due with what I have. Some sticks and my hat should work fine...
+
 Name: Sam
 Sprite: Sam_Happy
 You guys can't look! This is a private wish.
 I'm only allowed to tell you after I wish it.
+
 Name:
 Sprite: EMPTY
-You turn away, and Howard covers his eyes half-heartedly.
+<i>You turn away, and Howard covers his eyes half-heartedly.
+
 Name: Sam
 Sprite: Sam_Happy
 I'll just toss this in and done!
+
 Name: PC
 Sprite: EMPTY
-(That can't be sanitary...)
+(That cannot be sanitary...)
+
 Name: Howard
 Sprite: Howard_Uncomfortable
 Oh... what did you wish for?
+
 Name: Sam
 Sprite: Sam_Pensive
 Actually, I'm not going to tell you. I don't think that will help it come true.

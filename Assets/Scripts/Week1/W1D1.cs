@@ -192,7 +192,7 @@ public class W1D1 : MonoBehaviour
                 // restart manager's selected option
                 dialogueManager.selectedOption = "";
 
-                if (currselectedOption == "Who's Patricia?")
+                if (currselectedOption == "Who's Roxanne?")
                 {
                     affectionManager.UpdateCharacterAffection("Sam", 1);
                     affectionManager.UpdateCharacterAffection("Howard", -1);

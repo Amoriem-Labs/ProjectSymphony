@@ -12,7 +12,6 @@ Sprite: Howard_At_Peace
 On my mark. 
 Ready. 
 Set.
-music	rhythm game first song
 Name: PC
 Now we just have to find two more people!
 Name: Howard
