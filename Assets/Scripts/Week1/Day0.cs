@@ -56,6 +56,7 @@ public class Day0 : MonoBehaviour
             // Decision Point 1
             if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && !DP0_1)
             {
+                
                 DP0_1 = true;
                 string currselectedOption = dialogueManager.selectedOption;
 

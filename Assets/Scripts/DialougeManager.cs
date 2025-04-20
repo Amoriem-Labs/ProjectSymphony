@@ -84,7 +84,7 @@ public class DialougeManager : MonoBehaviour
     private List<Button> activeButtons = new List<Button>();
 
     private AnimationManager animationManager;
-
+    private AffectionManager affectionManager;
     private bool startedFade = false;
     private UnityEvent onFinishedDialogeLoading = new UnityEvent();
     // animations
@@ -94,6 +94,8 @@ public class DialougeManager : MonoBehaviour
     UIManager uiManager;
     private List<bool> SceneList;
     public Button saveScreen;
+
+    
     void Awake()
     {
 
@@ -102,7 +104,7 @@ public class DialougeManager : MonoBehaviour
         SetSceneBools();
 
         loadedEvents = false; // DELETE THIS IF BUGSS
-
+        affectionManager = FindAnyObjectByType<AffectionManager>();
         animationManager = GetComponent<AnimationManager>();
         uiManager = UIManager.GetComponent<UIManager>();
 
@@ -126,7 +128,11 @@ public class DialougeManager : MonoBehaviour
         saveScreen.onClick.AddListener(SaveScreen);
 
     }
+    private void Update()
+    {
+        //Debug.Log("Sam affection =" + affectionManager.GetCharacterAffection("Sam") + "& = " + PlayerPrefs.GetInt("SamAffection."));
 
+    }
 
 
     private void InitArr(List<bool> arr)

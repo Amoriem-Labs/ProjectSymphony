@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class AffectionManager : MonoBehaviour
 {
+    private const string HOWARD_AFFECTION_KEY = "HowardAffection.";
+    private const string SAM_AFFECTION_KEY = "SamAffection.";
+    private const string DAYLO_AFFECTION_KEY = "DayloAffection.";
+    private const string CARTER_AFFECTION_KEY = "CarterAffection.";
+    private const string PAULINE_AFFECTION_KEY = "PaulineAffection.";
+    private const string SCENE_INDEX_KEY = "SceneIndex.";
+    private const string HOWARD_UNLOCKED_KEY = "HowardUnlocked.";
+    private const string SAM_UNLOCKED_KEY = "SamUnlocked.";
+    private const string CARTER_UNLOCKED_KEY = "CarterUnlocked.";
+    private const string PAULINE_UNLOCKED_KEY = "PaulineUnlocked.";
+    private const string DAYLO_UNLOCKED_KEY = "DayloUnlocked.";
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +34,12 @@ public class AffectionManager : MonoBehaviour
         //GameStateManager.Instance.characterData.ElementAt(0);
     }
 
-    void UpdatePlayerPrefAffections()
+    public void UpdatePlayerPrefAffections()
     {
         int affection = (int)GetCharacterAffection("Carter");
         if(affection != -1)
         {
-            PlayerPrefs.SetInt("CarterAffection", affection);
+            PlayerPrefs.SetInt(CARTER_AFFECTION_KEY, affection);
         }
         else
         {
@@ -38,7 +49,7 @@ public class AffectionManager : MonoBehaviour
         affection = (int)GetCharacterAffection("Sam");
         if (affection != -1)
         {
-            PlayerPrefs.SetInt("SamAffection", affection);
+            PlayerPrefs.SetInt(SAM_AFFECTION_KEY, affection);
         }
         else
         {
@@ -48,7 +59,7 @@ public class AffectionManager : MonoBehaviour
         affection = (int)GetCharacterAffection("Howard");
         if (affection != -1)
         {
-            PlayerPrefs.SetInt("HowardAffection", affection);
+            PlayerPrefs.SetInt(HOWARD_AFFECTION_KEY, affection);
         }
         else
         {
@@ -58,7 +69,7 @@ public class AffectionManager : MonoBehaviour
         affection = (int)GetCharacterAffection("Daylo");
         if (affection != -1)
         {
-            PlayerPrefs.SetInt("DayloAffection", affection);
+            PlayerPrefs.SetInt(DAYLO_AFFECTION_KEY, affection);
         }
         else
         {
@@ -68,15 +79,31 @@ public class AffectionManager : MonoBehaviour
         affection = (int)GetCharacterAffection("Pauline");
         if (affection != -1)
         {
-            PlayerPrefs.SetInt("PaulineAffection", affection);
+            PlayerPrefs.SetInt(PAULINE_AFFECTION_KEY, affection);
         }
         else
         {
             Debug.Log("Error, affection failed retrieval");
         }
+        //TODO: add unlocked to this
     }
 
-    float GetCharacterAffection(string searchName)
+    public void UpdateGsmAffection()
+    {
+        Debug.Log("here??");
+        SetCharacterAffection("Carter", PlayerPrefs.GetInt(CARTER_AFFECTION_KEY));
+        SetCharacterAffection("Sam", PlayerPrefs.GetInt(SAM_AFFECTION_KEY));
+        SetCharacterAffection("Howard", PlayerPrefs.GetInt(HOWARD_AFFECTION_KEY));
+        SetCharacterAffection("Daylo", PlayerPrefs.GetInt(DAYLO_AFFECTION_KEY));
+        SetCharacterAffection("Pauline", PlayerPrefs.GetInt(PAULINE_AFFECTION_KEY));
+        int newUnlock;
+        UpdateCharacterUnlock("Carter", (newUnlock = PlayerPrefs.GetInt(CARTER_UNLOCKED_KEY)) == 1);
+        UpdateCharacterUnlock("Sam", (newUnlock = PlayerPrefs.GetInt(SAM_UNLOCKED_KEY)) == 1);
+        UpdateCharacterUnlock("Pauline", (newUnlock = PlayerPrefs.GetInt(PAULINE_UNLOCKED_KEY)) == 1);
+        UpdateCharacterUnlock("Daylo", (newUnlock = PlayerPrefs.GetInt(DAYLO_UNLOCKED_KEY)) == 1);
+        UpdateCharacterUnlock("Howard", (newUnlock = PlayerPrefs.GetInt(HOWARD_UNLOCKED_KEY)) == 1);
+    }
+    public float GetCharacterAffection(string searchName)
     {
 
         // Find the Character object by name
@@ -105,8 +132,36 @@ public class AffectionManager : MonoBehaviour
 
     }
 
+    public void SetCharacterAffection(string searchName, float incrementValue)
+    {
 
-    void UpdateCharacterAffection(string searchName, float incrementValue)
+        // Find the Character object by name
+        Character[] charArr = GameStateManager.Instance.characters;
+        Character characterSought = null;
+        for (int index = 0; index < charArr.Length; index++)
+        {
+            if (charArr[index].name == searchName)
+            {
+                characterSought = charArr[index];
+            }
+        }
+
+        //.FirstOrDefault(c => c.name == searchName);
+
+        if (characterSought != null && GameStateManager.Instance.characterData.TryGetValue(characterSought, out CharacterData data))
+        {
+            Debug.Log($"Prior Affection: {data.affection}");
+            data.affection = incrementValue;
+            Debug.Log($"Current Affection: {data.affection}");
+
+        }
+        else
+        {
+            Debug.LogWarning("Character not found!");
+        }
+
+    }
+    public void UpdateCharacterAffection(string searchName, float incrementValue)
     {
 
         // Find the Character object by name
@@ -136,7 +191,7 @@ public class AffectionManager : MonoBehaviour
 
     }
 
-    bool CharacterIsUnlocked(string searchName)
+    public bool CharacterIsUnlocked(string searchName)
     {
 
         // Find the Character object by name
@@ -173,7 +228,7 @@ public class AffectionManager : MonoBehaviour
 
     }
 
-    void UpdateCharacterUnlock(string searchName, bool unlockValue)
+    public void UpdateCharacterUnlock(string searchName, bool unlockValue)
     {
 
         // Find the Character object by name

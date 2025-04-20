@@ -8,6 +8,7 @@ using System.IO;
 public class W1D1 : MonoBehaviour
 {
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     public bool isStarted = false;
     public bool DP1_1 = true;
     public bool DP1_2 = false;
@@ -23,7 +24,7 @@ public class W1D1 : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
-        
+        affectionManager = FindAnyObjectByType<AffectionManager>();
   
     }
 
@@ -168,6 +169,7 @@ public class W1D1 : MonoBehaviour
 
                 if (currselectedOption == "That'd be so cool!")
                 {
+                    affectionManager.UpdateCharacterAffection("Sam", 1);
                     DP1_7 = true;
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D1.5" }));
 
@@ -192,6 +194,8 @@ public class W1D1 : MonoBehaviour
 
                 if (currselectedOption == "Who's Patricia?")
                 {
+                    affectionManager.UpdateCharacterAffection("Sam", 1);
+                    affectionManager.UpdateCharacterAffection("Howard", -1);
                     DP1_8 = false;
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D1.5a" }));
                     END = true;
@@ -199,6 +203,8 @@ public class W1D1 : MonoBehaviour
                 }
                 else if (currselectedOption == "Do you guys know how to find all of your classes?")
                 {
+                    affectionManager.UpdateCharacterAffection("Sam", 1);
+                    affectionManager.UpdateCharacterAffection("Howard", 1);
                     DP1_8 = true;
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D1.5b" }));
                 }
@@ -214,6 +220,7 @@ public class W1D1 : MonoBehaviour
 
                 if (currselectedOption == "That would be awesome! Let's do it!")
                 {
+                    affectionManager.UpdateCharacterAffection("Howard", 1);
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D1.5c" }));
                     //dialogueManager.isW1D2 = true;
                     END = true;
@@ -232,6 +239,7 @@ public class W1D1 : MonoBehaviour
             {
                 if (dialogueManager.activeDialogue == false)
                 {
+                    affectionManager.UpdatePlayerPrefAffections();
                     END = false;
                     dialogueManager.isW1D2 = true;
                     dialogueManager.UpdatePPref(2);

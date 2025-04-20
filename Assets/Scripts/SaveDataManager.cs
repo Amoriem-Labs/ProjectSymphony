@@ -17,11 +17,17 @@ public class SaveDataManager : MonoBehaviour
     private const string SAM_AFFECTION_KEY = "SamAffection.";
     private const string DAYLO_AFFECTION_KEY = "DayloAffection.";
     private const string CARTER_AFFECTION_KEY = "CarterAffection.";
-    private const string PAWLINE_AFFECTION_KEY = "PawlineAffection.";
+    private const string PAULINE_AFFECTION_KEY = "PaulineAffection.";
     private const string SCENE_INDEX_KEY = "SceneIndex.";
+    private const string HOWARD_UNLOCKED_KEY = "HowardUnlocked.";
+    private const string SAM_UNLOCKED_KEY = "SamUnlocked.";
+    private const string CARTER_UNLOCKED_KEY = "CarterUnlocked.";
+    private const string PAULINE_UNLOCKED_KEY = "PaulineUnlocked.";
+    private const string DAYLO_UNLOCKED_KEY = "DayloUnlocked.";
 
     private DialougeManager dialogueManager;
     private MapManager mapManager;
+    private AffectionManager affectionManager;
     public GameObject saveSlotPanel;
     public GameObject saveSlotButtonPrefab;
     public Button SaveButton;
@@ -36,12 +42,9 @@ public class SaveDataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        affectionManager = FindAnyObjectByType<AffectionManager>();
         LoadingScreen.enabled = false;
         LS = FindAnyObjectByType<LoadingScreens>();
-        //PlayerPrefs.DeleteAll();
-        // 0 is VN
-        // 1 is map
-        // 2 is Rhythm
         PlayerPrefs.SetInt(CURRENT_WEEK_KEY, 1);
         PlayerPrefs.SetInt("SceneToLoad", 0);
         dialogueManager = FindAnyObjectByType<DialougeManager>();
@@ -59,13 +62,32 @@ public class SaveDataManager : MonoBehaviour
 
         }
 
+        if (!PlayerPrefs.HasKey(HOWARD_AFFECTION_KEY) || !PlayerPrefs.HasKey(HOWARD_UNLOCKED_KEY))
+        {
+            Debug.Log("setting values??");
+            PlayerPrefs.SetInt(HOWARD_AFFECTION_KEY, 0);
+            PlayerPrefs.SetInt(SAM_AFFECTION_KEY, 0);
+            PlayerPrefs.SetInt(CARTER_AFFECTION_KEY, 0);
+            PlayerPrefs.SetInt(DAYLO_AFFECTION_KEY, 0);
+            PlayerPrefs.SetInt(PAULINE_AFFECTION_KEY, 0);
+            PlayerPrefs.SetInt(HOWARD_UNLOCKED_KEY, 1);
+            PlayerPrefs.SetInt(SAM_UNLOCKED_KEY, 1);
+            PlayerPrefs.SetInt(CARTER_UNLOCKED_KEY, 0);
+            PlayerPrefs.SetInt(DAYLO_UNLOCKED_KEY, 0);
+            PlayerPrefs.SetInt(PAULINE_UNLOCKED_KEY, 0);
+            affectionManager.UpdateGsmAffection();
+        }
+        else
+        {
+            Debug.Log("not setting values??");
+        }
+
         SaveButton.onClick.AddListener(() => SaveGame(PlayerPrefs.GetInt(SLOT_INDEX_KEY)));
         //SaveButtonVN.onClick.AddListener(() => SaveGame(PlayerPrefs.GetInt(SLOT_INDEX_KEY)));
 
         DisplaySaves();
     }
 
-    // Update is called once per frame
     void DisplaySaves()
     {
         // Clear any existing save slot buttons
@@ -139,6 +161,19 @@ public class SaveDataManager : MonoBehaviour
         Debug.Log("Scene index is: " + PlayerPrefs.GetInt(SCENE_INDEX_KEY));
         PlayerPrefs.SetInt(SCENE_INDEX_KEY + saveName.ToString(), PlayerPrefs.GetInt(SCENE_INDEX_KEY));
         //dialogueManager.SetSceneBools();
+        //affectionManager.UpdatePlayerPrefAffections();
+        PlayerPrefs.SetInt(HOWARD_AFFECTION_KEY + saveName.ToString(), PlayerPrefs.GetInt(HOWARD_AFFECTION_KEY));
+        PlayerPrefs.SetInt(SAM_AFFECTION_KEY + saveName.ToString(), PlayerPrefs.GetInt(SAM_AFFECTION_KEY));
+        PlayerPrefs.SetInt(CARTER_AFFECTION_KEY + saveName.ToString(), PlayerPrefs.GetInt(CARTER_AFFECTION_KEY));
+        PlayerPrefs.SetInt(DAYLO_AFFECTION_KEY + saveName.ToString(), PlayerPrefs.GetInt(DAYLO_AFFECTION_KEY));
+        PlayerPrefs.SetInt(PAULINE_AFFECTION_KEY + saveName.ToString(), PlayerPrefs.GetInt(PAULINE_AFFECTION_KEY));
+        PlayerPrefs.SetInt(HOWARD_UNLOCKED_KEY + saveName.ToString(), PlayerPrefs.GetInt(HOWARD_UNLOCKED_KEY));
+        PlayerPrefs.SetInt(SAM_UNLOCKED_KEY + saveName.ToString(), PlayerPrefs.GetInt(SAM_UNLOCKED_KEY));
+        PlayerPrefs.SetInt(CARTER_UNLOCKED_KEY + saveName.ToString(), PlayerPrefs.GetInt(CARTER_UNLOCKED_KEY));
+        PlayerPrefs.SetInt(DAYLO_UNLOCKED_KEY + saveName.ToString(), PlayerPrefs.GetInt(DAYLO_UNLOCKED_KEY));
+        PlayerPrefs.SetInt(PAULINE_UNLOCKED_KEY + saveName.ToString(), PlayerPrefs.GetInt(PAULINE_UNLOCKED_KEY));
+
+
         PlayerPrefs.Save();
         DisplaySaves();
 
@@ -146,12 +181,25 @@ public class SaveDataManager : MonoBehaviour
 
     public void LoadData(int saveName)
     {
+
         Debug.Log("data loaded " + saveName.ToString());
         //dialogueManager.inputtedName = PlayerPrefs.GetString(PLAYER_NAME_KEY + saveName);
         saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
         PlayerPrefs.SetInt(SCENE_INDEX_KEY, PlayerPrefs.GetInt(SCENE_INDEX_KEY + saveName.ToString()));
         Debug.Log("Loading:   Scene index is: " + PlayerPrefs.GetInt(SCENE_INDEX_KEY));
         //SceneManager.LoadScene("Splash");
+        PlayerPrefs.SetInt(HOWARD_AFFECTION_KEY, PlayerPrefs.GetInt(HOWARD_AFFECTION_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(SAM_AFFECTION_KEY, PlayerPrefs.GetInt(SAM_AFFECTION_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(CARTER_AFFECTION_KEY, PlayerPrefs.GetInt(CARTER_AFFECTION_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(DAYLO_AFFECTION_KEY, PlayerPrefs.GetInt(DAYLO_AFFECTION_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(PAULINE_AFFECTION_KEY, PlayerPrefs.GetInt(PAULINE_AFFECTION_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(HOWARD_UNLOCKED_KEY, PlayerPrefs.GetInt(HOWARD_UNLOCKED_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(SAM_UNLOCKED_KEY, PlayerPrefs.GetInt(SAM_UNLOCKED_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(CARTER_UNLOCKED_KEY, PlayerPrefs.GetInt(CARTER_UNLOCKED_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(DAYLO_UNLOCKED_KEY, PlayerPrefs.GetInt(DAYLO_UNLOCKED_KEY + saveName.ToString()));
+        PlayerPrefs.SetInt(PAULINE_UNLOCKED_KEY, PlayerPrefs.GetInt(PAULINE_UNLOCKED_KEY + saveName.ToString()));
+        affectionManager.UpdateGsmAffection();
+
         LoadingScreen.enabled = true;
         LS.loaded = false;
 
