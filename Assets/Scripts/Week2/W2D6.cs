@@ -38,8 +38,9 @@ public class W2D6 : MonoBehaviour
             PlayerPrefs.SetInt("CurrentWeek.", 3);
             dialogueManager.isW3D2B = true;
 
-            PlayerPrefs.SetInt("SceneIndex.", 12);
+
             GameStateManager.Instance.LoadCharacterSelect("Week 2");
+            PlayerPrefs.SetInt("SceneIndex.", 12);
 
             //dialogueManager.UpdatePPref(12);
             //PlayerPrefs.SetInt("Looping3", 1);

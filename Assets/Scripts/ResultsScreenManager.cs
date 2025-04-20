@@ -370,10 +370,10 @@ public class ResultsScreenManager : MonoBehaviour
                 Debug.Log("demo complete, returning to title");
                 GameStateManager.Instance.LoadNewScene("TitleScene");
             }
-            else if (PlayerPrefs.GetInt("CurrentWeek.") == 3)
+            else if (PlayerPrefs.GetInt("SceneIndex.") == 12)
             {
                 Debug.Log("loading week 3 VN");
-                GameStateManager.Instance.LoadNewScene("MapScreen");
+                GameStateManager.Instance.LoadNewScene("VN");
             }
 
         }

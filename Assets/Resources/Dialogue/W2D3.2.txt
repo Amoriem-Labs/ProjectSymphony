@@ -7,10 +7,11 @@ Sprite: GC_Happy
 Howard! Sam! So lovely to see you both.
 
 Name: Sam
-Sprite: Sam_Excited	
+Sprite: Sam_Happy
 You too, Ms. A!
 
 Name: Ms.A
+BGM: butterflies (audition)
 Sprite: GC_Neutral
 I'd actually like a personal word with PC, if that's ok.
 
@@ -20,7 +21,7 @@ Name: Howard
 Sprite: Howard_Shrug
 Of course, we'll be right outside PC.
 Name: Sam
-Sprite: Sam_Excited
+Sprite: Sam_Happy
 Have fun!
 
 Name: PC

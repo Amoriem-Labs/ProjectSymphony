@@ -1,5 +1,6 @@
-BG: Classroom
 Name: Howard
+BG: Classroom
+BGM: HowardTheme
 Sprite: Howard_At_Peace
 Hey PC!
 Name: PC

@@ -3006,7 +3006,7 @@ MonoBehaviour:
   characterSlotPrefab: {fileID: 5438444862494756814, guid: f812d13def9ea4ec88550bf825e91b43, type: 3}
   audioSource: {fileID: 1657559593}
   select: {fileID: 8300000, guid: a21ce1e80ad5e4c639169b676aec140a, type: 3}
-  threshold: 10
+  threshold: -10
   chemistry: 0
   numberInBand: 4
   SongText: {fileID: 1486532180}

@@ -17,7 +17,7 @@ public class PartyManager : MonoBehaviour
     public GameObject NotEnoughAffection;
     public GameObject ChemistryBar;
     public GameObject characterSlotPrefab;
-    
+
     ComboBar chemistryBar;
     List<CharacterSlot> characterSlots = new List<CharacterSlot>();
 
@@ -28,7 +28,7 @@ public class PartyManager : MonoBehaviour
     public float threshold; // can be edited
 
     [SerializeField]
-    private float chemistry; 
+    private float chemistry;
 
 
     // Input // 
@@ -92,7 +92,7 @@ public class PartyManager : MonoBehaviour
             .setEase(LeanTweenType.easeInElastic)
             .setOnComplete(() => backgroundLabelRT.gameObject.SetActive(false));
 
-        
+
         RectTransform backgroundHeroRT = backgroundHeros[idx].GetComponent<RectTransform>();
         LeanTween.scale(backgroundHeroRT, Vector3.zero, 0.5f)
             .setEase(LeanTweenType.easeInElastic)
@@ -104,7 +104,7 @@ public class PartyManager : MonoBehaviour
                 LeanTween.scale(backgroundHeroRT, new Vector3(1f, 1f, 1f), 0.5f)
                     .setEase(LeanTweenType.easeOutElastic);
             });
-        
+
         CheckIfReady();
     }
 
@@ -152,7 +152,7 @@ public class PartyManager : MonoBehaviour
             .Where(c => c.thisSelected)
             .Aggregate(0f, (acc, c) => acc + c.characterData.affection)
             / RequiredForSong;
-        
+
         chemistryBar.SetScore((int)chemistry);
         return chemistry >= threshold;
     }

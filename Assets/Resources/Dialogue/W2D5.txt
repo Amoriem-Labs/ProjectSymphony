@@ -13,7 +13,7 @@ They're just really excited!
 Name: Announcer
 Sprite: EMPTY
 And now, I am honored to welcome last year's champions...
-...<b>Synthia and The Star Chasers<\b>!
+...<b>Synthia and The Star Chasers</b>!
 Name:  
 Sprite: EMPTY
 Synthia and The Star Chasers walk on slowly, waving towards the crowd. The bassist makes a heart with their hands and pretends to throw it into the audience, who start cheering. 

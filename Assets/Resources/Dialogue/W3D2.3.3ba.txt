@@ -23,8 +23,6 @@ Name: Pauline
 Sprite: Pauline_Locked_In
 I will follow your lead, PC.
 
-BGM2: Bassoon_and_Piano
-
 Name:  
 As your fingers glide across the keyboard, Pauline flawlessly follows your lead.
 You find yourself playing well into the night, lit by the glowbugs and the moon.

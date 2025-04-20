@@ -2,7 +2,7 @@ Name:
 Sprite: EMPTY
 <i>Howard pulls Sam into a hug. He hesitates for a moment, and then reaches his arm out to you as well.
 
-Name: PC	
+Name: PC
 (That was nice of him...)
 Name:    
 <i>Looking over Howard's shoulder, you see a small building with the MIRA flag on it.
@@ -15,7 +15,7 @@ Sprite: Howard_Shrug
 I'm not actually sure.
 
 Name: Sam
-Sprite: Sam_Excited	
+Sprite: Sam_Happy
 Let's go check it out!
 BG: Classroom
 
@@ -24,7 +24,7 @@ Name:
 <i>A tall, snake-haired woman is sitting at what looks like a repurposed receptionist's desk, but the rest of the room is empty.
 
 Name: Sam
-Sprite: Sam_Excited	
+Sprite: Sam_Happy	
 Hey, it's Ms. A!
 
 Options: 

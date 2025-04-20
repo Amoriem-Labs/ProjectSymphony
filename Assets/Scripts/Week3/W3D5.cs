@@ -190,6 +190,8 @@ public class W3D5 : MonoBehaviour
                     // add scene management stuff
                     //update map week num
                     PlayerPrefs.SetInt("CurrentWeek.", 3);
+                    dialogueManager.isW3D7 = true;
+                    dialogueManager.UpdatePPref(20);
                     //dialogueManager.isW3D2C = true;
                     //dialogueManager.UpdatePPref(21);
                     //PlayerPrefs.SetInt("SceneToLoad", 3);

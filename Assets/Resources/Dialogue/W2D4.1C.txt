@@ -15,6 +15,6 @@ I can't take too much spice either to be honest.
 Sprite: Howard_Shrug
 I'm more of a salty or savory kind of guy.
 
-Sprite:Sam_Happy
+Sprite: Sam_Happy
 And I like sweet!
 I guess all of our food tastes can balance each other out!

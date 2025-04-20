@@ -1,6 +1,7 @@
 Name:  
 Sprite: EMPTY
-BG: Lake
+BG: Town
+BGM: classroom-bgm
 <i>The town is near-deserted in the afternoon heat. You can smell skewers of meat coming from some stalls along the main road. 
 <i>It's pretty cold, and so Howard and Sam are both wearing hats, although Sam's is made of paper.
 

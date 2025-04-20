@@ -12,7 +12,7 @@ Sprite: Rival_Neutral
 Attention everyone!
 Name: Cynthia
 Sprite: Rival_Smirk
-I'm Cynthia, and you'll remember my band, <b>Synthia and the Starcatchers<\b>, from last year. 
+I'm Cynthia, and you'll remember my band, <b>Synthia and the Starcatchers</b>, from last year. 
 Sprite: Rival_Think
 We'll be expecting some challengers tomorrow at the Jazz Disco scrimmage. 
 Sprite: Rival_Smirk

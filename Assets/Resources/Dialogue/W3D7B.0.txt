@@ -47,7 +47,7 @@ Name: Announcer
 Sprite: EMPTY
 All right then. Well, I guess it's time to get started! You're first!
 
-Name: PC	
+Name: PC
 (What do I say?)
 
 Options: 

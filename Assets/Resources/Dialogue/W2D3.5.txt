@@ -13,7 +13,8 @@ Sprite: GC_Happy
 Go on, find your friends.
 
 Name:  
-BG: Lake
+BG: Town
+BGM: classroom-bgm
 Sprite: EMPTY
 Howard and Sam are sitting on the sidewalk, leaning against the concrete.
 
@@ -96,11 +97,12 @@ Sprite: Sam_Happy
 You guys can't look! This is a private wish.
 I'm only allowed to tell you after I wish it.
 
-Name:
+Name: 
 Sprite: EMPTY
 <i>You turn away, and Howard covers his eyes half-heartedly.
 
 Name: Sam
+SFX: Silence
 Sprite: Sam_Happy
 I'll just toss this in and done!
 

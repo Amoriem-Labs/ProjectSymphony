@@ -8,8 +8,7 @@ Sprite: Sam_Sad
 Sorry Howie.
 I think I'm kind of tired.
 
-Name: Sam
-
+Name: PC
 Sprite: Howard_Uncomfortable
 (What is her problem with me...)
 
