@@ -54,33 +54,36 @@ Well that's easy! Just be a good friend and make sure they get their moment to s
 
 Oh!
 I almost forgot!
-Another way to really make band members happy, is by having them play alongside their perfect match.
+Another way to really make band members happy, is by making sure you have good compatability with everyone.
 
 Name: PC
-What's a perfect match?
+What does that mean?
 
 Name: Sam
 Sprite: Sam_Pensive
-It's exactly what it sounds like! Everyone has a musician that your sound compliments the most!
-Roxanne and I are a perfect match obviously.
-Sprite: Sam_Happy
+It's exactly what it sounds like! Make sure you're spending enough time with your bandmates offstage.
+And everyone will vibe more when you perform!
 
-We just need to play together and then she'll see that I'm the only one for her.
+Sprite: Sam_Happy
+Although if Roxanne and I were in a band together, I bet we'd always play in perfect harmony.
 
 Name: PC
-So, I just have to find compatible instruments to play with each other?
+So, I just have to choose to spend time with the people in my band during school?
 
 Name: Sam
 Sprite: Sam_neutral
-That's one strategy for finding them, but some matches are more unexpected than you would think.
-But trust me, when you have a perfect match playing together, you'll know.
+That's one part of it, but you should also make sure to be a good friend to them.
+Help them with their homework, ask about their hobbies, or whatever else they need.
+
+Sprite: Sam_Happy
+Although I don't think you'll have a problem with that, we just met and we're already best pals!
 
 Name: PC
-Okay... I think I'll take your word on this one.
+Ah okay, thanks for the tip. I'll make sure to keep that in mind.
 
 Name: Sam
 Sprite: Sam_Happy
-Yay! Howard is waiting for us in the hallway!
+Oh! It looks like Howard is waiting for us in the hallway!
 
 
 Name: Howard
