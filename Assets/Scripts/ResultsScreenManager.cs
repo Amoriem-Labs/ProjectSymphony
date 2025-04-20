@@ -40,8 +40,8 @@ public class ResultsScreenManager : MonoBehaviour
     public void ShowResultsScreen(int finalScore, int perfectHits, int goodHits, int missedHits, int largestCombo, Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
         gameObject.SetActive(true);
-
-        ChemistryBar.SetScore(0); // PLACEHOLDER: NEED TO CHANGE TO CURRENT CHEMISTRY
+        Debug.Log("Average Prior Chem:" + AverageChemistry());
+        ChemistryBar.SetScore(AverageChemistry()); // PLACEHOLDER: NEED TO CHANGE TO CURRENT CHEMISTRY
 
         int totalNotes = perfectHits + goodHits + missedHits;
 
@@ -53,7 +53,7 @@ public class ResultsScreenManager : MonoBehaviour
 
         double chemistry = UpdateAffections(notes, timeSpentOnCharacter);
 
-        StartCoroutine(ResultsAnimate(chemistry));
+        StartCoroutine(ResultsAnimate((float)chemistry));
 
         foreach (var character in notes.Keys)
         {
@@ -74,7 +74,21 @@ public class ResultsScreenManager : MonoBehaviour
 
     }
 
-    IEnumerator ResultsAnimate(double chemistry)
+    public float AverageChemistry(){
+        CharacterData[] selected = GameStateManager.Instance.selectedCharacters;
+
+        float totalAffection = 0f;
+        int count = 0;
+
+        foreach (CharacterData cd in selected)
+        {
+            totalAffection += cd.affection;
+            count++;
+        }
+
+        return totalAffection / count;
+    }
+    IEnumerator ResultsAnimate(float chemistry)
     {
 
         LeanTween.scale(StellarText.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
@@ -146,8 +160,8 @@ public class ResultsScreenManager : MonoBehaviour
         // {
         //     Debug.Log("no change");
         // }
-
-        ChemistryBar.SetScore(-50);
+        Debug.Log("New Chem: " + chemistry);
+        ChemistryBar.SetScore(chemistry);
         // change chemistry here PLACEHOLDER: CHEMISTRY HERE IS RETURNED AS THE NET CHANGE
 
         ResultsAudio.PlayOneShot(SFX[2]);
@@ -274,7 +288,9 @@ public class ResultsScreenManager : MonoBehaviour
                 favCharacter = pair.Key;
             }
         }
-        return favCharacter.ToString();
+
+        Character character = GameStateManager.Instance.GetSelectedCharacterWithRole(favCharacter).character;
+        return character.name;
     }
 
     private void UpdateGradeImage(int grade)

@@ -20,7 +20,7 @@ public class ComboBar : MonoBehaviour
     }
 
     // Sets the slider value with a smooth transition
-    public void SetScore(int score)
+    public void SetScore(float score)
     {
 
         if (comboText != null) comboText.text = score.ToString();
@@ -29,10 +29,9 @@ public class ComboBar : MonoBehaviour
             .setOnUpdate((float value) =>
             {
                 Debug.Log("tweening");
+                Debug.Log(value);
                 slider.value = value; // Update the slider value during the transition
             });
-
-
     }
     public void ChangeColorBlue()
     {

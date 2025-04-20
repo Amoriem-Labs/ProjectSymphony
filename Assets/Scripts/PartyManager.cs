@@ -154,7 +154,7 @@ public class PartyManager : MonoBehaviour
             .Aggregate(0f, (acc, c) => acc + c.characterData.affection)
             / RequiredForSong;
         
-        chemistryBar.SetScore((int)chemistry);
+        chemistryBar.SetScore(chemistry);
         return chemistry >= threshold;
     }
 
