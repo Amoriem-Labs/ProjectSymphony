@@ -1,0 +1,10 @@
+Name: Sam
+Sprite: Sam_Happy
+BG: LockerRoom
+BGM: what_s next (hallway)
+Wait, you should ask them!
+Ask them to join our band!
+What's their name?
+
+Options: 
+Pauline.

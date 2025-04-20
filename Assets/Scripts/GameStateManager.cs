@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using RhythMidi;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum CharacterRole
 {
@@ -55,6 +57,17 @@ public class GameStateManager : MonoBehaviour
     public Animator transition;
     public float transitionTime;
 
+    // Variables for leaving results screen 
+
+    public bool DemoComplete = false; // will be set true in W3D7
+
+    public bool freePlay = false;
+
+    public Image[] panels;
+    public GameObject panel;
+
+    public Button closeButton;
+
     void Start()
     {
         if (Instance == null)
@@ -89,6 +102,7 @@ public class GameStateManager : MonoBehaviour
     public void LoadCharacterSelect(string song)
     {
         currentSongName = song;
+        transitionTime = 0.5f;
         StartCoroutine(LoadScene("PartyScreen"));
     }
 
@@ -151,6 +165,11 @@ public class GameStateManager : MonoBehaviour
 
         if (newAudio != null)
             yield return StartCoroutine(FadeInAudio(newAudio, 1f)); // 1 second fade-in
+
+        if (DemoComplete && SceneManager.GetActiveScene().name == "TitleScene")
+        {
+            SetPanelActive(); // or whichever panel index you want to activate
+        }
     }
 
     IEnumerator FadeOutAudio(AudioSource audio, float duration)
@@ -191,6 +210,17 @@ public class GameStateManager : MonoBehaviour
                                            // yield return StartCoroutine(FadeInAudio(buttonAudio, 0.5f, 0.5f));
             }
         }
+    }
+    public void SetPanelActive()
+    {
+        panel.SetActive(true);
+        closeButton.onClick.AddListener(ClosePanel);
+        DemoComplete = false;
+    }
+    public void ClosePanel()
+    {
+        panel.SetActive(false);
+        //hello
     }
 
 

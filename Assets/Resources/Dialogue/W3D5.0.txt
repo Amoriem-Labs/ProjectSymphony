@@ -1,6 +1,7 @@
 Name: Sam
 Sprite: Sam_Sad
 BG: LockerRoom
+BGM: what_s next (hallway)
 
 Ughhhh, this class is so BORING!
 
@@ -21,9 +22,9 @@ Yeah... okay. That's true.
 Name: Sam
 Sprite: Sam_Sad
 I just can't stop thinking about the band during class!
+What's happening with that?
 
 Name: PC
-What's happening with that?
 I mean...
 Well, we need two more people. 
 Do you guys know anyone?
@@ -35,18 +36,8 @@ Uhh, what do you mean?
 Name: Howard
 Sprite: Howard_Uncomfortable
 PC, if you haven't noticed, we're kind of outcasts here. 
-Do YOU know anyone?
+Do YOU know anyone? <b>Anyone you think might like you enough to say yes?</b>
 
 Name: PC
 Well, I did meet one person... but they're kind of–
-Name: Sam
-Sprite: Sam_Happy
 
-Wait, you should ask them!
-Ask them to join our band!
-What's their name?
-
-Options: 
-Daylo.
-Carter.
-Pauline.

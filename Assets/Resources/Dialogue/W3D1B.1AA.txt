@@ -17,8 +17,10 @@ I play the bassoon, pretty common in my family.
 Name: PC
 That's awesome!
 Name: Pauline
-Pauline	How about you?
+How about you?
+Name: PC
 I play the piano.
+Name: Pauline
 Cool.
 Name: PC
 ...
@@ -26,7 +28,8 @@ Name: PC
 What were you looking at? 
 Name: Pauline
 Oh, just those damselflies.
-PC	Ah I see.
+Name: PC	
+Ah I see.
 Name:  
 The damselflies circle her legs like as if they were flowers.
 Name: Pauline

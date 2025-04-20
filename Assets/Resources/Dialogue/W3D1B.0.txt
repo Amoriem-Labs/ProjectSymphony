@@ -1,5 +1,6 @@
 Name:  
 Sprite: EMPTY
+BGM: pauline
 BG: Park
 <i>The park is beautiful this time of day...
 <i>There's plenty of fresh grass and a little pond.
@@ -9,6 +10,6 @@ Name: PC
 (Perfect opportunity to recruit someone for the band.)
 
 Options: 
-Hey, I'm PC, what's your name?
+Hey, what's your name?
 Actually, I think that'd be rude. I'll just wait.
 Approach Silently.

@@ -1,25 +1,37 @@
 Name: PC
 Can I study with you?
+
 Name: Carter
+Sprite: Carter_Neutral
 Be my guest.
-Name:
+
+Name: 
 Sprite: EMPTY
 Carter walks back over to the table. On it, you can see a book about higher-dimensional geometry.
+
 Name: PC
 (What are those symbols in his book??)
 (This is nice silence though. I don't want to interrupt to ask him.)
-Name:
+
+Name: 
+Sprite: EMPTY
 <i>A couple of hours pass like this before Carter stands up.
-Name: Carter
-Sprite: Carter_Smile
-Hey, sorry. I need to head out. It’s been nice studying with you though. 
-I wouldn’t mind doing it again.
-Name:   
-<i> Carter smiles at you before reaching out for a handshake. You return the gesture.
+
 Name: Carter
 Sprite: Carter_Neutral
+Hey, sorry. I need to head out. It’s been nice studying with you though. 
+I wouldn’t mind doing it again.
+
 Name:   
+Sprite: EMPTY
+<i> Carter smiles at you before reaching out for a handshake. You return the gesture.
+
+Name: Carter
+Sprite: Carter_Neutral
 You can probably find me here again during the day. I spend a lot of time with these books.
+
+Name: 
+Sprite: EMPTY
 <i> He finishes packing up his belongings, and leaves with a backwards wave over his shoulder.
 
 Options: 

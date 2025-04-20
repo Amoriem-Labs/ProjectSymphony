@@ -95,7 +95,7 @@ public class DialougeManager : MonoBehaviour
     private List<bool> SceneList;
     public Button saveScreen;
 
-    
+
     void Awake()
     {
 
@@ -211,6 +211,7 @@ public class DialougeManager : MonoBehaviour
     public void UpdatePPref(int index)
     {
         //int index = SceneList.IndexOf(sceneBool);
+        Debug.Log("updated to scene index" + index);
         PlayerPrefs.SetInt("SceneIndex.", index);
         SetSceneBools();
     }
