@@ -7,6 +7,7 @@ public class W3D1B : MonoBehaviour
 {
 
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
@@ -22,6 +23,7 @@ public class W3D1B : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
+        affectionManager = FindAnyObjectByType<AffectionManager>();
     }
 
     // Update is called once per frame
@@ -90,6 +92,7 @@ public class W3D1B : MonoBehaviour
                     }
                     else if (currselectedOption == "What were you looking at?")
                     {
+                        affectionManager.UpdateCharacterAffection("Pauline", 2);
                         DP4 = true;
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1B.1AB", "W3D1B.2" }));

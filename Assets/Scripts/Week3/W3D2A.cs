@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class W3D2A : MonoBehaviour
 {
     private DialougeManager dialogueManager;
+    private AffectionManager affectionManager;
     private bool isStarted = false;
     bool startChoiceDetection = false;
 
@@ -24,6 +25,7 @@ public class W3D2A : MonoBehaviour
     void Start()
     {
         dialogueManager = FindAnyObjectByType<DialougeManager>();
+        affectionManager = FindAnyObjectByType<AffectionManager>();
 
     }
 
@@ -80,6 +82,7 @@ public class W3D2A : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "I saw you by the glowing bugs and wondered what was up.")
                     {
+                        affectionManager.UpdateCharacterAffection("Pauline", 1);
                         // load the next dialogue
 
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.3.3b" }));
@@ -88,6 +91,7 @@ public class W3D2A : MonoBehaviour
                     }
                     else if (currselectedOption == "I heard you playing the bassoon! ")
                     {
+                        affectionManager.UpdateCharacterAffection("Pauline", 1);
                         DP3 = true;
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.3.3b" }));
@@ -106,6 +110,7 @@ public class W3D2A : MonoBehaviour
                     // change this to the options that are in your file [up to 4]
                     if (currselectedOption == "Why don't we catch some of these lighting bugs?")
                     {
+                        affectionManager.UpdateCharacterAffection("Pauline", 2);
                         // load the next dialogue
                         DP4 = true;
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.3.3ba" }));
@@ -114,6 +119,7 @@ public class W3D2A : MonoBehaviour
                     }
                     else if (currselectedOption == "You collect bugs right? Do you have any of these flies already in a jar?")
                     {
+                        affectionManager.UpdateCharacterAffection("Pauline", -4);
                         // load the next dialogue
                         DP4 = true;
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D2.3.3ba" }));
