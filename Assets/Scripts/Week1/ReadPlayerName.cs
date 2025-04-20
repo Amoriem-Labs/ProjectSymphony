@@ -41,13 +41,15 @@ public class ReadPlayerName : MonoBehaviour
             dialogueManager.inputtedName = player_input;
             Debug.Log("player name is: " + dialogueManager.inputtedName);
 
-            dialogueManager.isW1D1 = true;
-            //dialogueManager.isW = true;
-            dialogueManager.UpdatePPref(1);
             playerNameReader.gameObject.SetActive(false);
+            GameStateManager.Instance.LoadCharacterSelect("Prelude");
+
+            //dialogueManager.isW1D1 = true; // commented out bc of rhythm transition 
+            dialogueManager.UpdatePPref(1);
+            ////dialogueManager.isW = true;
         }
 
-        if(dialogueManager.isW1D1 == true)
+        if (dialogueManager.isW1D1 == true)
         {
             dialoguebox.SetActive(true);
         }
