@@ -114,7 +114,6 @@ public class Scoreboard
         // scoreText.text = "" + currentScore; 
         // multiplierText.text = "Multiplier: x" + currentMultiplier;
         //comboBar.SetScore(currentCombo); // current combo instead
-        // Debug.Log(currentCombo);
     }
 
     void UpdateMultiplier()
@@ -231,6 +230,8 @@ public class GameManager : MonoBehaviour
         {
             if (!RhythMidiController.Instance.IsAudioStillPlaying)
             {
+                print("STOPPING: " + RhythMidiController.Instance.IsAudioStillPlaying.ToString());
+
                 RhythMidiController.Instance.StopChart();
                 
                 ShowResultsScreen();
@@ -240,7 +241,7 @@ public class GameManager : MonoBehaviour
         // DEBUGGING 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("Showing Results Screen (R key pressed)");
+            RhythMidiController.Instance.StopChart();
             ShowResultsScreen();
         }
 
