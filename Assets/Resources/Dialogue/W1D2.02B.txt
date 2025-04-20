@@ -22,7 +22,7 @@ If you couldn't tell yet, Sam loves being outside.
 
 Name: Sam
 Sprite: Sam_Happy
-Not as much as I love Patricia!
+Not as much as I love Roxanne!
 
 Name: Howard
 Sprite: Howard_Uncomfortable
