@@ -17,7 +17,6 @@ public class TitleScreenManager : MonoBehaviour
         LoadButton.onClick.AddListener(LoadGame);
         FreePlayButton.onClick.AddListener(LoadFreePlay);
         StartButton.onClick.AddListener(StartGame);
-        FreePlayButton.onClick.AddListener(() => Debug.Log("Free Play clicked"));
     }
 
     public void Settings()
@@ -28,7 +27,6 @@ public class TitleScreenManager : MonoBehaviour
     public void LoadFreePlay()
     {
         GameStateManager.Instance.LoadNewScene("FreePlayScene");
-        Debug.Log("Started Free Play");
         //SceneManager.LoadScene("FreePlayScene");
     }
     public void StartGame()

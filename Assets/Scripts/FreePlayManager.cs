@@ -25,7 +25,6 @@ public class FreePlayManger : MonoBehaviour
         {
             GameObject button = Instantiate(songButtonPrefab, buttonContainer);
 
-            Debug.Log(chart.Title);
             button.GetComponentInChildren<TextMeshProUGUI>().text = chart.Title;
 
             string songName = chart.Title;
