@@ -40,8 +40,8 @@ public class ResultsScreenManager : MonoBehaviour
     public void ShowResultsScreen(int finalScore, int perfectHits, int goodHits, int missedHits, int largestCombo, Dictionary<CharacterRole, List<int>> notes, Dictionary<CharacterRole, float> timeSpentOnCharacter)
     {
         gameObject.SetActive(true);
-
-        ChemistryBar.SetScore(0); // PLACEHOLDER: NEED TO CHANGE TO CURRENT CHEMISTRY
+        Debug.Log("Average Prior Chem:" + AverageChemistry());
+        ChemistryBar.SetScore(AverageChemistry()); // PLACEHOLDER: NEED TO CHANGE TO CURRENT CHEMISTRY
 
         int totalNotes = perfectHits + goodHits + missedHits;
 
@@ -53,19 +53,7 @@ public class ResultsScreenManager : MonoBehaviour
 
         double chemistry = UpdateAffections(notes, timeSpentOnCharacter);
 
-        StartCoroutine(ResultsAnimate(chemistry));
-
-        foreach (var character in notes.Keys)
-        {
-            if (notes[character].Count > 0)
-            {
-                Debug.Log($"{character}: {notes[character][0]}/{notes[character][1]}/{notes[character][2]} Time: {timeSpentOnCharacter[character]} Grade: {CalculateGrade(notes[character])}");
-            }
-        }
-        Debug.Log($"Largest Combo: {largestCombo}");
-        Debug.Log($"Combined Overall Ratio: {perfectHits}/{goodHits}/{missedHits}");
-        Debug.Log($"Overall Chem: {UpdateAffections(notes, timeSpentOnCharacter)}");
-        Debug.Log($"Fav Charcter: {GetFavoriteCharacter(timeSpentOnCharacter)}");
+        StartCoroutine(ResultsAnimate((float)chemistry));
 
         UpdateGradeImage(CalculateOverallGrade(notes));
 
@@ -74,7 +62,22 @@ public class ResultsScreenManager : MonoBehaviour
 
     }
 
-    IEnumerator ResultsAnimate(double chemistry)
+    public float AverageChemistry()
+    {
+        CharacterData[] selected = GameStateManager.Instance.selectedCharacters;
+
+        float totalAffection = 0f;
+        int count = 0;
+
+        foreach (CharacterData cd in selected)
+        {
+            totalAffection += cd.affection;
+            count++;
+        }
+
+        return totalAffection / count;
+    }
+    IEnumerator ResultsAnimate(float chemistry)
     {
 
         LeanTween.scale(StellarText.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
@@ -135,19 +138,8 @@ public class ResultsScreenManager : MonoBehaviour
         if (chemistry < 0)
         {
             ChemistryBar.ChangeColorBlue();
-            Debug.Log("negative chemistry change");
         }
-        // else if (chemistry > 0)
-        // {
-        //     ChemistryBar.ChangeColorBlue();
-        //     Debug.Log("positive chemistry change");
-        // }
-        // else
-        // {
-        //     Debug.Log("no change");
-        // }
-
-        ChemistryBar.SetScore(-50);
+        ChemistryBar.SetScore(chemistry);
         // change chemistry here PLACEHOLDER: CHEMISTRY HERE IS RETURNED AS THE NET CHANGE
 
         ResultsAudio.PlayOneShot(SFX[2]);
@@ -190,14 +182,11 @@ public class ResultsScreenManager : MonoBehaviour
             float timeSpentPercentage = timeSpent / totalTime;
 
             float affectionChange = CalculateAffectionChange(timeSpentPercentage, grade);
-            print(character);
             GameStateManager.Instance.GetSelectedCharacterWithRole(character).affection += affectionChange;
-            Debug.Log($"Time%: {timeSpentPercentage}, Grade: {grade}, affchange: {affectionChange}");
             totalChemistryChange += affectionChange;
             characterCount++;
         }
 
-        Debug.Log($"TotalChem: {totalChemistryChange}, characterCount: {characterCount}");
         return totalChemistryChange / characterCount;
     }
 
@@ -274,13 +263,14 @@ public class ResultsScreenManager : MonoBehaviour
                 favCharacter = pair.Key;
             }
         }
-        return favCharacter.ToString();
+
+        Character character = GameStateManager.Instance.GetSelectedCharacterWithRole(favCharacter).character;
+        return character.name;
     }
 
     private void UpdateGradeImage(int grade)
     {
         LeanTween.scale(gradeImage.GetComponent<RectTransform>(), Vector3.zero, 0.1f);
-        Debug.Log("Update Grade Image");
         switch (grade)
         {
             case 5:
@@ -307,7 +297,6 @@ public class ResultsScreenManager : MonoBehaviour
     private IEnumerator AnimateGrade()
     {
         yield return new WaitForSeconds(2f);
-        Debug.Log("grade animated");
         ResultsAudio.PlayOneShot(SFX[1]);
         LeanTween.scale(gradeImage.GetComponent<RectTransform>(), new Vector3(0.15f, 0.15f, 0.15f), jumpingWait)
        .setEase(LeanTweenType.easeInBounce);
@@ -345,7 +334,6 @@ public class ResultsScreenManager : MonoBehaviour
 
     public void LeaveResults()
     {
-        Debug.Log("clicked next button");
         if (GameStateManager.Instance.freePlay)
         {
             GameStateManager.Instance.LoadNewScene("TitleScene");
@@ -353,21 +341,16 @@ public class ResultsScreenManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Scene Index" + PlayerPrefs.GetInt("SceneIndex."));
-            Debug.Log("Current Week" + PlayerPrefs.GetInt("CurrentWeek."));
             if (PlayerPrefs.GetInt("SceneIndex.") == 1)
             {
-                Debug.Log("loading week 1 VN");
                 GameStateManager.Instance.LoadNewScene("VN");
             }
             else if (PlayerPrefs.GetInt("CurrentWeek.") == 2)
             {
-                Debug.Log("loading week 2 VN");
                 GameStateManager.Instance.LoadNewScene("MapScreen");
             }
             else if (GameStateManager.Instance.DemoComplete == true)
             {
-                Debug.Log("demo complete, returning to title");
                 GameStateManager.Instance.LoadNewScene("TitleScene");
             }
             else if (PlayerPrefs.GetInt("SceneIndex.") == 12)

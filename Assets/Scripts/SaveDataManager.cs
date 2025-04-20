@@ -154,7 +154,7 @@ public class SaveDataManager : MonoBehaviour
         Debug.Log($"Slot index key: {PlayerPrefs.GetInt(SLOT_INDEX_KEY)}");
         PlayerPrefs.SetInt(SLOT_NAME_KEY + saveName.ToString(), PlayerPrefs.GetInt(SLOT_INDEX_KEY));
 
-        PlayerPrefs.SetString(PLAYER_NAME_KEY + saveName.ToString(), "Yow");
+        PlayerPrefs.SetString(PLAYER_NAME_KEY + saveName.ToString(), PlayerPrefs.GetString(PLAYER_NAME_KEY));
         Debug.Log($"Save Count: {saveSlotCount}");
         PlayerPrefs.SetInt("Index" + saveName.ToString(), saveSlotCount);
         PlayerPrefs.SetInt(SLOT_INDEX_KEY, PlayerPrefs.GetInt(SLOT_INDEX_KEY) + 1);
@@ -183,7 +183,8 @@ public class SaveDataManager : MonoBehaviour
     {
 
         Debug.Log("data loaded " + saveName.ToString());
-        //dialogueManager.inputtedName = PlayerPrefs.GetString(PLAYER_NAME_KEY + saveName);
+        PlayerPrefs.SetString(PLAYER_NAME_KEY, PlayerPrefs.GetString(PLAYER_NAME_KEY + saveName));
+        dialogueManager.inputtedName = PlayerPrefs.GetString(PLAYER_NAME_KEY + saveName);
         saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
         PlayerPrefs.SetInt(SCENE_INDEX_KEY, PlayerPrefs.GetInt(SCENE_INDEX_KEY + saveName.ToString()));
         Debug.Log("Loading:   Scene index is: " + PlayerPrefs.GetInt(SCENE_INDEX_KEY));
