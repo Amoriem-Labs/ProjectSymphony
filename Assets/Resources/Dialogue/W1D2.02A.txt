@@ -10,7 +10,7 @@ Oh geez, here we go again.
 Name: Sam
 Sprite: Sam_Happy
 Actually, I have a new one I've been working on recently! I'll run it by y'all as we walk.
-♫ Like the sun, you are the only one for me–♫
+<i>♫ Like the sun, you are the only one for me–♫
 SFX: Sam_Guitar_Strum
 
 Name: Howard

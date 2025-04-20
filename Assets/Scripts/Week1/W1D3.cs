@@ -141,13 +141,13 @@ public class W1D3 : MonoBehaviour
                     END = false;
                     dialogueManager.isW1D3 = false;
 
-                    GameStateManager.Instance.LoadCharacterSelect("Week 1");
+                    //GameStateManager.Instance.LoadCharacterSelect("Week 1");
 
                     //dialogueManager.UpdatePPref(4);
                     PlayerPrefs.SetInt("CurrentWeek.", 2);
                     PlayerPrefs.SetInt("SceneToLoad", 3);
 
-                    //SceneManager.LoadScene("MapScreen");
+                    SceneManager.LoadScene("MapScreen");
                     //SceneManager.LoadScene("MapScreen");
                     //SceneManager.LoadScene("Splash");
                 }

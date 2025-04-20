@@ -5,8 +5,8 @@ So this is the Lake. When the weather's nice you can take a swim in the water, b
 
 Name: Sam
 Sprite: Sam_Pensive
-People love to take a dip or even fish here! Not me though - I can never catch anything. 
-Oh! Pro tip, don't go into those woods over there either.
+People love to take a dip or even fish here! Although, I can never catch anything. 
+Pro tip, don't go into those woods over there!
 You don't seem like much of a fighter, so the creatures living there would probably be too much for you.
 
 Name: Howard
@@ -14,7 +14,6 @@ Sprite: Howard_Uncomfortable
 Yeah, I haven't heard great things either. If you want to enjoy nature, just head to the park where we met yesterday.
 
 Name: 
-Sprite: EMPTY
 A gust of wind seems to blow through the trees at Howard's words. The ground rumbles.
 
 Name: Howard

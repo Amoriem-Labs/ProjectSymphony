@@ -42,9 +42,9 @@ public class ReadPlayerName : MonoBehaviour
             Debug.Log("player name is: " + dialogueManager.inputtedName);
 
             playerNameReader.gameObject.SetActive(false);
-            GameStateManager.Instance.LoadCharacterSelect("Prelude");
+            //GameStateManager.Instance.LoadCharacterSelect("Prelude");
 
-            //dialogueManager.isW1D1 = true; // commented out bc of rhythm transition 
+            dialogueManager.isW1D1 = true; // commented out bc of rhythm transition 
             dialogueManager.UpdatePPref(1);
             ////dialogueManager.isW = true;
         }
