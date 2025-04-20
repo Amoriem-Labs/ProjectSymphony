@@ -99,6 +99,7 @@ public class DialougeManager : MonoBehaviour
     void Awake()
     {
 
+        inputtedName = PlayerPrefs.GetString("PlayerName.");
         SceneList = new List<bool>();
         InitArr(SceneList);
         SetSceneBools();

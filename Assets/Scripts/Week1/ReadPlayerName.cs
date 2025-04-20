@@ -48,19 +48,19 @@ public class ReadPlayerName : MonoBehaviour
 
             // GameStateManager.Instance.LoadCharacterSelect("Prelude");
 
-            dialogueManager.isW1D1 = true; // commented out bc of rhythm transition 
+            //dialogueManager.isW1D1 = true; // commented out bc of rhythm transition 
             // dialogueManager.UpdatePPref(1);
 
             // StartCoroutine(WaitForSceneLoad());
 
-            //GameStateManager.Instance.LoadCharacterSelect("Prelude");
 
-            dialogueManager.UpdatePPref(1);
-            //PlayerPrefs.SetInt("SceneIndex.", 1);
+            //dialogueManager.UpdatePPref(1);
+            PlayerPrefs.SetInt("SceneIndex.", 1);
             playerNameReader.gameObject.SetActive(false);
 
             Debug.Log("set player pref scene index to 1");
-            ////dialogueManager.isW = true;
+
+            GameStateManager.Instance.LoadCharacterSelect("Prelude");
         }
 
         if (dialogueManager.isW1D1 == true)
