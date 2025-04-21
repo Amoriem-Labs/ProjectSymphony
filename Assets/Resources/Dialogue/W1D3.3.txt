@@ -14,13 +14,13 @@ I quit!
 Name: Student 2
 You can't quit! We need you!
 
-Name: Student 1	
+Name: Student 1
 You didn't seem to need me when you let the trumpet play all over my solo.
 
-Name: Student 2	
+Name: Student 2
 I didn't mean it! Please keep playing with us.
 
-Name: Student 1	
+Name: Student 1
 No way! I'm going to go find people that actually appreciate my talent.
 
 Name: 
@@ -71,7 +71,7 @@ Name: PC
 So, I just have to choose to spend time with the people in my band during school?
 
 Name: Sam
-Sprite: Sam_neutral
+Sprite: Sam_Neutral
 That's one part of it, but you should also make sure to be a good friend to them.
 Help them with their homework, ask about their hobbies, or whatever else they need.
 
@@ -82,7 +82,7 @@ Name: PC
 Ah okay, thanks for the tip. I'll make sure to keep that in mind.
 
 Name: Sam
-Sprite: Sam_Happy
+Sprite: Sam_Neutral
 Oh! It looks like Howard is waiting for us in the hallway!
 
 

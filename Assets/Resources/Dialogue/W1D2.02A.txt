@@ -1,5 +1,4 @@
 Name: Sam
-BG: LockerRoom
 Sprite: Sam_Pensive
 Ooh let me. I spend a lot of time there practicing my songs for Roxanne!
 
@@ -33,10 +32,10 @@ Sprite: Howard_Shrug
 I've gotten a lot better, but it's still hard to find time to practice...
 
 Name: Sam
-Sprite: Sam_Happy 
+Sprite: Sam_Happy
 The instruments are all top grade, so feel free to play your heart out!
 
-Name: PC	
+Name: PC
 Hey, I think I was here for my audition!
 
 Name: Sam

@@ -9,6 +9,10 @@ public class TitleScreenManager : MonoBehaviour
     public Canvas LoadingScreen;
     public Button StartButton, LoadButton, FreePlayButton, SettingsButton, QuitButton;
     private LoadingScreens LS;
+
+    public GameObject CreditsList;
+
+    public Button CloseButton;
     void Start()
     {
         LoadingScreen.enabled = false;
@@ -17,11 +21,19 @@ public class TitleScreenManager : MonoBehaviour
         LoadButton.onClick.AddListener(LoadGame);
         FreePlayButton.onClick.AddListener(LoadFreePlay);
         StartButton.onClick.AddListener(StartGame);
+        SettingsButton.onClick.AddListener(Settings);
+        CloseButton.onClick.AddListener(closeCredits);
+
     }
 
     public void Settings()
     {
         //TODO: implement this
+        CreditsList.SetActive(true);
+    }
+    public void closeCredits()
+    {
+        CreditsList.SetActive(false);
     }
 
     public void LoadFreePlay()

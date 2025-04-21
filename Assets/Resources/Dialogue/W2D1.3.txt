@@ -14,7 +14,7 @@ Sprite: EMPTY
 Name: PC
 (Let it carry me... and I will get to where–)
 
-SFX: Barking_Sound
+SFX: Cute_Dog_Barking
 
 Name:  
 Sprite: EMPTY
@@ -61,7 +61,7 @@ Ahh!
 
 Sprite: Sam_Happy
 
-Name:
+Name: 
 <i>Sam sits beside you, also taking shelter behind the table. She has what looks to be bottle of soda in one hand, and a hamburger in the other.
 
 Name: Sam
@@ -89,9 +89,8 @@ Name: PC
 Lucky.
 Alright, time for me to get moving.
 
-BG: Rehearsal_Room
-
 Name:  
+BG: PracticeStage
 Sprite: EMPTY
 <i>When you open the door to the rehearsal room, a slight scuffling sound escapes from the far corner. The room seems empty.
 <i>Closing the door behind you and quietly moving to a better position, you see Ina laying on the ground with a drum stick in his mouth.

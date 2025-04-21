@@ -1,8 +1,7 @@
 
 Name: PC
 Sprite: Howard_Shrug
-BG: LockerRoom
-Can I ask you something Howard?
+Can I ask you something, Howard?
 
 Name: Howard
 Sprite: Howard_Uncomfortable
@@ -39,8 +38,8 @@ Name: PC
 Sprite: EMPTY
 Sounds great, see you later!
 
-BG: Classroom
 Name: Sam
+BG: Classroom
 Sprite: Sam_Happy
 Hey you! I'm so glad we're in the same class!
 

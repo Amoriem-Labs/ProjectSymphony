@@ -2141,7 +2141,7 @@ MonoBehaviour:
   scorePerGoodNote: 125
   scorePerPerfectNote: 150
   multiplierThresholds: 020000000800000010000000
-  scoreText: {fileID: 1791990394}
+  scoreText: {fileID: 888608902}
   multiText: {fileID: 2046179001}
   comboBar: {fileID: 839392492}
   scoreboard:
@@ -4876,7 +4876,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.77
+  m_Volume: 0.428
   m_Pitch: 1
   Loop: 0
   Mute: 0

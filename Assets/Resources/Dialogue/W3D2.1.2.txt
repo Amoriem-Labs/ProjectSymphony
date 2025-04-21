@@ -83,13 +83,13 @@ Be careful with that promise. I half talked your ear off this time and yet you'r
 You're a special one, you know?
 They've been quiet for a bit now. Guess the book was a dud–
 
-SFX: Big_Fire
+SFX: big_fire
 BGM: eldritch_horror
 
 Name:  
 Out of the corner of your eye, you can see an explosion of purple flames rise from the center of the circle.
 You should be able to feel the heat from here. You don't.
-SFX: Running_sounds
+SFX: footsteps
 
 Name:  
 Sprite: EMPTY
@@ -108,7 +108,7 @@ Sprite: EMPTY
 You feel like you should listen to him. Hell, you're halfway through turning around when you wrestle control back over fight or flight instinct.
 Suddenly, you hear music notes ring out.
 
-SFX: Monster_Screaming
+SFX: monster_agony
 
 Name:  
 Sprite: EMPTY
@@ -122,7 +122,7 @@ Name:
 Sprite: EMPTY
 A spike of pain shoots through your skull. You find it difficult to string together coherent thoughts.
 
-SFX: Walking_Noises
+SFX: footsteps
 
 Name: Carter
 Sprite: Carter_Neutral

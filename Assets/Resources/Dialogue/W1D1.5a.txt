@@ -47,7 +47,7 @@ Name: Sam
 Sprite: Sam_Sad
 Okay, fine you win!
 Sprite: Sam_Happy
-Anyway, it's so beautiful it's called Arial Lake you should come see it with us soon.
+Anyway, it's so beautiful. It's called Arial Lake. You should come see it with us soon!
 
 Name: PC
 Oh! That would be really nice!

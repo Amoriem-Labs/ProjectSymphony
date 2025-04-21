@@ -37,7 +37,7 @@ public class Day0 : MonoBehaviour
         affectionManager = FindAnyObjectByType<AffectionManager>();
         affectionManager.InitPPrefs();
         DP0_1 = false;
-        playerNameReader.gameObject.SetActive(false); 
+        playerNameReader.gameObject.SetActive(false);
 
         // get dialoguemanager and verify
         dialogueManager = FindAnyObjectByType<DialougeManager>();
@@ -48,7 +48,7 @@ public class Day0 : MonoBehaviour
             return;
         }
         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D0.0" }));
-        
+
 
     }
 
@@ -60,7 +60,7 @@ public class Day0 : MonoBehaviour
             // Decision Point 1
             if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && !DP0_1)
             {
-                
+
                 DP0_1 = true;
                 string currselectedOption = dialogueManager.selectedOption;
 
@@ -77,11 +77,13 @@ public class Day0 : MonoBehaviour
                 else if (currselectedOption == "No.")
                 {
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D0.1a" }));
+
+                    GameStateManager.Instance.LoadNewScene("TitleScene");
                 }
 
 
             }
         }
-        
+
     }
 }

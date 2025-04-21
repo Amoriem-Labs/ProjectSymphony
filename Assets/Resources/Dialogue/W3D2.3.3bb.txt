@@ -18,7 +18,7 @@ Name:
 As your fingers glide across the keyboard, Pauline flawlessly follows your lead.
 You find yourself playing well into the night, lit by the glowbugs and the moon.
 Sprite: Pauline_Confused
-SFX: Glass_Breaking
+SFX: glass_crack
 Your song is abruptly cut off by the sound of a glass breaking and bugs flying away.
 
 Name: PC

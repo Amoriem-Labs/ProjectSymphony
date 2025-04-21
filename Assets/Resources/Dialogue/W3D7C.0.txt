@@ -20,7 +20,7 @@ Sprite: EMPTY
 A new challenger has emerged! 
 We'll see if they have what it takes against Synthia and the Starcatchers in this showdown!
 
-SFX: Scattered_applause
+SFX: Cheering_Noises
 
 Name:   
 Sprite: Daylo_Smug

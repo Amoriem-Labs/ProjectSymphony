@@ -1,6 +1,5 @@
 Name: Howard
 Sprite: Howard_At_Peace
-BG: Lake
 So this is the Lake. When the weather's nice you can take a swim in the water, but be careful not to go too deep.
 
 Name: Sam
@@ -19,6 +18,8 @@ A gust of wind seems to blow through the trees at Howard's words. The ground rum
 Name: Howard
 Sprite: Howard_Uncomfortable
 Anyway, let's go back to the main campus.
+
+Name: Howard
 BG: Hallway
 BGM: what_s next (hallway)
 Sprite: Howard_Shrug

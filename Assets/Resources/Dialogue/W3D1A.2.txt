@@ -33,7 +33,7 @@ Name: Howard
 Sprite: Howard_At_Peace
 
 That's very nice, I'm glad you got a nice surprise today, Sam.
-SFX: bellring
+SFX: school_bell2
 Let's meet up again after class.
 
 Name: Sam

@@ -6,7 +6,7 @@ Name: Carter
 Sprite: Carter_Nonchalant
 They've been quiet for a bit now. Guess the book was a dud–
 
-SFX: Big_Fire
+SFX: big_fire
 
 Animation: Screen_Flashes_Purple
 
@@ -17,7 +17,7 @@ Sprite: EMPTY
 Out of the corner of your eye, you can see an explosion of purple flames rise from the center of the circle.
 You should be able to feel the heat from here. You don't.
 
-SFX: Running_sounds
+SFX: footsteps
 
 Name:  
 Sprite: EMPTY
@@ -43,7 +43,7 @@ Suddenly, you hear music notes ring out.
 
 ****Carter's theme plays, starting softly before getting louder. As it does, the horror battle music fades
 
-SFX: Monster_Screaming
+SFX: monster_agony
 
 Animation: Screen_Flashes_DarkPurple
 
@@ -59,7 +59,7 @@ Name:
 Sprite: EMPTY
 A spike of pain shoots through your skull. You find it difficult to string together coherent thoughts.
 
-SFX: Walking_Noises
+SFX: footsteps
 
 Name: Carter
 Sprite: Carter_Understanding

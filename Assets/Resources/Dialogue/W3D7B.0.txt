@@ -20,7 +20,7 @@ Sprite: EMPTY
 A new challenger has emerged! 
 We'll see if they have what it takes against Synthia and the Starcatchers in this showdown!
 
-SFX: Scattered_applause
+SFX: Cheering_Noises
 
 <i> Pauline walks over to the drumset and admires it slowly, running her hand over the cymbals and the snare.
 Name: Howard

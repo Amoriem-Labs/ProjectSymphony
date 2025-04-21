@@ -186,7 +186,7 @@ public class W2D1B : MonoBehaviour
                 PlayerPrefs.SetInt("CurrentWeek.", 21);
                 PlayerPrefs.SetInt("SceneToLoad", 3);
                 //SceneManager.LoadScene("Splash");
-                SceneManager.LoadScene("MapScreen");
+                GameStateManager.Instance.LoadNewScene("MapScreen");
 
             }
 

@@ -35,7 +35,7 @@ public class MapManager : MonoBehaviour
 
     public int weekNum;
     public TextMeshProUGUI Creds;
-    public Canvas loadingScreen; 
+    public Canvas loadingScreen;
     public Canvas YesNoUI;
     public Button Yes;
     public Button No;
@@ -102,7 +102,7 @@ public class MapManager : MonoBehaviour
         allEvents = new Dictionary<string, mapObject>();
         weekEvents = new Dictionary<string, mapObject>();
         finishedEvents = new Dictionary<string, mapObject>();
-        if(PlayerPrefs.GetInt("Looping3") != 1)
+        if (PlayerPrefs.GetInt("Looping3") != 1)
         {
             initializeEvents();
 
@@ -186,7 +186,7 @@ public class MapManager : MonoBehaviour
                 ButtonSetInteractable(Islands);
             }
 
-            
+
         }
     }
     void nullUnrequiredEvents()
@@ -226,8 +226,8 @@ public class MapManager : MonoBehaviour
         addEvent(Islands, false, true, true, "Islands", 1, "Should I meet my rival at the Islands?", 6);
         addEvent(Trees, false, true, true, "Trees2", 2, "Should I help Sam with her event?", 4);
         addEvent(Islands, false, true, true, "Islands2", 2, "Should I help Howard watch Ina?", 5);
-        addEvent(Trees, false, true, true, "Trees3", 21, "Should I meet  Howard at the park?", 6);
-        addEvent(Islands, false, true, true, "Islands3", 21, "Should I meet Sam at the lake?", 7);
+        addEvent(Trees, false, true, true, "Trees3", 21, "Should I meet Sam at the park?", 6);
+        addEvent(Islands, false, true, true, "Islands3", 21, "Should I meet Howard at the classroom?", 7); // edit later
 
         addEvent(School, false, true, true, "Daylo", 3, "Should I head to the locker room?", 12);
         addEvent(Hanger, false, true, true, "Carter", 3, "Should I head to the library?", 14);
@@ -374,7 +374,7 @@ public class MapManager : MonoBehaviour
                 }
 
             }
-            if(detected == false)
+            if (detected == false)
             {
                 button.interactable = false;
             }

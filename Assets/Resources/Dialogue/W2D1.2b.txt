@@ -1,4 +1,5 @@
 Name: PC
 BG: Hallway
+Sprite: EMPTY
 Whew... haah... that air conditioning is nice...
 (Ugh, I have to focus.)

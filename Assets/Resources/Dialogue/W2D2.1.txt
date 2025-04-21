@@ -1,7 +1,7 @@
 Name: PC
 Sprite: Sam_Neutral
 I love feeling the melody of people's thoughts.
-SFX: chimes play
+SFX: chimes
 
 Name:   
 <i>The wind blows, and you hear chimes ringing in the distance.

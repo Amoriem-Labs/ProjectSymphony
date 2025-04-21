@@ -188,8 +188,9 @@ public class GameStateManager : MonoBehaviour
 
     IEnumerator FadeInAudio(AudioSource audio, float duration)
     {
-        audio.Play(); // make sure it starts playing
+
         audio.volume = 0f;
+        audio.Play(); // make sure it starts playing
         float targetVolume = 1f;
 
         for (float t = 0; t < duration; t += Time.deltaTime)
@@ -206,7 +207,7 @@ public class GameStateManager : MonoBehaviour
             AudioSource buttonAudio = buttonManager.GetComponent<AudioSource>();
             if (buttonAudio != null)
             {
-                buttonAudio.volume = 0.5f; // or fade it in if you want:
+                buttonAudio.volume = 0.3f; // or fade it in if you want:
                                            // yield return StartCoroutine(FadeInAudio(buttonAudio, 0.5f, 0.5f));
             }
         }

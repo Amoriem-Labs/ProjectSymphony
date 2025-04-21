@@ -38,7 +38,7 @@ You find yourself playing well into the night, lit by the glowbugs and the moon.
 Your song is abruptly cut off by the sound of a glass breaking and bugs flying away.
 
 Sprite: Pauline_Confused
-SFX: Glass_Breaking
+SFX: glass_crack
 
 Name: PC
 That was some amazing bassoon playing, Pauline!

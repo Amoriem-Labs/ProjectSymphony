@@ -2,7 +2,7 @@ Name: Sam
 Sprite: Sam_Happy
 Anyway, yip-yip!
 
-SFX: Magical_Horse_Neigh
+SFX: horse
 
 Name:  
 <i>Some of the audience is interested, but most are just confused about what Sam is doing.

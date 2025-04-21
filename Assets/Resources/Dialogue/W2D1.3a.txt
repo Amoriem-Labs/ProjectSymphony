@@ -5,7 +5,7 @@ Name:
 Sprite: EMPTY
 <i>You slowly sneak up to the dog, approaching from its blind spot. When you are about five feet away, you tense before leaping at Ina.
 
-SFX: Soft_Cymbal_Hit
+SFX: cymbal_tap
 
 Name:  
 Sprite: EMPTY

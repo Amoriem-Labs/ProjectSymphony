@@ -21,12 +21,10 @@ Name: Ina
 Name: PC
 So, uhh, do you want to play–
 
-SFX: Zoom_Sound
+SFX: Zoom
 Sprite: EMPTY
 Name: PC
 Wait!
-
-SFX: Heavy_footfalls
 
 Name:  
 Sprite: EMPTY
@@ -53,7 +51,7 @@ Name: PC
 (He could be anywhere by now... he's small enough to get past the school security, too.)
 (Darn it. I'm going to have to look everywhere.)
 
-SFX: Muffled_Dog_Barking_Sound
+SFX: Cute_Dog_Barking
 (That sounded like it came from the Lake!)
 
 BG: Lake
