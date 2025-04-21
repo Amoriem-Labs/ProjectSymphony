@@ -1,5 +1,5 @@
 Name: Carter
-Sprite: Carter_Understanding
+Sprite: Carter_Angry
 There's a lot of things that need to go wrong before we get to that point.
 Assuming anything happens at all.
 

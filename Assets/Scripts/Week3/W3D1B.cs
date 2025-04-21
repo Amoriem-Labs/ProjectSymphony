@@ -52,7 +52,7 @@ public class W3D1B : MonoBehaviour
                     dialogueManager.selectedOption = "";
 
                     // change this to the options that are in your file [up to 4]
-                    if (currselectedOption == "Hey, I'm PC, what's your name?")
+                    if (currselectedOption == "Hey, what's your name?")
                     {
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1B.1A" }));

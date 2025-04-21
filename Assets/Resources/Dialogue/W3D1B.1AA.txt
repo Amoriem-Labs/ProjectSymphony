@@ -28,11 +28,12 @@ Name: PC
 What were you looking at? 
 Name: Pauline
 Oh, just those damselflies.
-Name: PC	
+Name: PC
 Ah I see.
 Name:  
 The damselflies circle her legs like as if they were flowers.
 Name: Pauline
+Sprite: Pauline_Neutral
 They're so cute. I wish I was a damselfly.
 ...
 Name: PC

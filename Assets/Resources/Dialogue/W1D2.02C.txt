@@ -4,7 +4,7 @@ Uhh, not sure why you'd want to spend time there?
 
 Name: Howard
 Sprite: Howard_Understanding
-Some of us care about our studies, Sam
+Some of us care about our studies, Sam.
 
 Name: Sam
 Sprite: Sam_Sad

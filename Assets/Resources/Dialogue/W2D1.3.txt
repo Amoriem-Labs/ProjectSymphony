@@ -1,6 +1,5 @@
-BG: Hallway
-
 Name:  
+BG: Hallway
 Sprite: EMPTY
 <i>Walking through the school's hallway, you think back to Sam's description of the place.
 
@@ -25,11 +24,12 @@ Sprite: EMPTY
 Name: PC
 (Whatever. Sam must have been being metaphorical or something.)
 
+
+
+Name:  
 BG: Cafeteria
 BG2: Busy_Cafeteria_Noises
 SFX: Crashing_Sound
-
-Name:  
 Sprite: EMPTY
 <i>Entering the cafeteria, you are greeted with chaos. Chairs are overturned.
 <i>Drinks are splattered across the wall. Food is thrown through the air.
@@ -95,8 +95,8 @@ Sprite: EMPTY
 <i>When you open the door to the rehearsal room, a slight scuffling sound escapes from the far corner. The room seems empty.
 <i>Closing the door behind you and quietly moving to a better position, you see Ina laying on the ground with a drum stick in his mouth.
 
-Sprite: Ina_normal
 Name: PC
+Sprite: Ina_Neutral
 (I've got you now!)
 
 Options: 

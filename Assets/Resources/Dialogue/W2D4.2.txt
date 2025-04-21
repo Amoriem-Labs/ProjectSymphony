@@ -6,7 +6,7 @@ Sprite: Howard_Uncomfortable
 Is that a student standing up on a table?
 Name:  
 <i>You see a student dressed in a cyberpunk style outfit standing on top of their lunch table, holding a MIDI keyboard. 
-They smile smugly down at all of the students before opening their mouth to speak.<\i>
+They smile smugly down at all of the students before opening their mouth to speak.</i>
 Name: ???
 Sprite: Rival_Neutral
 Attention everyone!
@@ -24,7 +24,7 @@ BG2: zapsplat_cafeteria
 Sprite: Sam_Sad
 Roxanne's in Cynthia's band...
 Name:  
-<i>Sure enough, Roxanne is at Cynthia's table, smiling pompously along with the rest of them.<\i>
+<i>Sure enough, Roxanne is at Cynthia's table, smiling pompously along with the rest of them.</i>
 Name: Howard
 Sprite: Howard_Uncomfortable 
 Well they sure seem to be excited about the Battle of the Bands.

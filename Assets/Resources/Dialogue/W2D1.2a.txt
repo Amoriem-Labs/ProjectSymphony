@@ -1,5 +1,5 @@
-BG: Park
 Name:  
+BG: Park
 Sprite: EMPTY
 <i>You race into the park, retracing your steps in hope that Ina returned to where the chase started.
 <i>The morning quiet remains. The park is calm. You have chosen the wrong place.

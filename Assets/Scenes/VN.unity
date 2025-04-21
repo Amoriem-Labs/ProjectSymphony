@@ -7270,7 +7270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8784413312493486156, guid: aff435821e7644f10b389df0484a1c34, type: 3}
       propertyPath: uiLocations.Array.data[7].name
-      value: Stage
+      value: BattleStage
       objectReference: {fileID: 0}
     - target: {fileID: 8784413312493486156, guid: aff435821e7644f10b389df0484a1c34, type: 3}
       propertyPath: uiLocations.Array.data[8].name

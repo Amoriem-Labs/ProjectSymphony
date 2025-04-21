@@ -18,21 +18,21 @@ Nothing that will kill them.
 But surely...
 It shall bring chaos and confusion!
 
-Name: ???	
+Name: ???
 And prove once and for all, that I, Daylo, can break free from the binds of perfection!
 BGM: DayloMotif
 
 Name: PC
 (Uh...)
 
-Name: Daylo	
+Name: Daylo
 Sprite: Daylo_Smug
 And who are you? I don't recall ever seeing your face, so you can't be too important.
 
 Name: PC
 I'm PC. I'm actually a new student.
 
-Name: Daylo	
+Name: Daylo
 Sprite: Daylo_Mischievous
 Oh.
 Well I suppose that makes sense. Then I shall let you in on my plan.
@@ -41,12 +41,12 @@ Sprite: Daylo_Smug
 A new student like you must need all the friends you can get.
 If you prove you have a mind for chaos, then I suppose I'll continue to lend you the pleasure of my company.
 
-Name: Daylo	
+Name: Daylo
 PC, come closer.
 In my hands lies the vehicle for madness.
 It will unleash terror and confusion upon the owner of this locker, throwing their life into complete disarray.
 
-Name: Daylo	
+Name: Daylo
 Sprite: Daylo_Mischievous
 Lay your eyes upon it and witness my dark, chaotic nature!
 Name:    
@@ -55,7 +55,7 @@ Name: PC
 ...
 Is that...
 A plastic snake?
-Name: Daylo	
+Name: Daylo
 Why of course!
 Sprite: Daylo_Mischievous
 But any common student is sure to mistake it for the frightening image of a real snake!

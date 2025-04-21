@@ -1,5 +1,4 @@
 Name: Sam
-Animaton: ScreenFlash
 Sprite: Sam_Happy
 BG: Park
 BGM: picnic-bgm

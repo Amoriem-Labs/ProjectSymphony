@@ -80,10 +80,10 @@ public class W3D1A : MonoBehaviour
                     if (currselectedOption == "Leave them alone.")
                     {
                         affectionManager.UpdateCharacterAffection("Daylo", -1);
-                        
+
                         // load the next dialogue
                         StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W3D1A.1A" }));
-                        END = true;
+                        DP4 = true;
 
                     }
                     else if (currselectedOption == "Help them with their plan.")

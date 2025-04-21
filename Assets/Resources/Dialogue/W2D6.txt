@@ -1,5 +1,6 @@
-Background: PracticeStage
 Name: Howard
+BG: PracticeStage
+BGM: HowardTheme
 Sprite: Howard_At_Peace
 Ready?
 Name: PC
@@ -12,3 +13,6 @@ Sprite: Howard_At_Peace
 On my mark. 
 Ready. 
 Set.
+
+Options: 
+Go!

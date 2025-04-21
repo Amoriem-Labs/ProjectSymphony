@@ -12,6 +12,7 @@ You too, Ms. A!
 
 Name: Ms.A
 BGM: butterflies (audition)
+SFX: Silence
 Sprite: GC_Neutral
 I'd actually like a personal word with PC, if that's ok.
 

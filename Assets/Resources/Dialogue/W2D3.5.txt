@@ -90,7 +90,7 @@ Sorry, Sam.
 
 Name: Sam
 Sprite: Sam_Pensive
-Well I'll have to make due with what I have. Some sticks and my hat should work fine...
+Well I'll have to make do with what I have. Some sticks and my hat should work fine...
 
 Name: Sam
 Sprite: Sam_Happy

@@ -5,8 +5,11 @@ using UnityEngine;
 public class W2D5 : MonoBehaviour
 {
     private DialougeManager dialogueManager;
+
+    private bool DP1 = true;
     private bool isStarted = false;
-    //bool startChoiceDetection = false;
+
+    bool startChoiceDetection = false;
     bool END = false;
     // Start is called before the first frame update
     void Start()
@@ -19,22 +22,58 @@ public class W2D5 : MonoBehaviour
     {
         if (dialogueManager.isW2D5)
         {
-            if (!dialogueManager.isW2D3 && !isStarted)
+            if (!dialogueManager.isW2D4 && !isStarted)
             {
                 StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D5" }));
                 isStarted = true;
-                END = true;
+                startChoiceDetection = true;
+
 
             }
 
-            if (END && !dialogueManager.activeDialogue)
+        }
+        if (startChoiceDetection)
+        {
+            if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP1)
             {
+                string currselectedOption = dialogueManager.selectedOption;
+                Debug.Log("enter this part");
 
-                END = false;
-                dialogueManager.isW2D5 = true;
-                dialogueManager.UpdatePPref(11);
-             
+                // restart manager's selected option
+                DP1 = false;
+                dialogueManager.selectedOption = "";
+
+                // change this to the options that are in your file [up to 4]
+                if (currselectedOption == "Let's play it!")
+                {
+                    DP1 = false;
+                    dialogueManager.selectedOption = "";
+
+                    startChoiceDetection = false;
+                    END = true;
+
+
+                }
+                else if (currselectedOption == "I wanna hear!")
+                {
+                    DP1 = false;
+
+                    dialogueManager.selectedOption = "";
+
+                    startChoiceDetection = false;
+                    END = true; ;
+                }
             }
+        }
+
+
+        if (END && !dialogueManager.activeDialogue)
+        {
+
+            END = false;
+            dialogueManager.isW2D5 = true;
+            dialogueManager.UpdatePPref(11);
+
         }
     }
 }

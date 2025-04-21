@@ -2,9 +2,14 @@ Name: PC
 This seems kind of intense...
 I'm just going to move on with my day.
 It was nice to meet you Daylo.
+
 Name: Daylo
 Sprite: Daylo_Sad
 I see you're a do-gooder, just like my parents.
 You could never grasp the complexities of my chaotic mind.
 Well, do come find me if you ever feel the need for some excitement in your perfect, cookie-cutter life.
 Or if you want me to grace you with the beauty of my harp-playing.
+
+Options: 
+Ok.
+See you then!

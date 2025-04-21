@@ -21,7 +21,6 @@ While you don't know any of their names, you have definitely seen their faces be
 Name: PC
 (Uh oh...)
 
-SFX: fire_fwhooshing_sound
 
 Name:  
 Sprite: Empty
