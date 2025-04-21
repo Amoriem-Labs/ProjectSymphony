@@ -573,9 +573,9 @@ MonoBehaviour:
   - role: 1
     name: Sam
     instrument: Guitar
-    bio: 'A not-so-secret romantic, (Sam hails from cowboy hats and wild horses,)
-      Sam expresses herself through () and guitar riffs that could make Cupid himself
-      fall in love. She hails from cowboy hats and wild horses, (wrestle hearts dadada) '
+    bio: 'A not-so-secret romantic, Sam  hails from cowboy hats and wild horses.
+      She expresses herself through guitar riffs that could make Cupid himself fall
+      in love. '
     spriteUnlocked: {fileID: 21300000, guid: e04192167f4ff4ad9bb0bcde6df3b362, type: 3}
     spriteLocked: {fileID: 21300000, guid: 7c2e73bcfe110449cbe5898593407784, type: 3}
     backgroundHero: {fileID: 21300000, guid: ad7edad48cbe241fb951db419989c709, type: 3}
@@ -607,11 +607,9 @@ MonoBehaviour:
   - role: 2
     name: Pauline
     instrument: Bassoon
-    bio: "High off of life and music, Pauline Meozart resembles the bugs she adores:
+    bio: 'High off of life and music, Pauline Meozart resembles the bugs she adores:
       fluttering around, heedless of anything but what catches her interest. But,
-      like a butterfly net, one thing always seems to entrap her?Music. From classical
-      to rock, Pauline wields her bassoon  (squash them\u2014- not like a bug, though.
-      Pauline would never squash a bug.) "
+      like a butterfly net, one thing always seems to entrap her. Music. '
     spriteUnlocked: {fileID: 21300000, guid: bc78c3e8757834aedababe3c076f12cd, type: 3}
     spriteLocked: {fileID: 21300000, guid: fe4eae4534e094b1a941a9e3aa74e28c, type: 3}
     backgroundHero: {fileID: 21300000, guid: 9147c34fa6fff45d1a39d98303e8634c, type: 3}
