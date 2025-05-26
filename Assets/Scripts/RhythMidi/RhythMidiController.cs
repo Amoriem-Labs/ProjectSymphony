@@ -133,10 +133,13 @@ namespace RhythMidi
         private IEnumerator LoadAllFromStreamingAssets_Coroutine(string chartsPath)
         {
             string chartDirPath = Path.Combine(Application.streamingAssetsPath, chartsPath);
-            string[] chartDirectories = Directory.GetDirectories(chartDirPath);
-            foreach(string directory in chartDirectories)
+            // string[] chartDirectories = Directory.GetDirectories(chartDirPath); this was causing a WebGL error
+            string[] chartDirectories = new string[] { "Daylo", "Prelude", "Sam", "Week1", "Week2", "Week3" };
+            foreach (string directory in chartDirectories)
             {
-                yield return LoadChart_Coroutine(directory);
+                string path = Path.Combine(chartDirPath, directory); //added line to fix WebGL error
+                yield return LoadChart_Coroutine(path);
+                // yield return LoadChart_Coroutine(directory);
             }
             onFinishedLoading.Invoke();
         }
