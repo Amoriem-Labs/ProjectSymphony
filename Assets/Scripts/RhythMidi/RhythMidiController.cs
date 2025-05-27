@@ -341,16 +341,15 @@ namespace RhythMidi
         {
             if(currentChart == null) throw new Exception("No chart loaded.");
 
-            // foreach(AudioSource source in audioSources) source.Play();  changing this because audios are not synced
+            foreach(AudioSource source in audioSources) source.Play(); //changing this because audios are not synced
 
             double offset = AudioSettings.dspTime + 0.1;
 
             foreach(AudioSource source in audioSources)
             {
-                source.time = 0;
                 source.PlayScheduled(offset);
             }
-            
+
             IsPlaying = true;
         }
 
