@@ -31,6 +31,8 @@ public class Day0 : MonoBehaviour
     public TMP_InputField playerNameReader;
     private AffectionManager affectionManager;
 
+    public GameObject dialoguebox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +74,19 @@ public class Day0 : MonoBehaviour
                 {
                     Debug.Log("chose yes");
 
+                    dialoguebox.SetActive(false);
+
+                    LeanTween.scale(dialoguebox.gameObject.GetComponent<RectTransform>(), Vector3.zero, 0.3f)
+                        .setEase(LeanTweenType.easeOutCubic);
+
+                    playerNameReader.gameObject.GetComponent<RectTransform>().localScale = Vector3.zero;
+
+                    // Activate it
                     playerNameReader.gameObject.SetActive(true);
+
+                    // Tween scale to 1 with easeOutCubic
+                    LeanTween.scale(playerNameReader.gameObject.GetComponent<RectTransform>(), Vector3.one, 0.3f)
+                        .setEase(LeanTweenType.easeOutCubic);
                 }
                 else if (currselectedOption == "No.")
                 {
