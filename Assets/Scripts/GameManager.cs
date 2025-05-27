@@ -230,18 +230,28 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (startPlaying && RhythMidiController.Instance.IsPlaying)
+        AudioSource backingTrackSource = RhythMidiController.Instance.backingTrackSource;
+        if (backingTrackSource != null && backingTrackSource.clip != null && RhythMidiController.Instance.IsPlaying && startPlaying)
         {
-            if (!RhythMidiController.Instance.IsAudioStillPlaying)
+            if (backingTrackSource.time >= backingTrackSource.clip.length - 0.1f)
             {
-                print("STOPPING: " + RhythMidiController.Instance.IsAudioStillPlaying.ToString());
-
                 RhythMidiController.Instance.StopChart();
-
                 ShowResultsScreen();
             }
             timeSpentOnCharacter[CurrentCharacter.role] += Time.deltaTime;
         }
+        // if (startPlaying && RhythMidiController.Instance.IsPlaying)
+        // {
+        //     if (!RhythMidiController.Instance.IsAudioStillPlaying)
+        //     {
+        //         print("STOPPING: " + RhythMidiController.Instance.IsAudioStillPlaying.ToString());
+
+        //         RhythMidiController.Instance.StopChart();
+
+        //         ShowResultsScreen();
+        //     }
+        //     timeSpentOnCharacter[CurrentCharacter.role] += Time.deltaTime;
+        // }
         // DEBUGGING 
         if (Input.GetKeyDown(KeyCode.R))
         {

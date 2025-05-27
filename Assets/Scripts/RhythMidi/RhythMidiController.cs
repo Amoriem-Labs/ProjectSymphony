@@ -85,6 +85,7 @@ namespace RhythMidi
         public ChartResource currentChart;
         private MidiFile midiData;
         public TempoMap CurrentTempoMap { get; private set; }
+        public AudioSource backingTrackSource => audioSources.Count > 0 ? audioSources[0] : null;
         
         public delegate bool NoteFilter(Note note);
 
@@ -339,8 +340,17 @@ namespace RhythMidi
         public void PlayChart()
         {
             if(currentChart == null) throw new Exception("No chart loaded.");
+
+            // foreach(AudioSource source in audioSources) source.Play();  changing this because audios are not synced
+
+            double offset = AudioSettings.dspTime + 0.1;
+
+            foreach(AudioSource source in audioSources)
+            {
+                source.time = 0;
+                source.PlayScheduled(offset);
+            }
             
-            foreach(AudioSource source in audioSources) source.Play();
             IsPlaying = true;
         }
 
