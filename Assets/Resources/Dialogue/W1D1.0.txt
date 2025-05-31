@@ -12,7 +12,7 @@ Sprite: EMPTY
 Name: 
 Sprite: EMPTY
 <i>Groups of students on blankets are scattered over the grass. Each group seems to fit together in its own way.
-<i>One blanket is full of mustached artists, and another with only those clothed in only bright green.
+<i>One blanket is full of mustached artists, and another with only those clothed in just bright green.
 <i>The members of a third have muscles as big as the bell of a trombone.
 
 Name: PC
