@@ -45,7 +45,7 @@ There's a town here?
 
 Name: Howard
 Sprite: Howard_Shrug
-I don't personally think it's that great, but there's some wishing well there that Sam wants me to see for some reason.
+Yeah there is. I haven't been there in a while, but there's some wishing well there that Sam wants me to see for some reason.
 Come along!
 
 Name: PC

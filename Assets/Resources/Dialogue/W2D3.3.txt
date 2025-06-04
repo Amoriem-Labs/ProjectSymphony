@@ -1,17 +1,57 @@
+BG: Hallway
+BGM: what_s next (hallway)
+
+Name: Howard
+Sprite: Howard_At_Peace
+So do you guys wanna meet up for lunch after I feed Ina? 
+
+Name: Sam
+Sprite: Sam_Happy
+Yes, I'd love to!
+
 Name: PC
-...What do you mean?
+That sounds good.
+
+Name: ???
+Sprite: GC_Neutral
+Excuse me for interrupting. I'm looking for PC.
+
+Name: Sam
+Sprite: Sam_Excited	
+Hey, it's Ms. A!
+
+Options: 
+Who's that?
+Oh, I think I recognize her from my audition.
+
+Name: Howard
+Sprite: Howard_Shrug	
+She's the guidance counselor here. 
+I only ever see her at assemblies. She's the one who convinced the principal to let Ina stay with me.
+
+Name: Ms.A
+Sprite: GC_Happy
+Howard! Sam! So lovely to see you both.
+
+Name: Sam
+Sprite: Sam_Excited	
+You too, Ms. A!
 
 Name: Ms.A
 Sprite: GC_Neutral
-Well, I just mean that I can tell you're having a little bit of a rough start. Are you in any clubs?
+I'd actually like a personal word with PC, if that's ok.
+
+Name: Howard
+Sprite: Howard_Understanding
+Yea, we were just about to split up anyways.
+
+Name: Sam
+Sprite: Sam_Happy
+We'll meet you at lunch PC!
 
 Name: PC
-No...
-(Does this school have clubs?)
+Sounds good, see you guys!
 
-Name: Ms.A
-And you don't have many friends yet, do you.
-
-Options: 
-I have Howard and Sam!
-No...
+Name: Ms. A
+Sprite: GC_Neutral
+Let's head into my office, PC.

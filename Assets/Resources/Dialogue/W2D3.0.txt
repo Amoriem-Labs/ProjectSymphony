@@ -1,27 +1,26 @@
 Name:  
 Sprite: EMPTY
-BG: Lake
-<i>The town is near-deserted in the afternoon heat. You can smell skewers of meat coming from some stalls along the main road. 
-<i>It's pretty cold, and so Howard and Sam are both wearing hats, although Sam's is made of paper.
-
-Name: PC
-(Why didn't I check the temperature...)
+BG: Town
+<i>The town is bustling with residents going about their day. 
+<i>You can smell skewers of meat coming from some stalls along the main road and hear the distant voices of vendors and customers haggling prices.
+<i>Sam excitedly skips down the main cobblestone path, she seems very at home here.
 
 Name: Howard
 Sprite: Howard_Understanding
-You'll find a lot of weird things happening here. Whenever someone doesn't want to be spotted by anyone, they come here.
-It's a good place for silence.
+The people of this town are super welcoming to us students. 
+Whenever someone gets tired of the fast paced environment of school, they come here to decompress.
+
 
 Name: Sam
 Sprite: Sam_Sad
-I came here a lot my first month. And I got rejected from a few bands...
+I came here a lot my first month. After I got rejected from a few bands...
 Name: PC
 Oh, I'm sorry Sam! You don't deserve that.
 
 Name: Sam
 Sprite: Sam_Sad
-It's okay. I'm not that good at guitar. 
-That's why Roxanne doesn't like me. 
+It's okay. Compared to the other students, I'm not that good at guitar. 
+That's why Roxanne doesn't like me.
 
 Options: 
 That's not true Sam - you're an amazing guitarist!!

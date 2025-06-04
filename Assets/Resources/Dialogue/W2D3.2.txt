@@ -1,41 +1,11 @@
 Name: Howard
-Sprite: Howard_Shrug	
-She's the guidance counselor here. 
-I only ever see her at assemblies. She's the one who convinced the principal to let Ina stay with me.
-Name: Ms.A
-Sprite: GC_Happy
-Howard! Sam! So lovely to see you both.
+Sprite: Howard_At_Peace
+Maybe we should head back now. I do actually need to feed Ina before we go to lunch.
 
 Name: Sam
-Sprite: Sam_Excited	
-You too, Ms. A!
-
-Name: Ms.A
-Sprite: GC_Neutral
-I'd actually like a personal word with PC, if that's ok.
+Sprite: Sam_Happy
+Thanks for coming here with me you guys!
+My old self would have loved to know that I ended up finding such good friends.
 
 Name: PC
-(Uhh...)
-Name: Howard
-Sprite: Howard_Shrug
-Of course, we'll be right outside PC.
-Name: Sam
-Sprite: Sam_Excited
-Have fun!
-
-Name: PC
-(I wonder what they're saying...)
-
-Name: Ms.A
-Sprite: GC_Neutral
-Sit.
-
-Name: PC
-(Ok...)
-
-Name: Ms.A
-How's the first few weeks been going, PC? I know it has to be hard as a transfer student. 
-
-Options: 
-It's been... confusing.
-Honestly no, it's been great!
+Of course Sam, I'm glad we got to be here with you.

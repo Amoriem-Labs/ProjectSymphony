@@ -175,7 +175,7 @@ public class W2D3 : MonoBehaviour
                 if (currselectedOption == "Did you wish to be with Roxanne?")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.5A", "W2D3.6" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1A", "W2D3.2" }));
                     DP7 = true;
 
                 }
@@ -183,7 +183,7 @@ public class W2D3 : MonoBehaviour
                 {
                     DP7 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.5B", "W2D3.6" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1B", "W2D3.2" }));
                 }
 
             }

@@ -16,11 +16,7 @@ Sprite: Howard_Uncomfortable
 
 Name: Howard
 Sprite: Howard_Understanding
-Maybe we should go back.
-
-Sprite: Howard_At_Peace
-Sorry to cut our journey short, PC.
-See you tomorrow for lunch?
+I think we're all just tired and hungry. Let's grab some lunch.
 
 Name: PC
 Sprite: EMPTY

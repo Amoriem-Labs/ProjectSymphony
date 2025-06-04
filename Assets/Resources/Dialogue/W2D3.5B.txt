@@ -1,6 +1,29 @@
-Name: Sam
-Sprite: Sam_Pensive
-Thank you.
+Name: Howard
+Sprite: Howard_Understanding
+Oh, well that makes sense. Ms A.'s really nice, I bet she just wanted to make you feel better since you're new.
+So you have someone else to talk to besides us two.
+
+Name: PC
+Besides you two...
+
 Name: Howard
 Sprite: Howard_Uncomfortable
-Huh, alright then.
+What?
+
+Name: PC
+Nothing...
+I just, you guys don't know anyone else here?
+
+Name: Howard
+Do we need to?
+
+Name: PC
+I guess not.
+
+Name: Sam
+Sprite: Sam_Pensive
+I want to be in a band...
+
+Name: Howard
+Sprite: Howard_Shrug
+Oh jeez, not this again.
