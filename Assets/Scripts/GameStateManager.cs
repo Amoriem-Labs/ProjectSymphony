@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public enum CharacterRole
 {
@@ -66,7 +67,26 @@ public class GameStateManager : MonoBehaviour
     public Image[] panels;
     public GameObject panel;
 
+
+    // WARNING METHOD
+
+    public GameObject warningObject;
+
+    public GameObject warningBackground;
+
+    public TMP_Text warningText;
+
+    public Button confirmWarning;
+
+    public Button cancelWarning;
+
+    private string pendingSceneName;
+
+
     public Button closeButton;
+
+    private Vector3 hiddenPosition;
+    private Vector3 centerPosition;
 
     void Start()
     {
@@ -82,6 +102,9 @@ public class GameStateManager : MonoBehaviour
         }
 
         LoadPersistentData();
+
+        centerPosition = new UnityEngine.Vector3(0, 0, 0);
+        hiddenPosition = centerPosition + new UnityEngine.Vector3(0, -Screen.height, 0);
     }
 
     public void LoadPersistentData()
@@ -222,6 +245,49 @@ public class GameStateManager : MonoBehaviour
     {
         panel.SetActive(false);
         //hello
+    }
+    public void displayWarning(string sceneName, string warningMessage)
+    {
+        pendingSceneName = sceneName;
+
+        warningText.text = warningMessage;
+        warningBackground.SetActive(true);
+        warningObject.SetActive(true);
+
+        // Reset position offscreen
+        RectTransform rect = warningObject.GetComponent<RectTransform>();
+        rect.anchoredPosition = hiddenPosition;
+
+        // Animate to center
+        LeanTween.move(rect, centerPosition, 0.4f).setEaseOutBack();
+
+        // Setup button listeners
+        confirmWarning.onClick.RemoveAllListeners();
+        cancelWarning.onClick.RemoveAllListeners();
+
+        confirmWarning.onClick.AddListener(OnConfirm);
+        cancelWarning.onClick.AddListener(OnCancel);
+    }
+
+    private void OnConfirm()
+    {
+        RectTransform rect = warningObject.GetComponent<RectTransform>();
+        LeanTween.move(rect, hiddenPosition, 0.3f).setEaseInBack().setOnComplete(() =>
+        {
+            warningObject.SetActive(false);
+            warningBackground.SetActive(false);
+        });
+        GameStateManager.Instance.LoadNewScene(pendingSceneName);
+    }
+
+    private void OnCancel()
+    {
+        RectTransform rect = warningObject.GetComponent<RectTransform>();
+        LeanTween.move(rect, hiddenPosition, 0.3f).setEaseInBack().setOnComplete(() =>
+        {
+            warningObject.SetActive(false);
+            warningBackground.SetActive(false);
+        });
     }
 
 

@@ -783,7 +783,7 @@ public class DialougeManager : MonoBehaviour
 
     public void SaveScreen()
     {
-        GameStateManager.Instance.LoadNewScene("SaveScreen");
+        GameStateManager.Instance.displayWarning("SaveScreen", "This will bring you to the save menu. You will lose your progress in this current scene but you will be able to save what scene you are on. Confirm?");
     }
 
 

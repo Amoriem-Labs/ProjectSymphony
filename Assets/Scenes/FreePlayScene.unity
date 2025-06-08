@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49153793, g: 0.22347811, b: 0.5849056, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.47784108, g: 0.2663314, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 3
   m_Viewport: {fileID: 915400095}
   m_HorizontalScrollbar: {fileID: 1111267517}
   m_VerticalScrollbar: {fileID: 1724027086}
@@ -1622,7 +1622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4130300903311375547, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 155
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 4130300903311375547, guid: a316bd7964e684459b53ab33aa8e9d89, type: 3}
       propertyPath: m_AnchoredPosition.y
