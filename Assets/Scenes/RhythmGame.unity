@@ -1044,6 +1044,7 @@ GameObject:
   - component: {fileID: 366181236}
   - component: {fileID: 366181238}
   - component: {fileID: 366181237}
+  - component: {fileID: 366181239}
   m_Layer: 5
   m_Name: Combo
   m_TagString: Untagged
@@ -1094,7 +1095,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 1c7700ae47850462dbd15662dfb3a885, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2100000, guid: 1c7700ae47850462dbd15662dfb3a885, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1167,6 +1169,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366181235}
   m_CullTransparentMesh: 1
+--- !u!114 &366181239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366181235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 0
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 20
+  offsetDistance: 8
+  offset: {x: 7.517541, y: -2.736161}
+  color: {r: 0, g: 0, b: 0, a: 0.866}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &368238761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2533,6 +2567,7 @@ GameObject:
   - component: {fileID: 724955863}
   - component: {fileID: 724955865}
   - component: {fileID: 724955864}
+  - component: {fileID: 724955866}
   m_Layer: 5
   m_Name: Stellar
   m_TagString: Untagged
@@ -2583,7 +2618,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2656,6 +2692,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724955862}
   m_CullTransparentMesh: 1
+--- !u!114 &724955866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724955862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 0
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 59.51736
+  offsetDistance: 8
+  offset: {x: 4.058218, y: -6.8942633}
+  color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &745663031
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,6 +3483,7 @@ GameObject:
   - component: {fileID: 936214565}
   - component: {fileID: 936214567}
   - component: {fileID: 936214566}
+  - component: {fileID: 936214568}
   m_Layer: 5
   m_Name: Slash
   m_TagString: Untagged
@@ -3465,7 +3534,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -3538,6 +3608,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936214564}
   m_CullTransparentMesh: 1
+--- !u!114 &936214568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936214564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 0
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 59.51736
+  offsetDistance: 8
+  offset: {x: 4.058218, y: -6.8942633}
+  color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &956204078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3549,6 +3651,7 @@ GameObject:
   - component: {fileID: 956204079}
   - component: {fileID: 956204081}
   - component: {fileID: 956204080}
+  - component: {fileID: 956204082}
   m_Layer: 5
   m_Name: Good
   m_TagString: Untagged
@@ -3599,7 +3702,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -3672,6 +3776,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956204078}
   m_CullTransparentMesh: 1
+--- !u!114 &956204082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956204078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 0
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 59.51736
+  offsetDistance: 8
+  offset: {x: 4.058218, y: -6.8942633}
+  color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &967148732
 GameObject:
   m_ObjectHideFlags: 0
@@ -4634,6 +4770,7 @@ GameObject:
   - component: {fileID: 1326575492}
   - component: {fileID: 1326575494}
   - component: {fileID: 1326575493}
+  - component: {fileID: 1326575495}
   m_Layer: 5
   m_Name: Slash
   m_TagString: Untagged
@@ -4684,7 +4821,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -4757,6 +4895,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326575491}
   m_CullTransparentMesh: 1
+--- !u!114 &1326575495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326575491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 0
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 59.51736
+  offsetDistance: 8
+  offset: {x: 4.058218, y: -6.8942633}
+  color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &1338444577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,7 +5651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 27.66}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.2, y: -25.2}
+  m_AnchoredPosition: {x: -7.200001, y: -25.2}
   m_SizeDelta: {x: 124.437, y: 126.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1377226573
@@ -5875,6 +6045,7 @@ GameObject:
   - component: {fileID: 1579633892}
   - component: {fileID: 1579633894}
   - component: {fileID: 1579633893}
+  - component: {fileID: 1579633895}
   m_Layer: 5
   m_Name: Miss
   m_TagString: Untagged
@@ -5925,7 +6096,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2100000, guid: 71d1f10468b414c17bdf580632de77fb, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -5998,6 +6170,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579633891}
   m_CullTransparentMesh: 1
+--- !u!114 &1579633895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579633891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 0
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 59.51736
+  offsetDistance: 8
+  offset: {x: 4.058218, y: -6.8942633}
+  color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &1601014004
 GameObject:
   m_ObjectHideFlags: 0
@@ -6870,6 +7074,7 @@ GameObject:
   - component: {fileID: 1915466563}
   - component: {fileID: 1915466565}
   - component: {fileID: 1915466564}
+  - component: {fileID: 1915466566}
   m_Layer: 5
   m_Name: FavoriteCharacter
   m_TagString: Untagged
@@ -6920,7 +7125,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 51ab3b0d926bb492596d20630b8dfabf, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2100000, guid: 51ab3b0d926bb492596d20630b8dfabf, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -6993,6 +7199,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915466562}
   m_CullTransparentMesh: 1
+--- !u!114 &1915466566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915466562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 0
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 20
+  offsetDistance: 8
+  offset: {x: 7.517541, y: -2.736161}
+  color: {r: 0, g: 0, b: 0, a: 0.866}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &1916517932
 GameObject:
   m_ObjectHideFlags: 0
