@@ -20,7 +20,7 @@ Name: PC
 (Uhh...)
 Name: Howard
 Sprite: Howard_Shrug
-Of course, we'll be right outside PC.
+Of course, we'll be right outside, PC.
 Name: Sam
 Sprite: Sam_Happy
 Have fun!
