@@ -8,6 +8,20 @@ Name: PC
 Sprite: EMPTY
 (Maybe I should try to meet some people before classes begin...)
 
+Name: sss
+ehehe
+Name: salala
+ehehee
+Sprite: EMPTY
+BG: Hallway
+eee
+BG: Park
+ehehe
+BG: Lake
+Sprite: Sam_Happy
+ehehe
+BG: Park
+ehehe
 
 Name: 
 Sprite: EMPTY

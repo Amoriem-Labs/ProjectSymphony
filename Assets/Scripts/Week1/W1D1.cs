@@ -241,7 +241,6 @@ public class W1D1 : MonoBehaviour
                 {
                     affectionManager.UpdatePlayerPrefAffections();
                     END = false;
-                    dialogueManager.isW1D2 = true;
                     dialogueManager.UpdatePPref(2);
 
                 }

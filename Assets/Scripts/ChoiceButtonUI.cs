@@ -35,14 +35,14 @@ public class ChoiceButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void hoverBigger()
     {
 
-        Debug.Log("hover bigger");
+        //Debug.Log("hover bigger");
         background.gameObject.SetActive(true);
         LeanTween.moveX(gameObject, position.x - 1f, 0.4f)
     .setEase(LeanTweenType.easeOutBack);
     }
     public void hoverSmaller()
     {
-        Debug.Log("hover smaller");
+        //Debug.Log("hover smaller");
         background.gameObject.SetActive(false);
         LeanTween.moveX(gameObject, position.x, 0.4f)
     .setEase(LeanTweenType.easeOutBack);

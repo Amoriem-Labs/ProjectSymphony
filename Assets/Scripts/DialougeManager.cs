@@ -301,7 +301,7 @@ public class DialougeManager : MonoBehaviour
                 Debug.LogWarning($"Failed to load sprite: {curr_dialogue.sprite}");
             }
         }
-        if (!string.IsNullOrEmpty(curr_dialogue.sprite) && backgroudSpriteImage != null)
+        if (!string.IsNullOrEmpty(curr_dialogue.background) && backgroudSpriteImage != null)
         {
             if (curr_dialogue == null)
             {
@@ -429,13 +429,20 @@ public class DialougeManager : MonoBehaviour
         }
         else
         {
-            if (currentDialogueIndex == dialogueSequence.Count - 1)
+            // no more sentences in this block
+            if (currentDialogueIndex < dialogueSequence.Count - 1)
             {
-                isEndofScene = true;
+                MoveToNextDialogueEntry();
             }
-            MoveToNextDialogueEntry();
+            else
+            {
+                // final block has finished; actually close out the dialogue
+                isEndofScene = true;
+                EndDialouge();
+            }
         }
     }
+
 
     private void MoveToNextDialogueEntry()
     {
@@ -476,19 +483,6 @@ public class DialougeManager : MonoBehaviour
             yield return letterDelay;
         }
     }
-
-
-    //IEnumerator TypeSentence(string sentence)
-    //{
-    //    dialougeText.text = "";
-
-    //    // <i> hid if < until > 
-    //    for (int i = 0; i <= sentence.Length; i++)
-    //    {
-    //        dialougeText.text = sentence.Substring(0, i);
-    //        yield return new WaitForSeconds(0.01f);
-    //    }
-    //}
 
     public void EndDialouge()
     {
@@ -551,12 +545,14 @@ public class DialougeManager : MonoBehaviour
             }
             else if (line.StartsWith("Sprite: "))
             {
-                if (loadedDialogue != null)
-                {
-                    loadedDialogue.sprite = line.Substring(8);
-                }
+                AddCurrentDialogue();
+                loadedDialogue = new Dialouge();
+                currentSentances = new List<string>();
+                currentOptions = new List<string>();
+
+                loadedDialogue.sprite = line.Substring(8);
             }
-            else if (line == "Options: ")
+            else if (line.StartsWith ("Options:"))
             {
                 AddCurrentDialogue();
                 loadedDialogue = new Dialouge();
@@ -572,24 +568,38 @@ public class DialougeManager : MonoBehaviour
             }
             else if (line.StartsWith("BG: "))
             {
-                if (loadedDialogue != null)
-                {
-                    loadedDialogue.background = line.Substring(4);
-                }
+                AddCurrentDialogue();
+                loadedDialogue = new Dialouge();
+                currentSentances = new List<string>();
+                currentOptions = new List<string>();
+                loadedDialogue.background = line.Substring(4);
+
             }
             else if (line.StartsWith("BGM: "))
             {
+                AddCurrentDialogue();
+                loadedDialogue = new Dialouge();
+                currentSentances = new List<string>();
+                currentOptions = new List<string>();
                 loadedDialogue.bgm = line.Substring(5);
 
             }
             else if (line.StartsWith("SFX: "))
             {
-                //Debug.Log("SFX loaded");
+                AddCurrentDialogue();
+                loadedDialogue = new Dialouge();
+                currentSentances = new List<string>();
+                currentOptions = new List<string>();
                 loadedDialogue.sfx = line.Substring(5);
 
             }
             else if (line.StartsWith("BG2: "))
             {
+                AddCurrentDialogue();
+                loadedDialogue = new Dialouge();
+                currentSentances = new List<string>();
+                currentOptions = new List<string>();
+
                 loadedDialogue.bgm2 = line.Substring(5);
                 //string bgm2 = line.Substring(5);
                 //Debug.Log($"Playing BGM2: {bgm2}");
@@ -610,20 +620,22 @@ public class DialougeManager : MonoBehaviour
             }
         }
         AddCurrentDialogue();
-
-        //Debug.Log($"Loaded {dialogueSequence.Count} dialogue entries");
-
     }
 
     private void AddCurrentDialogue()
     {
         if (loadedDialogue != null)
         {
-            loadedDialogue.sentences = currentSentances.ToArray();
+            if (currentSentances.Count > 0 || loadedDialogue.name == "Options:")
+            {
+                loadedDialogue.sentences = currentSentances.ToArray();
+            }
+
             if (currentOptions.Count > 0)
             {
                 loadedDialogue.options = currentOptions.ToArray();
             }
+
             dialogueSequence.Add(loadedDialogue);
         }
         loadedEvents = true;
@@ -634,8 +646,6 @@ public class DialougeManager : MonoBehaviour
         dialougeText.enabled = false;
         continueButton.gameObject.SetActive(false);
         nameText.text = "What should I do?";
-
-        //Debug.Log($"ShowChoiceOptions called with {options?.Length ?? 0} options");
 
         if (dialougueButtons == null || options == null)
         {
@@ -689,11 +699,9 @@ public class DialougeManager : MonoBehaviour
 
     private void HandleOptionSelected(int optionIndex)
     {
-        //Debug.Log($"Option {optionIndex} selected");
         ClearActiveButtons();
 
         selectedOption = dialogueSequence[currentDialogueIndex].options[optionIndex];
-        //Debug.Log($"Selected {selectedOption}");
         //currentDialogueIndex = 0;
         choiceSelected = true;
         MoveToNextDialogueEntry();
@@ -759,7 +767,7 @@ public class DialougeManager : MonoBehaviour
             yield return new WaitUntil(() => uiManager.IsReady);
 
             //yield return new WaitForSeconds(1f);
-            loadedEvents = false; // DELETE THIS IF BUGSS
+            loadedEvents = false; 
             StartDialogueSequence();
             yield return new WaitUntil(() => currentDialogueIndex >= dialogueSequence.Count);
 
