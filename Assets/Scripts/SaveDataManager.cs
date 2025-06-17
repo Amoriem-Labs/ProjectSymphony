@@ -183,7 +183,7 @@ public class SaveDataManager : MonoBehaviour
     {
 
         Debug.Log("data loaded " + saveName.ToString());
-        saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
+        saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
         PlayerPrefs.SetInt(SCENE_INDEX_KEY, PlayerPrefs.GetInt(SCENE_INDEX_KEY + saveName.ToString()));
         if (PlayerPrefs.GetInt(SCENE_INDEX_KEY) >= 1)
         {
@@ -239,7 +239,7 @@ public class SaveDataManager : MonoBehaviour
 
     public void ExitScreen()
     {
-        GameStateManager.Instance.LoadNewScene("TitleScene");
+        GameStateManager.Instance.displayWarning("TitleScene", "This will bring you back to the title screen. Make sure you have made a new save! Confirm?");
     }
 
 }

@@ -17,7 +17,7 @@ Yeah, I'm going to head to bed as well. It's been fun getting to know you!
 
 Name: Sam
 Sprite: Sam_Happy
-We should meet up again tomorrow!
+We should hang out again tomorrow!
 
 Name: Howard
 Sprite: Howard_Uncomfortable
@@ -25,7 +25,7 @@ We have classes tomorrow, Sam.
 
 Name: Sam
 Sprite: Sam_Happy
-We should meet up again after classes!
+Then we should meet up before they start!
 
 Name: PC
 I guess I'll see you then! Want to meet here?

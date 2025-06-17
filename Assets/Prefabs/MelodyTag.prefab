@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2997613242612061554}
   - component: {fileID: 8079047557120496492}
   - component: {fileID: 3571376278686588168}
+  - component: {fileID: 3023695212368665833}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -35,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.695}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.3, y: 23}
+  m_AnchoredPosition: {x: 60, y: 32}
   m_SizeDelta: {x: 241.4713, y: 72.8515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2997613242612061554
@@ -66,11 +67,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Select a '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: -3071229948089561510, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -3071229948089561510, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -150,6 +152,38 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: -10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &3023695212368665833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560089250193167425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 1
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 63.523144
+  offsetDistance: 8
+  offset: {x: 3.56669, y: -7.1609163}
+  color: {r: 0, g: 0, b: 0, a: 0.8784314}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &3399475950345824379
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +288,7 @@ GameObject:
   - component: {fileID: 33507449047818961}
   - component: {fileID: 5363862112911655065}
   - component: {fileID: 26859434645783539}
+  - component: {fileID: 2676319028622301462}
   m_Layer: 5
   m_Name: InstrumentText
   m_TagString: Untagged
@@ -277,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.598}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59, y: -24.5}
+  m_AnchoredPosition: {x: 59, y: -16.499958}
   m_SizeDelta: {x: 241.4713, y: 72.8515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &33507449047818961
@@ -308,11 +343,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Character
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_sharedMaterial: {fileID: -3071229948089561510, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: -3071229948089561510, guid: 4b3407b210f8445f4805fb02ff6079b6, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -392,6 +428,38 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: -10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &2676319028622301462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3896625964419269110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c162dc854d2f24fa639ba0623de5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  algorithm: 1
+  size: 0
+  spread: 0
+  useGlobalAngle: 0
+  offsetAngle: 63.523144
+  offsetDistance: 8
+  offset: {x: 3.56669, y: -7.1609163}
+  color: {r: 0, g: 0, b: 0, a: 0.8784314}
+  inset: 0
+  blendMode: 0
+  useCasterAlpha: 1
+  ignoreCasterColor: 0
+  skipTextHashing: 0
+  deallocateOnDisable: 0
+  disableFitCompensation: 0
+  shadowAsSibling: 0
+  cutout: 0
+  baked: 0
+  modifiedFromInspector: 0
+  bakedShadows: []
 --- !u!1 &4751983043592530035
 GameObject:
   m_ObjectHideFlags: 0
