@@ -13,7 +13,6 @@ public class W3D1C : MonoBehaviour
 
     private bool DP1 = true;
     private bool DP2 = false;
-    private bool DP3 = false;
     private bool DP4 = false;
 
 
