@@ -64,6 +64,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     }
     public void hoverBigger()
     {
+        Debug.Log("hover bigger");
         if (characterData.isUnlocked && isAvailable)
         {
             // Bouncy scale up to 1.2 over 0.4 seconds
@@ -73,6 +74,7 @@ public class CharacterSlot : MonoBehaviour, IPointerClickHandler
     }
     public void hoverSmaller()
     {
+        Debug.Log("hover smaller");
         if (characterData.isUnlocked && isAvailable)
         {
             // Scale back to original size

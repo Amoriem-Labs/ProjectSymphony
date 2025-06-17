@@ -10,6 +10,7 @@ public class ButtonManager : MonoBehaviour
 
     public void ButtonHover()
     {
+
         audioSource.PlayOneShot(buttonSounds[0]);
     }
     public void ConfirmButton()
