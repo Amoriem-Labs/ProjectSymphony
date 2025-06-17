@@ -258,6 +258,10 @@ public class GameManager : MonoBehaviour
             // RhythMidiController.Instance.StopChart();
             // ShowResultsScreen();
         }
+        if (Input.GetKeyDown(KeyCode.T))  // Press "T" to log times
+        {
+            RhythMidiController.Instance.LogAllTrackTimes();
+        }
 
         RectTransform columnTarget = null;
         bool perfect = false;

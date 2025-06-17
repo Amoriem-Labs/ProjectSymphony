@@ -341,29 +341,55 @@ namespace RhythMidi
         {
             if(currentChart == null) throw new Exception("No chart loaded.");
 
-            foreach(AudioSource source in audioSources) source.Play(); //changing this because audios are not synced
+            //foreach(AudioSource source in audioSources) source.Play(); //changing this because audios are not synced
 
-            double offset = AudioSettings.dspTime + 0.1;
+            double offset = AudioSettings.dspTime;
 
             foreach(AudioSource source in audioSources)
             {
+                source.Stop();
                 source.PlayScheduled(offset);
             }
-
+            // SyncPlayAllTracks();
             IsPlaying = true;
         }
+        
+        private void SyncPlayAllTracks(double delay = 0.1)
+        {
+            double dspStartTime = AudioSettings.dspTime;
+
+            foreach (AudioSource source in audioSources)
+            {
+                source.Stop(); // ensure clean start
+                source.PlayScheduled(dspStartTime);
+            }
+
+            Debug.Log($"Scheduled all audio sources for DSP time: {dspStartTime}");
+        }
+
+        public void LogAllTrackTimes()
+        {
+            for (int i = 0; i < audioSources.Count; i++)
+            {
+                AudioSource src = audioSources[i];
+                string name = src.clip != null ? src.clip.name : "Unnamed";
+                Debug.Log($"Track {i} - '{name}': time = {src.time:F4} / {src.clip?.length:F4}");
+            }
+        }
+
 
         /// <summary>
         /// Halts playback of a chart.
         /// </summary>
         public void StopChart()
         {
-            foreach(AudioSource source in audioSources) {
+            foreach (AudioSource source in audioSources)
+            {
                 Destroy(source);
             }
             audioSources.Clear();
             IsPlaying = false;
-            foreach(NoteNotifier noteNotifier in noteNotifiers) noteNotifier.Clear();
+            foreach (NoteNotifier noteNotifier in noteNotifiers) noteNotifier.Clear();
         }
 
 
