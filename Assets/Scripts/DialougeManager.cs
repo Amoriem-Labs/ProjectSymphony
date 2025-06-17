@@ -585,6 +585,8 @@ public class DialougeManager : MonoBehaviour
                 {
                     loadedDialogue.background = line.Substring(4);
                 }
+
+
             }
             else if (line.StartsWith("BGM: "))
             {
