@@ -9,6 +9,6 @@ Name: PC
 
 Name:  
 Sprite: EMPTY
-<i>You hold the modified drum case carefully as you sneak up behind the dog. He is so engrossed in his delicious snack that he fails to notice you before it's too late
+<i>You hold the modified drum case carefully as you sneak up behind the dog. He is so engrossed in his delicious snack that he fails to notice you before it's too late.
 <i>With the swiftness of an arrow, you toss the drum case over Ina's head, trapping him beneath.
 <i>Ina tries to move, but the drum case doesn't budge.
