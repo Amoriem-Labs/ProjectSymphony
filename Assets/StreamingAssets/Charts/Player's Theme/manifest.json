@@ -1,0 +1,12 @@
+{
+    "game": "ProjectSymphony",
+    "manifestVersion": 1,
+    "title": "Player's Theme",
+    "artist": "Sebastien",
+    "mapper": "Sebastien",
+    "midi": "Midi.mid",
+    "backingTrack": "Backing.mp3",
+    "tracks": {
+        "You": "Silence.mp3"
+    }
+}
