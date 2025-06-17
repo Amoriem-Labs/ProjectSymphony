@@ -87,8 +87,7 @@ public class DialougeManager : MonoBehaviour
 
     private AnimationManager animationManager;
     private AffectionManager affectionManager;
-    private bool startedFade = false;
-    private UnityEvent onFinishedDialogeLoading = new UnityEvent();
+
     // animations
 
     // UI Manager

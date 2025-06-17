@@ -13,11 +13,8 @@ public class W3D2B : MonoBehaviour
     // make one bool for each decision point
     private bool DP1 = true;
     private bool DP2 = false;
-    private bool DP3 = false;
     private bool DP4 = false;
-    private bool DP5 = false;
-    private bool DP6 = false;
-    private bool DP7 = false;
+
 
     bool END = false;
 

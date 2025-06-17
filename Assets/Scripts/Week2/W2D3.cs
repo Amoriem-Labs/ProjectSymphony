@@ -6,7 +6,6 @@ public class W2D3 : MonoBehaviour
 {
     private DialougeManager dialogueManager;
     private bool isStarted = false;
-    bool startChoiceDetection = false;
 
     // make one bool for each decision point
     private bool DP1 = true;

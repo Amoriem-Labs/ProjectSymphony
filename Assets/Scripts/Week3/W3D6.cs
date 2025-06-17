@@ -8,12 +8,7 @@ public class W3D6 : MonoBehaviour
 {
     private DialougeManager dialogueManager;
     private bool isStarted = false;
-    bool startChoiceDetection = false;
 
-    private bool DP1 = true;
-    private bool DP2 = false;
-    private bool DP3 = false;
-    private bool DP4 = false;
 
     bool END = false;
 
