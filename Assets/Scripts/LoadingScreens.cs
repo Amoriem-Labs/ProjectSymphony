@@ -18,13 +18,13 @@ public class LoadingScreens : MonoBehaviour
     {
         if (!loaded)
         {
-            Debug.Log("he222re");
+            //Debug.Log("he222re");
 
             int SceneToLoad = PlayerPrefs.GetInt("SceneToLoad");
             switch (SceneToLoad)
             {
                 case 0:
-                    Debug.Log("here");
+                    //Debug.Log("here");
                     // Load VN
                     new WaitForSeconds(3f);
                     GameStateManager.Instance.LoadVN();

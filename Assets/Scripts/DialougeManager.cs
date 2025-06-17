@@ -466,14 +466,24 @@ public class DialougeManager : MonoBehaviour
     private readonly WaitForSeconds secondDelay = new WaitForSeconds(1.0f);
     IEnumerator TypeSentence(string sentence)
     {
-        dialougeText.text = "";
-        int visibleCharacters = 0;
-        while (visibleCharacters <= sentence.Length)
-        {
-            dialougeText.text = sentence.Substring(0, visibleCharacters);
-            visibleCharacters++;
+        dialougeText.text = sentence;
+        dialougeText.ForceMeshUpdate();
+        int total = dialougeText.textInfo.characterCount;
+        dialougeText.maxVisibleCharacters = 0;
+        for (int i = 1; i <= total; i++) 
+        { 
+            dialougeText.maxVisibleCharacters = i; 
             yield return letterDelay;
         }
+        //dialougeText.text = "";
+
+        //int visibleCharacters = 0;
+        //while (visibleCharacters <= sentence.Length)
+        //{
+        //    dialougeText.text = sentence.Substring(0, visibleCharacters);
+        //    visibleCharacters++;
+        //    yield return letterDelay;
+        //}
     }
 
 

@@ -64,7 +64,7 @@ public class SaveDataManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey(HOWARD_AFFECTION_KEY) || !PlayerPrefs.HasKey(HOWARD_UNLOCKED_KEY))
         {
-            Debug.Log("setting values??");
+            //Debug.Log("setting values??");
             PlayerPrefs.SetInt(HOWARD_AFFECTION_KEY, 0);
             PlayerPrefs.SetInt(SAM_AFFECTION_KEY, 0);
             PlayerPrefs.SetInt(CARTER_AFFECTION_KEY, 0);
@@ -79,7 +79,7 @@ public class SaveDataManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("not setting values??");
+            //Debug.Log("not setting values??");
         }
 
         SaveButton.onClick.AddListener(() => SaveGame(PlayerPrefs.GetInt(SLOT_INDEX_KEY)));
@@ -98,7 +98,7 @@ public class SaveDataManager : MonoBehaviour
 
         // Load existing save slots
         int slotIndex = 1;
-        Debug.Log("increment");
+        //Debug.Log("increment");
         bool incremented = false;
         while (PlayerPrefs.HasKey(SLOT_NAME_KEY + slotIndex))
         {
