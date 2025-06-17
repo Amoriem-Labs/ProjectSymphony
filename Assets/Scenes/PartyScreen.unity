@@ -3043,7 +3043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10.438}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232, y: 56}
+  m_AnchoredPosition: {x: 240, y: 45}
   m_SizeDelta: {x: 451.0677, y: 109.5661}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486532182
@@ -3081,7 +3081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name
+  m_text: Howard's Theme
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bc7e0f13329e9474eaf33f4b47317637, type: 2}
   m_sharedMaterial: {fileID: 6189373169711827019, guid: bc7e0f13329e9474eaf33f4b47317637, type: 2}
@@ -3109,8 +3109,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3121,7 +3121,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: -11
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -40
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -3145,7 +3145,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 2.7253458, z: -34.92981, w: 0}
+  m_margin: {x: 0, y: 2.7253458, z: 52.24556, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
