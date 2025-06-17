@@ -195,7 +195,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    IEnumerator FadeOutAudio(AudioSource audio, float duration)
+    public IEnumerator FadeOutAudio(AudioSource audio, float duration)
     {
         float startVolume = audio.volume;
 
@@ -209,7 +209,7 @@ public class GameStateManager : MonoBehaviour
         audio.Pause(); // optional: stop playback
     }
 
-    IEnumerator FadeInAudio(AudioSource audio, float duration)
+    public IEnumerator FadeInAudio(AudioSource audio, float duration)
     {
 
         audio.volume = 0f;

@@ -737,6 +737,8 @@ public class DialougeManager : MonoBehaviour
     }
 
 
+
+
     private void PlayBGM2(string bgm2Name)
     {
         AudioClip clip = Resources.Load<AudioClip>($"Audio/Music/SecondaryBGM/{bgm2Name}");

@@ -36,6 +36,7 @@ public class Day0 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         affectionManager = FindAnyObjectByType<AffectionManager>();
         affectionManager.InitPPrefs();
         DP0_1 = false;
@@ -49,8 +50,16 @@ public class Day0 : MonoBehaviour
             Debug.LogError("DialougeManager not found in the scene");
             return;
         }
-        StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D0.0" }));
-
+       
+        //if (dialogueManager.isDay0 == false)
+        //{
+        //    Debug.Log("!!!!!!!xDAY 0 FALSE AT STARTUP");
+        //    dialogueManager.SetSceneBools();
+        //}
+        //else
+        //{
+            StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W1D0.0" }));
+        //}
 
     }
 
