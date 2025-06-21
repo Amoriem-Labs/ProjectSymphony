@@ -33,7 +33,6 @@ public class W2D3 : MonoBehaviour
         {
             if (dialogueManager.isW2D3 && !isStarted)
             {
-                Debug.Log("PPPPP");
                 StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.0" }));
                 // is started triggers the choice tests
                 isStarted = true; // MAKE SURE THIS IS AFTER THE FIRST LOAD 
@@ -75,14 +74,14 @@ public class W2D3 : MonoBehaviour
                 dialogueManager.selectedOption = "";
 
                 // change this to the options that are in your file [up to 4]
-                if (currselectedOption == "Who's that?")
+                if (currselectedOption == "Did you wish to be with Roxanne?")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1A", "W2D3.2" }));
                     DP3 = true;
 
                 }
-                else if (currselectedOption == "Oh, I think I recognize her from my audition.")
+                else if (currselectedOption == "I think you should never reveal your wishes to anyone until they come true.\r\n")
                 {
                     DP3 = true;
                     // load the next dialogue
