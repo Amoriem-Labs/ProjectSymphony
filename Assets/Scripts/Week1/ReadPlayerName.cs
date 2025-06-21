@@ -36,6 +36,8 @@ public class ReadPlayerName : MonoBehaviour
 
             //dialogueManager.isW1D1 = true;
             dialogueManager.UpdatePPref(1);
+            LeanTween.scale(playerNameReader.gameObject.GetComponent<RectTransform>(), Vector3.zero, 0.3f)
+                .setEase(LeanTweenType.easeOutCubic);
             playerNameReader.gameObject.SetActive(false);
 
 
@@ -56,6 +58,8 @@ public class ReadPlayerName : MonoBehaviour
 
             //dialogueManager.UpdatePPref(1);
             PlayerPrefs.SetInt("SceneIndex.", 1);
+            LeanTween.scale(playerNameReader.gameObject.GetComponent<RectTransform>(), Vector3.zero, 0.3f)
+                        .setEase(LeanTweenType.easeOutCubic);
             playerNameReader.gameObject.SetActive(false);
 
             Debug.Log("set player pref scene index to 1");

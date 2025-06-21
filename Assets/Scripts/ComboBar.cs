@@ -28,8 +28,8 @@ public class ComboBar : MonoBehaviour
             .setEase(LeanTweenType.easeInOutCubic) // Cubic easing
             .setOnUpdate((float value) =>
             {
-                Debug.Log("tweening");
-                Debug.Log(value);
+                //Debug.Log("tweening");
+                //Debug.Log(value);
                 slider.value = value; // Update the slider value during the transition
             });
     }

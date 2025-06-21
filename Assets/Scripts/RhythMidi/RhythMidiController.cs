@@ -38,23 +38,23 @@ namespace RhythMidi
     {
         public float TimeInAdvance { get; private set; }
         public UnityAction<Note> OnNote { get; set; }
-        public Queue<Note> Notes { get; private set;}
+        public Queue<Note> Notes { get; private set; }
         RhythMidiController.NoteFilter noteFilter;
 
         public NoteNotifier(float timeInAdvance, RhythMidiController.NoteFilter noteFilter = null)
         {
             TimeInAdvance = timeInAdvance;
             Notes = new Queue<Note>();
-            OnNote = delegate {};
+            OnNote = delegate { };
             this.noteFilter = noteFilter;
         }
 
         public void EnqueueNotes(IEnumerable<Note> noteList)
         {
             Notes.Clear();
-            foreach(Note note in noteList)
+            foreach (Note note in noteList)
             {
-                if(noteFilter != null && !noteFilter(note)) continue;
+                if (noteFilter != null && !noteFilter(note)) continue;
                 Notes.Enqueue(note);
             }
         }
@@ -85,6 +85,7 @@ namespace RhythMidi
         public ChartResource currentChart;
         private MidiFile midiData;
         public TempoMap CurrentTempoMap { get; private set; }
+        public AudioSource backingTrackSource => audioSources.Count > 0 ? audioSources[0] : null;
         
         public delegate bool NoteFilter(Note note);
 
@@ -104,7 +105,8 @@ namespace RhythMidi
             audioSources = gameObject.GetComponents<AudioSource>().ToList();
         }
 
-        public void ClearCallbacks() {
+        public void ClearCallbacks()
+        {
             noteNotifiers.Clear();
         }
 
@@ -129,14 +131,17 @@ namespace RhythMidi
             StartCoroutine(LoadAllFromStreamingAssets_Coroutine(chartsPath));
         }
 
-        
+
         private IEnumerator LoadAllFromStreamingAssets_Coroutine(string chartsPath)
         {
             string chartDirPath = Path.Combine(Application.streamingAssetsPath, chartsPath);
-            string[] chartDirectories = Directory.GetDirectories(chartDirPath);
-            foreach(string directory in chartDirectories)
+            // string[] chartDirectories = Directory.GetDirectories(chartDirPath); this was causing a WebGL error
+            string[] chartDirectories = new string[] { "Daylo", "Prelude", "Sam", "Week1", "Week2", "Week3" };
+            foreach (string directory in chartDirectories)
             {
-                yield return LoadChart_Coroutine(directory);
+                string path = Path.Combine(chartDirPath, directory); //added line to fix WebGL error
+                yield return LoadChart_Coroutine(path);
+                // yield return LoadChart_Coroutine(directory);
             }
             onFinishedLoading.Invoke();
         }
@@ -147,7 +152,7 @@ namespace RhythMidi
 
             Ref<string> manifestData = new Ref<string>(); // Ref? it's how you do out params in coroutines
             yield return ReadFile(manifestPath, manifestData);
-            
+
             JSONNode manifest = JSON.Parse(manifestData.value);
             string title = manifest["title"];
             string artist = manifest["artist"];
@@ -159,11 +164,11 @@ namespace RhythMidi
             chart.Title = title;
             chart.Artist = artist;
             chart.Mapper = mapper;
-            
+
             chart.MidiFilepath = Path.Combine(directory, midi);
             yield return LoadMidiFile(chart.MidiFilepath, chart);
 
-            foreach(string key in tracks.Keys)
+            foreach (string key in tracks.Keys)
             {
                 string trackPath = Path.Combine(directory, tracks[key].Value);
                 yield return LoadTrackAudioClip(trackPath, key, chart);
@@ -173,7 +178,7 @@ namespace RhythMidi
             yield return LoadTrackAudioClip(backingTrackPath, "__BACKING", chart);
 
             loadedCharts.Add(chart);
-            if(onChartLoaded != null) onChartLoaded.Invoke();
+            if (onChartLoaded != null) onChartLoaded.Invoke();
         }
 
         private IEnumerator ReadFile(string path, Ref<string> data)
@@ -182,14 +187,16 @@ namespace RhythMidi
 #if UNITY_WEBGL && !UNITY_EDITOR
             platformCorrectedPath = path;
 #endif
+
+            Debug.Log("Reading file from path: " + platformCorrectedPath); // Print the file path
             using (UnityWebRequest www = UnityWebRequest.Get(platformCorrectedPath))
             {
                 yield return www.SendWebRequest();
-                while(!www.isDone)
+                while (!www.isDone)
                 {
                     yield return null;
                 }
-                if(www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+                if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
                 {
                     throw new Exception("Error reading file: " + www.error);
                 }
@@ -209,17 +216,17 @@ namespace RhythMidi
             using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(platformCorrectedPath, AudioType.MPEG))
             {
                 yield return www.SendWebRequest();
-                while(!www.isDone)
+                while (!www.isDone)
                 {
                     yield return null;
                 }
-                if(www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+                if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
                 {
                     throw new Exception("Error loading audio clip: " + www.error);
                 }
                 else
                 {
-                    if(key == "__BACKING")
+                    if (key == "__BACKING")
                     {
                         chart.BackingTrack = DownloadHandlerAudioClip.GetContent(www);
                     }
@@ -240,11 +247,11 @@ namespace RhythMidi
             using (UnityWebRequest www = UnityWebRequest.Get(platformCorrectedPath))
             {
                 yield return www.SendWebRequest();
-                while(!www.isDone)
+                while (!www.isDone)
                 {
                     yield return null;
                 }
-                if(www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+                if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
                 {
                     throw new Exception("Error loading MIDI file: " + www.error);
                 }
@@ -273,7 +280,7 @@ namespace RhythMidi
         public void PrepareChart(string title)
         {
             currentChart = GetChartByName(title);
-            if(currentChart == null) throw new Exception("Chart not found.");
+            if (currentChart == null) throw new Exception("Chart not found.");
 
             using (MemoryStream memoryStream = new MemoryStream(currentChart.MidiFileData))
             {
@@ -283,18 +290,18 @@ namespace RhythMidi
             IEnumerable<Note> allNotes = midiData.GetNotes();
             CurrentTempoMap = midiData.GetTempoMap();
 
-            if(noteNotifiers.Count == 0)
+            if (noteNotifiers.Count == 0)
             {
                 Debug.LogWarning("There are no note notifiers. This script will do nothing. Call CreateNoteNotifier before calling PrepareChart.");
             }
 
-            foreach(NoteNotifier noteNotifier in noteNotifiers)
+            foreach (NoteNotifier noteNotifier in noteNotifiers)
             {
                 noteNotifier.EnqueueNotes(allNotes);
             }
 
             // Add the backing track
-            if(audioSources.Count == 0)
+            if (audioSources.Count == 0)
             {
                 audioSources.Add(gameObject.AddComponent<AudioSource>());
                 audioSources[0].clip = currentChart.BackingTrack;
@@ -302,10 +309,10 @@ namespace RhythMidi
             }
 
             int i = 1;
-            foreach(string key in currentChart.Tracks.Keys)
+            foreach (string key in currentChart.Tracks.Keys)
             {
                 AudioClip track = currentChart.Tracks[key];
-                if(i >= audioSources.Count)
+                if (i >= audioSources.Count)
                 {
                     audioSources.Add(gameObject.AddComponent<AudioSource>());
                 }
@@ -316,7 +323,7 @@ namespace RhythMidi
 
             IsPlaying = false;
         }
-        
+
         /// <summary>
         /// Creates a NoteNotifier that will invoke a UnityAction `timeInAdvance` seconds before the note is played.
         /// </summary>
@@ -336,37 +343,71 @@ namespace RhythMidi
         public void PlayChart()
         {
             if(currentChart == null) throw new Exception("No chart loaded.");
-            
-            foreach(AudioSource source in audioSources) source.Play();
+
+            //foreach(AudioSource source in audioSources) source.Play(); //changing this because audios are not synced
+
+            double offset = AudioSettings.dspTime;
+
+            foreach(AudioSource source in audioSources)
+            {
+                source.Stop();
+                source.PlayScheduled(offset);
+            }
+            // SyncPlayAllTracks();
             IsPlaying = true;
         }
+        
+        private void SyncPlayAllTracks(double delay = 0.1)
+        {
+            double dspStartTime = AudioSettings.dspTime;
+
+            foreach (AudioSource source in audioSources)
+            {
+                source.Stop(); // ensure clean start
+                source.PlayScheduled(dspStartTime);
+            }
+
+            Debug.Log($"Scheduled all audio sources for DSP time: {dspStartTime}");
+        }
+
+        public void LogAllTrackTimes()
+        {
+            for (int i = 0; i < audioSources.Count; i++)
+            {
+                AudioSource src = audioSources[i];
+                string name = src.clip != null ? src.clip.name : "Unnamed";
+                Debug.Log($"Track {i} - '{name}': time = {src.time:F4} / {src.clip?.length:F4}");
+            }
+        }
+
 
         /// <summary>
         /// Halts playback of a chart.
         /// </summary>
         public void StopChart()
         {
-            foreach(AudioSource source in audioSources) {
+            foreach (AudioSource source in audioSources)
+            {
                 Destroy(source);
             }
             audioSources.Clear();
             IsPlaying = false;
-            foreach(NoteNotifier noteNotifier in noteNotifiers) noteNotifier.Clear();
+            foreach (NoteNotifier noteNotifier in noteNotifiers) noteNotifier.Clear();
         }
 
 
         void Update()
         {
-            if(!IsPlaying) return;
+            if (!IsPlaying) return;
 
-            foreach(NoteNotifier noteNotifier in noteNotifiers)
+            foreach (NoteNotifier noteNotifier in noteNotifiers)
             {
-                while(noteNotifier.Notes.Count > 0)
+                while (noteNotifier.Notes.Count > 0)
                 {
                     Note note = noteNotifier.Notes.Peek();
                     MetricTimeSpan metricTime = note.TimeAs<MetricTimeSpan>(CurrentTempoMap);
 
-                    if(metricTime.TotalMilliseconds > (audioSources[0].time + noteNotifier.TimeInAdvance) * 1000) break;
+                    if (metricTime.TotalMilliseconds > (audioSources[0].time + noteNotifier.TimeInAdvance) * 1000) break;
 
                     noteNotifier.Notes.Dequeue();
                     noteNotifier.OnNote.Invoke(note);
@@ -374,13 +415,16 @@ namespace RhythMidi
             }
         }
 
-        public bool IsAudioStillPlaying {
-            get {
+        public bool IsAudioStillPlaying
+        {
+            get
+            {
                 return audioSources != null && audioSources.Count > 0 && audioSources[0].isPlaying;
             }
         }
 
-        public List<ChartResource> GetAllCharts(){
+        public List<ChartResource> GetAllCharts()
+        {
             return loadedCharts;
         }
     }

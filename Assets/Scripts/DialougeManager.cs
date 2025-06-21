@@ -80,13 +80,14 @@ public class DialougeManager : MonoBehaviour
     public AudioSource SecondaryBG;
 
     // buttons and choices
+
+    public GameObject choicePanel;
     public Button[] dialougueButtons;
     private List<Button> activeButtons = new List<Button>();
 
     private AnimationManager animationManager;
     private AffectionManager affectionManager;
-    private bool startedFade = false;
-    private UnityEvent onFinishedDialogeLoading = new UnityEvent();
+
     // animations
 
     // UI Manager
@@ -127,6 +128,8 @@ public class DialougeManager : MonoBehaviour
             }
         }
         saveScreen.onClick.AddListener(SaveScreen);
+
+        choicePanel.SetActive(false);
 
     }
     private void Update()
@@ -463,14 +466,24 @@ public class DialougeManager : MonoBehaviour
     private readonly WaitForSeconds secondDelay = new WaitForSeconds(1.0f);
     IEnumerator TypeSentence(string sentence)
     {
-        dialougeText.text = "";
-        int visibleCharacters = 0;
-        while (visibleCharacters <= sentence.Length)
-        {
-            dialougeText.text = sentence.Substring(0, visibleCharacters);
-            visibleCharacters++;
+        dialougeText.text = sentence;
+        dialougeText.ForceMeshUpdate();
+        int total = dialougeText.textInfo.characterCount;
+        dialougeText.maxVisibleCharacters = 0;
+        for (int i = 1; i <= total; i++) 
+        { 
+            dialougeText.maxVisibleCharacters = i; 
             yield return letterDelay;
         }
+        //dialougeText.text = "";
+
+        //int visibleCharacters = 0;
+        //while (visibleCharacters <= sentence.Length)
+        //{
+        //    dialougeText.text = sentence.Substring(0, visibleCharacters);
+        //    visibleCharacters++;
+        //    yield return letterDelay;
+        //}
     }
 
 
@@ -572,6 +585,8 @@ public class DialougeManager : MonoBehaviour
                 {
                     loadedDialogue.background = line.Substring(4);
                 }
+
+
             }
             else if (line.StartsWith("BGM: "))
             {
@@ -644,6 +659,10 @@ public class DialougeManager : MonoBehaviour
             button.gameObject.SetActive(false);
         }
 
+        choicePanel.SetActive(true);
+        choicePanel.transform.localScale = Vector3.zero;
+        LeanTween.scale(choicePanel, Vector3.one, 0.4f).setEase(LeanTweenType.easeOutBack);
+
         for (int i = 0; i < options.Length && i < dialougueButtons.Length; i++)
         {
             Button button = dialougueButtons[i];
@@ -693,6 +712,12 @@ public class DialougeManager : MonoBehaviour
 
     private void ClearActiveButtons()
     {
+        LeanTween.scale(choicePanel, Vector3.zero, 0.2f)
+     .setEase(LeanTweenType.easeInBack)
+     .setOnComplete(() =>
+     {
+         choicePanel.SetActive(false); // Disable after animation
+     });
         foreach (Button button in activeButtons)
         {
             button.gameObject.SetActive(false);
@@ -721,6 +746,8 @@ public class DialougeManager : MonoBehaviour
             BGM.Play();
         }
     }
+
+
 
 
     private void PlayBGM2(string bgm2Name)
@@ -769,7 +796,7 @@ public class DialougeManager : MonoBehaviour
 
     public void SaveScreen()
     {
-        GameStateManager.Instance.LoadNewScene("SaveScreen");
+        GameStateManager.Instance.displayWarning("SaveScreen", "This will bring you to the save menu. You will lose your progress in this current scene but you will be able to save what scene you are on. Confirm?");
     }
 
 

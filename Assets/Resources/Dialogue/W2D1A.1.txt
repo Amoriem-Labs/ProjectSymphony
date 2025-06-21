@@ -25,7 +25,7 @@ Huh? What do you mean supporter?
 
 Name: Sam
 Sprite: Sam_Pensive
-Ah! Well... uh... Can you come closer ?
+Ah! Well... uh... Can you come closer?
 
 Name: Sam
 Sprite: Sam_Normal

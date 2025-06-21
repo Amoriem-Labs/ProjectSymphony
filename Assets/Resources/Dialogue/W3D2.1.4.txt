@@ -39,9 +39,9 @@ Sprite: EMPTY
 You feel like you should listen to him. Hell, you're halfway through turning around when you wrestle control back over fight or flight instinct.
 Suddenly, you hear music notes ring out.
 
-*****Carter facing away from you. His body is blocking the player's sight of the monster, though some vfx effects are visible. He is holding his saxophone
+*****Carter facing away from you. His body is blocking the player's sight of the monster, though some vfx effects are visible. He is holding his saxophone.
 
-****Carter's theme plays, starting softly before getting louder. As it does, the horror battle music fades
+****Carter's theme plays, starting softly before getting louder. As it does, the horror battle music fades.
 
 SFX: monster_agony
 

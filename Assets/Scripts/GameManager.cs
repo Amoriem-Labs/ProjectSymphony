@@ -5,7 +5,9 @@ using System.Linq;
 using Melanchall.DryWetMidi.Interaction;
 using RhythMidi;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -228,23 +230,37 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (startPlaying && RhythMidiController.Instance.IsPlaying)
+        AudioSource backingTrackSource = RhythMidiController.Instance.backingTrackSource;
+        if (backingTrackSource != null && backingTrackSource.clip != null && RhythMidiController.Instance.IsPlaying && startPlaying)
         {
-            if (!RhythMidiController.Instance.IsAudioStillPlaying)
+            if (backingTrackSource.time >= backingTrackSource.clip.length - 0.1f)
             {
-                print("STOPPING: " + RhythMidiController.Instance.IsAudioStillPlaying.ToString());
-
                 RhythMidiController.Instance.StopChart();
-
                 ShowResultsScreen();
             }
             timeSpentOnCharacter[CurrentCharacter.role] += Time.deltaTime;
         }
+        // if (startPlaying && RhythMidiController.Instance.IsPlaying)
+        // {
+        //     if (!RhythMidiController.Instance.IsAudioStillPlaying)
+        //     {
+        //         print("STOPPING: " + RhythMidiController.Instance.IsAudioStillPlaying.ToString());
+
+        //         RhythMidiController.Instance.StopChart();
+
+        //         ShowResultsScreen();
+        //     }
+        //     timeSpentOnCharacter[CurrentCharacter.role] += Time.deltaTime;
+        // }
         // DEBUGGING 
         if (Input.GetKeyDown(KeyCode.R))
         {
             // RhythMidiController.Instance.StopChart();
             // ShowResultsScreen();
+        }
+        if (Input.GetKeyDown(KeyCode.T))  // Press "T" to log times
+        {
+            RhythMidiController.Instance.LogAllTrackTimes();
         }
 
         RectTransform columnTarget = null;

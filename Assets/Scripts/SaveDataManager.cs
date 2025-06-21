@@ -64,7 +64,7 @@ public class SaveDataManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey(HOWARD_AFFECTION_KEY) || !PlayerPrefs.HasKey(HOWARD_UNLOCKED_KEY))
         {
-            Debug.Log("setting values??");
+            //Debug.Log("setting values??");
             PlayerPrefs.SetInt(HOWARD_AFFECTION_KEY, 0);
             PlayerPrefs.SetInt(SAM_AFFECTION_KEY, 0);
             PlayerPrefs.SetInt(CARTER_AFFECTION_KEY, 0);
@@ -79,7 +79,7 @@ public class SaveDataManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("not setting values??");
+            //Debug.Log("not setting values??");
         }
 
         SaveButton.onClick.AddListener(() => SaveGame(PlayerPrefs.GetInt(SLOT_INDEX_KEY)));
@@ -98,7 +98,7 @@ public class SaveDataManager : MonoBehaviour
 
         // Load existing save slots
         int slotIndex = 1;
-        Debug.Log("increment");
+        //Debug.Log("increment");
         bool incremented = false;
         while (PlayerPrefs.HasKey(SLOT_NAME_KEY + slotIndex))
         {
@@ -183,7 +183,7 @@ public class SaveDataManager : MonoBehaviour
     {
 
         Debug.Log("data loaded " + saveName.ToString());
-        saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
+        saveSlotIndex = PlayerPrefs.GetInt("Index" + saveName.ToString());
         PlayerPrefs.SetInt(SCENE_INDEX_KEY, PlayerPrefs.GetInt(SCENE_INDEX_KEY + saveName.ToString()));
         if (PlayerPrefs.GetInt(SCENE_INDEX_KEY) >= 1)
         {
@@ -239,7 +239,7 @@ public class SaveDataManager : MonoBehaviour
 
     public void ExitScreen()
     {
-        GameStateManager.Instance.LoadNewScene("TitleScene");
+        GameStateManager.Instance.displayWarning("TitleScene", "This will bring you back to the title screen. Make sure you have made a new save! Confirm?");
     }
 
 }
