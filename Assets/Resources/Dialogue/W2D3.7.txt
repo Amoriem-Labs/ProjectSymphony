@@ -18,6 +18,6 @@ Name: Howard
 Sprite: Howard_Understanding
 I think we're all just tired and hungry. Let's grab some lunch.
 
-Name: PC
-Sprite: EMPTY
+Options:  
 Sounds good.
+Okay!

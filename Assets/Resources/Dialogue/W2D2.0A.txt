@@ -1,5 +1,5 @@
-Name: Sam
 Animaton: ScreenFlash
+Name: Sam
 Sprite: Sam_Happy
 BG: Park
 BGM: picnic-bgm

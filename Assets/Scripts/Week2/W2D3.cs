@@ -16,6 +16,7 @@ public class W2D3 : MonoBehaviour
     private bool DP5 = false;
     private bool DP6 = false;
     private bool DP7 = false;
+    private bool DP8 = false;
 
     bool END = false;
 
@@ -81,11 +82,11 @@ public class W2D3 : MonoBehaviour
                     DP3 = true;
 
                 }
-                else if (currselectedOption == "I think you should never reveal your wishes to anyone until they come true.\r\n")
+                else if (currselectedOption == "I think you should never reveal your wishes to anyone until they come true.")
                 {
-                    DP3 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1B", "W2D3.2" }));
+                    DP3 = true;
                 }
 
             }
@@ -199,15 +200,37 @@ public class W2D3 : MonoBehaviour
                 {
                     // load the next dialogue
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.6A", "W2D3.7" }));
-                    END = true;
+                    DP8 = true;
 
                 }
                 else if (currselectedOption == "Nothing much! She just asked how classes were going and stuff.")
                 {
-                    END = true;
                     // load the next dialogue
                     StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.6B", "W2D3.7" }));
+                    DP8 = true;
                 }
+
+            }
+             if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP8 == true)
+            {
+                string currselectedOption = dialogueManager.selectedOption;
+                DP3 = false;
+
+                // restart manager's selected option
+                dialogueManager.selectedOption = "";
+
+                if (currselectedOption == "Sounds good." || currselectedOption == "Okay!")
+                {
+
+                    DP8 = false;
+                    dialogueManager.selectedOption = "";
+                    startChoiceDetection = false;
+                    END = true;
+
+                }
+
+
+
 
             }
 
