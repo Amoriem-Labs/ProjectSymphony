@@ -78,14 +78,14 @@ public class W2D3 : MonoBehaviour
                 if (currselectedOption == "Did you wish to be with Roxanne?")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1A", "W2D3.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1A", "W2D3.2", "W2D3.3" }));
                     DP3 = true;
 
                 }
                 else if (currselectedOption == "I think you should never reveal your wishes to anyone until they come true.")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1B", "W2D3.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1B", "W2D3.2", "W2D3.3" }));
                     DP3 = true;
                 }
 
@@ -99,18 +99,18 @@ public class W2D3 : MonoBehaviour
                 dialogueManager.selectedOption = "";
 
                 // change this to the options that are in your file [up to 4]
-                if (currselectedOption == "It's been... confusing.")
+                if (currselectedOption == "Who's that?")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.2A", "W2D3.3" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.4", "W2D3.5" }));
                     DP4 = true;
 
                 }
-                else if (currselectedOption == "Honestly no, it's been great!")
+                else if (currselectedOption == "Oh, I think I recognize her from my audition.")
                 {
                     DP4 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.2B", "W2D3.3" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.4", "W2D3.5" }));
                 }
 
             }
@@ -124,21 +124,22 @@ public class W2D3 : MonoBehaviour
                 dialogueManager.selectedOption = "";
 
                 // change this to the options that are in your file [up to 4]
-                if (currselectedOption == "I have Howard and Sam!")
+                if (currselectedOption == "It's been... confusing.")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.4" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.6A", "W2D3.7" }));
                     DP5 = true;
 
                 }
-                else if (currselectedOption == "No...")
+                else if (currselectedOption == "Honestly no, it's been great!")
                 {
                     DP5 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.4" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.6B", "W2D3.7" }));
                 }
 
             }
+
             if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP5 == true)
             {
                 string currselectedOption = dialogueManager.selectedOption;
@@ -148,18 +149,18 @@ public class W2D3 : MonoBehaviour
                 dialogueManager.selectedOption = "";
 
                 // change this to the options that are in your file [up to 4]
-                if (currselectedOption == "A legacy?")
+                if (currselectedOption == "I have Howard and Sam!")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.4A", "W2D3.5" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.7A" }));
                     DP6 = true;
 
                 }
-                else if (currselectedOption == "I promise.")
+                else if (currselectedOption == "No...")
                 {
                     DP6 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.5" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.7A" }));
                 }
 
             }
@@ -172,21 +173,22 @@ public class W2D3 : MonoBehaviour
                 dialogueManager.selectedOption = "";
 
                 // change this to the options that are in your file [up to 4]
-                if (currselectedOption == "Did you wish to be with Roxanne?")
+                if (currselectedOption == "A legacy?")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1A", "W2D3.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.7B", "W2D3.8" }));
                     DP7 = true;
 
                 }
-                else if (currselectedOption == "I think you should never reveal your wishes to anyone until they come true.")
+                else if (currselectedOption == "I promise.")
                 {
                     DP7 = true;
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.1B", "W2D3.2" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.7B", "W2D3.8" }));
                 }
 
             }
+
             if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP7 == true)
             {
                 string currselectedOption = dialogueManager.selectedOption;
@@ -199,14 +201,14 @@ public class W2D3 : MonoBehaviour
                 if (currselectedOption == "Oh, well... she basically said I needed to get more friends.")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.6A", "W2D3.7" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.8a", "W2D3.9" }));
                     DP8 = true;
 
                 }
                 else if (currselectedOption == "Nothing much! She just asked how classes were going and stuff.")
                 {
                     // load the next dialogue
-                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.6B", "W2D3.7" }));
+                    StartCoroutine(dialogueManager.LoadAndStartDialoguesSequentially(new string[] { "W2D3.8b", "W2D3.9" }));
                     DP8 = true;
                 }
 
@@ -214,7 +216,7 @@ public class W2D3 : MonoBehaviour
              if (!string.IsNullOrEmpty(dialogueManager.selectedOption) && DP8 == true)
             {
                 string currselectedOption = dialogueManager.selectedOption;
-                DP3 = false;
+                DP8 = false;
 
                 // restart manager's selected option
                 dialogueManager.selectedOption = "";

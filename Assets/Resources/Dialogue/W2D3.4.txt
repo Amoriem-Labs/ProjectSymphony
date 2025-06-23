@@ -1,84 +1,32 @@
-BG: Classroom
-
-<i>The room is well-lit and meticulously clean. 
-<i>Ms. A sits down at what looks like a repurposed receptionist's desk, but the rest of the room is empty.
-
-Name: Ms.A
-Sprite: GC_Neutral
-Sit.
-
-Name: PC
-(Ok...)
-
-Name: Ms.A
-How's the first few weeks been going, PC? I know it has to be hard as a transfer student. 
-
-Options: 
-It's been... confusing.
-Honestly no, it's been great!
-
-Name: Ms.A
-Sprite: GC_Neutral
-I'm sorry to hear that. It will get better. 
-For someone of your talent, it'll all fall into place soon enough.
-
-Name: Ms.A
-Sprite: GC_Neutral
-Well, that's amazing! Maybe I should've expected such an outcome for someone of your talent.
-
-Name: PC
-...What do you mean?
-
-Name: Ms.A
-Sprite: GC_Neutral
-Well, I just mean that I can tell you're having a little bit of a rough start. Are you in any clubs?
-
-Name: PC
-No...
-(Does this school have clubs?)
-
-Name: Ms.A
-And you don't have many friends yet, do you.
-
-Options: 
-I have Howard and Sam!
-No...
-
-Name: Ms.A
-Sprite: GC_Neutral
-Maybe you should try to get out there more, PC. You don't want to just wade your way through this school alone.
-Take advantage of the opportunity you have by being here.
-When else will you ever be in a community of so many incredible artists, all in the same place?
-
-Name: PC	
-(Huh.)
+Name: Howard
+Sprite: Howard_Understanding	
+She's the guidance counselor here. 
+I only ever see her at assemblies. She's the one who convinced the principal to let Ina stay with me.
 
 Name: Ms.A
 Sprite: GC_Happy
-Just promise me you'll try a little bit harder to reach... outside of whatever little social circle you have right now.
-Try and make some new friends.
-If you do that, I know you can leave a legacy here.
+Howard! Sam! So lovely to see you both.
 
-Options: 
-A legacy?
-I promise.
+Name: Sam
+Sprite: Sam_Happy
+You too, Ms. A!
 
 Name: Ms.A
-Oh yes! I'm sure of it. 
+Sprite: GC_Neutral
+I'd actually like a personal word with PC, if that's ok.
+
+Name: Howard
+Sprite: Howard_Understanding
+Yea, we were just about to split up anyways.
+
+Name: Sam
+Sprite: Sam_Happy
+We'll meet you at lunch PC!
 
 Name: PC
-Alright then...
-
-Name: PC
-Sprite: EMPTY
-Thanks, Ms. A.
+Sounds good, see you guys!
 
 Name: Ms. A
 Sprite: GC_Neutral
-Call me Aria.
+Let's head into my office, PC.
 
-Name: PC
-I will try to do that.
-Name: Ms. A
-Sprite: GC_Happy
-Go on, find your friends.

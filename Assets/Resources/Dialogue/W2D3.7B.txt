@@ -1,0 +1,20 @@
+Name: Ms.A
+Oh yes! I'm sure of it. 
+
+Name: PC
+Alright then...
+
+Name: PC
+Thanks, Ms. A.
+
+Name: Ms. A
+Sprite: GC_Neutral
+Call me Aria.
+
+Name: PC
+I will try to do that.
+
+Name: Ms. A
+Sprite: GC_Happy
+Go on, find your friends.
+

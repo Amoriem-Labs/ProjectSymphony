@@ -26,7 +26,7 @@ Name: Sam
 Sprite: Sam_Pensive
 I want to be in a band...
 
-Name:
+Name:     
 Sprite: EMPTY
 Howard rubs his forehead with the back of his hand.
 

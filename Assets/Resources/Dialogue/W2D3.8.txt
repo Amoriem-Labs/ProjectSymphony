@@ -1,0 +1,13 @@
+BG: Hallway
+Name:  
+Sprite: EMPTY    
+<i>You leave the office to find Howard and Sam waiting for you outside.
+
+Name: Sam
+BG: Hallway
+Sprite: Sam_Happy
+So anyway, PC, what did you and Ms. A. talk about?
+
+Options: 
+Oh, well... she basically said I needed to get more friends.
+Nothing much! She just asked how classes were going and stuff.

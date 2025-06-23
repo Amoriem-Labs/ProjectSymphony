@@ -1,11 +1,20 @@
-BG: Hallway
-Name:      
-<i>You leave the office to find Howard and Sam waiting for you outside.
+Name:               
+BG: Classroom
+<i>The room is well-lit and meticulously clean. 
+<i>Ms. A sits down at what looks like a repurposed receptionist's desk, but the rest of the room is empty.
 
-Name: Sam
-Sprite: Sam_Happy
-So anyway, PC, what did you and Ms. A. talk about?
+Name: Ms.A
+BG: Classroom
+Sprite: GC_Neutral
+Sit.
+
+Name: PC
+(Ok...)
+
+Name: Ms.A
+How's the first few weeks been going, PC? I know it has to be hard as a transfer student. 
 
 Options: 
-Oh, well... she basically said I needed to get more friends. 
-Nothing much! She just asked how classes were going and stuff.
+It's been... confusing.
+Honestly no, it's been great!
+

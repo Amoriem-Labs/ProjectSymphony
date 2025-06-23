@@ -1,0 +1,18 @@
+Name: Ms.A
+Sprite: GC_Neutral
+Maybe you should try to get out there more, PC. You don't want to just wade your way through this school alone.
+Take advantage of the opportunity you have by being here.
+When else will you ever be in a community of so many incredible artists, all in the same place?
+
+Name: PC	
+(Huh.)
+
+Name: Ms.A
+Sprite: GC_Happy
+Just promise me you'll try a little bit harder to reach... outside of whatever little social circle you have right now.
+Try and make some new friends.
+If you do that, I know you can leave a legacy here.
+
+Options: 
+A legacy?
+I promise.
