@@ -37,11 +37,12 @@ Encore! is being developed in **Unity (C#)**, with a fully custom-built visual n
 - Danielle Campisi (Lead)
 - Isabella Campisi  
 - Jennifer Chen  
-- Maryeva Gonzalez  
+- Maryeva Gonzalez
+- Jam Lian
 - Chris Shia  
 - Eden Wyandon  
 - Eric Yoon  
-- Jam Lian
+
 
 
 ### 🎨 Art
