@@ -1,4 +1,5 @@
-Name:               
+Name:            
+Sprite: EMPTY
 BG: Classroom
 <i>The room is well-lit and meticulously clean. 
 <i>Ms. A sits down at what looks like a repurposed receptionist's desk, but the rest of the room is empty.

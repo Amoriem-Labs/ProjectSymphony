@@ -12,6 +12,6 @@ Name: Howard
 Sprite: Howard_Understanding
 I think we're all just tired and hungry. Let's grab some lunch.
 
-Options:  
+Options: 
 Sounds good.
 Okay!

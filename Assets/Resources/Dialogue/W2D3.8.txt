@@ -1,6 +1,7 @@
-BG: Hallway
 Name:  
-Sprite: EMPTY    
+Sprite: EMPTY  
+BG: Hallway
+
 <i>You leave the office to find Howard and Sam waiting for you outside.
 
 Name: Sam
