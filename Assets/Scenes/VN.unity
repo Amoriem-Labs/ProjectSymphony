@@ -1221,7 +1221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.4000015, y: -4.6000004}
+  m_AnchoredPosition: {x: 4.4000015, y: -3.2999992}
   m_SizeDelta: {x: -9.183548, y: -2.1865501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &230846740
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THis will last two lines bla bla bla bla bla
+  m_text: THis will last two lines bla bla bla bla bla hello hello hello hello hellooooooooooo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
   m_sharedMaterial: {fileID: -3715439258902062163, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
@@ -1271,8 +1271,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -30
+  m_lineSpacing: -18
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2411,7 +2411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.4000015, y: -4.6000004}
+  m_AnchoredPosition: {x: 4.4000015, y: -3.2999954}
   m_SizeDelta: {x: -9.183548, y: -2.1865501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693664665
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THis will last two lines bla bla bla bla bla
+  m_text: THis will last two lines bla bla bla bla bla hello hello hello hello hellooooooooooo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
   m_sharedMaterial: {fileID: -3715439258902062163, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
@@ -2461,8 +2461,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2473,7 +2473,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -30
+  m_lineSpacing: -18
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2750,7 +2750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1089.9999, y: 248.99995}
+  m_AnchoredPosition: {x: -1090, y: 248.99992}
   m_SizeDelta: {x: 239.84, y: 49.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &797632785
@@ -3833,7 +3833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1067, y: 324.99994}
+  m_AnchoredPosition: {x: -1067, y: 325}
   m_SizeDelta: {x: 243.04, y: 51.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1019299654
@@ -6382,7 +6382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1120.0001, y: 108.000015}
+  m_AnchoredPosition: {x: -1120.0005, y: 107.99997}
   m_SizeDelta: {x: 239.84, y: 49.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489748978
@@ -6767,11 +6767,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1205293913}
+  - {fileID: 1341106280}
   - {fileID: 1489748977}
   - {fileID: 923588230}
   - {fileID: 797632784}
   - {fileID: 1019299653}
-  - {fileID: 1341106280}
   m_Father: {fileID: 59759053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
@@ -7660,7 +7660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.5999985, y: -4.1000004}
+  m_AnchoredPosition: {x: 4.5999985, y: -2.7999954}
   m_SizeDelta: {x: -8.744999, y: -3.2000008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1831345308
@@ -7683,7 +7683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THis will last two lines bla bla bla bla bla
+  m_text: THis will last two lines bla bla bla bla bla hello hello hello hello hellooooooooooo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
   m_sharedMaterial: {fileID: -3715439258902062163, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
@@ -7710,8 +7710,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7722,7 +7722,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -30
+  m_lineSpacing: -18
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -8627,7 +8627,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077163128}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1236557915}
@@ -8699,7 +8699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.4000015, y: -4.6000004}
+  m_AnchoredPosition: {x: 4.4000015, y: -3.2999954}
   m_SizeDelta: {x: -9.183548, y: -2.1865501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078748918
@@ -8722,7 +8722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: THis will last two lines bla bla bla bla bla
+  m_text: THis will last two lines bla bla bla bla bla hello hello hello hello hellooooooooooo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
   m_sharedMaterial: {fileID: -3715439258902062163, guid: a744a8287f32f48958398ba77320c8f8, type: 2}
@@ -8749,8 +8749,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8761,7 +8761,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -30
+  m_lineSpacing: -18
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

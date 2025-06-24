@@ -470,9 +470,9 @@ public class DialougeManager : MonoBehaviour
         dialougeText.ForceMeshUpdate();
         int total = dialougeText.textInfo.characterCount;
         dialougeText.maxVisibleCharacters = 0;
-        for (int i = 1; i <= total; i++) 
-        { 
-            dialougeText.maxVisibleCharacters = i; 
+        for (int i = 1; i <= total; i++)
+        {
+            dialougeText.maxVisibleCharacters = i;
             yield return letterDelay;
         }
         //dialougeText.text = "";
@@ -661,41 +661,40 @@ public class DialougeManager : MonoBehaviour
 
         choicePanel.SetActive(true);
         choicePanel.transform.localScale = Vector3.zero;
-        LeanTween.scale(choicePanel, Vector3.one, 0.4f).setEase(LeanTweenType.easeOutBack);
+        LeanTween.scale(choicePanel, Vector3.one, 0.4f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
+{
+    for (int i = 0; i < options.Length && i < dialougueButtons.Length; i++)
+    {
+        Button button = dialougueButtons[i];
 
-        for (int i = 0; i < options.Length && i < dialougueButtons.Length; i++)
+        if (button != null)
         {
-            Button button = dialougueButtons[i];
+            button.gameObject.SetActive(true);
 
-            if (button != null)
+            TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (buttonText != null)
             {
-                button.gameObject.SetActive(true);
-
-                TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
-
-                if (buttonText != null)
-                {
-                    buttonText.text = options[i];
-                }
-                else
-                {
-                    Debug.LogWarning($"Button {i} is missing text component");
-                }
-
-                int optionIndex = i; // index for selection
-
-                button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => HandleOptionSelected(optionIndex));
-
-                activeButtons.Add(button);
-
+                buttonText.text = options[i];
             }
             else
             {
-                Debug.LogWarning($"Button at index {i} is null");
+                Debug.LogWarning($"Button {i} is missing text component");
             }
 
+            int optionIndex = i; // capture index for the listener
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => HandleOptionSelected(optionIndex));
+
+            activeButtons.Add(button);
         }
+        else
+        {
+            Debug.LogWarning($"Button at index {i} is null");
+        }
+    }
+});
+
     }
 
     private void HandleOptionSelected(int optionIndex)

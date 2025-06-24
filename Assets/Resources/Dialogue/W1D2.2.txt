@@ -13,7 +13,7 @@ Sprite: Howard_Uncomfortable
 Yeah, I haven't heard great things either. If you want to enjoy nature, just head to the park where we met yesterday.
 
 Name: 
-A gust of wind seems to blow through the trees at Howard's words. The ground rumbles.
+<i>A gust of wind seems to blow through the trees at Howard's words. The ground rumbles.</i>
 
 Name: Howard
 Sprite: Howard_Uncomfortable

@@ -8,4 +8,4 @@ Don't worry about it. Are you ready to go?
 
 Name: Sam
 Sprite: Sam_Happy
-C'mon! There's this really nice spot in the library I just have to show you!
+C'mon! There's this really nice spot in the library I just have to show you later on this tour!
