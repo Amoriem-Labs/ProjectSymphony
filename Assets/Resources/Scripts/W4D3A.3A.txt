@@ -1,0 +1,8 @@
+Name: PC
+You're not alone, Carter. Not anymore.
+
+Name: Carter
+Sprite: Carter_Neutral
+...I’ll try to remember that.
+
+

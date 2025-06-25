@@ -1,0 +1,35 @@
+Name: Daylo
+Sprite: Daylo_Smug
+I shall take your suggestion to heart, PC.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+I'm excited at the idea of novelty in my life.
+Trying out different passions will help me learn more about myself.
+
+Name: Daylo
+Sprite: Daylo_Smug
+And it seems that my previous pranks have earned me some new friends.
+Thank you, PC, for encouraging me to try new things.
+You have seen the rebirth of me, Daylorian Vallonius.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+As thanks, please allow me to gift you a flower I have come to love.
+It's a daffodil. It's fairly simple in looks, but it signifies new beginnings.
+
+Name: PC
+Thanks Daylo, this means a lot.
+
+Name: Daylo
+Sprite: Daylo_Smug
+It's only a simple token of thanks. You were there to support me through my "rebellious phase" and still remain my friend after that.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+I will part from you now, I am late for my next class.
+But once again, thank you, PC.
+I hope to see you again soon.
+
+Name: PC
+See you later Daylo!

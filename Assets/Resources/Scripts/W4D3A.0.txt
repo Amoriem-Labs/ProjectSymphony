@@ -1,0 +1,67 @@
+Name:       
+Sprite: EMPTY
+BG: lake
+SFX: crickets
+<i>You find yourself returning to the lake. It's dark. Quiet.
+<i>During your walk through the park and towards the forest, you can't help but thinking that something is... off.
+<i>Maybe it's a feeling in the air or a cold chill on the wind. You can't quite pinpoint its origin.
+
+Name: PC
+(Something about this feels familiar.)
+
+Name:        
+<i>As you approach the lake, you see the full moon reflected in the water. The stars are barely visible, their light obscured by the moon's radiance. What few constellations you can see make your gut churn.
+<i>Further down the shoreline, half-lit by the lake, you can see Carter gesturing wildly. He seems to be arguing with someone.
+<i>No one's there.
+
+Name: Carter
+Sprite: Carter_Angry
+You don't get to ask for that.
+
+Name: ???
+Sprite: EMPTY
+...
+
+Name: Carter
+Sprite: Carter_Angry
+That's not what this is. That's not how this is going to work.
+
+Name: ???
+Sprite: EMPTY
+...
+
+Name:      
+<i>Carter's necklace glows with an eerie light as his eyes pulse with power.
+
+Name: Carter
+Sprite: Carter_Glitch
+You think I won't? Don't you remember last time?
+
+Name:      
+<i>His voice is low, coming out in short bursts of emotion. There's something sharp and biting at the edges.
+
+Name: Carter
+Sprite: Carter_Angry
+I left. I'm not going to let you drag me back into this.
+Listen, I'm done playing warden. Find some other dream to gnaw on.
+No more... echoes.
+
+Name:     
+Sprite: EMPTY
+<i>You take a step forward. Something crackles in the air.
+<i>Static. Wrong. Like a long-forgotten memory trying to claw itself back into place.
+
+Name: Carter
+Sprite: Carter_Neutral
+Don't.
+You don't get to make me afraid of this too.
+
+Name:      
+<i>He exhales slowly, letting his shoulders drop.
+<i>After a moment, he sits by the edge of the lake, staring at the water.
+
+Options:
+(Say nothing. Sit down next to him.)
+Are you okay?
+Was that the same thing from last time?
+

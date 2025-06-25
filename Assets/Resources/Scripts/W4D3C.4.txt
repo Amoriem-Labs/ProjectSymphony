@@ -1,0 +1,45 @@
+Name: Cynthia
+Sprite: Cynthia_Smirk
+Just know you could be doing better. Try chasing the stars like Ina.
+
+Name: Howard
+Sprite: Howard_Shrug
+Thanks Cynthia, see you around.
+
+Name: PC
+BG: Hallway
+So... what will you decide to do?
+
+Name: Howard
+Sprite: Howard_Neutral
+I won't be accepting her offer. I can't betray you like that.
+
+Name: PC
+Thanks Howard.
+
+Name: Howard
+Sprite: Howard_Understanding
+I realized something while we were looking for Ina.
+I kept thinking I wasn’t good enough — for this school, for your band, for anything.
+
+Name: Howard
+Sprite: Howard_Neutral
+But... Cynthia basically staged a dog heist just to get my attention.
+
+Name: PC
+That's one way to look at it.
+
+Name: Howard
+Sprite: Howard_Shrug
+I guess what I’m trying to say is... maybe I am good at this. Maybe I do have something special.
+
+Name: PC
+Howard, you’ve always had something special. I think you just had to see it for yourself.
+
+Name: Howard
+Sprite: Howard_Understanding
+Thanks, MC. For being there. For helping me find Ina. And maybe... for helping me find a bit of myself too.
+
+Name: PC
+(Maybe “chasing the stars” really did mean something. Maybe Howard just found his own — the kind that burns quietly, but brightly inside him.)
+

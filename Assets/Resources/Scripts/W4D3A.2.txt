@@ -1,0 +1,35 @@
+Name: PC
+Sprite: Carter_Neutral
+(He looks... tired. Not physically. Something deeper.)
+What was it saying?
+
+Name: Carter
+Nothing new. Nothing important.
+
+Name:     
+He laughs. It's not a happy sound.
+
+Name: Carter
+They constantly whisper dreams of greatness. Of glory and fame.
+They say that my music could be what changes things. That I'm wasting my talent on peace.
+
+Name: Carter
+Sprite: Carter_Angry
+As if they weren't the ones that smothered my passion.
+
+Name:     
+<i>His hand drifts toward the saxophone case next to him, like he’s not even thinking about it.
+
+Name: Carter
+Every time I played, the noise stopped. The static in people’s heads faded.
+You know what kind of responsibility that is?
+Playing music used to be fun. It was my lifeline back when I was young.
+But then it stopped being mine. It became a weapon.
+And when your passion becomes a sword, you're left without the shield that made you feel safe.
+
+Options:
+But you still play.
+You don't have to fight anymore.
+So what now?
+
+

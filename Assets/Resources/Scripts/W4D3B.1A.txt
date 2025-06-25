@@ -1,0 +1,8 @@
+Name: Daylo
+Sprite: Daylo_Disgust
+You really think so?
+Who am I kidding, I keep trying to be something that I'm not.
+
+Name: PC
+But maybe giving up on this "chaotic" persona will give you the chance to figure out what you want.
+

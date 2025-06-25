@@ -1,0 +1,7 @@
+Name: PC
+Sprite: Carter_Neutral
+You okay?
+
+Name: Carter
+I'm fine. Well, I will be.
+Hopefully.

@@ -1,0 +1,53 @@
+Name: Howard
+Sprite: Howard_Neutral
+BG: Practice room
+There she is! Ina I missed you!
+SFX: barking_sound
+
+Name: Ina
+Sprite: Ina_Neutral
+...
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Why did you guys take my dog?!
+
+Name: Cynthia
+Sprite: Cynthia_Smirk
+We had to get your attention somehow.
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+My attention? Why would you need that?
+
+Name: Cynthia
+Sprite: Cynthia_Annoyed
+I know you're humble and all Howard, but you're by far the best drummer at this school.
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Well, I wouldn't say that... But how does that explain you stealing my dog?
+
+Name: Cynthia
+Sprite: Cynthia_Neutral
+It wasn't really stealing, we just took her for a walk and gave her some treats.
+
+Name: Cynthia
+Sprite: Cynthia_Smirk
+But the reason we wanted you to come, was to recruit you into our band.
+
+Name: Cynthia
+Sprite: Cynthia_Annoyed
+We didn't expect you to bring PC... But nonetheless our offer stands.
+
+Name: PC
+(We didn't expect you to be so rude...)
+
+Name: Howard
+Sprite: Howard_Neutral
+Wow, that's very flattering!
+
+Name: PC
+Are you considering their offer?
+
+

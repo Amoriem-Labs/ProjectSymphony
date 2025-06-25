@@ -1,0 +1,7 @@
+Name: Daylo
+Sprite: Daylo_Smug
+You really think so?
+
+Name: PC
+Maybe you can find a way to not conform to the way you were raised while still being yourself.
+

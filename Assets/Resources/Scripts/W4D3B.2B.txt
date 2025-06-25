@@ -1,0 +1,10 @@
+Name: PC
+Sprite: Daylo_Neutral
+I think you should try your hand at writing poetry!
+
+Name: Daylo
+Sprite: Daylo_Smug
+How romantic.
+That sounds rather interesting.
+I believe it would also serve as a thereputic practice for me. A pleasant creative outlet.
+

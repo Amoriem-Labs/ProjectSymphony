@@ -1,0 +1,44 @@
+Name: Daylo
+Sprite: Daylo_Smug
+Hm. When you say it like that, maybe I don't have to give up, but just change my mindset a little bit.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+I've always felt like the way I was supposed to act was forced upon me by my parents and the society I grew up in.
+When I was younger, I was obsessed with living up to my parents' and my teachers' expectations.
+I felt like my every move was being observed and evaluated.
+Even though my parents support me in everything I do, I wasn't able to shake the mindset that I had to be perfect all the time.
+
+Name: Daylo
+Sprite: Daylo_Disgust
+It was exhausting. And soon enough it became clear to me that the expectations of a perfect society will always be too high for me to ever reach.
+Perfection is something we all strive for, but no one ever attains it.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+When I rejected that idea, my first instinct was to become as far away from perfection as possible.
+But it seems I just ended up in the same predicament.
+I can't be the epitome of perfection, and I can't be the opposite of that either.
+It seems I must find myself somewhere in the space between those ideas.
+Thank you, PC, for helping me figure this out.
+
+Name: PC
+Of course, I'm glad that you're putting less pressure on yourself!
+
+Name: Daylo
+Sprite: Daylo_Smug
+I'm glad as well, my wings feel a lot lighter.
+
+Name: PC
+Since you won't be planning pranks all the time, do you know what you'd want to do instead?
+
+Name: Daylo
+Sprite: Daylo_Neutral
+I'm not sure. I should probably find a new hobby.
+What do you think I should become involved in?
+
+Options:
+Gardening!
+Writing poetry!
+Archery!
+Cooking!

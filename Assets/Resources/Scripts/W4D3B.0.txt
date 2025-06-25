@@ -1,0 +1,36 @@
+Name: PC
+Sprite: EMPTY
+BG: Garden
+BGM: daylo_theme
+Hey Daylo! I didn't expect to run into you here.
+
+Name: Daylo
+Sprite: Daylo_Disgust
+Hello PC.
+You're coming across another failed attempt to spread my ideas of chaos to this school.
+
+Name:     
+<i>Daylo sighs as their wings droop. They look really upset.
+
+Name: PC
+What happened?
+
+Name: Daylo
+Sprite: Daylo_Neutral
+Well...
+I was told that humans could be very allergic to pollen.
+So I found the first human I could and gave them a whole bouquet.
+
+Name: Daylo
+Sprite: Daylo_Disgust
+But instead of sneezing, they just thanked me and complemented my chivalry!
+This is only the latest of my attempts to bring chaos to the lives of others, but I seem to only be able to accomplish the perfect interaction.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+Maybe I should just give up and go back to being the perfect angel everyone expects me to be.
+
+Options:  
+Maybe that's for the best.
+You should try to keep finding yourself!
+

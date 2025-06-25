@@ -1,0 +1,7 @@
+Name: PC
+This isn't weird. It’s just you. I've seen weirder.
+
+Name: Carter
+Sprite: Carter_Blushing
+Dangerous words. You might be tempting fate.
+

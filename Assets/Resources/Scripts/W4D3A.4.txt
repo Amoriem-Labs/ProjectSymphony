@@ -1,0 +1,13 @@
+Name:     
+<i>Carter stands, brushing off his pants. He offers you a hand up.
+
+Name: Carter
+Come on. Let's head back before something weirder tries to crawl out of the lake.
+
+Name:      
+BGM: carter_sax
+<i>You walk side by side in the dark. Carter hums softly. It’s not a melody you recognize.
+
+Name:       
+<i>It's quiet. But it's his.
+

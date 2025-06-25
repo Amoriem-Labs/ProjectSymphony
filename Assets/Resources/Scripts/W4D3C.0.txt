@@ -1,0 +1,22 @@
+Name: PC
+BGM: Howard_Theme
+SFX: door_knock
+(Howard asked me if he could come over to discuss something... It seemed urgent.)
+(That must be him.)
+Howard! Come in! You look really stressed out, is everything alright?
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+No, not really. I'm not sure how, but Ina's missing.
+
+Name: PC
+What? How is that possible? She stays in your room during class.
+
+Name: Howard
+I thought she would be safe there, but someone must have let her out.
+There's no way she could have escaped.
+
+Options:
+Are you sure you didn't leave your door open?
+Maybe someone took her?
+

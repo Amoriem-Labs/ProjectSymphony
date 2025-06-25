@@ -1,0 +1,20 @@
+Name: Howard
+Sprite: Howard_Uncomfortable
+But my door was locked!
+
+Name: PC
+Maybe someone let her out and then she ran off?
+
+Name: Howard
+But who would do that?
+
+Name: PC
+Well this whole situation doesn't make sense.
+
+Name: Howard
+How about we keep brainstorming.
+
+Name: PC
+Alright, let me think...
+
+

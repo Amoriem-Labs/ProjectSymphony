@@ -1,0 +1,6 @@
+Name: PC
+Sprite: Carter_Neutral
+But you still play. That has to mean something.
+
+Name: Carter
+I guess so. Maybe I'm just deluding myself into thinking that muscle memory will turn back into heart.

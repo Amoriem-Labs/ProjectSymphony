@@ -1,0 +1,9 @@
+Name: PC
+Sprite: Carter_Neutral
+So what now? What's next?
+
+Name: Carter
+Now? I try again.
+I try to play a song that’s just for me.
+I'll probably fail, though.
+

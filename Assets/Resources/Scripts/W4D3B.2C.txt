@@ -1,0 +1,10 @@
+Name: PC
+Sprite: Daylo_Neutral
+I think you should try your hand at archery!
+
+Name: Daylo
+Sprite: Daylo_Smug
+Archery?
+That's a very traditional activity for us angels.
+That sounds rather interesting, I could use a new sport help temper my stress.
+

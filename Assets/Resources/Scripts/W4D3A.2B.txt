@@ -1,0 +1,7 @@
+Name: PC
+Sprite: Carter_Neutral
+You don't have to fight anymore. Not here.
+
+Name: Carter
+Hopefully. That's what I keep telling myself.
+Some days I even believe it.

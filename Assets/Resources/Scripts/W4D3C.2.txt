@@ -1,0 +1,33 @@
+Name: Howard
+Sprite: Howard_Uncomfortable
+When I noticed she was gone, I found a note on my desk.
+
+Name: PC
+That's so scary, what did it say?
+
+Name: Howard
+Sprite: Howard_Understanding
+It says: "Your beloved Ina is chasing the stars".
+I have no idea what that means!
+
+Name: PC
+Let's brainstorm and try to think of potential places she could be.
+
+Name: Howard
+Sprite: Howard_Neutral
+Thank goodness I have you, otherwise I don't know if I could do this.
+
+Name: PC
+I'm always here for you Howard, no matter what happens.
+
+Name: Howard
+Thanks MC. I really appreciate that!
+
+Name: PC
+Now let's solve this mystery!
+
+Options:
+Has she been around anything named "star" lately?
+Maybe she saw something shiny and ran off?
+Could it be a place with a clear night sky?
+It could be where stars perform?

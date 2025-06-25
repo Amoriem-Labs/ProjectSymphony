@@ -1,0 +1,4 @@
+Name: Howard
+Sprite: Howard_Neutral
+That's what I'm afraid of!
+

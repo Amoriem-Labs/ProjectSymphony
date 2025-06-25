@@ -1,0 +1,3 @@
+Name: Howard
+Sprite: Howard_Uncomfortable
+Yes! That's why I'm so worried!

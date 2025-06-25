@@ -1,0 +1,12 @@
+Name:     
+Sprite: Carter_Neutral
+<i> He leans back, looking up at the sky.
+
+Name: Carter
+Thanks for showing up tonight. I know this whole thing must be... weird to you.
+You didn't have to. But you did.
+
+Options:  
+You're not alone, Carter.
+This isn't weird. It’s just you.
+No problem, anytime.

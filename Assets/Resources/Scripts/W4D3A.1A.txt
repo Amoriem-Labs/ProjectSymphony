@@ -1,0 +1,7 @@
+Name:      
+Sprite: Carter_Neutral
+<i>You walk over and sit beside him. Close, but not touching.
+<i>You wait.
+
+Name: Carter
+Hey.

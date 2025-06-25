@@ -1,0 +1,27 @@
+Name: Howard
+Sprite: Howard_Neutral
+That's a good start! Where could that be?
+
+Name: PC
+Probably somewhere outdoors right?
+
+Name: Howard
+Sprite: Howard_Shrug
+How about the lake? That's the best place to see the stars on campus!
+
+Name: PC
+Great idea, let's head over!
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+BG: lake
+Ina come here ––  I have treats!
+I don't see her anywhere. What should we do?
+
+Name: PC
+Maybe we went down the wrong lead?
+We've been out here a while, let's head back to my place and keep thinking.
+BG: MC Bedroom
+
+
+

@@ -1,0 +1,11 @@
+Name: Howard
+Sprite: Howard_Uncomfortable
+Well it's not like you want me in your band PC.
+
+Name: PC
+I- I didn't mean it like that.
+
+Name: Howard
+Cynthia, I will definitely consider your offer.
+Thanks for holding me to such high esteem.
+

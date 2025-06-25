@@ -1,0 +1,7 @@
+Name: PC
+Sprite: Daylo_Neutral
+I think you should try your hand at gardening!
+
+Name: Daylo
+Hm that does sound rather interesting.
+I could help maintain the gardens here. The flowers are very pleasant to be around.

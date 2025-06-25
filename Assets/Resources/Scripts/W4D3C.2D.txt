@@ -1,0 +1,19 @@
+Name: Howard
+Sprite: Howard_Neutral
+Good idea! Maybe the concert hall?
+
+Name: PC
+Yes, that must be where she is!
+
+Name: PC
+BG: Concert hall
+Ina! Let's go to the park!
+I don't see her here, should we try another idea?
+
+Name: Howard
+Sprite: Howard_Neutral
+Let's do that. Want to head back to your place to think?
+
+Name: PC
+Sounds good, hopefully our next idea is better.
+

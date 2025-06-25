@@ -1,0 +1,25 @@
+Name: Howard
+Sprite: Howard_Understanding
+I don't think so, but let's keep thinking in that direction. Maybe we know someone named Star?
+
+Name: PC
+Hmm, I don't think I know any people with a name like that.
+What if its not a person, but a group?
+
+Name: Howard
+Sprite: Howard_Uncomfortable
+Ugh, my mind is totally blank!
+
+Name: Howard
+Sprite: Howard_Neutral
+Maybe something to do with chasing the stars?
+
+Name: PC
+There's Synthia and the Star Chasers?
+
+Name: Howard
+That must be it! Where can we find them?
+
+Name: PC
+They might be practicing right now! Let's try the music room.
+

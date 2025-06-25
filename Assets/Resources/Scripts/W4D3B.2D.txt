@@ -1,0 +1,14 @@
+Name: PC
+Sprite: Daylo_Neutral
+I think you should try your hand at cooking!
+
+
+Name: Daylo
+Sprite: Daylo_Disgust
+I have famously always been an awful cook.
+
+Name: Daylo
+Sprite: Daylo_Neutral
+However, if there is a time to make peace with my imperfections it would be now.
+I believe it could also serve as a thereputic practice for me.
+
